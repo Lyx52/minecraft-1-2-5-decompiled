@@ -2,7 +2,7 @@ package mojang;
 
 public abstract class ajr extends aaa {
 
-   public ajr(xd var1) {
+   public ajr(World var1) {
       super(var1);
    }
 
@@ -19,14 +19,14 @@ public abstract class ajr extends aaa {
       this.ac.b(12, Integer.valueOf(var1));
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("Age", this.av());
+      var1.addInt("Age", this.av());
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.d(var1.f("Age"));
+      this.d(var1.getInt("Age"));
    }
 
    public void e() {

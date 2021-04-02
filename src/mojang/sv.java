@@ -11,9 +11,9 @@ public class sv extends fe {
       super(new gj(), 0.5F);
    }
 
-   protected void a(yd var1, float var2) {
+   protected void a(Creeper var1, float var2) {
       float var4 = var1.c(var2);
-      float var5 = 1.0F + gk.a(var4 * 100.0F) * var4 * 0.01F;
+      float var5 = 1.0F + Utils.sin(var4 * 100.0F) * var4 * 0.01F;
       if(var4 < 0.0F) {
          var4 = 0.0F;
       }
@@ -29,7 +29,7 @@ public class sv extends fe {
       GL11.glScalef(var6, var7, var6);
    }
 
-   protected int a(yd var1, float var2, float var3) {
+   protected int a(Creeper var1, float var2, float var3) {
       float var5 = var1.c(var3);
       if((int)(var5 * 10.0F) % 2 == 0) {
          return 0;
@@ -50,7 +50,7 @@ public class sv extends fe {
       }
    }
 
-   protected int a(yd var1, int var2, float var3) {
+   protected int a(Creeper var1, int var2, float var3) {
       if(var1.af()) {
          if(var2 == 1) {
             float var4 = (float)var1.V + var3;
@@ -82,7 +82,7 @@ public class sv extends fe {
       return -1;
    }
 
-   protected int b(yd var1, int var2, float var3) {
+   protected int b(Creeper var1, int var2, float var3) {
       return -1;
    }
 }

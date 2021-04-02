@@ -15,14 +15,14 @@ public class oa {
       this.b = var2;
    }
 
-   public ady a() {
-      ady var1 = new ady();
-      var1.a("name", this.a);
-      var1.a("ip", this.b);
+   public CompundTag a() {
+      CompundTag var1 = new CompundTag();
+      var1.addString("name", this.a);
+      var1.addString("ip", this.b);
       return var1;
    }
 
-   public static oa a(ady var0) {
-      return new oa(var0.j("name"), var0.j("ip"));
+   public static oa a(CompundTag var0) {
+      return new oa(var0.getString("name"), var0.getString("ip"));
    }
 }

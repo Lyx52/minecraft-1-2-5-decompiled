@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class aju extends h {
+public class aju extends Resource {
 
    private ZipFile e;
    private int f = -1;
@@ -32,7 +32,7 @@ public class aju extends h {
       return var1;
    }
 
-   public void a(Minecraft var1) {
+   public void a(Minecraft minecraft) {
       ZipFile var2 = null;
       InputStream var3 = null;
 
@@ -78,28 +78,28 @@ public class aju extends h {
 
    }
 
-   public void b(Minecraft var1) {
+   public void b(Minecraft minecraft) {
       if(this.g != null) {
-         var1.p.a(this.f);
+         minecraft.p.a(this.f);
       }
 
       this.b();
    }
 
-   public void c(Minecraft var1) {
+   public void c(Minecraft minecraft) {
       if(this.g != null && this.f < 0) {
-         this.f = var1.p.a(this.g);
+         this.f = minecraft.p.a(this.g);
       }
 
       if(this.g != null) {
-         var1.p.b(this.f);
+         minecraft.p.b(this.f);
       } else {
-         GL11.glBindTexture(3553, var1.p.b("/mojang/gui/unknown_pack.png"));
+         GL11.glBindTexture(3553, minecraft.p.b("/mojang/gui/unknown_pack.png"));
       }
 
    }
 
-   public void a() {
+   public void read() {
       try {
          this.e = new ZipFile(this.h);
       } catch (Exception var2) {
@@ -118,7 +118,7 @@ public class aju extends h {
       this.e = null;
    }
 
-   public InputStream a(String var1) {
+   public InputStream readResourceAsStream(String var1) {
       try {
          ZipEntry var2 = this.e.getEntry(var1.substring(1));
          if(var2 != null) {
@@ -128,6 +128,6 @@ public class aju extends h {
          ;
       }
 
-      return h.class.getResourceAsStream(var1);
+      return Resource.class.getResourceAsStream(var1);
    }
 }

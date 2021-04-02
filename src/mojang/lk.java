@@ -17,7 +17,7 @@ public class lk extends ho {
       this.g.g = 1.5707964F;
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.a.a(var7);
       this.b.a(var7);
@@ -29,16 +29,16 @@ public class lk extends ho {
    }
 
    public void a(float var1, float var2, float var3, float var4, float var5, float var6) {
-      float var7 = (gk.a(var1 * 0.02F) * 0.1F + 1.25F) * var4;
+      float var7 = (Utils.sin(var1 * 0.02F) * 0.1F + 1.25F) * var4;
       this.a.g = 3.1415927F + var7;
       this.b.g = -var7;
       this.c.g = var7;
       this.d.g = -var7;
       this.e.g = var7 - var7 * 2.0F * var2;
       this.f.g = var7 - var7 * 2.0F * var3;
-      this.c.c = gk.a(var7);
-      this.d.c = gk.a(var7);
-      this.e.c = gk.a(var7);
-      this.f.c = gk.a(var7);
+      this.c.c = Utils.sin(var7);
+      this.d.c = Utils.sin(var7);
+      this.e.c = Utils.sin(var7);
+      this.f.c = Utils.sin(var7);
    }
 }

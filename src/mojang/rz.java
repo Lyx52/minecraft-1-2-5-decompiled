@@ -9,15 +9,15 @@ public class rz {
 
    public static ArrayList a(Random var0, int var1) {
       ArrayList var2 = new ArrayList();
-      var2.add(new dt(ey.class, 4, gk.a(var0, 2 + var1, 4 + var1 * 2)));
-      var2.add(new dt(aeu.class, 20, gk.a(var0, 0 + var1, 1 + var1)));
-      var2.add(new dt(akc.class, 20, gk.a(var0, 0 + var1, 2 + var1)));
-      var2.add(new dt(amk.class, 3, gk.a(var0, 2 + var1, 5 + var1 * 3)));
-      var2.add(new dt(p.class, 15, gk.a(var0, 0 + var1, 2 + var1)));
-      var2.add(new dt(k.class, 3, gk.a(var0, 1 + var1, 4 + var1)));
-      var2.add(new dt(qf.class, 3, gk.a(var0, 2 + var1, 4 + var1 * 2)));
-      var2.add(new dt(cq.class, 15, gk.a(var0, 0, 1 + var1)));
-      var2.add(new dt(yb.class, 8, gk.a(var0, 0 + var1, 3 + var1 * 2)));
+      var2.add(new dt(ey.class, 4, Utils.a(var0, 2 + var1, 4 + var1 * 2)));
+      var2.add(new dt(aeu.class, 20, Utils.a(var0, 0 + var1, 1 + var1)));
+      var2.add(new dt(akc.class, 20, Utils.a(var0, 0 + var1, 2 + var1)));
+      var2.add(new dt(amk.class, 3, Utils.a(var0, 2 + var1, 5 + var1 * 3)));
+      var2.add(new dt(p.class, 15, Utils.a(var0, 0 + var1, 2 + var1)));
+      var2.add(new dt(k.class, 3, Utils.a(var0, 1 + var1, 4 + var1)));
+      var2.add(new dt(qf.class, 3, Utils.a(var0, 2 + var1, 4 + var1 * 2)));
+      var2.add(new dt(cq.class, 15, Utils.a(var0, 0, 1 + var1)));
+      var2.add(new dt(yb.class, 8, Utils.a(var0, 0 + var1, 3 + var1 * 2)));
       Iterator var3 = var2.iterator();
 
       while(var3.hasNext()) {

@@ -1,21 +1,21 @@
 package mojang;
 
-public class ti extends vp {
+public class ti extends GUIManager {
 
    public void a() {}
 
    public void c() {
-      adn var1 = adn.a();
-      this.s.clear();
-      this.s.add(new z(0, this.q / 2 - 155, this.r / 4 + 120 + 12, var1.b("mojang.gui.toMenu")));
-      this.s.add(new z(1, this.q / 2 - 155 + 160, this.r / 4 + 120 + 12, var1.b("menu.quit")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.clear();
+      this.buttonList.add(new z(0, this.q / 2 - 155, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.toMenu")));
+      this.buttonList.add(new z(1, this.q / 2 - 155 + 160, this.r / 4 + 120 + 12, var1.getLocaleStringByName("menu.quit")));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 0) {
-         this.p.a((vp)(new xt()));
+         this.minecraft.a((GUIManager)(new xt()));
       } else if(var1.f == 1) {
-         this.p.f();
+         this.minecraft.stop();
       }
 
    }

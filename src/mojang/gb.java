@@ -4,7 +4,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-public abstract class gb extends vp {
+public abstract class gb extends GUIManager {
 
    protected static tw a = new tw();
    protected int b = 176;
@@ -20,7 +20,7 @@ public abstract class gb extends vp {
 
    public void c() {
       super.c();
-      this.p.h.ar = this.d;
+      this.minecraft.h.ar = this.d;
       this.e = (this.q - this.b) / 2;
       this.f = (this.r - this.c) / 2;
    }
@@ -38,7 +38,7 @@ public abstract class gb extends vp {
       yu var6 = null;
       short var7 = 240;
       short var8 = 240;
-      es.a(es.b, (float)var7 / 1.0F, (float)var8 / 1.0F);
+      ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var7 / 1.0F, (float)var8 / 1.0F);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
       int var10;
@@ -58,13 +58,13 @@ public abstract class gb extends vp {
       }
 
       this.d();
-      aak var21 = this.p.h.ap;
+      aak var21 = this.minecraft.h.ap;
       if(var21.k() != null) {
          GL11.glTranslatef(0.0F, 0.0F, 32.0F);
          this.g = 200.0F;
          a.b = 200.0F;
-         a.a(this.u, this.p.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
-         a.b(this.u, this.p.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
+         a.a(this.u, this.minecraft.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
+         a.b(this.u, this.minecraft.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
          this.g = 0.0F;
          a.b = 0.0F;
       }
@@ -152,7 +152,7 @@ public abstract class gb extends vp {
          int var8 = var1.e();
          if(var8 >= 0) {
             GL11.glDisable(2896);
-            this.p.p.b(this.p.p.b("/mojang/gui/items.png"));
+            this.minecraft.p.b(this.minecraft.p.b("/mojang/gui/items.png"));
             this.b(var2, var3, var8 % 16 * 16, var8 / 16 * 16, 16, 16);
             GL11.glEnable(2896);
             var5 = true;
@@ -160,8 +160,8 @@ public abstract class gb extends vp {
       }
 
       if(!var5) {
-         a.a(this.u, this.p.p, var4, var2, var3);
-         a.b(this.u, this.p.p, var4, var2, var3);
+         a.a(this.u, this.minecraft.p, var4, var2, var3);
+         a.b(this.u, this.minecraft.p, var4, var2, var3);
       }
 
       a.b = 0.0F;
@@ -216,20 +216,20 @@ public abstract class gb extends vp {
          var2 = var1.c;
       }
 
-      this.p.c.a(this.d.f, var2, var3, var4, this.p.h);
+      this.minecraft.c.a(this.d.f, var2, var3, var4, this.minecraft.h);
    }
 
    protected void a(char var1, int var2) {
-      if(var2 == 1 || var2 == this.p.A.s.d) {
-         this.p.h.af();
+      if(var2 == 1 || var2 == this.minecraft.options.key_inventory.keyCode) {
+         this.minecraft.h.af();
       }
 
    }
 
    public void e() {
-      if(this.p.h != null) {
-         this.d.a((yw)this.p.h);
-         this.p.c.a(this.d.f, this.p.h);
+      if(this.minecraft.h != null) {
+         this.d.a((Player)this.minecraft.h);
+         this.minecraft.c.a(this.d.f, this.minecraft.h);
       }
    }
 
@@ -239,8 +239,8 @@ public abstract class gb extends vp {
 
    public void a() {
       super.a();
-      if(!this.p.h.M() || this.p.h.G) {
-         this.p.h.af();
+      if(!this.minecraft.h.M() || this.minecraft.h.G) {
+         this.minecraft.h.af();
       }
 
    }

@@ -9,11 +9,11 @@ public class amo extends fe {
       this.a((ho)(new nf()));
    }
 
-   protected float a(cb var1) {
+   protected float a(Spider var1) {
       return 180.0F;
    }
 
-   protected int a(cb var1, int var2, float var3) {
+   protected int a(Spider var1, int var2, float var3) {
       if(var2 != 0) {
          return -1;
       } else {
@@ -25,14 +25,14 @@ public class amo extends fe {
          char var5 = '\uf0f0';
          int var6 = var5 % 65536;
          int var7 = var5 / 65536;
-         es.a(es.b, (float)var6 / 1.0F, (float)var7 / 1.0F);
+         ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var6 / 1.0F, (float)var7 / 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, var4);
          return 1;
       }
    }
 
-   protected void a(cb var1, float var2) {
+   protected void a(Spider var1, float var2) {
       float var3 = var1.r();
       GL11.glScalef(var3, var3, var3);
    }

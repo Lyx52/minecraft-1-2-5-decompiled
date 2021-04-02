@@ -15,7 +15,7 @@ public class alf {
    private vc d;
 
 
-   public alf(fc var1, File var2) {
+   public alf(CredentialManager var1, File var2) {
       File var3 = new File(var2, "stats");
       if(!var3.exists()) {
          var3.mkdir();

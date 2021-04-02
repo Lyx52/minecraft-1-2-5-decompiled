@@ -8,11 +8,11 @@ public class aal {
 
    private int[] a = new int[16384];
    private int b;
-   private hu c;
+   private OptionParser c;
    private nl d;
 
 
-   public aal(nl var1, hu var2, aaw var3) {
+   public aal(nl var1, OptionParser var2, Texture var3) {
       this.c = var2;
       this.d = var1;
       this.b = var3.a(new BufferedImage(128, 128, 2));
@@ -23,7 +23,7 @@ public class aal {
 
    }
 
-   public void a(yw var1, aaw var2, aaj var3) {
+   public void a(Player var1, Texture var2, aaj var3) {
       for(int var4 = 0; var4 < 16384; ++var4) {
          byte var5 = var3.f[var4];
          if(var5 / 4 == 0) {
@@ -43,7 +43,7 @@ public class aal {
             int var9 = (var6 >> 16 & 255) * var8 / 255;
             int var10 = (var6 >> 8 & 255) * var8 / 255;
             int var11 = (var6 & 255) * var8 / 255;
-            if(this.c.g) {
+            if(this.c.glyph3d) {
                int var12 = (var9 * 30 + var10 * 59 + var11 * 11) / 100;
                int var13 = (var9 * 30 + var10 * 70) / 100;
                int var14 = (var9 * 30 + var11 * 70) / 100;
@@ -59,7 +59,7 @@ public class aal {
       var2.a(this.a, 128, 128, this.b);
       byte var15 = 0;
       byte var16 = 0;
-      adz var17 = adz.a;
+      Tessalator var17 = Tessalator.a;
       float var18 = 0.0F;
       GL11.glBindTexture(3553, this.b);
       GL11.glEnable(3042);

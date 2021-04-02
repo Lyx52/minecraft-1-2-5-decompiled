@@ -28,17 +28,17 @@ public class da extends yr {
       return 1.0F;
    }
 
-   public boolean a(aan var1, acq var2, acq var3) {
+   public boolean a(aan var1, Mob var2, Mob var3) {
       var1.a(2, var3);
       return true;
    }
 
-   public boolean a(aan var1, int var2, int var3, int var4, int var5, acq var6) {
+   public boolean a(aan var1, int var2, int var3, int var4, int var5, Mob var6) {
       var1.a(1, var6);
       return true;
    }
 
-   public int a(nn var1) {
+   public int a(BaseEntity var1) {
       return this.bV;
    }
 

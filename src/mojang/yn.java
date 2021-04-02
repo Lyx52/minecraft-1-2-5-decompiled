@@ -14,7 +14,7 @@ public class yn extends abs {
 
    public yn() {}
 
-   public yn(nn var1) {
+   public yn(BaseEntity var1) {
       this(var1.f, var1.r, var1.s, var1.t);
    }
 

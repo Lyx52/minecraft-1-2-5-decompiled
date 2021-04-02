@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class mp {
 
    public BufferedImage a;
-   public xd b;
+   public World b;
    public int c;
    public int d;
    public boolean e = false;
@@ -14,7 +14,7 @@ public class mp {
    public boolean h = false;
 
 
-   public mp(xd var1, int var2, int var3) {
+   public mp(World var1, int var2, int var3) {
       this.b = var1;
       this.a(var2, var3);
    }
@@ -27,7 +27,7 @@ public class mp {
       this.h = false;
    }
 
-   public void a(xd var1, int var2, int var3) {
+   public void a(World var1, int var2, int var3) {
       this.b = var1;
       this.a(var2, var3);
    }

@@ -8,7 +8,7 @@ public class mv extends pb {
       super(var1, var2, acn.D);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5) {
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5) {
       var5.q();
    }
 
@@ -16,7 +16,7 @@ public class mv extends pb {
       return false;
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 

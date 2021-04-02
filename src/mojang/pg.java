@@ -18,7 +18,7 @@ public abstract class pg {
       return this.a;
    }
 
-   public void a(xd var1, Random var2, qg var3) {
+   public void a(World var1, Random var2, qg var3) {
       Iterator var4 = this.a.iterator();
 
       while(var4.hasNext()) {
@@ -41,7 +41,7 @@ public abstract class pg {
 
    }
 
-   protected void a(xd var1, Random var2, int var3) {
+   protected void a(World var1, Random var2, int var3) {
       int var4 = 63 - var3;
       int var5 = this.b.c() + 1;
       if(var5 < var4) {
@@ -59,7 +59,7 @@ public abstract class pg {
 
    }
 
-   protected void a(xd var1, Random var2, int var3, int var4) {
+   protected void a(World var1, Random var2, int var3, int var4) {
       int var5 = var4 - var3 + 1 - this.b.c();
       boolean var6 = true;
       int var10;

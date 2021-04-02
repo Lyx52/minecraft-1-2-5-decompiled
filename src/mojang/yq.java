@@ -6,17 +6,17 @@ public class yq extends rt {
 
    private int a = 0;
    private int au = 0;
-   private aaw av;
+   private Texture av;
 
 
-   public yq(aaw var1, xd var2, double var3, double var5, double var7) {
+   public yq(Texture var1, World var2, double var3, double var5, double var7) {
       super(var2, var3, var5, var7, 0.0D, 0.0D, 0.0D);
       this.av = var1;
       this.r = this.s = this.t = 0.0D;
       this.au = 200;
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = ((float)this.a + var2) / (float)this.au;
       var8 *= var8;
       float var9 = 2.0F - var8 * 2.0F;
@@ -30,7 +30,7 @@ public class yq extends rt {
       float var11 = (float)(this.o - ar);
       float var12 = (float)(this.p - as);
       float var13 = (float)(this.q - at);
-      float var14 = this.k.c(gk.c(this.o), gk.c(this.p), gk.c(this.q));
+      float var14 = this.k.c(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q));
       this.av.b(this.av.b("/mojang/misc/footprint.png"));
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);

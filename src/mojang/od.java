@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class od extends li {
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6 = var3;
 
       for(int var7 = var5; var4 < 128; ++var4) {

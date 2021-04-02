@@ -11,11 +11,11 @@ public class bb extends yr {
       this.a = var2;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       float var4 = 1.0F;
-      double var5 = var3.l + (var3.o - var3.l) * (double)var4;
-      double var7 = var3.m + (var3.p - var3.m) * (double)var4 + 1.62D - (double)var3.H;
-      double var9 = var3.n + (var3.q - var3.n) * (double)var4;
+      double var5 = var3.sandX + (var3.o - var3.sandX) * (double)var4;
+      double var7 = var3.sandY + (var3.p - var3.sandY) * (double)var4 + 1.62D - (double)var3.H;
+      double var9 = var3.sandZ + (var3.q - var3.sandZ) * (double)var4;
       boolean var11 = this.a == 0;
       pl var12 = this.a(var2, var3, var11);
       if(var12 == null) {
@@ -102,7 +102,7 @@ public class bb extends yr {
                   return new aan(yr.aw);
                }
             }
-         } else if(this.a == 0 && var12.g instanceof un) {
+         } else if(this.a == 0 && var12.g instanceof Cow) {
             return new aan(yr.aG);
          }
 

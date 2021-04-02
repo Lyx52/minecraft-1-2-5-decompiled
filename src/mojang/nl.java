@@ -22,7 +22,7 @@ public class nl {
    private final int[] f = new int[256];
    private int[] g = new int[32];
    private int h;
-   private final aaw i;
+   private final Texture i;
    private float j;
    private float k;
    private boolean l;
@@ -37,14 +37,14 @@ public class nl {
       this.i = null;
    }
 
-   public nl(hu var1, String var2, aaw var3, boolean var4) {
+   public nl(OptionParser var1, String var2, Texture var3, boolean var4) {
       this.i = var3;
       this.l = var4;
 
       BufferedImage var5;
       try {
-         var5 = ImageIO.read(aaw.class.getResourceAsStream(var2));
-         InputStream var6 = aaw.class.getResourceAsStream("/mojang/font/glyph_sizes.bin");
+         var5 = ImageIO.read(Texture.class.getResourceAsStream(var2));
+         InputStream var6 = Texture.class.getResourceAsStream("/mojang/font/glyph_sizes.bin");
          var6.read(this.e);
       } catch (IOException var18) {
          throw new RuntimeException(var18);
@@ -107,7 +107,7 @@ public class nl {
             var11 += 85;
          }
 
-         if(var1.g) {
+         if(var1.glyph3d) {
             int var20 = (var11 * 30 + var12 * 59 + var13 * 11) / 100;
             var15 = (var11 * 30 + var12 * 70) / 100;
             var16 = (var11 * 30 + var13 * 70) / 100;
@@ -159,7 +159,7 @@ public class nl {
 
       BufferedImage var2;
       try {
-         var2 = ImageIO.read(aaw.class.getResourceAsStream(var3));
+         var2 = ImageIO.read(Texture.class.getResourceAsStream(var3));
       } catch (IOException var5) {
          throw new RuntimeException(var5);
       }
@@ -350,9 +350,9 @@ public class nl {
                ++var14;
             }
 
-            adz var12;
+            Tessalator var12;
             if(var7) {
-               var12 = adz.a;
+               var12 = Tessalator.a;
                GL11.glDisable(3553);
                var12.b();
                var12.a((double)this.j, (double)(this.k + (float)(this.b / 2)), 0.0D);
@@ -364,7 +364,7 @@ public class nl {
             }
 
             if(var6) {
-               var12 = adz.a;
+               var12 = Tessalator.a;
                GL11.glDisable(3553);
                var12.b();
                int var13 = var6?-1:0;

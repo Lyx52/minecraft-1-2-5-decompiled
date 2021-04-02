@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class lo extends li {
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6 = var2.nextInt(5) + 7;
       int var7 = var6 - var2.nextInt(2) - 3;
       int var8 = var6 - var7;

@@ -34,7 +34,7 @@ public class wv {
       float var9 = -99999.0F;
       boolean var10;
       if(var0.aY()) {
-         double var11 = var0.aV().b(gk.c(var0.o), gk.c(var0.p), gk.c(var0.q)) + 4.0D;
+         double var11 = var0.aV().b(Utils.c(var0.o), Utils.c(var0.p), Utils.c(var0.q)) + 4.0D;
          var10 = var11 < (double)(var0.aW() + (float)var1);
       } else {
          var10 = false;
@@ -45,9 +45,9 @@ public class wv {
          int var13 = var4.nextInt(2 * var2) - var2;
          int var14 = var4.nextInt(2 * var1) - var1;
          if(var3 == null || (double)var12 * var3.a + (double)var14 * var3.c >= 0.0D) {
-            var12 += gk.c(var0.o);
-            var13 += gk.c(var0.p);
-            var14 += gk.c(var0.q);
+            var12 += Utils.c(var0.o);
+            var13 += Utils.c(var0.p);
+            var14 += Utils.c(var0.q);
             if(!var10 || var0.f(var12, var13, var14)) {
                float var15 = var0.a(var12, var13, var14);
                if(var15 > var9) {

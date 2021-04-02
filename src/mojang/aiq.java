@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class aiq extends h {
+public class aiq extends Resource {
 
    private int e = -1;
    private BufferedImage f;
@@ -31,12 +31,12 @@ public class aiq extends h {
       return var1;
    }
 
-   public void a(Minecraft var1) {
+   public void a(Minecraft minecraft) {
       InputStream var2 = null;
 
       try {
          try {
-            var2 = this.a("mojang/pack.txt");
+            var2 = this.readResourceAsStream("mojang/pack.txt");
             BufferedReader var3 = new BufferedReader(new InputStreamReader(var2));
             this.b = this.b(var3.readLine());
             this.c = this.b(var3.readLine());
@@ -47,7 +47,7 @@ public class aiq extends h {
          }
 
          try {
-            var2 = this.a("mojang/pack.png");
+            var2 = this.readResourceAsStream("mojang/pack.png");
             this.f = ImageIO.read(var2);
             var2.close();
          } catch (Exception var14) {
@@ -66,32 +66,32 @@ public class aiq extends h {
 
    }
 
-   public void b(Minecraft var1) {
+   public void b(Minecraft minecraft) {
       if(this.f != null) {
-         var1.p.a(this.e);
+         minecraft.p.a(this.e);
       }
 
       this.b();
    }
 
-   public void c(Minecraft var1) {
+   public void c(Minecraft minecraft) {
       if(this.f != null && this.e < 0) {
-         this.e = var1.p.a(this.f);
+         this.e = minecraft.p.a(this.f);
       }
 
       if(this.f != null) {
-         var1.p.b(this.e);
+         minecraft.p.b(this.e);
       } else {
-         GL11.glBindTexture(3553, var1.p.b("/mojang/gui/unknown_pack.png"));
+         GL11.glBindTexture(3553, minecraft.p.b("/mojang/gui/unknown_pack.png"));
       }
 
    }
 
-   public void a() {}
+   public void read() {}
 
    public void b() {}
 
-   public InputStream a(String var1) {
+   public InputStream readResourceAsStream(String var1) {
       try {
          File var2 = new File(this.g, var1.substring(1));
          if(var2.exists()) {
@@ -101,6 +101,6 @@ public class aiq extends h {
          ;
       }
 
-      return h.class.getResourceAsStream(var1);
+      return Resource.class.getResourceAsStream(var1);
    }
 }

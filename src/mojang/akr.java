@@ -26,7 +26,7 @@ public class akr extends rc {
       if(this.e && this.a.k.m()) {
          return false;
       } else {
-         kd var1 = this.a.k.A.a(gk.c(this.a.o), gk.c(this.a.p), gk.c(this.a.q), 0);
+         kd var1 = this.a.k.A.a(Utils.c(this.a.o), Utils.c(this.a.p), Utils.c(this.a.q), 0);
          if(var1 == null) {
             return false;
          } else {
@@ -84,7 +84,7 @@ public class akr extends rc {
 
       while(var5.hasNext()) {
          adm var6 = (adm)var5.next();
-         int var7 = var6.a(gk.c(this.a.o), gk.c(this.a.p), gk.c(this.a.q));
+         int var7 = var6.a(Utils.c(this.a.o), Utils.c(this.a.p), Utils.c(this.a.q));
          if(var7 < var3 && !this.a(var6)) {
             var2 = var6;
             var3 = var7;

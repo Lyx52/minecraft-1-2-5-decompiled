@@ -15,7 +15,7 @@ public class st extends fe {
       this.a(this.c);
    }
 
-   public void a(jg var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(Enderman var1, double var2, double var4, double var6, float var8, float var9) {
       this.c.a = var1.z_() > 0;
       this.c.b = var1.a;
       if(var1.a) {
@@ -24,10 +24,10 @@ public class st extends fe {
          var6 += this.d.nextGaussian() * var10;
       }
 
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 
-   protected void a(jg var1, float var2) {
+   protected void a(Enderman var1, float var2) {
       super.b(var1, var2);
       if(var1.z_() > 0) {
          GL11.glEnable('\u803a');
@@ -41,7 +41,7 @@ public class st extends fe {
          int var4 = var1.b(var2);
          int var5 = var4 % 65536;
          int var6 = var4 / 65536;
-         es.a(es.b, (float)var5 / 1.0F, (float)var6 / 1.0F);
+         ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var5 / 1.0F, (float)var6 / 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.a("/mojang/terrain.png");
@@ -52,7 +52,7 @@ public class st extends fe {
 
    }
 
-   protected int a(jg var1, int var2, float var3) {
+   protected int a(Enderman var1, int var2, float var3) {
       if(var2 != 0) {
          return -1;
       } else {
@@ -65,7 +65,7 @@ public class st extends fe {
          char var5 = '\uf0f0';
          int var6 = var5 % 65536;
          int var7 = var5 / 65536;
-         es.a(es.b, (float)var6 / 1.0F, (float)var7 / 1.0F);
+         ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var6 / 1.0F, (float)var7 / 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glEnable(2896);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, var4);

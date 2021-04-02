@@ -6,7 +6,7 @@ public class acy extends is {
    int j;
 
 
-   public acy(acq var1, boolean var2) {
+   public acy(Mob var1, boolean var2) {
       super(var1);
       this.a = var1;
       this.i = var2;

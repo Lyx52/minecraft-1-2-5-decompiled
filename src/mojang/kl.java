@@ -59,7 +59,7 @@ public class kl implements io {
       this.c.j();
    }
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return this.b.a_(var1) && this.c.a_(var1);
    }
 

@@ -7,7 +7,7 @@ public class pe extends yr {
       this.f(1);
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       --var1.a;
       if(!var2.F) {
          var3.bf();
@@ -24,7 +24,7 @@ public class pe extends yr {
       return aaq.c;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       var3.c(var1, this.b(var1));
       return var1;
    }

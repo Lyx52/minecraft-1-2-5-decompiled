@@ -2,17 +2,17 @@ package mojang;
 
 public abstract class akm extends aaa {
 
-   public akm(xd var1) {
+   public akm(World var1) {
       super(var1);
    }
 
    protected void e(float var1) {}
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
    }
 

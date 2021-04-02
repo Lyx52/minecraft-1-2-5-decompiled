@@ -20,22 +20,22 @@ public class uj extends pb {
       return 30;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.h(var1, var2, var3, var4);
       super.a(var1, var2, var3, var4, var5);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, nn var5) {
+   public void b(World var1, int var2, int var3, int var4, BaseEntity var5) {
       this.h(var1, var2, var3, var4);
       super.b(var1, var2, var3, var4, var5);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       this.h(var1, var2, var3, var4);
       return super.b(var1, var2, var3, var4, var5);
    }
 
-   private void h(xd var1, int var2, int var3, int var4) {
+   private void h(World var1, int var2, int var3, int var4) {
       this.i(var1, var2, var3, var4);
       if(this.bO == aN.bO) {
          var1.g(var2, var3, var4, aO.bO);
@@ -43,7 +43,7 @@ public class uj extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(this.bO == aO.bO) {
          var1.g(var2, var3, var4, aN.bO);
       }
@@ -62,14 +62,14 @@ public class uj extends pb {
       return 4 + var1.nextInt(2);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       if(this.a) {
          this.i(var1, var2, var3, var4);
       }
 
    }
 
-   private void i(xd var1, int var2, int var3, int var4) {
+   private void i(World var1, int var2, int var3, int var4) {
       Random var5 = var1.r;
       double var6 = 0.0625D;
 

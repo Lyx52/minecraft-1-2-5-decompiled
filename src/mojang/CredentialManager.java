@@ -3,47 +3,47 @@ package mojang;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fc {
+public class CredentialManager {
 
-   public static List a = new ArrayList();
-   public String b;
-   public String c;
-   public String d;
+   public static List credList = new ArrayList();
+   public String username;
+   public String sessionid;
+   public String mppass;
 
 
-   public fc(String var1, String var2) {
-      this.b = var1;
-      this.c = var2;
+   public CredentialManager(String username, String sessionid) {
+      this.username = username;
+      this.sessionid = sessionid;
    }
 
    static {
-      a.add(pb.t);
-      a.add(pb.w);
-      a.add(pb.al);
-      a.add(pb.v);
-      a.add(pb.x);
-      a.add(pb.J);
-      a.add(pb.K);
-      a.add(pb.aq);
-      a.add(pb.ak);
-      a.add(pb.M);
-      a.add(pb.ao);
-      a.add(pb.y);
-      a.add(pb.ad);
-      a.add(pb.ae);
-      a.add(pb.af);
-      a.add(pb.ag);
-      a.add(pb.E);
-      a.add(pb.F);
-      a.add(pb.L);
-      a.add(pb.ab);
-      a.add(pb.I);
-      a.add(pb.H);
-      a.add(pb.G);
-      a.add(pb.ai);
-      a.add(pb.ah);
-      a.add(pb.an);
-      a.add(pb.am);
-      a.add(pb.ap);
+      credList.add(pb.t);
+      credList.add(pb.w);
+      credList.add(pb.al);
+      credList.add(pb.v);
+      credList.add(pb.x);
+      credList.add(pb.J);
+      credList.add(pb.K);
+      credList.add(pb.aq);
+      credList.add(pb.ak);
+      credList.add(pb.M);
+      credList.add(pb.ao);
+      credList.add(pb.y);
+      credList.add(pb.ad);
+      credList.add(pb.ae);
+      credList.add(pb.af);
+      credList.add(pb.ag);
+      credList.add(pb.E);
+      credList.add(pb.F);
+      credList.add(pb.L);
+      credList.add(pb.ab);
+      credList.add(pb.I);
+      credList.add(pb.H);
+      credList.add(pb.G);
+      credList.add(pb.ai);
+      credList.add(pb.ah);
+      credList.add(pb.an);
+      credList.add(pb.am);
+      credList.add(pb.ap);
    }
 }

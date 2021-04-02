@@ -34,8 +34,8 @@ public class dz extends ho {
       this.c.g = var4 / 57.295776F;
       this.c.f = var5 / 57.295776F;
       this.a.g = var4 / 57.295776F * 0.25F;
-      float var7 = gk.a(this.a.g);
-      float var8 = gk.b(this.a.g);
+      float var7 = Utils.sin(this.a.g);
+      float var8 = Utils.cos(this.a.g);
       this.d.h = 1.0F;
       this.e.h = -1.0F;
       this.d.g = 0.0F + this.a.g;
@@ -46,7 +46,7 @@ public class dz extends ho {
       this.e.e = var7 * 5.0F;
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.a.a(var7);
       this.b.a(var7);

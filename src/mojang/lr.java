@@ -19,7 +19,7 @@ public class lr {
    private float s = 0.0F;
    public mn c;
    private int t;
-   private nn u = null;
+   private BaseEntity u = null;
    private ch v = new ch();
    private ch w = new ch();
    private ch x = new ch();
@@ -63,7 +63,7 @@ public class lr {
    float[] j;
    volatile int k = 0;
    volatile int l = 0;
-   FloatBuffer m = ew.e(16);
+   FloatBuffer m = BufferManager.createFloatBuffer(16);
    float n;
    float o;
    float p;
@@ -90,8 +90,8 @@ public class lr {
       this.P = this.O;
       float var1;
       float var2;
-      if(this.r.A.J) {
-         var1 = this.r.A.c * 0.6F + 0.2F;
+      if(this.r.options.J) {
+         var1 = this.r.options.mouseSensitivity * 0.6F + 0.2F;
          var2 = var1 * var1 * var1 * 8.0F;
          this.J = this.v.a(this.H, 0.05F * var2);
          this.K = this.w.a(this.I, 0.05F * var2);
@@ -104,8 +104,8 @@ public class lr {
          this.r.i = this.r.h;
       }
 
-      var1 = this.r.f.c(gk.c(this.r.i.o), gk.c(this.r.i.p), gk.c(this.r.i.q));
-      var2 = (float)(3 - this.r.A.e) / 3.0F;
+      var1 = this.r.f.c(Utils.c(this.r.i.o), Utils.c(this.r.i.p), Utils.c(this.r.i.q));
+      var2 = (float)(3 - this.r.options.viewDistance) / 3.0F;
       float var3 = var1 * (1.0F - var2) + var2;
       this.ae += (var3 - this.ae) * 0.1F;
       ++this.t;
@@ -139,11 +139,11 @@ public class lr {
             bo var8 = var6.c(var7.a * var2, var7.b * var2, var7.c * var2);
             this.u = null;
             float var9 = 1.0F;
-            List var10 = this.r.f.b((nn)this.r.i, this.r.i.y.a(var7.a * var2, var7.b * var2, var7.c * var2).b((double)var9, (double)var9, (double)var9));
+            List var10 = this.r.f.b((BaseEntity)this.r.i, this.r.i.y.a(var7.a * var2, var7.b * var2, var7.c * var2).b((double)var9, (double)var9, (double)var9));
             double var11 = var4;
 
             for(int var13 = 0; var13 < var10.size(); ++var13) {
-               nn var14 = (nn)var10.get(var13);
+               BaseEntity var14 = (BaseEntity)var10.get(var13);
                if(var14.l_()) {
                   float var15 = var14.j_();
                   wu var16 = var14.y.b((double)var15, (double)var15, (double)var15);
@@ -182,10 +182,10 @@ public class lr {
       if(this.q > 0) {
          return 90.0F;
       } else {
-         yw var3 = (yw)this.r.i;
+         Player var3 = (Player)this.r.i;
          float var4 = 70.0F;
          if(var2) {
-            var4 += this.r.A.N * 40.0F;
+            var4 += this.r.options.fov * 40.0F;
             var4 *= this.S + (this.R - this.S) * var1;
          }
 
@@ -204,7 +204,7 @@ public class lr {
    }
 
    private void d(float var1) {
-      acq var2 = this.r.i;
+      Mob var2 = this.r.i;
       float var3 = (float)var2.bA - var1;
       float var4;
       if(var2.bb() <= 0) {
@@ -214,7 +214,7 @@ public class lr {
 
       if(var3 >= 0.0F) {
          var3 /= (float)var2.bB;
-         var3 = gk.a(var3 * var3 * var3 * var3 * 3.1415927F);
+         var3 = Utils.sin(var3 * var3 * var3 * var3 * 3.1415927F);
          var4 = var2.bC;
          GL11.glRotatef(-var4, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(-var3 * 14.0F, 0.0F, 0.0F, 1.0F);
@@ -223,33 +223,33 @@ public class lr {
    }
 
    private void e(float var1) {
-      if(this.r.i instanceof yw) {
-         yw var2 = (yw)this.r.i;
+      if(this.r.i instanceof Player) {
+         Player var2 = (Player)this.r.i;
          float var3 = var2.L - var2.K;
          float var4 = -(var2.L + var3 * var1);
          float var5 = var2.aw + (var2.ax - var2.aw) * var1;
          float var6 = var2.bF + (var2.bG - var2.bF) * var1;
-         GL11.glTranslatef(gk.a(var4 * 3.1415927F) * var5 * 0.5F, -Math.abs(gk.b(var4 * 3.1415927F) * var5), 0.0F);
-         GL11.glRotatef(gk.a(var4 * 3.1415927F) * var5 * 3.0F, 0.0F, 0.0F, 1.0F);
-         GL11.glRotatef(Math.abs(gk.b(var4 * 3.1415927F - 0.2F) * var5) * 5.0F, 1.0F, 0.0F, 0.0F);
+         GL11.glTranslatef(Utils.sin(var4 * 3.1415927F) * var5 * 0.5F, -Math.abs(Utils.cos(var4 * 3.1415927F) * var5), 0.0F);
+         GL11.glRotatef(Utils.sin(var4 * 3.1415927F) * var5 * 3.0F, 0.0F, 0.0F, 1.0F);
+         GL11.glRotatef(Math.abs(Utils.cos(var4 * 3.1415927F - 0.2F) * var5) * 5.0F, 1.0F, 0.0F, 0.0F);
          GL11.glRotatef(var6, 1.0F, 0.0F, 0.0F);
       }
    }
 
    private void f(float var1) {
-      acq var2 = this.r.i;
+      Mob var2 = this.r.i;
       float var3 = var2.H - 1.62F;
-      double var4 = var2.l + (var2.o - var2.l) * (double)var1;
-      double var6 = var2.m + (var2.p - var2.m) * (double)var1 - (double)var3;
-      double var8 = var2.n + (var2.q - var2.n) * (double)var1;
+      double var4 = var2.sandX + (var2.o - var2.sandX) * (double)var1;
+      double var6 = var2.sandY + (var2.p - var2.sandY) * (double)var1 - (double)var3;
+      double var8 = var2.sandZ + (var2.q - var2.sandZ) * (double)var1;
       GL11.glRotatef(this.P + (this.O - this.P) * var1, 0.0F, 0.0F, 1.0F);
       if(var2.az()) {
          var3 = (float)((double)var3 + 1.0D);
          GL11.glTranslatef(0.0F, 0.3F, 0.0F);
-         if(!this.r.A.K) {
-            int var10 = this.r.f.a(gk.c(var2.o), gk.c(var2.p), gk.c(var2.q));
+         if(!this.r.options.K) {
+            int var10 = this.r.f.a(Utils.c(var2.o), Utils.c(var2.p), Utils.c(var2.q));
             if(var10 == pb.S.bO) {
-               int var11 = this.r.f.e(gk.c(var2.o), gk.c(var2.p), gk.c(var2.q));
+               int var11 = this.r.f.e(Utils.c(var2.o), Utils.c(var2.p), Utils.c(var2.q));
                int var12 = var11 & 3;
                GL11.glRotatef((float)(var12 * 90), 0.0F, 1.0F, 0.0F);
             }
@@ -257,11 +257,11 @@ public class lr {
             GL11.glRotatef(var2.w + (var2.u - var2.w) * var1 + 180.0F, 0.0F, -1.0F, 0.0F);
             GL11.glRotatef(var2.x + (var2.v - var2.x) * var1, -1.0F, 0.0F, 0.0F);
          }
-      } else if(this.r.A.E > 0) {
+      } else if(this.r.options.E > 0) {
          double var27 = (double)(this.C + (this.B - this.C) * var1);
          float var13;
          float var28;
-         if(this.r.A.K) {
+         if(this.r.options.K) {
             var28 = this.E + (this.D - this.E) * var1;
             var13 = this.G + (this.F - this.G) * var1;
             GL11.glTranslatef(0.0F, 0.0F, (float)(-var27));
@@ -270,13 +270,13 @@ public class lr {
          } else {
             var28 = var2.u;
             var13 = var2.v;
-            if(this.r.A.E == 2) {
+            if(this.r.options.E == 2) {
                var13 += 180.0F;
             }
 
-            double var14 = (double)(-gk.a(var28 / 180.0F * 3.1415927F) * gk.b(var13 / 180.0F * 3.1415927F)) * var27;
-            double var16 = (double)(gk.b(var28 / 180.0F * 3.1415927F) * gk.b(var13 / 180.0F * 3.1415927F)) * var27;
-            double var18 = (double)(-gk.a(var13 / 180.0F * 3.1415927F)) * var27;
+            double var14 = (double)(-Utils.sin(var28 / 180.0F * 3.1415927F) * Utils.cos(var13 / 180.0F * 3.1415927F)) * var27;
+            double var16 = (double)(Utils.cos(var28 / 180.0F * 3.1415927F) * Utils.cos(var13 / 180.0F * 3.1415927F)) * var27;
+            double var18 = (double)(-Utils.sin(var13 / 180.0F * 3.1415927F)) * var27;
 
             for(int var20 = 0; var20 < 8; ++var20) {
                float var21 = (float)((var20 & 1) * 2 - 1);
@@ -294,7 +294,7 @@ public class lr {
                }
             }
 
-            if(this.r.A.E == 2) {
+            if(this.r.options.E == 2) {
                GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
             }
 
@@ -308,24 +308,24 @@ public class lr {
          GL11.glTranslatef(0.0F, 0.0F, -0.1F);
       }
 
-      if(!this.r.A.K) {
+      if(!this.r.options.K) {
          GL11.glRotatef(var2.x + (var2.v - var2.x) * var1, 1.0F, 0.0F, 0.0F);
          GL11.glRotatef(var2.w + (var2.u - var2.w) * var1 + 180.0F, 0.0F, 1.0F, 0.0F);
       }
 
       GL11.glTranslatef(0.0F, var3, 0.0F);
-      var4 = var2.l + (var2.o - var2.l) * (double)var1;
-      var6 = var2.m + (var2.p - var2.m) * (double)var1 - (double)var3;
-      var8 = var2.n + (var2.q - var2.n) * (double)var1;
+      var4 = var2.sandX + (var2.o - var2.sandX) * (double)var1;
+      var6 = var2.sandY + (var2.p - var2.sandY) * (double)var1 - (double)var3;
+      var8 = var2.sandZ + (var2.q - var2.sandZ) * (double)var1;
       this.U = this.r.g.a(var4, var6, var8, var1);
    }
 
    private void a(float var1, int var2) {
-      this.s = (float)(256 >> this.r.A.e);
+      this.s = (float)(256 >> this.r.options.viewDistance);
       GL11.glMatrixMode(5889);
       GL11.glLoadIdentity();
       float var3 = 0.07F;
-      if(this.r.A.g) {
+      if(this.r.options.glyph3d) {
          GL11.glTranslatef((float)(-(var2 * 2 - 1)) * var3, 0.0F, 0.0F);
       }
 
@@ -334,7 +334,7 @@ public class lr {
          GL11.glScaled(this.V, this.V, 1.0D);
       }
 
-      GLU.gluPerspective(this.a(var1, true), (float)this.r.d / (float)this.r.e, 0.05F, this.s * 2.0F);
+      GLU.gluPerspective(this.a(var1, true), (float)this.r.width / (float)this.r.height, 0.05F, this.s * 2.0F);
       float var4;
       if(this.r.c.e()) {
          var4 = 0.6666667F;
@@ -343,12 +343,12 @@ public class lr {
 
       GL11.glMatrixMode(5888);
       GL11.glLoadIdentity();
-      if(this.r.A.g) {
+      if(this.r.options.glyph3d) {
          GL11.glTranslatef((float)(var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
       }
 
       this.d(var1);
-      if(this.r.A.f) {
+      if(this.r.options.bobView) {
          this.e(var1);
       }
 
@@ -397,7 +397,7 @@ public class lr {
          GL11.glMatrixMode(5889);
          GL11.glLoadIdentity();
          float var3 = 0.07F;
-         if(this.r.A.g) {
+         if(this.r.options.glyph3d) {
             GL11.glTranslatef((float)(-(var2 * 2 - 1)) * var3, 0.0F, 0.0F);
          }
 
@@ -406,7 +406,7 @@ public class lr {
             GL11.glScaled(this.V, this.V, 1.0D);
          }
 
-         GLU.gluPerspective(this.a(var1, false), (float)this.r.d / (float)this.r.e, 0.05F, this.s * 2.0F);
+         GLU.gluPerspective(this.a(var1, false), (float)this.r.width / (float)this.r.height, 0.05F, this.s * 2.0F);
          if(this.r.c.e()) {
             float var4 = 0.6666667F;
             GL11.glScalef(1.0F, var4, 1.0F);
@@ -414,29 +414,29 @@ public class lr {
 
          GL11.glMatrixMode(5888);
          GL11.glLoadIdentity();
-         if(this.r.A.g) {
+         if(this.r.options.glyph3d) {
             GL11.glTranslatef((float)(var2 * 2 - 1) * 0.1F, 0.0F, 0.0F);
          }
 
          GL11.glPushMatrix();
          this.d(var1);
-         if(this.r.A.f) {
+         if(this.r.options.bobView) {
             this.e(var1);
          }
 
-         if(this.r.A.E == 0 && !this.r.i.az() && !this.r.A.D && !this.r.c.e()) {
+         if(this.r.options.E == 0 && !this.r.i.az() && !this.r.options.D && !this.r.c.e()) {
             this.b((double)var1);
             this.c.a(var1);
             this.a((double)var1);
          }
 
          GL11.glPopMatrix();
-         if(this.r.A.E == 0 && !this.r.i.az()) {
+         if(this.r.options.E == 0 && !this.r.i.az()) {
             this.c.b(var1);
             this.d(var1);
          }
 
-         if(this.r.A.f) {
+         if(this.r.options.bobView) {
             this.e(var1);
          }
 
@@ -444,13 +444,13 @@ public class lr {
    }
 
    public void a(double var1) {
-      es.a(es.b);
+      ARBTextureHelper.selectActiveTexture(ARBTextureHelper.b);
       GL11.glDisable(3553);
-      es.a(es.a);
+      ARBTextureHelper.selectActiveTexture(ARBTextureHelper.a);
    }
 
    public void b(double var1) {
-      es.a(es.b);
+      ARBTextureHelper.selectActiveTexture(ARBTextureHelper.b);
       GL11.glMatrixMode(5890);
       GL11.glLoadIdentity();
       float var3 = 0.00390625F;
@@ -466,7 +466,7 @@ public class lr {
       GL11.glTexParameteri(3553, 10243, 10496);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glEnable(3553);
-      es.a(es.a);
+      ARBTextureHelper.selectActiveTexture(ARBTextureHelper.a);
    }
 
    private void d() {
@@ -480,7 +480,7 @@ public class lr {
    }
 
    private void e() {
-      xd var1 = this.r.f;
+      World var1 = this.r.f;
       if(var1 != null) {
          for(int var2 = 0; var2 < 256; ++var2) {
             float var3 = var1.b(1.0F) * 0.95F + 0.05F;
@@ -506,7 +506,7 @@ public class lr {
                var14 = 0.25F + var11 * 0.75F;
             }
 
-            float var15 = this.r.A.O;
+            float var15 = this.r.options.gammaSetting;
             if(var12 > 1.0F) {
                var12 = 1.0F;
             }
@@ -584,16 +584,16 @@ public class lr {
       lv.a("mouse");
       if(this.r.R) {
          this.r.D.c();
-         float var2 = this.r.A.c * 0.6F + 0.2F;
+         float var2 = this.r.options.mouseSensitivity * 0.6F + 0.2F;
          float var3 = var2 * var2 * var2 * 8.0F;
          float var4 = (float)this.r.D.a * var3;
          float var5 = (float)this.r.D.b * var3;
          byte var6 = 1;
-         if(this.r.A.d) {
+         if(this.r.options.mouseInverted) {
             var6 = -1;
          }
 
-         if(this.r.A.J) {
+         if(this.r.options.J) {
             this.H += var4;
             this.I += var5;
             float var7 = var1 - this.L;
@@ -608,32 +608,32 @@ public class lr {
 
       lv.b();
       if(!this.r.x) {
-         a = this.r.A.g;
-         agd var13 = new agd(this.r.A, this.r.d, this.r.e);
-         int var14 = var13.a();
-         int var15 = var13.b();
-         int var16 = Mouse.getX() * var14 / this.r.d;
-         int var17 = var15 - Mouse.getY() * var15 / this.r.e - 1;
+         a = this.r.options.glyph3d;
+         WindowScaler var13 = new WindowScaler(this.r.options, this.r.width, this.r.height);
+         int var14 = var13.getWidth();
+         int var15 = var13.getHeight();
+         int var16 = Mouse.getX() * var14 / this.r.width;
+         int var17 = var15 - Mouse.getY() * var15 / this.r.height - 1;
          short var18 = 200;
-         if(this.r.A.i == 1) {
+         if(this.r.options.fpsLimit == 1) {
             var18 = 120;
          }
 
-         if(this.r.A.i == 2) {
+         if(this.r.options.fpsLimit == 2) {
             var18 = 40;
          }
 
          long var8;
          if(this.r.f != null) {
             lv.a("level");
-            if(this.r.A.i == 0) {
+            if(this.r.options.fpsLimit == 0) {
                this.a(var1, 0L);
             } else {
                this.a(var1, this.Z + (long)(1000000000 / var18));
             }
 
             lv.c("sleep");
-            if(this.r.A.i == 2) {
+            if(this.r.options.fpsLimit == 2) {
                var8 = (this.Z + (long)(1000000000 / var18) - System.nanoTime()) / 1000000L;
                if(var8 > 0L && var8 < 500L) {
                   try {
@@ -646,13 +646,13 @@ public class lr {
 
             this.Z = System.nanoTime();
             lv.c("mojang/gui");
-            if(!this.r.A.D || this.r.s != null) {
-               this.r.w.a(var1, this.r.s != null, var16, var17);
+            if(!this.r.options.D || this.r.guiManager != null) {
+               this.r.w.a(var1, this.r.guiManager != null, var16, var17);
             }
 
             lv.b();
          } else {
-            GL11.glViewport(0, 0, this.r.d, this.r.e);
+            GL11.glViewport(0, 0, this.r.width, this.r.height);
             GL11.glMatrixMode(5889);
             GL11.glLoadIdentity();
             GL11.glMatrixMode(5888);
@@ -674,11 +674,11 @@ public class lr {
             this.Z = System.nanoTime();
          }
 
-         if(this.r.s != null) {
+         if(this.r.guiManager != null) {
             GL11.glClear(256);
-            this.r.s.a(var16, var17, var1);
-            if(this.r.s != null && this.r.s.v != null) {
-               this.r.s.v.a(var1);
+            this.r.guiManager.a(var16, var17, var1);
+            if(this.r.guiManager != null && this.r.guiManager.v != null) {
+               this.r.guiManager.v.a(var1);
             }
          }
 
@@ -699,7 +699,7 @@ public class lr {
 
       lv.c("pick");
       this.a(var1);
-      acq var4 = this.r.i;
+      Mob var4 = this.r.i;
       l var5 = this.r.g;
       cw var6 = this.r.j;
       double var7 = var4.N + (var4.o - var4.N) * (double)var1;
@@ -710,13 +710,13 @@ public class lr {
       int var16;
       if(var13 instanceof hy) {
          hy var14 = (hy)var13;
-         int var15 = gk.d((float)((int)var7)) >> 4;
-         var16 = gk.d((float)((int)var11)) >> 4;
+         int var15 = Utils.d((float)((int)var7)) >> 4;
+         var16 = Utils.d((float)((int)var11)) >> 4;
          var14.d(var15, var16);
       }
 
       for(int var18 = 0; var18 < 2; ++var18) {
-         if(this.r.A.g) {
+         if(this.r.options.glyph3d) {
             b = var18;
             if(b == 0) {
                GL11.glColorMask(false, true, true, false);
@@ -726,16 +726,16 @@ public class lr {
          }
 
          lv.c("clear");
-         GL11.glViewport(0, 0, this.r.d, this.r.e);
+         GL11.glViewport(0, 0, this.r.width, this.r.height);
          this.g(var1);
          GL11.glClear(16640);
          GL11.glEnable(2884);
          lv.c("camera");
          this.a(var1, var18);
-         aau.a(this.r.h, this.r.A.E == 2);
+         aau.a(this.r.h, this.r.options.E == 2);
          lv.c("frustrum");
          r.init();
-         if(this.r.A.e < 2) {
+         if(this.r.options.viewDistance < 2) {
             this.a(-1, var1);
             lv.c("sky");
             var5.a(var1);
@@ -743,7 +743,7 @@ public class lr {
 
          GL11.glEnable(2912);
          this.a(1, var1);
-         if(this.r.A.k) {
+         if(this.r.options.aoSetting) {
             GL11.glShadeModel(7425);
          }
 
@@ -769,7 +769,7 @@ public class lr {
          lv.c("mojang/terrain");
          var5.a(var4, 0, (double)var1);
          GL11.glShadeModel(7424);
-         yw var21;
+         Player var21;
          if(this.q == 0) {
             tf.b();
             lv.c("entities");
@@ -782,8 +782,8 @@ public class lr {
             lv.c("particles");
             var6.a(var4, var1);
             this.a((double)var1);
-            if(this.r.z != null && var4.a(acn.g) && var4 instanceof yw && !this.r.A.D) {
-               var21 = (yw)var4;
+            if(this.r.z != null && var4.a(acn.g) && var4 instanceof Player && !this.r.options.D) {
+               var21 = (Player)var4;
                GL11.glDisable(3008);
                lv.c("outline");
                var5.a(var21, this.r.z, 0, var21.ap.b(), var1);
@@ -800,15 +800,15 @@ public class lr {
          GL11.glEnable(3042);
          GL11.glDisable(2884);
          GL11.glBindTexture(3553, this.r.p.b("/mojang/terrain.png"));
-         if(this.r.A.j) {
+         if(this.r.options.fancyGraphics) {
             lv.c("water");
-            if(this.r.A.k) {
+            if(this.r.options.aoSetting) {
                GL11.glShadeModel(7425);
             }
 
             GL11.glColorMask(false, false, false, false);
             var16 = var5.a(var4, 1, (double)var1);
-            if(this.r.A.g) {
+            if(this.r.options.glyph3d) {
                if(b == 0) {
                   GL11.glColorMask(false, true, true, true);
                } else {
@@ -831,8 +831,8 @@ public class lr {
          GL11.glDepthMask(true);
          GL11.glEnable(2884);
          GL11.glDisable(3042);
-         if(this.V == 1.0D && var4 instanceof yw && !this.r.A.D && this.r.z != null && !var4.a(acn.g)) {
-            var21 = (yw)var4;
+         if(this.V == 1.0D && var4 instanceof Player && !this.r.options.D && this.r.z != null && !var4.a(acn.g)) {
+            var21 = (Player)var4;
             GL11.glDisable(3008);
             lv.c("outline");
             var5.a(var21, this.r.z, 0, var21.ap.b(), var1);
@@ -847,7 +847,7 @@ public class lr {
             ;
          }
 
-         if(this.r.A.c()) {
+         if(this.r.options.cloudsVisible()) {
             lv.c("clouds");
             GL11.glPushMatrix();
             this.a(0, var1);
@@ -864,7 +864,7 @@ public class lr {
             this.b(var1, var18);
          }
 
-         if(!this.r.A.g) {
+         if(!this.r.options.glyph3d) {
             lv.b();
             return;
          }
@@ -876,26 +876,26 @@ public class lr {
 
    private void f() {
       float var1 = this.r.f.j(1.0F);
-      if(!this.r.A.j) {
+      if(!this.r.options.fancyGraphics) {
          var1 /= 2.0F;
       }
 
       if(var1 != 0.0F) {
          this.ab.setSeed((long)this.t * 312987231L);
-         acq var2 = this.r.i;
-         xd var3 = this.r.f;
-         int var4 = gk.c(var2.o);
-         int var5 = gk.c(var2.p);
-         int var6 = gk.c(var2.q);
+         Mob var2 = this.r.i;
+         World var3 = this.r.f;
+         int var4 = Utils.c(var2.o);
+         int var5 = Utils.c(var2.p);
+         int var6 = Utils.c(var2.q);
          byte var7 = 10;
          double var8 = 0.0D;
          double var10 = 0.0D;
          double var12 = 0.0D;
          int var14 = 0;
          int var15 = (int)(100.0F * var1 * var1);
-         if(this.r.A.Q == 1) {
+         if(this.r.options.particleSettings == 1) {
             var15 >>= 1;
-         } else if(this.r.A.Q == 2) {
+         } else if(this.r.options.particleSettings == 2) {
             var15 = 0;
          }
 
@@ -927,7 +927,7 @@ public class lr {
 
          if(var14 > 0 && this.ab.nextInt(3) < this.ac++) {
             this.ac = 0;
-            if(var10 > var2.p + 1.0D && var3.f(gk.c(var2.o), gk.c(var2.q)) > gk.c(var2.p)) {
+            if(var10 > var2.p + 1.0D && var3.f(Utils.c(var2.o), Utils.c(var2.q)) > Utils.c(var2.p)) {
                this.r.f.a(var8, var10, var12, "ambient.weather.rain", 0.1F, 0.5F);
             } else {
                this.r.f.a(var8, var10, var12, "ambient.weather.rain", 0.2F, 1.0F);
@@ -949,19 +949,19 @@ public class lr {
                for(int var4 = 0; var4 < 32; ++var4) {
                   float var5 = (float)(var4 - 16);
                   float var6 = (float)(var3 - 16);
-                  float var7 = gk.c(var5 * var5 + var6 * var6);
+                  float var7 = Utils.sqrt(var5 * var5 + var6 * var6);
                   this.i[var3 << 5 | var4] = -var6 / var7;
                   this.j[var3 << 5 | var4] = var5 / var7;
                }
             }
          }
 
-         acq var41 = this.r.i;
-         xd var42 = this.r.f;
-         int var43 = gk.c(var41.o);
-         int var44 = gk.c(var41.p);
-         int var45 = gk.c(var41.q);
-         adz var8 = adz.a;
+         Mob var41 = this.r.i;
+         World var42 = this.r.f;
+         int var43 = Utils.c(var41.o);
+         int var44 = Utils.c(var41.p);
+         int var45 = Utils.c(var41.q);
+         Tessalator var8 = Tessalator.a;
          GL11.glDisable(2884);
          GL11.glNormal3f(0.0F, 1.0F, 0.0F);
          GL11.glEnable(3042);
@@ -971,16 +971,16 @@ public class lr {
          double var9 = var41.N + (var41.o - var41.N) * (double)var1;
          double var11 = var41.O + (var41.p - var41.O) * (double)var1;
          double var13 = var41.P + (var41.q - var41.P) * (double)var1;
-         int var15 = gk.c(var11);
+         int var15 = Utils.c(var11);
          byte var16 = 5;
-         if(this.r.A.j) {
+         if(this.r.options.fancyGraphics) {
             var16 = 10;
          }
 
          boolean var17 = false;
          byte var18 = -1;
          float var19 = (float)this.t + var1;
-         if(this.r.A.j) {
+         if(this.r.options.fancyGraphics) {
             var16 = 10;
          }
 
@@ -1030,7 +1030,7 @@ public class lr {
                         var32 = ((float)(this.t + var21 * var21 * 3121 + var21 * 45238971 + var20 * var20 * 418711 + var20 * 13761 & 31) + var1) / 32.0F * (3.0F + this.ab.nextFloat());
                         double var33 = (double)((float)var21 + 0.5F) - var41.o;
                         var35 = (double)((float)var20 + 0.5F) - var41.q;
-                        float var37 = gk.a(var33 * var33 + var35 * var35) / (float)var16;
+                        float var37 = Utils.sqrt(var33 * var33 + var35 * var35) / (float)var16;
                         float var38 = 1.0F;
                         var8.b(var42.b(var21, var30, var20, 0));
                         var8.a(var38, var38, var38, ((1.0F - var37 * var37) * 0.5F + 0.5F) * var2);
@@ -1056,7 +1056,7 @@ public class lr {
                         float var34 = this.ab.nextFloat() + var19 * (float)this.ab.nextGaussian() * 0.001F;
                         var35 = (double)((float)var21 + 0.5F) - var41.o;
                         double var47 = (double)((float)var20 + 0.5F) - var41.q;
-                        float var39 = gk.a(var35 * var35 + var47 * var47) / (float)var16;
+                        float var39 = Utils.sqrt(var35 * var35 + var47 * var47) / (float)var16;
                         float var40 = 1.0F;
                         var8.b((var42.b(var21, var30, var20, 0) * 3 + 15728880) / 4);
                         var8.a(var40, var40, var40, ((1.0F - var39 * var39) * 0.3F + 0.5F) * var2);
@@ -1084,20 +1084,20 @@ public class lr {
    }
 
    public void b() {
-      agd var1 = new agd(this.r.A, this.r.d, this.r.e);
+      WindowScaler var1 = new WindowScaler(this.r.options, this.r.width, this.r.height);
       GL11.glClear(256);
       GL11.glMatrixMode(5889);
       GL11.glLoadIdentity();
-      GL11.glOrtho(0.0D, var1.a, var1.b, 0.0D, 1000.0D, 3000.0D);
+      GL11.glOrtho(0.0D, var1.widthScaled, var1.heightScaled, 0.0D, 1000.0D, 3000.0D);
       GL11.glMatrixMode(5888);
       GL11.glLoadIdentity();
       GL11.glTranslatef(0.0F, 0.0F, -2000.0F);
    }
 
    private void g(float var1) {
-      xd var2 = this.r.f;
-      acq var3 = this.r.i;
-      float var4 = 1.0F / (float)(4 - this.r.A.e);
+      World var2 = this.r.f;
+      Mob var3 = this.r.i;
+      float var4 = 1.0F / (float)(4 - this.r.options.viewDistance);
       var4 = 1.0F - (float)Math.pow((double)var4, 0.25D);
       bo var5 = var2.a(this.r.i, var1);
       float var6 = (float)var5.a;
@@ -1108,8 +1108,8 @@ public class lr {
       this.o = (float)var9.b;
       this.p = (float)var9.c;
       float var11;
-      if(this.r.A.e < 2) {
-         bo var10 = gk.a(var2.e(var1)) > 0.0F?bo.b(-1.0D, 0.0D, 0.0D):bo.b(1.0D, 0.0D, 0.0D);
+      if(this.r.options.viewDistance < 2) {
+         bo var10 = Utils.sin(var2.e(var1)) > 0.0F?bo.b(-1.0D, 0.0D, 0.0D):bo.b(1.0D, 0.0D, 0.0D);
          var11 = (float)var3.k(var1).b(var10);
          if(var11 < 0.0F) {
             var11 = 0.0F;
@@ -1188,7 +1188,7 @@ public class lr {
          this.p = (float)((double)this.p * var14);
       }
 
-      if(this.r.A.g) {
+      if(this.r.options.glyph3d) {
          float var23 = (this.n * 30.0F + this.o * 59.0F + this.p * 11.0F) / 100.0F;
          float var17 = (this.n * 30.0F + this.o * 70.0F) / 100.0F;
          float var18 = (this.n * 30.0F + this.p * 70.0F) / 100.0F;
@@ -1201,10 +1201,10 @@ public class lr {
    }
 
    private void a(int var1, float var2) {
-      acq var3 = this.r.i;
+      Mob var3 = this.r.i;
       boolean var4 = false;
-      if(var3 instanceof yw) {
-         var4 = ((yw)var3).aT.d;
+      if(var3 instanceof Player) {
+         var4 = ((Player)var3).aT.d;
       }
 
       if(var1 == 999) {
@@ -1254,7 +1254,7 @@ public class lr {
                var6 = 1.0F;
                var12 = 1.0F;
                var8 = 1.0F;
-               if(this.r.A.g) {
+               if(this.r.options.glyph3d) {
                   var9 = (var6 * 30.0F + var12 * 59.0F + var8 * 11.0F) / 100.0F;
                   var10 = (var6 * 30.0F + var12 * 70.0F) / 100.0F;
                   var11 = (var6 * 30.0F + var8 * 70.0F) / 100.0F;
@@ -1270,7 +1270,7 @@ public class lr {
                var6 = 0.4F;
                var12 = 0.4F;
                var8 = 0.9F;
-               if(this.r.A.g) {
+               if(this.r.options.glyph3d) {
                   var9 = (var6 * 30.0F + var12 * 59.0F + var8 * 11.0F) / 100.0F;
                   var10 = (var6 * 30.0F + var12 * 70.0F) / 100.0F;
                   var11 = (var6 * 30.0F + var8 * 70.0F) / 100.0F;
@@ -1281,7 +1281,7 @@ public class lr {
                var6 = 0.4F;
                var12 = 0.3F;
                var8 = 0.3F;
-               if(this.r.A.g) {
+               if(this.r.options.glyph3d) {
                   var9 = (var6 * 30.0F + var12 * 59.0F + var8 * 11.0F) / 100.0F;
                   var10 = (var6 * 30.0F + var12 * 70.0F) / 100.0F;
                   var11 = (var6 * 30.0F + var8 * 70.0F) / 100.0F;

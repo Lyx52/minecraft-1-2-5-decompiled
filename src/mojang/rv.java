@@ -1,6 +1,6 @@
 package mojang;
 
-public class rv extends yw {
+public class rv extends Player {
 
    private boolean b = false;
    private int c;
@@ -11,7 +11,7 @@ public class rv extends yw {
    private double ao;
 
 
-   public rv(xd var1, String var2) {
+   public rv(World var1, String var2) {
       super(var1);
       this.aA = var2;
       this.H = 0.0F;
@@ -46,9 +46,9 @@ public class rv extends yw {
       this.aN = 0.0F;
       super.J_();
       this.bL = this.bM;
-      double var1 = this.o - this.l;
-      double var3 = this.q - this.n;
-      float var5 = gk.a(var1 * var1 + var3 * var3) * 4.0F;
+      double var1 = this.o - this.sandX;
+      double var3 = this.q - this.sandZ;
+      float var5 = Utils.sqrt(var1 * var1 + var3 * var3) * 4.0F;
       if(var5 > 1.0F) {
          var5 = 1.0F;
       }
@@ -94,7 +94,7 @@ public class rv extends yw {
       }
 
       this.aw = this.ax;
-      float var9 = gk.a(this.r * this.r + this.t * this.t);
+      float var9 = Utils.sqrt(this.r * this.r + this.t * this.t);
       float var2 = (float)Math.atan(-this.s * 0.20000000298023224D) * 15.0F;
       if(var9 > 0.1F) {
          var9 = 0.1F;

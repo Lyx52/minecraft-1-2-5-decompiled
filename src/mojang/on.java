@@ -34,7 +34,7 @@ public class on {
       this.a = var1;
    }
 
-   public void a(adz var1, float var2) {
+   public void a(Tessalator var1, float var2) {
       bo var3 = this.a[1].a.a(this.a[0].a);
       bo var4 = this.a[1].a.a(this.a[2].a);
       bo var5 = var4.c(var3).c();

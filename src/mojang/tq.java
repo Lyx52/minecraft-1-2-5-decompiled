@@ -2,7 +2,7 @@ package mojang;
 
 public abstract class tq extends aaa {
 
-   public tq(xd var1) {
+   public tq(World var1) {
       super(var1);
    }
 
@@ -10,11 +10,11 @@ public abstract class tq extends aaa {
       return true;
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
    }
 
@@ -30,7 +30,7 @@ public abstract class tq extends aaa {
       return true;
    }
 
-   protected int b(yw var1) {
+   protected int b(Player var1) {
       return 1 + this.k.r.nextInt(3);
    }
 }

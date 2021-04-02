@@ -13,9 +13,9 @@ public class pa extends agy {
       return null;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {}
+   public void a(World var1, int var2, int var3, int var4) {}
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       kw var5 = var1.b(var2, var3, var4);
       if(var5 != null && var5 instanceof ou) {
          ((ou)var5).g();
@@ -25,11 +25,11 @@ public class pa extends agy {
 
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return false;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       return false;
    }
 
@@ -45,7 +45,7 @@ public class pa extends agy {
       return false;
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(!var1.F && var1.b(var2, var3, var4) == null) {
          var1.g(var2, var3, var4, 0);
          return true;
@@ -58,7 +58,7 @@ public class pa extends agy {
       return 0;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!var1.F) {
          ou var8 = this.gou(var1, var2, var3, var4);
          if(var8 != null) {
@@ -67,7 +67,7 @@ public class pa extends agy {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F && var1.b(var2, var3, var4) == null) {
          ;
       }
@@ -78,7 +78,7 @@ public class pa extends agy {
       return new ou(var0, var1, var2, var3, var4);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       ou var5 = this.gou(var1, var2, var3, var4);
       if(var5 == null) {
          return null;
@@ -92,7 +92,7 @@ public class pa extends agy {
       }
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       ou var5 = this.gou(var1, var2, var3, var4);
       if(var5 != null) {
          pb var6 = m[var5.a()];
@@ -117,7 +117,7 @@ public class pa extends agy {
 
    }
 
-   public wu b(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public wu b(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(var5 != 0 && var5 != this.bO) {
          wu var8 = m[var5].c(var1, var2, var3, var4);
          if(var8 == null) {
@@ -148,7 +148,7 @@ public class pa extends agy {
       }
    }
 
-   private ou gou(ali var1, int var2, int var3, int var4) {
+   private ou gou(WorldInterface var1, int var2, int var3, int var4) {
       kw var5 = var1.b(var2, var3, var4);
       return var5 != null && var5 instanceof ou?(ou)var5:null;
    }

@@ -22,11 +22,11 @@ public class aaj extends zk {
       super(var1);
    }
 
-   public void a(ady var1) {
-      this.d = var1.d("dimension");
-      this.b = var1.f("xCenter");
-      this.c = var1.f("zCenter");
-      this.e = var1.d("scale");
+   public void a(CompundTag var1) {
+      this.d = var1.getByte("dimension");
+      this.b = var1.getInt("xCenter");
+      this.c = var1.getInt("zCenter");
+      this.e = var1.getByte("scale");
       if(this.e < 0) {
          this.e = 0;
       }
@@ -35,12 +35,12 @@ public class aaj extends zk {
          this.e = 4;
       }
 
-      short var2 = var1.e("width");
-      short var3 = var1.e("height");
+      short var2 = var1.getShort("width");
+      short var3 = var1.getShort("height");
       if(var2 == 128 && var3 == 128) {
-         this.f = var1.k("colors");
+         this.f = var1.getByteArray("colors");
       } else {
-         byte[] var4 = var1.k("colors");
+         byte[] var4 = var1.getByteArray("colors");
          this.f = new byte[16384];
          int var5 = (128 - var2) / 2;
          int var6 = (128 - var3) / 2;
@@ -60,17 +60,17 @@ public class aaj extends zk {
 
    }
 
-   public void b(ady var1) {
-      var1.a("dimension", this.d);
-      var1.a("xCenter", this.b);
-      var1.a("zCenter", this.c);
-      var1.a("scale", this.e);
-      var1.a("width", (short)128);
-      var1.a("height", (short)128);
-      var1.a("colors", this.f);
+   public void b(CompundTag var1) {
+      var1.addByte("dimension", this.d);
+      var1.addInt("xCenter", this.b);
+      var1.addInt("zCenter", this.c);
+      var1.addByte("scale", this.e);
+      var1.addShort("width", (short)128);
+      var1.addShort("height", (short)128);
+      var1.addByteArray("colors", this.f);
    }
 
-   public void a(yw var1, aan var2) {
+   public void a(Player var1, aan var2) {
       if(!this.j.containsKey(var1)) {
          nk var3 = new nk(this, var1);
          this.j.put(var1, var3);

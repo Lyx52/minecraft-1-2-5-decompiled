@@ -2,7 +2,7 @@ package mojang;
 
 public class xv {
 
-   private ali a;
+   private WorldInterface a;
    private acc b = new acc();
    private abh c = new abh();
    private e[] d = new e[32];
@@ -12,7 +12,7 @@ public class xv {
    private boolean h;
 
 
-   public xv(ali var1, boolean var2, boolean var3, boolean var4, boolean var5) {
+   public xv(WorldInterface var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       this.a = var1;
       this.e = var2;
       this.f = var3;
@@ -20,41 +20,41 @@ public class xv {
       this.h = var5;
    }
 
-   public vu a(nn var1, nn var2, float var3) {
+   public vu a(BaseEntity var1, BaseEntity var2, float var3) {
       return this.a(var1, var2.o, var2.y.b, var2.q, var3);
    }
 
-   public vu a(nn var1, int var2, int var3, int var4, float var5) {
+   public vu a(BaseEntity var1, int var2, int var3, int var4, float var5) {
       return this.a(var1, (double)((float)var2 + 0.5F), (double)((float)var3 + 0.5F), (double)((float)var4 + 0.5F), var5);
    }
 
-   private vu a(nn var1, double var2, double var4, double var6, float var8) {
+   private vu a(BaseEntity var1, double var2, double var4, double var6, float var8) {
       this.b.a();
       this.c.a();
       boolean var9 = this.g;
-      int var10 = gk.c(var1.y.b + 0.5D);
+      int var10 = Utils.c(var1.y.b + 0.5D);
       if(this.h && var1.H()) {
          var10 = (int)var1.y.b;
 
-         for(int var11 = this.a.a(gk.c(var1.o), var10, gk.c(var1.q)); var11 == pb.A.bO || var11 == pb.B.bO; var11 = this.a.a(gk.c(var1.o), var10, gk.c(var1.q))) {
+         for(int var11 = this.a.a(Utils.c(var1.o), var10, Utils.c(var1.q)); var11 == pb.A.bO || var11 == pb.B.bO; var11 = this.a.a(Utils.c(var1.o), var10, Utils.c(var1.q))) {
             ++var10;
          }
 
          var9 = this.g;
          this.g = false;
       } else {
-         var10 = gk.c(var1.y.b + 0.5D);
+         var10 = Utils.c(var1.y.b + 0.5D);
       }
 
-      e var15 = this.a(gk.c(var1.y.a), var10, gk.c(var1.y.c));
-      e var12 = this.a(gk.c(var2 - (double)(var1.I / 2.0F)), gk.c(var4), gk.c(var6 - (double)(var1.I / 2.0F)));
-      e var13 = new e(gk.d(var1.I + 1.0F), gk.d(var1.J + 1.0F), gk.d(var1.I + 1.0F));
+      e var15 = this.a(Utils.c(var1.y.a), var10, Utils.c(var1.y.c));
+      e var12 = this.a(Utils.c(var2 - (double)(var1.I / 2.0F)), Utils.c(var4), Utils.c(var6 - (double)(var1.I / 2.0F)));
+      e var13 = new e(Utils.d(var1.I + 1.0F), Utils.d(var1.J + 1.0F), Utils.d(var1.I + 1.0F));
       vu var14 = this.a(var1, var15, var12, var13, var8);
       this.g = var9;
       return var14;
    }
 
-   private vu a(nn var1, e var2, e var3, e var4, float var5) {
+   private vu a(BaseEntity var1, e var2, e var3, e var4, float var5) {
       var2.e = 0.0F;
       var2.f = var2.a(var3);
       var2.g = var2.f;
@@ -99,7 +99,7 @@ public class xv {
       }
    }
 
-   private int b(nn var1, e var2, e var3, e var4, float var5) {
+   private int b(BaseEntity var1, e var2, e var3, e var4, float var5) {
       int var6 = 0;
       byte var7 = 0;
       if(this.a(var1, var2.a, var2.b + 1, var2.c, var3) == 1) {
@@ -129,7 +129,7 @@ public class xv {
       return var6;
    }
 
-   private e a(nn var1, int var2, int var3, int var4, e var5, int var6) {
+   private e a(BaseEntity var1, int var2, int var3, int var4, e var5, int var6) {
       e var7 = null;
       int var8 = this.a(var1, var2, var3, var4, var5);
       if(var8 == 2) {
@@ -189,7 +189,7 @@ public class xv {
       return var5;
    }
 
-   private int a(nn var1, int var2, int var3, int var4, e var5) {
+   private int a(BaseEntity var1, int var2, int var3, int var4, e var5) {
       boolean var6 = false;
 
       for(int var7 = var2; var7 < var2 + var5.a; ++var7) {

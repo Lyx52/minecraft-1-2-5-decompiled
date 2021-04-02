@@ -13,7 +13,7 @@ public class aly implements ca {
    public op a;
    public op b;
    public op c;
-   private xd p;
+   private World p;
    private final boolean q;
    private double[] r;
    private double[] s = new double[256];
@@ -32,7 +32,7 @@ public class aly implements ca {
    int[][] j = new int[32][32];
 
 
-   public aly(xd var1, long var2, boolean var4) {
+   public aly(World var1, long var2, boolean var4) {
       this.p = var1;
       this.q = var4;
       this.k = new Random(var2);
@@ -209,7 +209,7 @@ public class aly implements ca {
 
          for(int var8 = -2; var8 <= 2; ++var8) {
             for(int var9 = -2; var9 <= 2; ++var9) {
-               float var10 = 10.0F / gk.c((float)(var8 * var8 + var9 * var9) + 0.2F);
+               float var10 = 10.0F / Utils.sqrt((float)(var8 * var8 + var9 * var9) + 0.2F);
                this.i[var8 + 2 + (var9 + 2) * 5] = var10;
             }
          }
@@ -405,7 +405,7 @@ public class aly implements ca {
       return var5 == null?null:var5.a(var1);
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return "Stronghold".equals(var2) && this.u != null?this.u.a(var1, var3, var4, var5):null;
    }
 }

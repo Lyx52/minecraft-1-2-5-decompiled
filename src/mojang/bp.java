@@ -20,11 +20,11 @@ public class bp extends rc {
          } else if(this.c != -1 && this.a.f((double)this.c, this.a.p, (double)this.d) < 4.0D) {
             return false;
          } else {
-            kd var1 = this.a.k.A.a(gk.c(this.a.o), gk.c(this.a.p), gk.c(this.a.q), 14);
+            kd var1 = this.a.k.A.a(Utils.c(this.a.o), Utils.c(this.a.p), Utils.c(this.a.q), 14);
             if(var1 == null) {
                return false;
             } else {
-               this.b = var1.c(gk.c(this.a.o), gk.c(this.a.p), gk.c(this.a.q));
+               this.b = var1.c(Utils.c(this.a.o), Utils.c(this.a.p), Utils.c(this.a.q));
                return this.b != null;
             }
          }

@@ -7,16 +7,16 @@ public class ox {
    private Random a = new Random();
 
 
-   public void a(xd var1, nn var2) {
+   public void a(World var1, BaseEntity var2) {
       if(var1.t.g != 1) {
          if(!this.b(var1, var2)) {
             this.c(var1, var2);
             this.b(var1, var2);
          }
       } else {
-         int var3 = gk.c(var2.o);
-         int var4 = gk.c(var2.p) - 1;
-         int var5 = gk.c(var2.q);
+         int var3 = Utils.c(var2.o);
+         int var4 = Utils.c(var2.p) - 1;
+         int var5 = Utils.c(var2.q);
          byte var6 = 1;
          byte var7 = 0;
 
@@ -37,14 +37,14 @@ public class ox {
       }
    }
 
-   public boolean b(xd var1, nn var2) {
+   public boolean b(World var1, BaseEntity var2) {
       short var3 = 128;
       double var4 = -1.0D;
       int var6 = 0;
       int var7 = 0;
       int var8 = 0;
-      int var9 = gk.c(var2.o);
-      int var10 = gk.c(var2.q);
+      int var9 = Utils.c(var2.o);
+      int var10 = Utils.c(var2.q);
 
       double var18;
       for(int var11 = var9 - var3; var11 <= var9 + var3; ++var11) {
@@ -100,12 +100,12 @@ public class ox {
       }
    }
 
-   public boolean c(xd var1, nn var2) {
+   public boolean c(World var1, BaseEntity var2) {
       byte var3 = 16;
       double var4 = -1.0D;
-      int var6 = gk.c(var2.o);
-      int var7 = gk.c(var2.p);
-      int var8 = gk.c(var2.q);
+      int var6 = Utils.c(var2.o);
+      int var7 = Utils.c(var2.p);
+      int var8 = Utils.c(var2.q);
       int var9 = var6;
       int var10 = var7;
       int var11 = var8;

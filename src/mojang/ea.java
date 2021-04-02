@@ -12,19 +12,19 @@ public class ea extends um {
       this.a = new wy();
    }
 
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("EP > NN");
       GL11.glPushMatrix();
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       GL11.glRotatef(180.0F - var8, 0.0F, 1.0F, 0.0F);
-      float var10 = (float)((ep)var1).o() - var9;
-      float var11 = (float)((ep)var1).n() - var9;
+      float var10 = (float)((Boat)var1).o() - var9;
+      float var11 = (float)((Boat)var1).n() - var9;
       if(var11 < 0.0F) {
          var11 = 0.0F;
       }
 
       if(var10 > 0.0F) {
-         GL11.glRotatef(gk.a(var10) * var10 * var11 / 10.0F * (float)((ep)var1).p(), 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(Utils.sin(var10) * var10 * var11 / 10.0F * (float)((Boat)var1).p(), 1.0F, 0.0F, 0.0F);
       }
 
       this.a("/mojang/terrain.png");

@@ -32,7 +32,7 @@ public class rk extends ki {
 
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       var1.u = -180.0F;
    }
 
@@ -50,7 +50,7 @@ public class rk extends ki {
          if(var7 != null) {
             var7.a(var5, var1, var2, var3, this.a.h);
             if(var7.a == 0) {
-               var7.a((yw)this.a.h);
+               var7.a((Player)this.a.h);
                this.a.h.aw();
             }
          }
@@ -68,10 +68,10 @@ public class rk extends ki {
          this.l.c(new hc(0, var1, var2, var3, var4));
          int var5 = this.a.f.a(var1, var2, var3);
          if(var5 > 0 && this.f == 0.0F) {
-            pb.m[var5].a(this.a.f, var1, var2, var3, (yw)this.a.h);
+            pb.m[var5].a(this.a.f, var1, var2, var3, (Player)this.a.h);
          }
 
-         if(var5 > 0 && pb.m[var5].a((yw)this.a.h) >= 1.0F) {
+         if(var5 > 0 && pb.m[var5].a((Player)this.a.h) >= 1.0F) {
             this.b(var1, var2, var3, var4);
          } else {
             this.j = true;
@@ -108,9 +108,9 @@ public class rk extends ki {
             }
 
             pb var6 = pb.m[var5];
-            this.f += var6.a((yw)this.a.h);
+            this.f += var6.a((Player)this.a.h);
             if(this.h % 4.0F == 0.0F && var6 != null) {
-               this.a.C.b(var6.cb.d(), (float)var1 + 0.5F, (float)var2 + 0.5F, (float)var3 + 0.5F, (var6.cb.b() + 1.0F) / 8.0F, var6.cb.c() * 0.5F);
+               this.a.soundManager.b(var6.cb.d(), (float)var1 + 0.5F, (float)var2 + 0.5F, (float)var3 + 0.5F, (var6.cb.b() + 1.0F) / 8.0F, var6.cb.c() * 0.5F);
             }
 
             ++this.h;
@@ -146,14 +146,14 @@ public class rk extends ki {
       return this.k?5.0F:4.5F;
    }
 
-   public void a(xd var1) {
+   public void a(World var1) {
       super.a(var1);
    }
 
    public void c() {
       this.j();
       this.g = this.f;
-      this.a.C.c();
+      this.a.soundManager.c();
    }
 
    private void j() {
@@ -165,7 +165,7 @@ public class rk extends ki {
 
    }
 
-   public boolean a(yw var1, xd var2, aan var3, int var4, int var5, int var6, int var7) {
+   public boolean a(Player var1, World var2, aan var3, int var4, int var5, int var6, int var7) {
       this.j();
       this.l.c(new ff(var4, var5, var6, var7, var1.ap.b()));
       int var8 = var2.a(var4, var5, var6);
@@ -185,30 +185,30 @@ public class rk extends ki {
       }
    }
 
-   public boolean a(yw var1, xd var2, aan var3) {
+   public boolean a(Player var1, World var2, aan var3) {
       this.j();
       this.l.c(new ff(-1, -1, -1, 255, var1.ap.b()));
       boolean var4 = super.a(var1, var2, var3);
       return var4;
    }
 
-   public yw b(xd var1) {
-      return new ahv(this.a, var1, this.a.k, this.l);
+   public Player b(World var1) {
+      return new ahv(this.a, var1, this.a.credentials, this.l);
    }
 
-   public void b(yw var1, nn var2) {
+   public void b(Player var1, BaseEntity var2) {
       this.j();
       this.l.c(new a(var1.f, var2.f, 1));
       var1.k(var2);
    }
 
-   public void a(yw var1, nn var2) {
+   public void a(Player var1, BaseEntity var2) {
       this.j();
       this.l.c(new a(var1.f, var2.f, 0));
       var1.j(var2);
    }
 
-   public aan a(int var1, int var2, int var3, boolean var4, yw var5) {
+   public aan a(int var1, int var2, int var3, boolean var4, Player var5) {
       short var6 = var5.ar.a(var5.ap);
       aan var7 = super.a(var1, var2, var3, var4, var5);
       this.l.c(new agf(var1, var2, var3, var4, var7, var6));
@@ -233,13 +233,13 @@ public class rk extends ki {
 
    }
 
-   public void a(int var1, yw var2) {
+   public void a(int var1, Player var2) {
       if(var1 != -9999) {
          ;
       }
    }
 
-   public void c(yw var1) {
+   public void c(Player var1) {
       this.j();
       this.l.c(new hc(5, 0, 0, 0, 255));
       super.c(var1);

@@ -13,7 +13,7 @@ public class pm extends w {
       this.v();
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {
@@ -44,15 +44,15 @@ public class pm extends w {
                var11 = (var11 + (double)var4 + 0.5D) / 2.0D;
             }
 
-            var1.a((nn)null, (double)((float)var2 + 0.5F), (double)((float)var3 + 0.5F), (double)((float)var4 + 0.5F), 5.0F, true);
+            var1.a((BaseEntity)null, (double)((float)var2 + 0.5F), (double)((float)var3 + 0.5F), (double)((float)var4 + 0.5F), 5.0F, true);
             return true;
          } else {
             if(h(var6)) {
-               yw var14 = null;
+               Player var14 = null;
                Iterator var8 = var1.d.iterator();
 
                while(var8.hasNext()) {
-                  yw var9 = (yw)var8.next();
+                  Player var9 = (Player)var8.next();
                   if(var9.az()) {
                      uh var10 = var9.aL;
                      if(var10.a == var2 && var10.b == var3 && var10.c == var4) {
@@ -108,11 +108,11 @@ public class pm extends w {
       return false;
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       this.v();
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       int var7 = a(var6);
       if(e(var6)) {
@@ -144,7 +144,7 @@ public class pm extends w {
       return (var0 & 4) != 0;
    }
 
-   public static void a(xd var0, int var1, int var2, int var3, boolean var4) {
+   public static void a(World var0, int var1, int var2, int var3, boolean var4) {
       int var5 = var0.e(var1, var2, var3);
       if(var4) {
          var5 |= 4;
@@ -155,7 +155,7 @@ public class pm extends w {
       var0.f(var1, var2, var3, var5);
    }
 
-   public static uh f(xd var0, int var1, int var2, int var3, int var4) {
+   public static uh f(World var0, int var1, int var2, int var3, int var4) {
       int var5 = var0.e(var1, var2, var3);
       int var6 = mojang.w.a(var5);
 
@@ -181,7 +181,7 @@ public class pm extends w {
       return null;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!e(var5)) {
          super.a(var1, var2, var3, var4, var5, var6, 0);
       }

@@ -1,8 +1,8 @@
 package mojang;
 
-public abstract class akn extends acq {
+public abstract class akn extends Mob {
 
-   public akn(xd var1) {
+   public akn(World var1) {
       super(var1);
    }
 
@@ -25,7 +25,7 @@ public abstract class akn extends acq {
          float var3 = 0.91F;
          if(this.z) {
             var3 = 0.54600006F;
-            int var4 = this.k.a(gk.c(this.o), gk.c(this.y.b) - 1, gk.c(this.q));
+            int var4 = this.k.a(Utils.c(this.o), Utils.c(this.y.b) - 1, Utils.c(this.q));
             if(var4 > 0) {
                var3 = pb.m[var4].ce * 0.91F;
             }
@@ -36,7 +36,7 @@ public abstract class akn extends acq {
          var3 = 0.91F;
          if(this.z) {
             var3 = 0.54600006F;
-            int var5 = this.k.a(gk.c(this.o), gk.c(this.y.b) - 1, gk.c(this.q));
+            int var5 = this.k.a(Utils.c(this.o), Utils.c(this.y.b) - 1, Utils.c(this.q));
             if(var5 > 0) {
                var3 = pb.m[var5].ce * 0.91F;
             }
@@ -49,9 +49,9 @@ public abstract class akn extends acq {
       }
 
       this.bL = this.bM;
-      double var10 = this.o - this.l;
-      double var9 = this.q - this.n;
-      float var7 = gk.a(var10 * var10 + var9 * var9) * 4.0F;
+      double var10 = this.o - this.sandX;
+      double var9 = this.q - this.sandZ;
+      float var7 = Utils.sqrt(var10 * var10 + var9 * var9) * 4.0F;
       if(var7 > 1.0F) {
          var7 = 1.0F;
       }

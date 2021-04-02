@@ -10,14 +10,14 @@ public class xi extends yr {
       return true;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       if(!var3.aT.d) {
          --var1.a;
       }
 
       var2.a(var3, "random.bow", 0.5F, 0.4F / (d.nextFloat() * 0.4F + 0.8F));
       if(!var2.F) {
-         var2.a((nn)(new hf(var2, var3)));
+         var2.a((BaseEntity)(new ThrownExpBottle(var2, var3)));
       }
 
       return var1;

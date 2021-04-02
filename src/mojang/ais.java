@@ -18,13 +18,13 @@ public class ais {
       if(var1 == null) {
          return 0;
       } else {
-         no var2 = var1.p();
+         ListTag var2 = var1.p();
          if(var2 == null) {
             return 0;
          } else {
             for(int var3 = 0; var3 < var2.d(); ++var3) {
-               short var4 = ((ady)var2.a(var3)).e("id");
-               short var5 = ((ady)var2.a(var3)).e("lvl");
+               short var4 = ((CompundTag)var2.a(var3)).getShort("id");
+               short var5 = ((CompundTag)var2.a(var3)).getShort("lvl");
                if(var4 == var0) {
                   return var5;
                }
@@ -53,11 +53,11 @@ public class ais {
 
    private static void a(t var0, aan var1) {
       if(var1 != null) {
-         no var2 = var1.p();
+         ListTag var2 = var1.p();
          if(var2 != null) {
             for(int var3 = 0; var3 < var2.d(); ++var3) {
-               short var4 = ((ady)var2.a(var3)).e("id");
-               short var5 = ((ady)var2.a(var3)).e("lvl");
+               short var4 = ((CompundTag)var2.a(var3)).getShort("id");
+               short var5 = ((CompundTag)var2.a(var3)).getShort("lvl");
                if(jt.a[var4] != null) {
                   var0.a(jt.a[var4], var5);
                }
@@ -89,18 +89,18 @@ public class ais {
       return (b.a + 1 >> 1) + a.nextInt((b.a >> 1) + 1);
    }
 
-   public static int a(aak var0, acq var1) {
+   public static int a(aak var0, Mob var1) {
       c.a = 0;
       c.b = var1;
       a((t)c, var0.b());
       return c.a > 0?1 + a.nextInt(c.a):0;
    }
 
-   public static int b(aak var0, acq var1) {
+   public static int b(aak var0, Mob var1) {
       return a(jt.l.w, var0.b());
    }
 
-   public static int c(aak var0, acq var1) {
+   public static int c(aak var0, Mob var1) {
       return a(jt.m.w, var0.b());
    }
 

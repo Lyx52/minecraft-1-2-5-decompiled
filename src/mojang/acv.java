@@ -9,7 +9,7 @@ public class acv extends yr {
 
    public String d(aan var1) {
       String var2 = ("" + cy.a(this.e() + ".name")).trim();
-      String var3 = aao.a(var1.i());
+      String var3 = EntityManager.getNameByID(var1.i());
       if(var3 != null) {
          var2 = var2 + " " + cy.a("entity." + var3 + ".name");
       }
@@ -18,7 +18,7 @@ public class acv extends yr {
    }
 
    public int b(int var1, int var2) {
-      hr var3 = (hr)aao.a.get(Integer.valueOf(var1));
+      hr var3 = (hr) EntityManager.a.get(Integer.valueOf(var1));
       return var3 != null?(var2 == 0?var3.b:var3.c):16777215;
    }
 
@@ -30,7 +30,7 @@ public class acv extends yr {
       return var2 > 0?super.a(var1, var2) + 16:super.a(var1, var2);
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var3.F) {
          return true;
       } else {
@@ -51,15 +51,15 @@ public class acv extends yr {
       }
    }
 
-   public static boolean a(xd var0, int var1, double var2, double var4, double var6) {
-      if(!aao.a.containsKey(Integer.valueOf(var1))) {
+   public static boolean a(World var0, int var1, double var2, double var4, double var6) {
+      if(!EntityManager.a.containsKey(Integer.valueOf(var1))) {
          return false;
       } else {
-         nn var8 = aao.a(var1, var0);
+         BaseEntity var8 = EntityManager.createEntity(var1, var0);
          if(var8 != null) {
             var8.c(var2, var4, var6, var0.r.nextFloat() * 360.0F, 0.0F);
             var0.a(var8);
-            ((acq)var8).aZ();
+            ((Mob)var8).aZ();
          }
 
          return var8 != null;

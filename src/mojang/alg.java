@@ -45,7 +45,7 @@ public class alg {
       return this.c;
    }
 
-   public boolean a(acq var1) {
+   public boolean a(Mob var1) {
       if(this.b > 0) {
          if(aad.a[this.a].b(this.b, this.c)) {
             this.b(var1);
@@ -61,7 +61,7 @@ public class alg {
       return --this.b;
    }
 
-   public void b(acq var1) {
+   public void b(Mob var1) {
       if(this.b > 0) {
          aad.a[this.a].a(var1, this.c);
       }

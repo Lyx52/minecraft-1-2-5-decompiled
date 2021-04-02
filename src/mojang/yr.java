@@ -191,7 +191,7 @@ public class yr {
       return this.b(var1.i());
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       return false;
    }
 
@@ -199,11 +199,11 @@ public class yr {
       return 1.0F;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       return var1;
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       return var1;
    }
 
@@ -237,15 +237,15 @@ public class yr {
       return this.a > 0 && !this.bU;
    }
 
-   public boolean a(aan var1, acq var2, acq var3) {
+   public boolean a(aan var1, Mob var2, Mob var3) {
       return false;
    }
 
-   public boolean a(aan var1, int var2, int var3, int var4, int var5, acq var6) {
+   public boolean a(aan var1, int var2, int var3, int var4, int var5, Mob var6) {
       return false;
    }
 
-   public int a(nn var1) {
+   public int a(BaseEntity var1) {
       return 1;
    }
 
@@ -253,7 +253,7 @@ public class yr {
       return false;
    }
 
-   public void a(aan var1, acq var2) {}
+   public void a(aan var1, Mob var2) {}
 
    public yr j() {
       this.bT = true;
@@ -315,9 +315,9 @@ public class yr {
       return 16777215;
    }
 
-   public void a(aan var1, xd var2, nn var3, int var4, boolean var5) {}
+   public void a(aan var1, World var2, BaseEntity var3, int var4, boolean var5) {}
 
-   public void c(aan var1, xd var2, yw var3) {}
+   public void c(aan var1, World var2, Player var3) {}
 
    public aaq c(aan var1) {
       return aaq.a;
@@ -327,7 +327,7 @@ public class yr {
       return 0;
    }
 
-   public void a(aan var1, xd var2, yw var3, int var4) {}
+   public void a(aan var1, World var2, Player var3, int var4) {}
 
    protected yr b(String var1) {
       this.c = var1;
@@ -345,7 +345,7 @@ public class yr {
    public void a(aan var1, List var2) {}
 
    public String d(aan var1) {
-      String var2 = ("" + adn.a().c(this.h(var1))).trim();
+      String var2 = ("" + LocalizationManager.getInstance().c(this.h(var1))).trim();
       return var2;
    }
 
@@ -361,18 +361,18 @@ public class yr {
       return this.f() == 1 && this.i();
    }
 
-   protected pl a(xd var1, yw var2, boolean var3) {
+   protected pl a(World var1, Player var2, boolean var3) {
       float var4 = 1.0F;
       float var5 = var2.x + (var2.v - var2.x) * var4;
       float var6 = var2.w + (var2.u - var2.w) * var4;
-      double var7 = var2.l + (var2.o - var2.l) * (double)var4;
-      double var9 = var2.m + (var2.p - var2.m) * (double)var4 + 1.62D - (double)var2.H;
-      double var11 = var2.n + (var2.q - var2.n) * (double)var4;
+      double var7 = var2.sandX + (var2.o - var2.sandX) * (double)var4;
+      double var9 = var2.sandY + (var2.p - var2.sandY) * (double)var4 + 1.62D - (double)var2.H;
+      double var11 = var2.sandZ + (var2.q - var2.sandZ) * (double)var4;
       bo var13 = mojang.bo.b(var7, var9, var11);
-      float var14 = gk.b(-var6 * 0.017453292F - 3.1415927F);
-      float var15 = gk.a(-var6 * 0.017453292F - 3.1415927F);
-      float var16 = -gk.b(-var5 * 0.017453292F);
-      float var17 = gk.a(-var5 * 0.017453292F);
+      float var14 = Utils.cos(-var6 * 0.017453292F - 3.1415927F);
+      float var15 = Utils.sin(-var6 * 0.017453292F - 3.1415927F);
+      float var16 = -Utils.cos(-var5 * 0.017453292F);
+      float var17 = Utils.sin(-var5 * 0.017453292F);
       float var18 = var15 * var16;
       float var20 = var14 * var16;
       double var21 = 5.0D;

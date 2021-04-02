@@ -6,7 +6,7 @@ public class agq extends aky {
       super(var1, false);
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       pl var4 = this.a(var2, var3, true);
       if(var4 == null) {
          return var1;

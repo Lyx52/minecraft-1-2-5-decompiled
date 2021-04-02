@@ -78,15 +78,15 @@ public class eg implements akp {
       throw new RuntimeException("Old Chunk Storage is no longer supported.");
    }
 
-   public wq c() {
+   public WorldParser c() {
       File var1 = new File(this.b, "level.dat");
-      ady var2;
-      ady var3;
+      CompundTag var2;
+      CompundTag var3;
       if(var1.exists()) {
          try {
-            var2 = at.a((InputStream)(new FileInputStream(var1)));
-            var3 = var2.m("Data");
-            return new wq(var3);
+            var2 = at.readLevelData((InputStream)(new FileInputStream(var1)));
+            var3 = var2.getCompundTag("Data");
+            return new WorldParser(var3);
          } catch (Exception var5) {
             var5.printStackTrace();
          }
@@ -95,9 +95,9 @@ public class eg implements akp {
       var1 = new File(this.b, "level.dat_old");
       if(var1.exists()) {
          try {
-            var2 = at.a((InputStream)(new FileInputStream(var1)));
-            var3 = var2.m("Data");
-            return new wq(var3);
+            var2 = at.readLevelData((InputStream)(new FileInputStream(var1)));
+            var3 = var2.getCompundTag("Data");
+            return new WorldParser(var3);
          } catch (Exception var4) {
             var4.printStackTrace();
          }
@@ -106,10 +106,10 @@ public class eg implements akp {
       return null;
    }
 
-   public void a(wq var1, List var2) {
-      ady var3 = var1.a(var2);
-      ady var4 = new ady();
-      var4.a("Data", (gh)var3);
+   public void a(WorldParser var1, List var2) {
+      CompundTag var3 = var1.setPlayerData(var2);
+      CompundTag var4 = new CompundTag();
+      var4.addBaseTag("Data", (BaseTag)var3);
 
       try {
          File var5 = new File(this.b, "level.dat_new");
@@ -135,10 +135,10 @@ public class eg implements akp {
 
    }
 
-   public void a(wq var1) {
-      ady var2 = var1.a();
-      ady var3 = new ady();
-      var3.a("Data", (gh)var2);
+   public void a(WorldParser var1) {
+      CompundTag var2 = var1.getTagWithCurrentPlayer();
+      CompundTag var3 = new CompundTag();
+      var3.addBaseTag("Data", (BaseTag)var2);
 
       try {
          File var4 = new File(this.b, "level.dat_new");

@@ -7,7 +7,7 @@ public class fg extends rc {
    private aaa a;
    private float b;
    private float c;
-   private nn d;
+   private BaseEntity d;
    private float e;
    private vu f;
    private rh g;
@@ -25,7 +25,7 @@ public class fg extends rc {
    }
 
    public boolean a() {
-      if(this.h == yw.class) {
+      if(this.h == Player.class) {
          if(this.a instanceof wd && ((wd)this.a).G_()) {
             return false;
          }
@@ -40,7 +40,7 @@ public class fg extends rc {
             return false;
          }
 
-         this.d = (nn)var1.get(0);
+         this.d = (BaseEntity)var1.get(0);
       }
 
       if(!this.a.aN().a(this.d)) {

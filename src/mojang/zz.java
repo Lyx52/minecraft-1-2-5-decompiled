@@ -6,7 +6,7 @@ public class zz extends li {
 
    static final byte[] a = new byte[]{(byte)2, (byte)0, (byte)0, (byte)1, (byte)2, (byte)1};
    Random b = new Random();
-   xd c;
+   World c;
    int[] d = new int[]{0, 0, 0};
    int e = 0;
    int f;
@@ -57,8 +57,8 @@ public class zz extends li {
             for(double var9 = 0.5D; var7 < var1; ++var7) {
                double var11 = this.j * (double)var8 * ((double)this.b.nextFloat() + 0.328D);
                double var13 = (double)this.b.nextFloat() * 2.0D * 3.14159D;
-               int var15 = gk.c(var11 * Math.sin(var13) + (double)this.d[0] + var9);
-               int var16 = gk.c(var11 * Math.cos(var13) + (double)this.d[2] + var9);
+               int var15 = Utils.c(var11 * Math.sin(var13) + (double)this.d[0] + var9);
+               int var16 = Utils.c(var11 * Math.cos(var13) + (double)this.d[2] + var9);
                int[] var17 = new int[]{var15, var3, var16};
                int[] var18 = new int[]{var15, var3 + this.n, var16};
                if(this.a(var17, var18) == -1) {
@@ -184,9 +184,9 @@ public class zz extends li {
          int var15 = 0;
 
          for(int var16 = var4[var6] + var9; var15 != var16; var15 += var9) {
-            var14[var6] = gk.c((double)(var1[var6] + var15) + 0.5D);
-            var14[var7] = gk.c((double)var1[var7] + (double)var15 * var10 + 0.5D);
-            var14[var8] = gk.c((double)var1[var8] + (double)var15 * var12 + 0.5D);
+            var14[var6] = Utils.c((double)(var1[var6] + var15) + 0.5D);
+            var14[var7] = Utils.c((double)var1[var7] + (double)var15 * var10 + 0.5D);
+            var14[var8] = Utils.c((double)var1[var8] + (double)var15 * var12 + 0.5D);
             this.a(this.c, var14[0], var14[1], var14[2], var3, 0);
          }
 
@@ -279,8 +279,8 @@ public class zz extends li {
          int var15;
          for(var15 = var3[var5] + var8; var14 != var15; var14 += var8) {
             var13[var5] = var1[var5] + var14;
-            var13[var6] = gk.c((double)var1[var6] + (double)var14 * var9);
-            var13[var7] = gk.c((double)var1[var7] + (double)var14 * var11);
+            var13[var6] = Utils.c((double)var1[var6] + (double)var14 * var9);
+            var13[var7] = Utils.c((double)var1[var7] + (double)var14 * var11);
             int var16 = this.c.a(var13[0], var13[1], var13[2]);
             if(var16 != 0 && var16 != 18) {
                break;
@@ -320,7 +320,7 @@ public class zz extends li {
       this.k = var5;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       this.c = var1;
       long var6 = var2.nextLong();
       this.b.setSeed(var6);

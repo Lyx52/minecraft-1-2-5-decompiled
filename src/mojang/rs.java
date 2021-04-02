@@ -24,15 +24,15 @@ public class rs {
       this.d.add(abn.x);
    }
 
-   public rs(long var1, vx var3) {
+   public rs(long var1, WorldGeneratorTypes var3) {
       this();
       wp[] var4 = wp.a(var1, var3);
       this.a = var4[0];
       this.b = var4[1];
    }
 
-   public rs(xd var1) {
-      this(var1.v(), var1.B().t());
+   public rs(World var1) {
+      this(var1.v(), var1.B().getGenerator());
    }
 
    public List a() {

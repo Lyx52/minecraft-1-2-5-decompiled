@@ -2,15 +2,15 @@ package mojang;
 
 import org.lwjgl.input.Keyboard;
 
-public class xs extends vp {
+public class xs extends GUIManager {
 
-   private vp a;
+   private GUIManager a;
    private agu b;
    private agu c;
    private oa d;
 
 
-   public xs(vp var1, oa var2) {
+   public xs(GUIManager var1, oa var2) {
       this.a = var1;
       this.d = var2;
    }
@@ -21,25 +21,25 @@ public class xs extends vp {
    }
 
    public void c() {
-      adn var1 = adn.a();
+      LocalizationManager var1 = LocalizationManager.getInstance();
       Keyboard.enableRepeatEvents(true);
-      this.s.clear();
-      this.s.add(new abp(0, this.q / 2 - 100, this.r / 4 + 96 + 12, var1.b("addServer.add")));
-      this.s.add(new abp(1, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.b("mojang.gui.cancel")));
+      this.buttonList.clear();
+      this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 96 + 12, var1.getLocaleStringByName("addServer.add")));
+      this.buttonList.add(new Button(1, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.cancel")));
       this.c = new agu(this.u, this.q / 2 - 100, 76, 200, 20);
       this.c.b(true);
       this.c.a(this.d.a);
       this.b = new agu(this.u, this.q / 2 - 100, 116, 200, 20);
       this.b.f(128);
       this.b.a(this.d.b);
-      ((abp)this.s.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
+      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
    }
 
    public void e() {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          if(var1.f == 1) {
             this.a.a(false, 0);
@@ -66,15 +66,15 @@ public class xs extends vp {
       }
 
       if(var1 == 13) {
-         this.a((abp)this.s.get(0));
+         this.a((Button)this.buttonList.get(0));
       }
 
-      ((abp)this.s.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
-      if(((abp)this.s.get(0)).h) {
+      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
+      if(((Button)this.buttonList.get(0)).h) {
          String var3 = this.b.b().trim();
          String[] var4 = var3.split(":");
          if(var4.length > 2) {
-            ((abp)this.s.get(0)).h = false;
+            ((Button)this.buttonList.get(0)).h = false;
          }
       }
 
@@ -87,11 +87,11 @@ public class xs extends vp {
    }
 
    public void a(int var1, int var2, float var3) {
-      adn var4 = adn.a();
+      LocalizationManager var4 = LocalizationManager.getInstance();
       this.k();
-      this.a(this.u, var4.b("addServer.title"), this.q / 2, this.r / 4 - 60 + 20, 16777215);
-      this.b(this.u, var4.b("addServer.enterName"), this.q / 2 - 100, 63, 10526880);
-      this.b(this.u, var4.b("addServer.enterIp"), this.q / 2 - 100, 104, 10526880);
+      this.a(this.u, var4.getLocaleStringByName("addServer.title"), this.q / 2, this.r / 4 - 60 + 20, 16777215);
+      this.b(this.u, var4.getLocaleStringByName("addServer.enterName"), this.q / 2 - 100, 63, 10526880);
+      this.b(this.u, var4.getLocaleStringByName("addServer.enterIp"), this.q / 2 - 100, 104, 10526880);
       this.c.f();
       this.b.f();
       super.a(var1, var2, var3);

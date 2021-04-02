@@ -50,7 +50,7 @@ public class cj extends kw {
             byte var7 = 4;
 
             for(int var8 = 0; var8 < var7; ++var8) {
-               acq var9 = (acq)((acq)aao.a(this.d, this.i));
+               Mob var9 = (Mob)((Mob) EntityManager.a(this.d, this.i));
                if(var9 == null) {
                   return;
                }
@@ -67,7 +67,7 @@ public class cj extends kw {
                   double var15 = (double)this.l + (this.i.r.nextDouble() - this.i.r.nextDouble()) * 4.0D;
                   var9.c(var11, var13, var15, this.i.r.nextFloat() * 360.0F, 0.0F);
                   if(var9.i()) {
-                     this.i.a((nn)var9);
+                     this.i.a((BaseEntity)var9);
                      this.i.g(2004, this.j, this.k, this.l, 0);
                      var9.ba();
                      this.d();
@@ -84,15 +84,15 @@ public class cj extends kw {
       this.a = 200 + this.i.r.nextInt(600);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.d = var1.j("EntityId");
-      this.a = var1.e("Delay");
+      this.d = var1.getString("EntityId");
+      this.a = var1.getShort("Delay");
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("EntityId", this.d);
-      var1.a("Delay", (short)this.a);
+      var1.addString("EntityId", this.d);
+      var1.addShort("Delay", (short)this.a);
    }
 }

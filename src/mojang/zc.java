@@ -10,7 +10,7 @@ public class zc extends qk {
       this.a(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, var3 * 2.0F, 0.5F + var3);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          super.a(var1, var2, var3, var4, var5);
          if(var1.o(var2, var3 + 1, var4) >= 9 && var5.nextInt(7) == 0) {
@@ -30,7 +30,7 @@ public class zc extends qk {
       return var2 == 1?63:(var2 == 2?79:(var2 == 3?30:super.a(var1, var2)));
    }
 
-   public void c(xd var1, int var2, int var3, int var4, Random var5) {
+   public void c(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4) & 3;
       Object var7 = null;
       int var8 = 0;
@@ -89,7 +89,7 @@ public class zc extends qk {
 
    }
 
-   public boolean f(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean f(World var1, int var2, int var3, int var4, int var5) {
       return var1.a(var2, var3, var4) == this.bO && (var1.e(var2, var3, var4) & 3) == var5;
    }
 

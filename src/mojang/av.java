@@ -2,7 +2,7 @@ package mojang;
 
 import java.util.List;
 
-public abstract class av extends nn {
+public abstract class av extends BaseEntity {
 
    private int d = -1;
    private int e = -1;
@@ -10,12 +10,12 @@ public abstract class av extends nn {
    private int an = 0;
    protected boolean a = false;
    public int b = 0;
-   protected acq c;
+   protected Mob c;
    private int ao;
    private int ap = 0;
 
 
-   public av(xd var1) {
+   public av(World var1) {
       super(var1);
       this.a(0.25F, 0.25F);
    }
@@ -28,24 +28,24 @@ public abstract class av extends nn {
       return var1 < var3 * var3;
    }
 
-   public av(xd var1, acq var2) {
+   public av(World var1, Mob var2) {
       super(var1);
       this.c = var2;
       this.a(0.25F, 0.25F);
       this.c(var2.o, var2.p + (double)var2.I(), var2.q, var2.u, var2.v);
-      this.o -= (double)(gk.b(this.u / 180.0F * 3.1415927F) * 0.16F);
+      this.o -= (double)(Utils.cos(this.u / 180.0F * 3.1415927F) * 0.16F);
       this.p -= 0.10000000149011612D;
-      this.q -= (double)(gk.a(this.u / 180.0F * 3.1415927F) * 0.16F);
+      this.q -= (double)(Utils.sin(this.u / 180.0F * 3.1415927F) * 0.16F);
       this.d(this.o, this.p, this.q);
       this.H = 0.0F;
       float var3 = 0.4F;
-      this.r = (double)(-gk.a(this.u / 180.0F * 3.1415927F) * gk.b(this.v / 180.0F * 3.1415927F) * var3);
-      this.t = (double)(gk.b(this.u / 180.0F * 3.1415927F) * gk.b(this.v / 180.0F * 3.1415927F) * var3);
-      this.s = (double)(-gk.a((this.v + this.d()) / 180.0F * 3.1415927F) * var3);
+      this.r = (double)(-Utils.sin(this.u / 180.0F * 3.1415927F) * Utils.cos(this.v / 180.0F * 3.1415927F) * var3);
+      this.t = (double)(Utils.cos(this.u / 180.0F * 3.1415927F) * Utils.cos(this.v / 180.0F * 3.1415927F) * var3);
+      this.s = (double)(-Utils.sin((this.v + this.d()) / 180.0F * 3.1415927F) * var3);
       this.a(this.r, this.s, this.t, this.c(), 1.0F);
    }
 
-   public av(xd var1, double var2, double var4, double var6) {
+   public av(World var1, double var2, double var4, double var6) {
       super(var1);
       this.ao = 0;
       this.a(0.25F, 0.25F);
@@ -62,7 +62,7 @@ public abstract class av extends nn {
    }
 
    public void a(double var1, double var3, double var5, float var7, float var8) {
-      float var9 = gk.a(var1 * var1 + var3 * var3 + var5 * var5);
+      float var9 = Utils.sqrt(var1 * var1 + var3 * var3 + var5 * var5);
       var1 /= (double)var9;
       var3 /= (double)var9;
       var5 /= (double)var9;
@@ -75,7 +75,7 @@ public abstract class av extends nn {
       this.r = var1;
       this.s = var3;
       this.t = var5;
-      float var10 = gk.a(var1 * var1 + var5 * var5);
+      float var10 = Utils.sqrt(var1 * var1 + var5 * var5);
       this.w = this.u = (float)(Math.atan2(var1, var5) * 180.0D / 3.1415927410125732D);
       this.x = this.v = (float)(Math.atan2(var3, (double)var10) * 180.0D / 3.1415927410125732D);
       this.ao = 0;
@@ -86,7 +86,7 @@ public abstract class av extends nn {
       this.s = var3;
       this.t = var5;
       if(this.x == 0.0F && this.w == 0.0F) {
-         float var7 = gk.a(var1 * var1 + var5 * var5);
+         float var7 = Utils.sqrt(var1 * var1 + var5 * var5);
          this.w = this.u = (float)(Math.atan2(var1, var5) * 180.0D / 3.1415927410125732D);
          this.x = this.v = (float)(Math.atan2(var3, (double)var7) * 180.0D / 3.1415927410125732D);
       }
@@ -133,12 +133,12 @@ public abstract class av extends nn {
       }
 
       if(!this.k.F) {
-         nn var4 = null;
-         List var5 = this.k.b((nn)this, this.y.a(this.r, this.s, this.t).b(1.0D, 1.0D, 1.0D));
+         BaseEntity var4 = null;
+         List var5 = this.k.b((BaseEntity)this, this.y.a(this.r, this.s, this.t).b(1.0D, 1.0D, 1.0D));
          double var6 = 0.0D;
 
          for(int var8 = 0; var8 < var5.size(); ++var8) {
-            nn var9 = (nn)var5.get(var8);
+            BaseEntity var9 = (BaseEntity)var5.get(var8);
             if(var9.l_() && (var9 != this.c || this.ap >= 5)) {
                float var10 = 0.3F;
                wu var11 = var9.y.b((double)var10, (double)var10, (double)var10);
@@ -165,7 +165,7 @@ public abstract class av extends nn {
       this.o += this.r;
       this.p += this.s;
       this.q += this.t;
-      float var16 = gk.a(this.r * this.r + this.t * this.t);
+      float var16 = Utils.sqrt(this.r * this.r + this.t * this.t);
       this.u = (float)(Math.atan2(this.r, this.t) * 180.0D / 3.1415927410125732D);
 
       for(this.v = (float)(Math.atan2(this.s, (double)var16) * 180.0D / 3.1415927410125732D); this.v - this.x < -180.0F; this.x -= 360.0F) {
@@ -210,25 +210,25 @@ public abstract class av extends nn {
 
    protected abstract void a(pl var1);
 
-   public void b(ady var1) {
-      var1.a("xTile", (short)this.d);
-      var1.a("yTile", (short)this.e);
-      var1.a("zTile", (short)this.am);
-      var1.a("inTile", (byte)this.an);
-      var1.a("shake", (byte)this.b);
-      var1.a("inGround", (byte)(this.a?1:0));
+   public void b(CompundTag var1) {
+      var1.addShort("xTile", (short)this.d);
+      var1.addShort("yTile", (short)this.e);
+      var1.addShort("zTile", (short)this.am);
+      var1.addByte("inTile", (byte)this.an);
+      var1.addByte("shake", (byte)this.b);
+      var1.addByte("inGround", (byte)(this.a?1:0));
    }
 
-   public void a(ady var1) {
-      this.d = var1.e("xTile");
-      this.e = var1.e("yTile");
-      this.am = var1.e("zTile");
-      this.an = var1.d("inTile") & 255;
-      this.b = var1.d("shake") & 255;
-      this.a = var1.d("inGround") == 1;
+   public void a(CompundTag var1) {
+      this.d = var1.getShort("xTile");
+      this.e = var1.getShort("yTile");
+      this.am = var1.getShort("zTile");
+      this.an = var1.getByte("inTile") & 255;
+      this.b = var1.getByte("shake") & 255;
+      this.a = var1.getByte("inGround") == 1;
    }
 
-   public void a(yw var1) {}
+   public void a(Player var1) {}
 
    public float h_() {
       return 0.0F;

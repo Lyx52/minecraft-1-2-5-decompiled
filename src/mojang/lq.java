@@ -67,7 +67,7 @@ public class lq {
 
    }
 
-   public void a(adz var1, float var2) {
+   public void a(Tessalator var1, float var2) {
       for(int var3 = 0; var3 < this.i.length; ++var3) {
          this.i[var3].a(var1, var2);
       }

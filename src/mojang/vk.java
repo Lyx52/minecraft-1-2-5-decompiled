@@ -16,7 +16,7 @@ public class vk extends yr {
       return true;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       if(var3.aZ != null) {
          int var4 = var3.aZ.n();
          var1.a(var4, var3);
@@ -24,7 +24,7 @@ public class vk extends yr {
       } else {
          var2.a(var3, "random.bow", 0.5F, 0.4F / (d.nextFloat() * 0.4F + 0.8F));
          if(!var2.F) {
-            var2.a((nn)(new act(var2, var3)));
+            var2.a((BaseEntity)(new act(var2, var3)));
          }
 
          var3.ax();

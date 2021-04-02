@@ -2,7 +2,7 @@ package mojang;
 
 public class vg extends rt {
 
-   public vg(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public vg(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.ao = 1.0F;
       this.ap = 1.0F;
@@ -17,15 +17,15 @@ public class vg extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       this.s += 0.002D;
       this.b(this.r, this.s, this.t);
       this.r *= 0.8500000238418579D;
       this.s *= 0.8500000238418579D;
       this.t *= 0.8500000238418579D;
-      if(this.k.f(gk.c(this.o), gk.c(this.p), gk.c(this.q)) != acn.g) {
+      if(this.k.f(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q)) != acn.g) {
          this.A();
       }
 

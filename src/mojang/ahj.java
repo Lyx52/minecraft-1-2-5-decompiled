@@ -28,13 +28,13 @@ public class ahj extends xu {
       int var27 = var25.nextInt(var16 / 2) + var16 / 4;
 
       for(boolean var28 = var25.nextInt(6) == 0; var15 < var16; ++var15) {
-         double var29 = 1.5D + (double)(gk.a((float)var15 * 3.1415927F / (float)var16) * var12 * 1.0F);
+         double var29 = 1.5D + (double)(Utils.sin((float)var15 * 3.1415927F / (float)var16) * var12 * 1.0F);
          double var31 = var29 * var17;
-         float var33 = gk.b(var14);
-         float var34 = gk.a(var14);
-         var6 += (double)(gk.b(var13) * var33);
+         float var33 = Utils.cos(var14);
+         float var34 = Utils.sin(var14);
+         var6 += (double)(Utils.cos(var13) * var33);
          var8 += (double)var34;
-         var10 += (double)(gk.a(var13) * var33);
+         var10 += (double)(Utils.sin(var13) * var33);
          if(var28) {
             var14 *= 0.92F;
          } else {
@@ -63,12 +63,12 @@ public class ahj extends xu {
             }
 
             if(var6 >= var19 - 16.0D - var29 * 2.0D && var10 >= var21 - 16.0D - var29 * 2.0D && var6 <= var19 + 16.0D + var29 * 2.0D && var10 <= var21 + 16.0D + var29 * 2.0D) {
-               int var55 = gk.c(var6 - var29) - var3 * 16 - 1;
-               int var36 = gk.c(var6 + var29) - var3 * 16 + 1;
-               int var56 = gk.c(var8 - var31) - 1;
-               int var38 = gk.c(var8 + var31) + 1;
-               int var57 = gk.c(var10 - var29) - var4 * 16 - 1;
-               int var40 = gk.c(var10 + var29) - var4 * 16 + 1;
+               int var55 = Utils.c(var6 - var29) - var3 * 16 - 1;
+               int var36 = Utils.c(var6 + var29) - var3 * 16 + 1;
+               int var56 = Utils.c(var8 - var31) - 1;
+               int var38 = Utils.c(var8 + var31) + 1;
+               int var57 = Utils.c(var10 - var29) - var4 * 16 - 1;
+               int var40 = Utils.c(var10 + var29) - var4 * 16 + 1;
                if(var55 < 0) {
                   var55 = 0;
                }
@@ -159,7 +159,7 @@ public class ahj extends xu {
 
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, byte[] var6) {
+   protected void a(World var1, int var2, int var3, int var4, int var5, byte[] var6) {
       int var7 = this.c.nextInt(this.c.nextInt(this.c.nextInt(40) + 1) + 1);
       if(this.c.nextInt(15) != 0) {
          var7 = 0;

@@ -31,7 +31,7 @@ public class ame extends pb {
       this.b[var1] = var3;
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -55,7 +55,7 @@ public class ame extends pb {
       return 30;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       boolean var6 = var1.a(var2, var3 - 1, var4) == bb.bO;
       if(var1.t instanceof ii && var1.a(var2, var3 - 1, var4) == z.bO) {
          var6 = true;
@@ -129,7 +129,7 @@ public class ame extends pb {
       }
    }
 
-   private void a(xd var1, int var2, int var3, int var4, int var5, Random var6, int var7) {
+   private void a(World var1, int var2, int var3, int var4, int var5, Random var6, int var7) {
       int var8 = this.b[var1.a(var2, var3, var4)];
       if(var6.nextInt(var5) < var8) {
          boolean var9 = var1.a(var2, var3, var4) == am.bO;
@@ -151,11 +151,11 @@ public class ame extends pb {
 
    }
 
-   private boolean h(xd var1, int var2, int var3, int var4) {
+   private boolean h(World var1, int var2, int var3, int var4) {
       return this.g(var1, var2 + 1, var3, var4)?true:(this.g(var1, var2 - 1, var3, var4)?true:(this.g(var1, var2, var3 - 1, var4)?true:(this.g(var1, var2, var3 + 1, var4)?true:(this.g(var1, var2, var3, var4 - 1)?true:this.g(var1, var2, var3, var4 + 1)))));
    }
 
-   private int i(xd var1, int var2, int var3, int var4) {
+   private int i(World var1, int var2, int var3, int var4) {
       byte var5 = 0;
       if(!var1.i(var2, var3, var4)) {
          return 0;
@@ -174,26 +174,26 @@ public class ame extends pb {
       return false;
    }
 
-   public boolean g(ali var1, int var2, int var3, int var4) {
+   public boolean g(WorldInterface var1, int var2, int var3, int var4) {
       return this.a[var1.a(var2, var3, var4)] > 0;
    }
 
-   public int f(xd var1, int var2, int var3, int var4, int var5) {
+   public int f(World var1, int var2, int var3, int var4, int var5) {
       int var6 = this.a[var1.a(var2, var3, var4)];
       return var6 > var5?var6:var5;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2, var3 - 1, var4) || this.h(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.h(var2, var3 - 1, var4) && !this.h(var1, var2, var3, var4)) {
          var1.g(var2, var3, var4, 0);
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(var1.t.g > 0 || var1.a(var2, var3 - 1, var4) != ap.bO || !be.a_(var1, var2, var3, var4)) {
          if(!var1.h(var2, var3 - 1, var4) && !this.h(var1, var2, var3, var4)) {
             var1.g(var2, var3, var4, 0);
@@ -203,7 +203,7 @@ public class ame extends pb {
       }
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       if(var5.nextInt(24) == 0) {
          var1.a((double)((float)var2 + 0.5F), (double)((float)var3 + 0.5F), (double)((float)var4 + 0.5F), "fire.fire", 1.0F + var5.nextFloat(), var5.nextFloat() * 0.7F + 0.3F);
       }

@@ -25,7 +25,7 @@ public class amm extends yr {
       this(var1, var2, 0.6F, var3);
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       --var1.a;
       var3.aF().a(this);
       var2.a(var3, "random.burp", 0.5F, var2.r.nextFloat() * 0.1F + 0.9F);
@@ -44,7 +44,7 @@ public class amm extends yr {
       return aaq.b;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       if(var3.a(this.bW)) {
          var3.c(var1, this.b(var1));
       }

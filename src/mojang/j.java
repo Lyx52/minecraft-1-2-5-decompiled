@@ -2,7 +2,7 @@ package mojang;
 
 public class j {
 
-   private acq a;
+   private Mob a;
    private double b;
    private double c;
    private double d;
@@ -10,7 +10,7 @@ public class j {
    private boolean f = false;
 
 
-   public j(acq var1) {
+   public j(Mob var1) {
       this.a = var1;
       this.b = var1.o;
       this.c = var1.p;
@@ -37,7 +37,7 @@ public class j {
       this.a.h(0.0F);
       if(this.f) {
          this.f = false;
-         int var1 = gk.c(this.a.y.b + 0.5D);
+         int var1 = Utils.c(this.a.y.b + 0.5D);
          double var2 = this.b - this.a.o;
          double var4 = this.d - this.a.q;
          double var6 = this.c - (double)var1;

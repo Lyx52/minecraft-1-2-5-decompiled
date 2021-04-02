@@ -6,12 +6,12 @@ public class akw extends rt {
    private int au = 0;
 
 
-   public akw(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public akw(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, 0.0D, 0.0D, 0.0D);
       this.au = 8;
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {}
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {}
 
    public void J_() {
       for(int var1 = 0; var1 < 6; ++var1) {

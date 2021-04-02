@@ -29,7 +29,7 @@ public class e {
       float var2 = (float)(var1.a - this.a);
       float var3 = (float)(var1.b - this.b);
       float var4 = (float)(var1.c - this.c);
-      return gk.c(var2 * var2 + var3 * var3 + var4 * var4);
+      return Utils.sqrt(var2 * var2 + var3 * var3 + var4 * var4);
    }
 
    public boolean equals(Object var1) {

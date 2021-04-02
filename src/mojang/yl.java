@@ -14,7 +14,7 @@ public class yl extends agy {
       return false;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       super.b(var1, var2, var3, var4, var5);
 
       for(int var6 = var2 - 2; var6 <= var2 + 2; ++var6) {
@@ -55,7 +55,7 @@ public class yl extends agy {
       return new uz();
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {

@@ -9,7 +9,7 @@ public class gw implements Comparator {
    private double c;
 
 
-   public gw(nn var1) {
+   public gw(BaseEntity var1) {
       this.a = -var1.o;
       this.b = -var1.p;
       this.c = -var1.q;

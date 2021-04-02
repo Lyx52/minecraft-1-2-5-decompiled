@@ -10,16 +10,16 @@ public class agh {
 
    public boolean a = false;
    private Random h = new Random();
-   private xd i;
+   private World i;
    public double b;
    public double c;
    public double d;
-   public nn e;
+   public BaseEntity e;
    public float f;
    public Set g = new HashSet();
 
 
-   public agh(xd var1, nn var2, double var3, double var5, double var7, float var9) {
+   public agh(World var1, BaseEntity var2, double var3, double var5, double var7, float var9) {
       this.i = var1;
       this.e = var2;
       this.f = var9;
@@ -55,9 +55,9 @@ public class agh {
                   var19 = this.d;
 
                   for(float var21 = 0.3F; var14 > 0.0F; var14 -= var21 * 0.75F) {
-                     int var22 = gk.c(var15);
-                     int var23 = gk.c(var17);
-                     int var24 = gk.c(var19);
+                     int var22 = Utils.c(var15);
+                     int var23 = Utils.c(var17);
+                     int var24 = Utils.c(var19);
                      int var25 = this.i.a(var22, var23, var24);
                      if(var25 > 0) {
                         var14 -= (pb.m[var25].a(this.e) + 0.3F) * var21;
@@ -77,23 +77,23 @@ public class agh {
       }
 
       this.f *= 2.0F;
-      var3 = gk.c(this.b - (double)this.f - 1.0D);
-      var4 = gk.c(this.b + (double)this.f + 1.0D);
-      var5 = gk.c(this.c - (double)this.f - 1.0D);
-      int var29 = gk.c(this.c + (double)this.f + 1.0D);
-      int var7 = gk.c(this.d - (double)this.f - 1.0D);
-      int var30 = gk.c(this.d + (double)this.f + 1.0D);
+      var3 = Utils.c(this.b - (double)this.f - 1.0D);
+      var4 = Utils.c(this.b + (double)this.f + 1.0D);
+      var5 = Utils.c(this.c - (double)this.f - 1.0D);
+      int var29 = Utils.c(this.c + (double)this.f + 1.0D);
+      int var7 = Utils.c(this.d - (double)this.f - 1.0D);
+      int var30 = Utils.c(this.d + (double)this.f + 1.0D);
       List var9 = this.i.b(this.e, wu.b((double)var3, (double)var5, (double)var7, (double)var4, (double)var29, (double)var30));
       bo var31 = bo.b(this.b, this.c, this.d);
 
       for(int var11 = 0; var11 < var9.size(); ++var11) {
-         nn var33 = (nn)var9.get(var11);
+         BaseEntity var33 = (BaseEntity)var9.get(var11);
          double var13 = var33.g(this.b, this.c, this.d) / (double)this.f;
          if(var13 <= 1.0D) {
             var15 = var33.o - this.b;
             var17 = var33.p - this.c;
             var19 = var33.q - this.d;
-            double var34 = (double)gk.a(var15 * var15 + var17 * var17 + var19 * var19);
+            double var34 = (double) Utils.sqrt(var15 * var15 + var17 * var17 + var19 * var19);
             var15 /= var34;
             var17 /= var34;
             var19 /= var34;
@@ -136,7 +136,7 @@ public class agh {
             double var15 = var9 - this.b;
             double var17 = var11 - this.c;
             double var19 = var13 - this.d;
-            double var21 = (double)gk.a(var15 * var15 + var17 * var17 + var19 * var19);
+            double var21 = (double) Utils.sqrt(var15 * var15 + var17 * var17 + var19 * var19);
             var15 /= var21;
             var17 /= var21;
             var19 /= var21;

@@ -10,7 +10,7 @@ public class acs extends yr {
       this.a = var2.bO;
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       int var8 = var3.a(var4, var5, var6);
       if(var8 == pb.aS.bO) {
          var7 = 1;
@@ -50,7 +50,7 @@ public class acs extends yr {
             if(var3.g(var4, var5, var6, this.a)) {
                if(var3.a(var4, var5, var6) == this.a) {
                   pb.m[this.a].c(var3, var4, var5, var6, var7);
-                  pb.m[this.a].a(var3, var4, var5, var6, (acq)var2);
+                  pb.m[this.a].a(var3, var4, var5, var6, (Mob)var2);
                }
 
                var3.a((double)((float)var4 + 0.5F), (double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), var9.cb.d(), (var9.cb.b() + 1.0F) / 2.0F, var9.cb.c() * 0.8F);

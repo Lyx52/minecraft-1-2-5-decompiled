@@ -5,7 +5,7 @@ public class mj extends rt {
    private float a;
 
 
-   public mj(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public mj(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.r = this.r * 0.009999999776482582D + var8;
       this.s = this.s * 0.009999999776482582D + var10;
@@ -20,7 +20,7 @@ public class mj extends rt {
       this.c(48);
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = ((float)this.d + var2) / (float)this.e;
       this.am = this.a * (1.0F - var8 * var8 * 0.5F);
       super.a(var1, var2, var3, var4, var5, var6, var7);
@@ -62,9 +62,9 @@ public class mj extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       if(this.d++ >= this.e) {
          this.A();
       }

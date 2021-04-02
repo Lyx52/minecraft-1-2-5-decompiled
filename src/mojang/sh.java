@@ -20,7 +20,7 @@ public class sh extends aas {
       return a(var7) && a(var0, var7) == null?new sh(var6, var1, var7, var5):null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       int var4 = this.c(pb.bC.bO, 2);
 
       for(int var5 = 0; var5 <= 9; ++var5) {

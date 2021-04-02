@@ -6,7 +6,7 @@ public class amb extends yr {
       super(var1);
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var7 == 0) {
          return false;
       } else if(var7 == 1) {
@@ -28,10 +28,10 @@ public class amb extends yr {
          if(!var2.e(var4, var5, var6)) {
             return false;
          } else {
-            mk var9 = new mk(var3, var4, var5, var6, var8);
+            Painting var9 = new Painting(var3, var4, var5, var6, var8);
             if(var9.n()) {
                if(!var3.F) {
-                  var3.a((nn)var9);
+                  var3.a((BaseEntity)var9);
                }
 
                --var1.a;

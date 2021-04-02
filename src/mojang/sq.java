@@ -22,7 +22,7 @@ public class sq extends pb {
       this.a = -1;
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       super.b_(var1, var2, var3, var4);
       int var5 = var1.e(var2, var3, var4);
       int var6 = qs.a[h(var5)];
@@ -57,11 +57,11 @@ public class sq extends pb {
       return false;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return false;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       return false;
    }
 
@@ -69,7 +69,7 @@ public class sq extends pb {
       return 0;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
+   public void a(World var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
       int var7 = var1.e(var2, var3, var4);
       switch(h(var7)) {
       case 0:
@@ -112,7 +112,7 @@ public class sq extends pb {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       switch(h(var5)) {
       case 0:
@@ -136,7 +136,7 @@ public class sq extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       int var6 = h(var1.e(var2, var3, var4));
       int var7 = var1.a(var2 - qs.b[var6], var3 - qs.c[var6], var4 - qs.d[var6]);
       if(var7 != Z.bO && var7 != V.bO) {

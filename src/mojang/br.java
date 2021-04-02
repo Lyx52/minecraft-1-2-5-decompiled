@@ -7,7 +7,7 @@ public class br extends amm {
       this.f(1);
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       super.b(var1, var2, var3);
       return new aan(E);
    }

@@ -2,15 +2,15 @@ package mojang;
 
 public class fl extends md {
 
-   protected nn a;
+   protected BaseEntity a;
 
 
-   public fl(String var1, nn var2) {
+   public fl(String var1, BaseEntity var2) {
       super(var1);
       this.a = var2;
    }
 
-   public nn a() {
+   public BaseEntity a() {
       return this.a;
    }
 }

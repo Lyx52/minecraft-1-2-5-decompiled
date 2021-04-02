@@ -16,7 +16,7 @@ public class qk extends pb {
       this(var1, var2, acn.j);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return super.e(var1, var2, var3, var4) && this.f_(var1.a(var2, var3 - 1, var4));
    }
 
@@ -24,16 +24,16 @@ public class qk extends pb {
       return var1 == u.bO || var1 == v.bO || var1 == aA.bO;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       super.a(var1, var2, var3, var4, var5);
       this.h(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       this.h(var1, var2, var3, var4);
    }
 
-   protected final void h(xd var1, int var2, int var3, int var4) {
+   protected final void h(World var1, int var2, int var3, int var4) {
       if(!this.g(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -41,11 +41,11 @@ public class qk extends pb {
 
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return (var1.n(var2, var3, var4) >= 8 || var1.m(var2, var3, var4)) && this.f_(var1.a(var2, var3 - 1, var4));
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 

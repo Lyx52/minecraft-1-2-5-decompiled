@@ -1,6 +1,6 @@
 package mojang;
 
-public class rt extends nn {
+public class rt extends BaseEntity {
 
    private int a;
    protected float b;
@@ -17,7 +17,7 @@ public class rt extends nn {
    public static double at;
 
 
-   public rt(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public rt(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1);
       this.a(0.2F, 0.2F);
       this.H = this.J / 2.0F;
@@ -27,7 +27,7 @@ public class rt extends nn {
       this.s = var10 + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.4F);
       this.t = var12 + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.4F);
       float var14 = (float)(Math.random() + Math.random() + 1.0D) * 0.15F;
-      float var15 = gk.a(this.r * this.r + this.s * this.s + this.t * this.t);
+      float var15 = Utils.sqrt(this.r * this.r + this.s * this.s + this.t * this.t);
       this.r = this.r / (double)var15 * (double)var14 * 0.4000000059604645D;
       this.s = this.s / (double)var15 * (double)var14 * 0.4000000059604645D + 0.10000000149011612D;
       this.t = this.t / (double)var15 * (double)var14 * 0.4000000059604645D;
@@ -76,9 +76,9 @@ public class rt extends nn {
    protected void b() {}
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       if(this.d++ >= this.e) {
          this.A();
       }
@@ -95,15 +95,15 @@ public class rt extends nn {
 
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = (float)(this.a % 16) / 16.0F;
       float var9 = var8 + 0.0624375F;
       float var10 = (float)(this.a / 16) / 16.0F;
       float var11 = var10 + 0.0624375F;
       float var12 = 0.1F * this.am;
-      float var13 = (float)(this.l + (this.o - this.l) * (double)var2 - ar);
-      float var14 = (float)(this.m + (this.p - this.m) * (double)var2 - as);
-      float var15 = (float)(this.n + (this.q - this.n) * (double)var2 - at);
+      float var13 = (float)(this.sandX + (this.o - this.sandX) * (double)var2 - ar);
+      float var14 = (float)(this.sandY + (this.p - this.sandY) * (double)var2 - as);
+      float var15 = (float)(this.sandZ + (this.q - this.sandZ) * (double)var2 - at);
       float var16 = 1.0F;
       var1.a(this.ao * var16, this.ap * var16, this.aq * var16);
       var1.a((double)(var13 - var3 * var12 - var6 * var12), (double)(var14 - var4 * var12), (double)(var15 - var5 * var12 - var7 * var12), (double)var9, (double)var11);
@@ -116,9 +116,9 @@ public class rt extends nn {
       return 0;
    }
 
-   public void b(ady var1) {}
+   public void b(CompundTag var1) {}
 
-   public void a(ady var1) {}
+   public void a(CompundTag var1) {}
 
    public void c(int var1) {
       this.a = var1;

@@ -2,7 +2,7 @@ package mojang;
 
 public class xy extends rt {
 
-   public xy(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public xy(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       float var14 = this.U.nextFloat() * 0.1F + 0.2F;
       this.ao = var14;
@@ -19,9 +19,9 @@ public class xy extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       this.b(this.r, this.s, this.t);
       this.r *= 0.99D;
       this.s *= 0.99D;

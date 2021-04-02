@@ -63,7 +63,7 @@ public class bo {
    }
 
    public bo c() {
-      double var1 = (double)gk.a(this.a * this.a + this.b * this.b + this.c * this.c);
+      double var1 = (double) Utils.sqrt(this.a * this.a + this.b * this.b + this.c * this.c);
       return var1 < 1.0E-4D? b(0.0D, 0.0D, 0.0D): b(this.a / var1, this.b / var1, this.c / var1);
    }
 
@@ -83,7 +83,7 @@ public class bo {
       double var2 = var1.a - this.a;
       double var4 = var1.b - this.b;
       double var6 = var1.c - this.c;
-      return (double)gk.a(var2 * var2 + var4 * var4 + var6 * var6);
+      return (double) Utils.sqrt(var2 * var2 + var4 * var4 + var6 * var6);
    }
 
    public double e(bo var1) {
@@ -101,7 +101,7 @@ public class bo {
    }
 
    public double d() {
-      return (double)gk.a(this.a * this.a + this.b * this.b + this.c * this.c);
+      return (double) Utils.sqrt(this.a * this.a + this.b * this.b + this.c * this.c);
    }
 
    public bo a(bo var1, double var2) {
@@ -145,8 +145,8 @@ public class bo {
    }
 
    public void a(float var1) {
-      float var2 = gk.b(var1);
-      float var3 = gk.a(var1);
+      float var2 = Utils.cos(var1);
+      float var3 = Utils.sin(var1);
       double var4 = this.a;
       double var6 = this.b * (double)var2 + this.c * (double)var3;
       double var8 = this.c * (double)var2 - this.b * (double)var3;
@@ -156,8 +156,8 @@ public class bo {
    }
 
    public void b(float var1) {
-      float var2 = gk.b(var1);
-      float var3 = gk.a(var1);
+      float var2 = Utils.cos(var1);
+      float var3 = Utils.sin(var1);
       double var4 = this.a * (double)var2 + this.c * (double)var3;
       double var6 = this.b;
       double var8 = this.c * (double)var2 - this.a * (double)var3;

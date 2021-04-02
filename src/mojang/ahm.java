@@ -12,7 +12,7 @@ public class ahm extends um {
       this.a = new adt();
    }
 
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("AMA > NN");
       GL11.glPushMatrix();
       long var10 = (long)var1.f * 493286711L;
@@ -25,11 +25,11 @@ public class ahm extends um {
       double var17 = var1.O + (var1.p - var1.O) * (double)var9;
       double var19 = var1.P + (var1.q - var1.P) * (double)var9;
       double var21 = 0.30000001192092896D;
-      bo var23 = ((ama)var1).i(var15, var17, var19);
+      bo var23 = ((Minecart)var1).i(var15, var17, var19);
       float var24 = var1.x + (var1.v - var1.x) * var9;
       if(var23 != null) {
-         bo var25 = ((ama)var1).a(var15, var17, var19, var21);
-         bo var26 = ((ama)var1).a(var15, var17, var19, -var21);
+         bo var25 = ((Minecart)var1).a(var15, var17, var19, var21);
+         bo var26 = ((Minecart)var1).a(var15, var17, var19, -var21);
          if(var25 == null) {
             var25 = var23;
          }
@@ -52,28 +52,28 @@ public class ahm extends um {
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       GL11.glRotatef(180.0F - var8, 0.0F, 1.0F, 0.0F);
       GL11.glRotatef(-var24, 0.0F, 0.0F, 1.0F);
-      float var28 = (float)((ama)var1).p() - var9;
-      float var29 = (float)((ama)var1).o() - var9;
+      float var28 = (float)((Minecart)var1).p() - var9;
+      float var29 = (float)((Minecart)var1).o() - var9;
       if(var29 < 0.0F) {
          var29 = 0.0F;
       }
 
       if(var28 > 0.0F) {
-         GL11.glRotatef(gk.a(var28) * var28 * var29 / 10.0F * (float)((ama)var1).r(), 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(Utils.sin(var28) * var28 * var29 / 10.0F * (float)((Minecart)var1).r(), 1.0F, 0.0F, 0.0F);
       }
 
-      if(((ama)var1).a != 0) {
+      if(((Minecart)var1).a != 0) {
          this.a("/mojang/terrain.png");
          float var30 = 0.75F;
          GL11.glScalef(var30, var30, var30);
-         if(((ama)var1).a == 1) {
+         if(((Minecart)var1).a == 1) {
             GL11.glTranslatef(-0.5F, 0.0F, 0.5F);
             GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
-            (new vl()).a(pb.au, 0, ((ama)var1).a(var9));
+            (new vl()).a(pb.au, 0, ((Minecart)var1).a(var9));
             GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
             GL11.glTranslatef(0.5F, 0.0F, -0.5F);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         } else if(((ama)var1).a == 2) {
+         } else if(((Minecart)var1).a == 2) {
             GL11.glTranslatef(0.0F, 0.3125F, 0.0F);
             GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
             (new vl()).a(pb.aB, 0, var1.a(var9));

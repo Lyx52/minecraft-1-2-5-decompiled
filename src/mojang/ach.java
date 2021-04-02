@@ -13,9 +13,9 @@ public class ach {
    public static double b;
    public static double c;
    public static double d;
-   public aaw e;
-   public xd f;
-   public acq g;
+   public Texture e;
+   public World f;
+   public Mob g;
    public float h;
    public float i;
    public double j;
@@ -57,7 +57,7 @@ public class ach {
       return var1 == null?null:this.a(var1.getClass());
    }
 
-   public void a(xd var1, aaw var2, nl var3, acq var4, float var5) {
+   public void a(World var1, Texture var2, nl var3, Mob var4, float var5) {
       if(this.f != var1) {
          this.a(var1);
       }
@@ -79,7 +79,7 @@ public class ach {
          int var3 = this.f.b(var1.j, var1.k, var1.l, 0);
          int var4 = var3 % 65536;
          int var5 = var3 / 65536;
-         es.a(es.b, (float)var4 / 1.0F, (float)var5 / 1.0F);
+         ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var4 / 1.0F, (float)var5 / 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.a(var1, (double)var1.j - b, (double)var1.k - c, (double)var1.l - d, var2);
       }
@@ -94,7 +94,7 @@ public class ach {
 
    }
 
-   public void a(xd var1) {
+   public void a(World var1) {
       this.f = var1;
       Iterator var2 = this.m.values().iterator();
 

@@ -8,7 +8,7 @@ public class i extends li {
       super(var1);
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6 = var2.nextInt(3) + 5;
       boolean var7 = true;
       if(var4 >= 1 && var4 + var6 + 1 <= 256) {

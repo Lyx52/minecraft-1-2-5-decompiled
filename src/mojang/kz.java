@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 public class kz extends aar {
 
-   FloatBuffer a = ew.e(16);
+   FloatBuffer a = BufferManager.createFloatBuffer(16);
 
 
    public void a(kw var1, double var2, double var4, double var6, float var8) {
@@ -69,7 +69,7 @@ public class kz extends aar {
          GL11.glTranslatef(-var9, -var11, -var10);
          var19 = var18 + aau.b;
          GL11.glTranslatef(aau.a * var15 / var19, aau.c * var15 / var19, -var10);
-         adz var24 = adz.a;
+         Tessalator var24 = Tessalator.a;
          var24.b();
          var21 = var12.nextFloat() * 0.5F + 0.1F;
          float var22 = var12.nextFloat() * 0.5F + 0.4F;

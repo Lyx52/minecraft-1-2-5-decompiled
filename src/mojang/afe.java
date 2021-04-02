@@ -18,7 +18,7 @@ public class afe extends aez {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5) {
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          if((var6 & 8) == 0) {
@@ -27,7 +27,7 @@ public class afe extends aez {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          if((var6 & 8) != 0) {
@@ -36,19 +36,19 @@ public class afe extends aez {
       }
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return (var1.e(var2, var3, var4) & 8) != 0;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
       return (var1.e(var2, var3, var4) & 8) == 0?false:var5 == 1;
    }
 
-   private void f(xd var1, int var2, int var3, int var4, int var5) {
+   private void f(World var1, int var2, int var3, int var4, int var5) {
       boolean var6 = (var5 & 8) != 0;
       boolean var7 = false;
       float var8 = 0.125F;
-      List var9 = var1.a(ama.class, wu.b((double)((float)var2 + var8), (double)var3, (double)((float)var4 + var8), (double)((float)(var2 + 1) - var8), (double)((float)(var3 + 1) - var8), (double)((float)(var4 + 1) - var8)));
+      List var9 = var1.a(Minecart.class, wu.b((double)((float)var2 + var8), (double)var3, (double)((float)var4 + var8), (double)((float)(var2 + 1) - var8), (double)((float)(var3 + 1) - var8), (double)((float)(var4 + 1) - var8)));
       if(var9.size() > 0) {
          var7 = true;
       }

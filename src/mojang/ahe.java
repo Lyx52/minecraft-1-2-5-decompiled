@@ -2,17 +2,17 @@ package mojang;
 
 public class ahe extends rc {
 
-   yd a;
-   acq b;
+   Creeper a;
+   Mob b;
 
 
-   public ahe(yd var1) {
+   public ahe(Creeper var1) {
       this.a = var1;
       this.a(1);
    }
 
    public boolean a() {
-      acq var1 = this.a.aT();
+      Mob var1 = this.a.aT();
       return this.a.ag() > 0 || var1 != null && this.a.f(var1) < 9.0D;
    }
 

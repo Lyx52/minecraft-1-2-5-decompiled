@@ -13,7 +13,7 @@ public class et extends li {
       this.b = var1;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       if(var1.f(var3, var4, var5) != acn.g) {
          return false;
       } else {

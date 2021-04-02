@@ -3,7 +3,7 @@ package mojang;
 final class ry implements t {
 
    public int a;
-   public acq b;
+   public Mob b;
 
 
    private ry() {}

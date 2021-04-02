@@ -22,5 +22,5 @@ public interface ca {
 
    List a(acf var1, int var2, int var3, int var4);
 
-   qo a(xd var1, String var2, int var3, int var4, int var5);
+   qo a(World var1, String var2, int var3, int var4, int var5);
 }

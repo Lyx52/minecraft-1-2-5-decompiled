@@ -14,7 +14,7 @@ public class xm extends pb {
       return var1 == 1?138:(var1 == 0?155:154);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
+   public void a(World var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 0.3125F, 1.0F);
       super.a(var1, var2, var3, var4, var5, var6);
       float var7 = 0.125F;
@@ -45,7 +45,7 @@ public class xm extends pb {
       return false;
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {
@@ -68,7 +68,7 @@ public class xm extends pb {
                if(var6.c == yr.bt.bQ && var7 > 0) {
                   aan var8 = new aan(yr.bs, 1, 0);
                   if(!var5.ap.a(var8)) {
-                     var1.a((nn)(new fq(var1, (double)var2 + 0.5D, (double)var3 + 1.5D, (double)var4 + 0.5D, var8)));
+                     var1.a((BaseEntity)(new Item(var1, (double)var2 + 0.5D, (double)var3 + 1.5D, (double)var4 + 0.5D, var8)));
                   }
 
                   --var6.a;

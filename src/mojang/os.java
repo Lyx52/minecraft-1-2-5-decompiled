@@ -9,7 +9,7 @@ class os extends dd {
    public List a = new ArrayList();
 
 
-   public os(yw var1) {
+   public os(Player var1) {
       pb[] var2 = new pb[]{pb.w, pb.t, pb.aw, pb.G, pb.H, pb.I, pb.N, pb.aN, pb.bm, pb.bm, pb.bm, pb.bm, pb.aW, pb.ax, pb.ah, pb.ai, pb.z, pb.O, pb.al, pb.ao, pb.ak, pb.ak, pb.ak, pb.ak, pb.ak, pb.ak, pb.ap, pb.bb, pb.bc, pb.bd, pb.J, pb.J, pb.J, pb.J, pb.K, pb.K, pb.K, pb.K, pb.v, pb.u, pb.E, pb.Q, pb.Q, pb.Q, pb.F, pb.W, pb.x, pb.x, pb.x, pb.x, pb.y, pb.y, pb.y, pb.y, pb.Y, pb.L, pb.aT, pb.aU, pb.ad, pb.ae, pb.af, pb.ag, pb.aV, pb.br, pb.ba, pb.bf, pb.bu, pb.bp, pb.bq, pb.bA, pb.bB, pb.bC, pb.bJ, pb.by, pb.bz, pb.X, pb.X, pb.au, pb.ay, pb.M, pb.am, pb.an, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.ab, pb.P, pb.aB, pb.R, pb.aY, pb.V, pb.Z, pb.aZ, pb.bv, pb.aF, pb.aG, pb.T, pb.U, pb.aq, pb.at, pb.aH, pb.bw, pb.bx, pb.aJ, pb.aK, pb.aM, pb.aQ, pb.aR, pb.bk, pb.bE, pb.bL};
       int var3 = 0;
       int var4 = 0;
@@ -58,7 +58,7 @@ class os extends dd {
          this.a.add(new aan(yr.aW.bQ, 1, var12));
       }
 
-      Iterator var15 = aao.a.keySet().iterator();
+      Iterator var15 = EntityManager.a.keySet().iterator();
 
       while(var15.hasNext()) {
          Integer var17 = (Integer)var15.next();
@@ -80,7 +80,7 @@ class os extends dd {
       this.a(0.0F);
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return true;
    }
 
@@ -104,5 +104,5 @@ class os extends dd {
 
    }
 
-   protected void b(int var1, int var2, boolean var3, yw var4) {}
+   protected void b(int var1, int var2, boolean var3, Player var4) {}
 }

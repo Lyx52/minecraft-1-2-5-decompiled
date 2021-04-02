@@ -1,8 +1,8 @@
 package mojang;
 
-public abstract class si extends nn {
+public abstract class si extends BaseEntity {
 
-   public si(xd var1) {
+   public si(World var1) {
       super(var1);
    }
 }

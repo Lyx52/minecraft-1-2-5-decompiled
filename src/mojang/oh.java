@@ -6,14 +6,14 @@ public class oh extends kw {
    public boolean b = false;
 
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("note", this.a);
+      var1.addByte("note", this.a);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.a = var1.d("note");
+      this.a = var1.getByte("note");
       if(this.a < 0) {
          this.a = 0;
       }
@@ -29,7 +29,7 @@ public class oh extends kw {
       this.j();
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(var1.f(var2, var3 + 1, var4) == acn.a) {
          acn var5 = var1.f(var2, var3 - 1, var4);
          byte var6 = 0;

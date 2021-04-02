@@ -7,13 +7,13 @@ import org.lwjgl.opengl.GL11;
 
 public class cw {
 
-   protected xd a;
+   protected World a;
    private List[] b = new List[4];
-   private aaw c;
+   private Texture c;
    private Random d = new Random();
 
 
-   public cw(xd var1, aaw var2) {
+   public cw(World var1, Texture var2) {
       if(var1 != null) {
          this.a = var1;
       }
@@ -48,7 +48,7 @@ public class cw {
 
    }
 
-   public void a(nn var1, float var2) {
+   public void a(BaseEntity var1, float var2) {
       float var3 = aau.d;
       float var4 = aau.f;
       float var5 = aau.g;
@@ -74,7 +74,7 @@ public class cw {
             }
 
             GL11.glBindTexture(3553, var9);
-            adz var10 = adz.a;
+            Tessalator var10 = Tessalator.a;
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             var10.b();
 
@@ -90,15 +90,15 @@ public class cw {
 
    }
 
-   public void b(nn var1, float var2) {
-      float var4 = gk.b(var1.u * 0.017453292F);
-      float var5 = gk.a(var1.u * 0.017453292F);
-      float var6 = -var5 * gk.a(var1.v * 0.017453292F);
-      float var7 = var4 * gk.a(var1.v * 0.017453292F);
-      float var8 = gk.b(var1.v * 0.017453292F);
+   public void b(BaseEntity var1, float var2) {
+      float var4 = Utils.cos(var1.u * 0.017453292F);
+      float var5 = Utils.sin(var1.u * 0.017453292F);
+      float var6 = -var5 * Utils.sin(var1.v * 0.017453292F);
+      float var7 = var4 * Utils.sin(var1.v * 0.017453292F);
+      float var8 = Utils.cos(var1.v * 0.017453292F);
       byte var9 = 3;
       if(this.b[var9].size() != 0) {
-         adz var10 = adz.a;
+         Tessalator var10 = Tessalator.a;
 
          for(int var11 = 0; var11 < this.b[var9].size(); ++var11) {
             rt var12 = (rt)this.b[var9].get(var11);
@@ -109,7 +109,7 @@ public class cw {
       }
    }
 
-   public void a(xd var1) {
+   public void a(World var1) {
       this.a = var1;
 
       for(int var2 = 0; var2 < 4; ++var2) {

@@ -12,7 +12,7 @@ public class abu extends um {
    }
 
    @Override
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("BT > NN");
       GL11.glPushMatrix();
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
@@ -21,7 +21,7 @@ public class abu extends um {
       GL11.glScalef(var10 / 1.0F, var10 / 1.0F, var10 / 1.0F);
       byte var11 = 46;
       this.a("/mojang/gui/items.png");
-      adz var12 = adz.a;
+      Tessalator var12 = Tessalator.a;
       float var13 = (float)(var11 % 16 * 16 + 0) / 256.0F;
       float var14 = (float)(var11 % 16 * 16 + 16) / 256.0F;
       float var15 = (float)(var11 / 16 * 16 + 0) / 256.0F;

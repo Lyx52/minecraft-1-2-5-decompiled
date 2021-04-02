@@ -58,40 +58,40 @@ public class ahg extends kw implements io {
       return "container.furnace";
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      no var2 = var1.n("Items");
+      ListTag var2 = var1.getListTag("Items");
       this.d = new aan[this.a()];
 
       for(int var3 = 0; var3 < var2.d(); ++var3) {
-         ady var4 = (ady)var2.a(var3);
-         byte var5 = var4.d("Slot");
+         CompundTag var4 = (CompundTag)var2.a(var3);
+         byte var5 = var4.getByte("Slot");
          if(var5 >= 0 && var5 < this.d.length) {
             this.d[var5] = aan.a(var4);
          }
       }
 
-      this.a = var1.e("BurnTime");
-      this.c = var1.e("CookTime");
+      this.a = var1.getShort("BurnTime");
+      this.c = var1.getShort("CookTime");
       this.b = a(this.d[1]);
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("BurnTime", (short)this.a);
-      var1.a("CookTime", (short)this.c);
-      no var2 = new no();
+      var1.addShort("BurnTime", (short)this.a);
+      var1.addShort("CookTime", (short)this.c);
+      ListTag var2 = new ListTag();
 
       for(int var3 = 0; var3 < this.d.length; ++var3) {
          if(this.d[var3] != null) {
-            ady var4 = new ady();
-            var4.a("Slot", (byte)var3);
+            CompundTag var4 = new CompundTag();
+            var4.addByte("Slot", (byte)var3);
             this.d[var3].b(var4);
-            var2.a((gh)var4);
+            var2.a((BaseTag)var4);
          }
       }
 
-      var1.a("Items", (gh)var2);
+      var1.addBaseTag("Items", (BaseTag)var2);
    }
 
    public int d() {
@@ -197,7 +197,7 @@ public class ahg extends kw implements io {
       return a(var0) > 0;
    }
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return this.i.b(this.j, this.k, this.l) != this?false:var1.f((double)this.j + 0.5D, (double)this.k + 0.5D, (double)this.l + 0.5D) <= 64.0D;
    }
 

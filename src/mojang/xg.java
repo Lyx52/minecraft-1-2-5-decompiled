@@ -59,7 +59,7 @@ public class xg extends ho {
       this.o.a(2.0F, 12.0F + var2, 0.0F);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.c.a(var7);
       this.e.a(var7);
@@ -75,12 +75,12 @@ public class xg extends ho {
       this.c.f = var5 / 57.295776F;
       this.d.g = this.c.g;
       this.d.f = this.c.f;
-      this.f.f = gk.b(var1 * 0.6662F + 3.1415927F) * 2.0F * var2 * 0.5F;
-      this.g.f = gk.b(var1 * 0.6662F) * 2.0F * var2 * 0.5F;
+      this.f.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 2.0F * var2 * 0.5F;
+      this.g.f = Utils.cos(var1 * 0.6662F) * 2.0F * var2 * 0.5F;
       this.f.h = 0.0F;
       this.g.h = 0.0F;
-      this.n.f = gk.b(var1 * 0.6662F) * 1.4F * var2;
-      this.o.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.4F * var2;
+      this.n.f = Utils.cos(var1 * 0.6662F) * 1.4F * var2;
+      this.o.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.4F * var2;
       this.n.g = 0.0F;
       this.o.g = 0.0F;
       if(this.i) {
@@ -106,11 +106,11 @@ public class xg extends ho {
       float var8;
       if(this.h > -9990.0F) {
          var7 = this.h;
-         this.e.g = gk.a(gk.c(var7) * 3.1415927F * 2.0F) * 0.2F;
-         this.f.e = gk.a(this.e.g) * 5.0F;
-         this.f.c = -gk.b(this.e.g) * 5.0F;
-         this.g.e = -gk.a(this.e.g) * 5.0F;
-         this.g.c = gk.b(this.e.g) * 5.0F;
+         this.e.g = Utils.sin(Utils.sqrt(var7) * 3.1415927F * 2.0F) * 0.2F;
+         this.f.e = Utils.sin(this.e.g) * 5.0F;
+         this.f.c = -Utils.cos(this.e.g) * 5.0F;
+         this.g.e = -Utils.sin(this.e.g) * 5.0F;
+         this.g.c = Utils.cos(this.e.g) * 5.0F;
          this.f.g += this.e.g;
          this.g.g += this.e.g;
          this.g.f += this.e.g;
@@ -118,11 +118,11 @@ public class xg extends ho {
          var7 *= var7;
          var7 *= var7;
          var7 = 1.0F - var7;
-         var8 = gk.a(var7 * 3.1415927F);
-         float var9 = gk.a(this.h * 3.1415927F) * -(this.c.f - 0.7F) * 0.75F;
+         var8 = Utils.sin(var7 * 3.1415927F);
+         float var9 = Utils.sin(this.h * 3.1415927F) * -(this.c.f - 0.7F) * 0.75F;
          this.f.f = (float)((double)this.f.f - ((double)var8 * 1.2D + (double)var9));
          this.f.g += this.e.g * 2.0F;
-         this.f.h = gk.a(this.h * 3.1415927F) * -0.4F;
+         this.f.h = Utils.sin(this.h * 3.1415927F) * -0.4F;
       }
 
       if(this.t) {
@@ -143,10 +143,10 @@ public class xg extends ho {
          this.c.d = 0.0F;
       }
 
-      this.f.h += gk.b(var3 * 0.09F) * 0.05F + 0.05F;
-      this.g.h -= gk.b(var3 * 0.09F) * 0.05F + 0.05F;
-      this.f.f += gk.a(var3 * 0.067F) * 0.05F;
-      this.g.f -= gk.a(var3 * 0.067F) * 0.05F;
+      this.f.h += Utils.cos(var3 * 0.09F) * 0.05F + 0.05F;
+      this.g.h -= Utils.cos(var3 * 0.09F) * 0.05F + 0.05F;
+      this.f.f += Utils.sin(var3 * 0.067F) * 0.05F;
+      this.g.f -= Utils.sin(var3 * 0.067F) * 0.05F;
       if(this.u) {
          var7 = 0.0F;
          var8 = 0.0F;
@@ -158,10 +158,10 @@ public class xg extends ho {
          this.g.f = -1.5707964F + this.c.f;
          this.f.f -= var7 * 1.2F - var8 * 0.4F;
          this.g.f -= var7 * 1.2F - var8 * 0.4F;
-         this.f.h += gk.b(var3 * 0.09F) * 0.05F + 0.05F;
-         this.g.h -= gk.b(var3 * 0.09F) * 0.05F + 0.05F;
-         this.f.f += gk.a(var3 * 0.067F) * 0.05F;
-         this.g.f -= gk.a(var3 * 0.067F) * 0.05F;
+         this.f.h += Utils.cos(var3 * 0.09F) * 0.05F + 0.05F;
+         this.g.h -= Utils.cos(var3 * 0.09F) * 0.05F + 0.05F;
+         this.f.f += Utils.sin(var3 * 0.067F) * 0.05F;
+         this.g.f -= Utils.sin(var3 * 0.067F) * 0.05F;
       }
 
    }

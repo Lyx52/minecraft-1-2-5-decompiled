@@ -17,11 +17,11 @@ public class pp extends pb {
       return J.bO;
    }
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       super.a(var1, var2, var3, var4, var5, var6);
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       byte var5 = 4;
       int var6 = var5 + 1;
       if(var1.b(var2 - var6, var3 - var6, var4 - var6, var2 + var6, var3 + var6, var4 + var6)) {

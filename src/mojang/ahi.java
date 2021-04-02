@@ -20,7 +20,7 @@ public class ahi extends pb {
       return this.bN;
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -36,15 +36,15 @@ public class ahi extends pb {
       return 5;
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       return 8388608;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2, var3 - 1, var4) || var1.a(var2, var3 - 1, var4) == bd.bO;
    }
 
-   private void h(xd var1, int var2, int var3, int var4) {
+   private void h(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4, var2, var3, var4);
       ArrayList var5 = new ArrayList(this.b);
       this.b.clear();
@@ -56,7 +56,7 @@ public class ahi extends pb {
 
    }
 
-   private void a(xd var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   private void a(World var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       int var8 = var1.e(var2, var3, var4);
       int var9 = 0;
       this.a = false;
@@ -172,7 +172,7 @@ public class ahi extends pb {
 
    }
 
-   private void i(xd var1, int var2, int var3, int var4) {
+   private void i(World var1, int var2, int var3, int var4) {
       if(var1.a(var2, var3, var4) == this.bO) {
          var1.j(var2, var3, var4, this.bO);
          var1.j(var2 - 1, var3, var4, this.bO);
@@ -184,7 +184,7 @@ public class ahi extends pb {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       if(!var1.F) {
          this.h(var1, var2, var3, var4);
@@ -221,7 +221,7 @@ public class ahi extends pb {
       }
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       super.b_(var1, var2, var3, var4);
       if(!var1.F) {
          var1.j(var2, var3 + 1, var4, this.bO);
@@ -262,7 +262,7 @@ public class ahi extends pb {
       }
    }
 
-   private int f(xd var1, int var2, int var3, int var4, int var5) {
+   private int f(World var1, int var2, int var3, int var4, int var5) {
       if(var1.a(var2, var3, var4) != this.bO) {
          return var5;
       } else {
@@ -271,7 +271,7 @@ public class ahi extends pb {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          boolean var7 = this.e(var1, var2, var3, var4);
@@ -290,11 +290,11 @@ public class ahi extends pb {
       return yr.aC.bQ;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
-      return !this.a ? false : this.b((ali)var1, var2, var3, var4, var5);
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
+      return !this.a ? false : this.b((WorldInterface)var1, var2, var3, var4, var5);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(!this.a) {
          return false;
       } else if(var1.e(var2, var3, var4) == 0) {
@@ -332,7 +332,7 @@ public class ahi extends pb {
       return this.a;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       if(var6 > 0) {
          double var7 = (double)var2 + 0.5D + ((double)var5.nextFloat() - 0.5D) * 0.2D;
@@ -359,7 +359,7 @@ public class ahi extends pb {
 
    }
 
-   public static boolean e(ali var0, int var1, int var2, int var3, int var4) {
+   public static boolean e(WorldInterface var0, int var1, int var2, int var3, int var4) {
       int var5 = var0.a(var1, var2, var3);
       if(var5 == av.bO) {
          return true;
@@ -373,7 +373,7 @@ public class ahi extends pb {
       }
    }
 
-   public static boolean f(ali var0, int var1, int var2, int var3, int var4) {
+   public static boolean f(WorldInterface var0, int var1, int var2, int var3, int var4) {
       if(e(var0, var1, var2, var3, var4)) {
          return true;
       } else {

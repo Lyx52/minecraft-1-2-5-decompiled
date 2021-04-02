@@ -8,7 +8,7 @@ import java.util.Random;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class aiy extends oo {
+public class aiy extends InterfaceRendererUtils {
 
    private static tw d = new tw();
    private List e = new ArrayList();
@@ -30,20 +30,20 @@ public class aiy extends oo {
    }
 
    public void a(float var1, boolean var2, int var3, int var4) {
-      agd var5 = new agd(this.i.A, this.i.d, this.i.e);
-      int var6 = var5.a();
-      int var7 = var5.b();
+      WindowScaler var5 = new WindowScaler(this.i.options, this.i.width, this.i.height);
+      int var6 = var5.getWidth();
+      int var7 = var5.getHeight();
       nl var8 = this.i.q;
       this.i.u.b();
       GL11.glEnable(3042);
-      if(Minecraft.s()) {
+      if(Minecraft.getFancyGraphics()) {
          this.a(this.i.h.a(var1), var6, var7);
       } else {
          GL11.glBlendFunc(770, 771);
       }
 
       aan var9 = this.i.h.ap.f(3);
-      if(this.i.A.E == 0 && var9 != null && var9.c == pb.ba.bO) {
+      if(this.i.options.E == 0 && var9 != null && var9.c == pb.ba.bO) {
          this.b(var6, var7);
       }
 
@@ -153,7 +153,7 @@ public class aiy extends oo {
                }
 
                byte var30 = 0;
-               if(this.i.f.B().s()) {
+               if(this.i.f.B().isHardcore()) {
                   var30 = 5;
                }
 
@@ -276,7 +276,7 @@ public class aiy extends oo {
          var8.b(var34, var39, var40, var12);
       }
 
-      if(this.i.A.F) {
+      if(this.i.options.F) {
          GL11.glPushMatrix();
          if(Minecraft.J > 0L) {
             GL11.glTranslatef(0.0F, 32.0F, 0.0F);
@@ -298,10 +298,10 @@ public class aiy extends oo {
          this.b(var8, "x: " + this.i.h.o, 2, 64, 14737632);
          this.b(var8, "y: " + this.i.h.p, 2, 72, 14737632);
          this.b(var8, "z: " + this.i.h.q, 2, 80, 14737632);
-         this.b(var8, "f: " + (gk.c((double)(this.i.h.u * 4.0F / 360.0F) + 0.5D) & 3), 2, 88, 14737632);
-         var45 = gk.c(this.i.h.o);
-         var22 = gk.c(this.i.h.p);
-         var23 = gk.c(this.i.h.q);
+         this.b(var8, "f: " + (Utils.c((double)(this.i.h.u * 4.0F / 360.0F) + 0.5D) & 3), 2, 88, 14737632);
+         var45 = Utils.c(this.i.h.o);
+         var22 = Utils.c(this.i.h.p);
+         var23 = Utils.c(this.i.h.q);
          if(this.i.f != null && this.i.f.j(var45, var22, var23)) {
             ack var48 = this.i.f.c(var45, var23);
             this.b(var8, "lc: " + (var48.h() + 15) + " b: " + var48.a(var45 & 15, var23 & 15, this.i.f.i()).y + " bl: " + var48.a(wl.b, var45 & 15, var22, var23 & 15) + " sl: " + var48.a(wl.a, var45 & 15, var22, var23 & 15) + " rl: " + var48.c(var45 & 15, var22, var23 & 15, 0), 2, 96, 14737632);
@@ -344,7 +344,7 @@ public class aiy extends oo {
       GL11.glTranslatef(0.0F, (float)(var7 - 48), 0.0F);
       this.a(var8);
       GL11.glPopMatrix();
-      if(this.i.h instanceof ahv && this.i.A.y.e) {
+      if(this.i.h instanceof ahv && this.i.options.key_playerlist.e) {
          adl var37 = ((ahv)this.i.h).cl;
          List var38 = var37.c;
          var13 = var37.d;
@@ -466,11 +466,11 @@ public class aiy extends oo {
 
    private void f() {
       if(or.c != null) {
-         oq var1 = or.c;
+         EnderDragon var1 = or.c;
          or.c = null;
          nl var2 = this.i.q;
-         agd var3 = new agd(this.i.A, this.i.d, this.i.e);
-         int var4 = var3.a();
+         WindowScaler var3 = new WindowScaler(this.i.options, this.i.width, this.i.height);
+         int var4 = var3.getWidth();
          short var5 = 182;
          int var6 = var4 / 2 - var5 / 2;
          int var7 = (int)((float)var1.x() / (float)var1.d() * (float)(var5 + 1));
@@ -495,7 +495,7 @@ public class aiy extends oo {
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(3008);
       GL11.glBindTexture(3553, this.i.p.b("%blur%/mojang.misc/pumpkinblur.png"));
-      adz var3 = adz.a;
+      Tessalator var3 = Tessalator.a;
       var3.b();
       var3.a(0.0D, (double)var2, -90.0D, 0.0D, 1.0D);
       var3.a((double)var1, (double)var2, -90.0D, 1.0D, 1.0D);
@@ -524,7 +524,7 @@ public class aiy extends oo {
       GL11.glBlendFunc(0, 769);
       GL11.glColor4f(this.c, this.c, this.c, 1.0F);
       GL11.glBindTexture(3553, this.i.p.b("%blur%/mojang.misc/vignette.png"));
-      adz var4 = adz.a;
+      Tessalator var4 = Tessalator.a;
       var4.b();
       var4.a(0.0D, (double)var3, -90.0D, 0.0D, 1.0D);
       var4.a((double)var2, (double)var3, -90.0D, 1.0D, 1.0D);
@@ -554,7 +554,7 @@ public class aiy extends oo {
       float var5 = (float)(pb.be.bN / 16) / 16.0F;
       float var6 = (float)(pb.be.bN % 16 + 1) / 16.0F;
       float var7 = (float)(pb.be.bN / 16 + 1) / 16.0F;
-      adz var8 = adz.a;
+      Tessalator var8 = Tessalator.a;
       var8.b();
       var8.a(0.0D, (double)var3, -90.0D, (double)var4, (double)var7);
       var8.a((double)var2, (double)var3, -90.0D, (double)var6, (double)var7);
@@ -659,9 +659,9 @@ public class aiy extends oo {
       if(!this.e()) {
          return null;
       } else {
-         agd var3 = new agd(this.i.A, this.i.d, this.i.e);
-         var2 = var2 / var3.c - 40;
-         var1 = var1 / var3.c - 3;
+         WindowScaler var3 = new WindowScaler(this.i.options, this.i.width, this.i.height);
+         var2 = var2 / var3.scale - 40;
+         var1 = var1 / var3.scale - 3;
          if(var1 >= 0 && var2 >= 0) {
             int var4 = Math.min(20, this.e.size());
             if(var1 <= 320 && var2 < this.i.q.b * var4 + var4) {
@@ -683,12 +683,12 @@ public class aiy extends oo {
    }
 
    public boolean e() {
-      return this.i.s instanceof yf;
+      return this.i.guiManager instanceof yf;
    }
 
    public void c(String var1) {
-      adn var2 = adn.a();
-      String var3 = var2.b(var1);
+      LocalizationManager var2 = LocalizationManager.getInstance();
+      String var3 = var2.getLocaleStringByName(var1);
       this.a(var3);
    }
 

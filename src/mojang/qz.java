@@ -10,13 +10,13 @@ public class qz extends fe {
       this.c = ((ake)this.a).a();
    }
 
-   public void a(adg var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(Blaze var1, double var2, double var4, double var6, float var8, float var9) {
       int var10 = ((ake)this.a).a();
       if(var10 != this.c) {
          this.c = var10;
          this.a = new ake();
       }
 
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 }

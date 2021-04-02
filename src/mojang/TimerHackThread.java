@@ -2,25 +2,24 @@ package mojang;
 
 import mojang.net.minecraft.client.Minecraft;
 
-public class hj extends Thread {
+public class TimerHackThread extends Thread {
 
-   // $FF: synthetic field
-   final Minecraft a;
+   final Minecraft minecraft;
 
 
-   public hj(Minecraft var1, String var2) {
-      super(var2);
-      this.a = var1;
+   public TimerHackThread(Minecraft minecraftApplication, String threadName) {
+      super(threadName);
+      this.minecraft = minecraftApplication;
       this.setDaemon(true);
       this.start();
    }
 
    public void run() {
-      while(this.a.L) {
+      while(this.minecraft.running) {
          try {
             Thread.sleep(2147483647L);
-         } catch (InterruptedException var2) {
-            ;
+         } catch (InterruptedException e) {
+            e.printStackTrace();
          }
       }
 

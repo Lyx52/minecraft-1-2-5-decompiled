@@ -30,7 +30,7 @@ public class afi extends aih {
       rz.b((g)var1, var2, var3, this.g.a + 1, this.g.e - 4, this.g.f + 1, 0, this.c());
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       if(this.b < 0) {
          this.b = this.b(var1, var3);
          if(this.b < 0) {

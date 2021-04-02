@@ -10,7 +10,7 @@ public class afp extends agy {
       return this.bN;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(var5 > 0) {
          boolean var6 = var1.x(var2, var3, var4);
          oh var7 = (oh)var1.b(var2, var3, var4);
@@ -25,7 +25,7 @@ public class afp extends agy {
 
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {
@@ -39,7 +39,7 @@ public class afp extends agy {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       if(!var1.F) {
          oh var6 = (oh)var1.b(var2, var3, var4);
          if(var6 != null) {
@@ -53,7 +53,7 @@ public class afp extends agy {
       return new oh();
    }
 
-   public void b(xd var1, int var2, int var3, int var4, int var5, int var6) {
+   public void b(World var1, int var2, int var3, int var4, int var5, int var6) {
       float var7 = (float)Math.pow(2.0D, (double)(var6 - 12) / 12.0D);
       String var8 = "harp";
       if(var5 == 1) {

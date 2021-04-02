@@ -21,7 +21,7 @@ public class wx extends aas {
       return a(var7) && a(var0, var7) == null?new wx(var6, var1, var7, var5):null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       this.a(var1, var3, 0, 3, 0, 12, 4, 12, pb.bA.bO, pb.bA.bO, false);
       this.a(var1, var3, 0, 5, 0, 12, 13, 12, 0, 0, false);
       this.a(var1, var3, 0, 5, 0, 1, 12, 12, pb.bA.bO, pb.bA.bO, false);

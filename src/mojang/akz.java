@@ -9,7 +9,7 @@ public class akz extends rc {
    private double e;
    private double f;
    private double g;
-   private yw h;
+   private Player h;
    private int i = 0;
    private boolean j;
    private int k;
@@ -85,7 +85,7 @@ public class akz extends rc {
       if(this.a.f(this.h) < 6.25D) {
          this.a.aM().f();
       } else {
-         this.a.aM().a((acq)this.h, this.b);
+         this.a.aM().a((Mob)this.h, this.b);
       }
 
    }

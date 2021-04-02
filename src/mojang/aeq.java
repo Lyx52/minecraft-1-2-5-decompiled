@@ -6,10 +6,10 @@ import java.io.FilenameFilter;
 class aeq implements FilenameFilter {
 
    // $FF: synthetic field
-   final fp a;
+   final SaveFileManager a;
 
 
-   aeq(fp var1) {
+   aeq(SaveFileManager var1) {
       this.a = var1;
    }
 

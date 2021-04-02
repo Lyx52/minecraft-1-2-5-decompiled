@@ -18,16 +18,16 @@ public class ot extends agy {
       this.a(0.5F - var4, 0.0F, 0.5F - var4, 0.5F + var4, var5, 0.5F + var4);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4);
       return super.d(var1, var2, var3, var4);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       if(!this.b) {
          int var5 = var1.e(var2, var3, var4);
          float var6 = 0.28125F;
@@ -63,7 +63,7 @@ public class ot extends agy {
       return false;
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return true;
    }
 
@@ -83,7 +83,7 @@ public class ot extends agy {
       return yr.au.bQ;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       boolean var6 = false;
       if(this.b) {
          if(!var1.f(var2, var3 - 1, var4).a()) {

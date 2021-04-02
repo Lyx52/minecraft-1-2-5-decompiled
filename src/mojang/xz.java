@@ -3,7 +3,7 @@ package mojang;
 public class xz extends rc {
 
    private aaa a;
-   private acq b;
+   private Mob b;
    private double c;
    private double d;
    private double e;

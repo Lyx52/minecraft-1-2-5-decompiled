@@ -1,18 +1,18 @@
 package mojang;
 
-public class dw extends vp {
+public class dw extends GUIManager {
 
    private String a;
    private String b;
 
 
    public dw(String var1, String var2, Object ... var3) {
-      adn var4 = adn.a();
-      this.a = var4.b(var1);
+      LocalizationManager var4 = LocalizationManager.getInstance();
+      this.a = var4.getLocaleStringByName(var1);
       if(var3 != null) {
          this.b = var4.a(var2, var3);
       } else {
-         this.b = var4.b(var2);
+         this.b = var4.getLocaleStringByName(var2);
       }
 
    }
@@ -22,14 +22,14 @@ public class dw extends vp {
    protected void a(char var1, int var2) {}
 
    public void c() {
-      adn var1 = adn.a();
-      this.s.clear();
-      this.s.add(new abp(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.b("mojang.gui.toMenu")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.clear();
+      this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.toMenu")));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 0) {
-         this.p.a((vp)(new xt()));
+         this.minecraft.a((GUIManager)(new xt()));
       }
 
    }

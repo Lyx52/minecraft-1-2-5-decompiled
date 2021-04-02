@@ -1,5 +1,6 @@
 package mojang.com.jcraft.jorbis;
 
+import mojang.Utils;
 import mojang.com.jcraft.jogg.Buffer;
 
 class Floor0 extends FuncFloor {
@@ -57,7 +58,7 @@ class Floor0 extends FuncFloor {
       var7.linearmap = new int[var7.n];
 
       for(int var8 = 0; var8 < var7.n; ++var8) {
-         int var9 = mojang.gk.d(toBARK((float)((double)var6.rate / 2.0D / (double)var7.n * (double)var8)) * var4);
+         int var9 = Utils.d(toBARK((float)((double)var6.rate / 2.0D / (double)var7.n * (double)var8)) * var4);
          if(var9 >= var7.ln) {
             var9 = var7.ln;
          }

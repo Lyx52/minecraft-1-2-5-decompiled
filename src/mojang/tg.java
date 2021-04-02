@@ -19,7 +19,7 @@ public class tg extends fe {
       this.d = var3;
    }
 
-   protected void b(acq var1, float var2) {
+   protected void b(Mob var1, float var2) {
       super.b(var1, var2);
       aan var3 = var1.ae();
       if(var3 != null) {

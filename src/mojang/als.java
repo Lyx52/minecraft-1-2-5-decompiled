@@ -7,7 +7,7 @@ import java.util.Random;
 public class als extends rc {
 
    private bc d;
-   xd a;
+   World a;
    private bc e;
    int b = 0;
    float c;
@@ -40,7 +40,7 @@ public class als extends rc {
 
    public void e() {
       this.d.aJ().a(this.e, 10.0F, (float)this.d.ak());
-      this.d.aM().a((acq)this.e, this.c);
+      this.d.aM().a((Mob)this.e, this.c);
       ++this.b;
       if(this.b == 60) {
          this.i();
@@ -59,7 +59,7 @@ public class als extends rc {
             return null;
          }
 
-         nn var4 = (nn)var3.next();
+         BaseEntity var4 = (BaseEntity)var3.next();
          var5 = (bc)var4;
       } while(!this.d.b(var5));
 
@@ -75,7 +75,7 @@ public class als extends rc {
          this.e.p_();
          var1.d(-24000);
          var1.c(this.d.o, this.d.p, this.d.q, 0.0F, 0.0F);
-         this.a.a((nn)var1);
+         this.a.a((BaseEntity)var1);
          Random var2 = this.d.aO();
 
          for(int var3 = 0; var3 < 7; ++var3) {

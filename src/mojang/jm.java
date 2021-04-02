@@ -15,10 +15,10 @@ public class jm extends kf {
       this.b.a(0.0F, 5.0F, 2.0F);
    }
 
-   public void a(acq var1, float var2, float var3, float var4) {
+   public void a(Mob var1, float var2, float var3, float var4) {
       super.a(var1, var2, var3, var4);
-      this.a.d = 6.0F + ((cu)var1).c(var4) * 9.0F;
-      this.o = ((cu)var1).d(var4);
+      this.a.d = 6.0F + ((Sheep)var1).c(var4) * 9.0F;
+      this.o = ((Sheep)var1).d(var4);
    }
 
    public void a(float var1, float var2, float var3, float var4, float var5, float var6) {

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class yg {
 
-   protected xd a;
+   protected World a;
    protected Random b;
    protected int c;
    protected int d;
@@ -78,7 +78,7 @@ public class yg {
       this.e = var1;
    }
 
-   public void a(xd var1, Random var2, int var3, int var4) {
+   public void a(World var1, Random var2, int var3, int var4) {
       if(this.a != null) {
          throw new RuntimeException("Already decorating!!");
       } else {

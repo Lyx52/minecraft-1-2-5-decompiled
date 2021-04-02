@@ -44,9 +44,9 @@ public class za {
                   }
 
                   FileInputStream var5 = new FileInputStream(var4);
-                  ady var6 = at.a((InputStream)var5);
+                  CompundTag var6 = at.readLevelData((InputStream)var5);
                   var5.close();
-                  var3.a(var6.m("data"));
+                  var3.a(var6.getCompundTag("data"));
                }
             } catch (Exception var8) {
                var8.printStackTrace();
@@ -91,10 +91,10 @@ public class za {
          try {
             File var2 = this.a.a(var1.a);
             if(var2 != null) {
-               ady var3 = new ady();
+               CompundTag var3 = new CompundTag();
                var1.b(var3);
-               ady var4 = new ady();
-               var4.a("data", var3);
+               CompundTag var4 = new CompundTag();
+               var4.addCompundTag("data", var3);
                FileOutputStream var5 = new FileOutputStream(var2);
                at.a(var4, (OutputStream)var5);
                var5.close();
@@ -116,15 +116,15 @@ public class za {
          File var1 = this.a.a("idcounts");
          if(var1 != null && var1.exists()) {
             DataInputStream var2 = new DataInputStream(new FileInputStream(var1));
-            ady var3 = at.a((DataInput)var2);
+            CompundTag var3 = at.a((DataInput)var2);
             var2.close();
-            Iterator var4 = var3.d().iterator();
+            Iterator var4 = var3.getValues().iterator();
 
             while(var4.hasNext()) {
-               gh var5 = (gh)var4.next();
-               if(var5 instanceof ow) {
-                  ow var6 = (ow)var5;
-                  String var7 = var6.c();
+               BaseTag var5 = (BaseTag)var4.next();
+               if(var5 instanceof ShortTag) {
+                  ShortTag var6 = (ShortTag)var5;
+                  String var7 = var6.getTag();
                   short var8 = var6.a;
                   this.d.put(var7, Short.valueOf(var8));
                }
@@ -151,13 +151,13 @@ public class za {
          try {
             File var3 = this.a.a("idcounts");
             if(var3 != null) {
-               ady var4 = new ady();
+               CompundTag var4 = new CompundTag();
                Iterator var5 = this.d.keySet().iterator();
 
                while(var5.hasNext()) {
                   String var6 = (String)var5.next();
                   short var7 = ((Short)this.d.get(var6)).shortValue();
-                  var4.a(var6, var7);
+                  var4.addShort(var6, var7);
                }
 
                DataOutputStream var9 = new DataOutputStream(new FileOutputStream(var3));

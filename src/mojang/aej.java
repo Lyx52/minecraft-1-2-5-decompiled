@@ -2,11 +2,11 @@ package mojang;
 
 public class aej {
 
-   private acq a;
+   private Mob a;
    private boolean b = false;
 
 
-   public aej(acq var1) {
+   public aej(Mob var1) {
       this.a = var1;
    }
 

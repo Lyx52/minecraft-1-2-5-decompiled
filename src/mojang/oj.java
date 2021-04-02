@@ -2,42 +2,42 @@ package mojang;
 
 public class oj {
 
-   public static acj a(ady var0) {
-      int var1 = var0.f("xPos");
-      int var2 = var0.f("zPos");
+   public static acj a(CompundTag var0) {
+      int var1 = var0.getInt("xPos");
+      int var2 = var0.getInt("zPos");
       acj var3 = new acj(var1, var2);
-      var3.g = var0.k("Blocks");
-      var3.f = new pd(var0.k("Data"), 7);
-      var3.e = new pd(var0.k("SkyLight"), 7);
-      var3.d = new pd(var0.k("BlockLight"), 7);
-      var3.c = var0.k("HeightMap");
-      var3.b = var0.o("TerrainPopulated");
-      var3.h = var0.n("Entities");
-      var3.i = var0.n("TileEntities");
-      var3.j = var0.n("TileTicks");
+      var3.g = var0.getByteArray("Blocks");
+      var3.f = new pd(var0.getByteArray("Data"), 7);
+      var3.e = new pd(var0.getByteArray("SkyLight"), 7);
+      var3.d = new pd(var0.getByteArray("BlockLight"), 7);
+      var3.c = var0.getByteArray("HeightMap");
+      var3.b = var0.getBoolean("TerrainPopulated");
+      var3.h = var0.getListTag("Entities");
+      var3.i = var0.getListTag("TileEntities");
+      var3.j = var0.getListTag("TileTicks");
 
       try {
-         var3.a = var0.g("LastUpdate");
+         var3.a = var0.getLong("LastUpdate");
       } catch (ClassCastException var5) {
-         var3.a = (long)var0.f("LastUpdate");
+         var3.a = (long)var0.getInt("LastUpdate");
       }
 
       return var3;
    }
 
-   public static void a(acj var0, ady var1, rs var2) {
-      var1.a("xPos", var0.k);
-      var1.a("zPos", var0.l);
-      var1.a("LastUpdate", var0.a);
+   public static void a(acj var0, CompundTag var1, rs var2) {
+      var1.addInt("xPos", var0.k);
+      var1.addInt("zPos", var0.l);
+      var1.addLong("LastUpdate", var0.a);
       int[] var3 = new int[var0.c.length];
 
       for(int var4 = 0; var4 < var0.c.length; ++var4) {
          var3[var4] = var0.c[var4];
       }
 
-      var1.a("HeightMap", var3);
-      var1.a("TerrainPopulated", var0.b);
-      no var16 = new no("Sections");
+      var1.addIntArray("HeightMap", var3);
+      var1.addBoolean("TerrainPopulated", var0.b);
+      ListTag var16 = new ListTag("Sections");
 
       int var7;
       for(int var5 = 0; var5 < 8; ++var5) {
@@ -86,17 +86,17 @@ public class oj {
                }
             }
 
-            ady var24 = new ady();
-            var24.a("Y", (byte)(var5 & 255));
-            var24.a("Blocks", var19);
-            var24.a("Data", var20.a);
-            var24.a("SkyLight", var21.a);
-            var24.a("BlockLight", var22.a);
-            var16.a((gh)var24);
+            CompundTag var24 = new CompundTag();
+            var24.addByte("Y", (byte)(var5 & 255));
+            var24.addByteArray("Blocks", var19);
+            var24.addByteArray("Data", var20.a);
+            var24.addByteArray("SkyLight", var21.a);
+            var24.addByteArray("BlockLight", var22.a);
+            var16.a((BaseTag)var24);
          }
       }
 
-      var1.a("Sections", (gh)var16);
+      var1.addBaseTag("Sections", (BaseTag)var16);
       byte[] var17 = new byte[256];
 
       for(int var18 = 0; var18 < 16; ++var18) {
@@ -105,11 +105,11 @@ public class oj {
          }
       }
 
-      var1.a("Biomes", var17);
-      var1.a("Entities", (gh)var0.h);
-      var1.a("TileEntities", (gh)var0.i);
+      var1.addByteArray("Biomes", var17);
+      var1.addBaseTag("Entities", (BaseTag)var0.h);
+      var1.addBaseTag("TileEntities", (BaseTag)var0.i);
       if(var0.j != null) {
-         var1.a("TileTicks", (gh)var0.j);
+         var1.addBaseTag("TileTicks", (BaseTag)var0.j);
       }
 
    }

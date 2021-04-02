@@ -38,7 +38,7 @@ public class vb extends ho {
       this.e.a(-2.0F, 0.0F, -2.0F, 4, 12, 4, var1);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.a.a(var7);
       this.b.a(var7);
@@ -53,8 +53,8 @@ public class vb extends ho {
       this.c.d = 3.0F;
       this.c.e = -1.0F;
       this.c.f = -0.75F;
-      this.d.f = gk.b(var1 * 0.6662F) * 1.4F * var2 * 0.5F;
-      this.e.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.4F * var2 * 0.5F;
+      this.d.f = Utils.cos(var1 * 0.6662F) * 1.4F * var2 * 0.5F;
+      this.e.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.4F * var2 * 0.5F;
       this.d.g = 0.0F;
       this.e.g = 0.0F;
    }

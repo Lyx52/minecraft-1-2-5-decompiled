@@ -11,7 +11,7 @@ public class sr extends gb {
    private boolean k;
 
 
-   public sr(yw var1) {
+   public sr(Player var1) {
       super(new os(var1));
       var1.ar = this.d;
       this.t = true;
@@ -20,8 +20,8 @@ public class sr extends gb {
    }
 
    public void a() {
-      if(!this.p.c.h()) {
-         this.p.a((vp)(new ain(this.p.h)));
+      if(!this.minecraft.c.h()) {
+         this.minecraft.a((GUIManager)(new ain(this.minecraft.h)));
       }
 
    }
@@ -31,7 +31,7 @@ public class sr extends gb {
       aan var6;
       if(var1 != null) {
          if(var1.b == h) {
-            var5 = this.p.h.ap;
+            var5 = this.minecraft.h.ap;
             var6 = var5.k();
             aan var7 = var1.b();
             if(var6 != null && var7 != null && var6.c == var7.c) {
@@ -58,23 +58,23 @@ public class sr extends gb {
                }
             }
          } else {
-            this.d.a(var1.c, var3, var4, this.p.h);
+            this.d.a(var1.c, var3, var4, this.minecraft.h);
             aan var8 = this.d.b(var1.c).b();
-            this.p.c.a(var8, var1.c - this.d.e.size() + 9 + 36);
+            this.minecraft.c.a(var8, var1.c - this.d.e.size() + 9 + 36);
          }
       } else {
-         var5 = this.p.h.ap;
+         var5 = this.minecraft.h.ap;
          if(var5.k() != null) {
             if(var3 == 0) {
-               this.p.h.a(var5.k());
-               this.p.c.a(var5.k());
+               this.minecraft.h.a(var5.k());
+               this.minecraft.c.a(var5.k());
                var5.b((aan)null);
             }
 
             if(var3 == 1) {
                var6 = var5.k().a(1);
-               this.p.h.a(var6);
-               this.p.c.a(var6);
+               this.minecraft.h.a(var6);
+               this.minecraft.c.a(var6);
                if(var5.k().a == 0) {
                   var5.b((aan)null);
                }
@@ -85,11 +85,11 @@ public class sr extends gb {
    }
 
    public void c() {
-      if(!this.p.c.h()) {
-         this.p.a((vp)(new ain(this.p.h)));
+      if(!this.minecraft.c.h()) {
+         this.minecraft.a((GUIManager)(new ain(this.minecraft.h)));
       } else {
          super.c();
-         this.s.clear();
+         this.buttonList.clear();
       }
 
    }
@@ -162,8 +162,8 @@ public class sr extends gb {
 
    protected void a(float var1, int var2, int var3) {
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      int var4 = this.p.p.b("/mojang/gui/allitems.png");
-      this.p.p.b(var4);
+      int var4 = this.minecraft.p.b("/mojang/gui/allitems.png");
+      this.minecraft.p.b(var4);
       int var5 = this.e;
       int var6 = this.f;
       this.b(var5, var6, 0, 0, this.b, this.c);
@@ -173,13 +173,13 @@ public class sr extends gb {
       this.b(var5 + 154, var6 + 17 + (int)((float)(var9 - var8 - 17) * this.i), 0, 208, 16, 16);
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 0) {
-         this.p.a((vp)(new ro(this.p.K)));
+         this.minecraft.a((GUIManager)(new ro(this.minecraft.K)));
       }
 
       if(var1.f == 1) {
-         this.p.a((vp)(new dc(this, this.p.K)));
+         this.minecraft.a((GUIManager)(new dc(this, this.minecraft.K)));
       }
 
    }

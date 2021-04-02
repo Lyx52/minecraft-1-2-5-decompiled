@@ -8,10 +8,10 @@ public class pc implements ca {
    private ack a;
    private en b = new en();
    private List c = new ArrayList();
-   private xd d;
+   private World d;
 
 
-   public pc(xd var1) {
+   public pc(World var1) {
       this.a = new ace(var1, 0, 0);
       this.d = var1;
    }
@@ -64,7 +64,7 @@ public class pc implements ca {
       return null;
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return null;
    }
 }

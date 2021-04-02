@@ -4,8 +4,8 @@ public class yj extends yf {
 
    public void c() {
       super.c();
-      adn var1 = adn.a();
-      this.s.add(new abp(1, this.q / 2 - 100, this.r - 40, var1.b("multiplayer.stopSleeping")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.add(new Button(1, this.q / 2 - 100, this.r - 40, var1.getLocaleStringByName("multiplayer.stopSleeping")));
    }
 
    protected void a(char var1, int var2) {
@@ -14,18 +14,18 @@ public class yj extends yf {
       } else if(var2 == 28) {
          String var3 = this.a.b().trim();
          if(var3.length() > 0) {
-            this.p.h.a(var3);
+            this.minecraft.h.a(var3);
          }
 
          this.a.a("");
-         this.p.w.d();
+         this.minecraft.w.d();
       } else {
          super.a(var1, var2);
       }
 
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 1) {
          this.g();
       } else {
@@ -35,9 +35,9 @@ public class yj extends yf {
    }
 
    private void g() {
-      if(this.p.h instanceof ahv) {
-         adl var1 = ((ahv)this.p.h).cl;
-         var1.c(new aig(this.p.h, 3));
+      if(this.minecraft.h instanceof ahv) {
+         adl var1 = ((ahv)this.minecraft.h).cl;
+         var1.c(new aig(this.minecraft.h, 3));
       }
 
    }

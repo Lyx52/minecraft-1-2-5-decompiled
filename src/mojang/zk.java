@@ -10,9 +10,9 @@ public abstract class zk {
       this.a = var1;
    }
 
-   public abstract void a(ady var1);
+   public abstract void a(CompundTag var1);
 
-   public abstract void b(ady var1);
+   public abstract void b(CompundTag var1);
 
    public void a() {
       this.a(true);

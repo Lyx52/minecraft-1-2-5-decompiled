@@ -2,12 +2,12 @@ package mojang;
 
 public class yc extends rc {
 
-   private tl a;
-   private ed b;
+   private VillagerGolem a;
+   private Villager b;
    private int c;
 
 
-   public yc(tl var1) {
+   public yc(VillagerGolem var1) {
       this.a = var1;
       this.a(3);
    }
@@ -18,7 +18,7 @@ public class yc extends rc {
       } else if(this.a.aO().nextInt(8000) != 0) {
          return false;
       } else {
-         this.b = (ed)this.a.k.a(ed.class, this.a.y.b(6.0D, 2.0D, 6.0D), this.a);
+         this.b = (Villager)this.a.k.a(Villager.class, this.a.y.b(6.0D, 2.0D, 6.0D), this.a);
          return this.b != null;
       }
    }

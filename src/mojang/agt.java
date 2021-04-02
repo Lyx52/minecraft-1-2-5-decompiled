@@ -10,11 +10,11 @@ public abstract class agt extends xu {
    protected HashMap e = new HashMap();
 
 
-   public void a(ca var1, xd var2, int var3, int var4, byte[] var5) {
+   public void a(ca var1, World var2, int var3, int var4, byte[] var5) {
       super.a(var1, var2, var3, var4, var5);
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, byte[] var6) {
+   protected void a(World var1, int var2, int var3, int var4, int var5, byte[] var6) {
       if(!this.e.containsKey(Long.valueOf(sj.a(var2, var3)))) {
          this.c.nextInt();
          if(this.a(var2, var3)) {
@@ -25,7 +25,7 @@ public abstract class agt extends xu {
       }
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4) {
+   public boolean a(World var1, Random var2, int var3, int var4) {
       int var5 = (var3 << 4) + 8;
       int var6 = (var4 << 4) + 8;
       boolean var7 = false;
@@ -62,7 +62,7 @@ public abstract class agt extends xu {
       return false;
    }
 
-   public qo a(xd var1, int var2, int var3, int var4) {
+   public qo a(World var1, int var2, int var3, int var4) {
       this.d = var1;
       this.c.setSeed(var1.v());
       long var5 = this.c.nextLong();

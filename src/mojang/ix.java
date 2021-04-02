@@ -7,12 +7,12 @@ public class ix extends fe {
       this.a(var2);
    }
 
-   protected int a(qr var1, int var2, float var3) {
+   protected int a(Pig var1, int var2, float var3) {
       this.a("/mojang/mob/saddle.png");
       return var2 == 0 && var1.aa()?1:-1;
    }
 
-   public void a(qr var1, double var2, double var4, double var6, float var8, float var9) {
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+   public void a(Pig var1, double var2, double var4, double var6, float var8, float var9) {
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 }

@@ -9,8 +9,8 @@ public class bn extends abn {
       this.I.z = 50;
       this.I.B = 25;
       this.I.A = 4;
-      this.J.add(new bg(uo.class, 2, 1, 1));
-      this.K.add(new bg(rd.class, 10, 4, 4));
+      this.J.add(new bg(Ozelot.class, 2, 1, 1));
+      this.K.add(new bg(Chicken.class, 10, 4, 4));
    }
 
    public li a(Random var1) {
@@ -21,7 +21,7 @@ public class bn extends abn {
       return var1.nextInt(4) == 0?new to(pb.X.bO, 2):new to(pb.X.bO, 1);
    }
 
-   public void a(xd var1, Random var2, int var3, int var4) {
+   public void a(World var1, Random var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       od var5 = new od();
 

@@ -8,7 +8,7 @@ public class rb extends li {
       super(var1);
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6 = var2.nextInt(4) + 6;
       int var7 = 1 + var2.nextInt(2);
       int var8 = var6 - var7;

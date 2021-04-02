@@ -9,7 +9,7 @@ abstract class fh extends he {
       super(var1);
    }
 
-   protected void a(xd var1, Random var2, qg var3, mg var4, int var5, int var6, int var7) {
+   protected void a(World var1, Random var2, qg var3, mg var4, int var5, int var6, int var7) {
       switch(aq.a[var4.ordinal()]) {
       case 1:
       default:

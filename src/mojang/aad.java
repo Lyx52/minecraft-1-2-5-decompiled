@@ -66,7 +66,7 @@ public class aad {
       return this.H;
    }
 
-   public void a(acq var1, int var2) {
+   public void a(Mob var1, int var2) {
       if(this.H == l.H) {
          if(var1.bb() < var1.d()) {
             var1.k(1);
@@ -75,8 +75,8 @@ public class aad {
          if(var1.bb() > 1) {
             var1.a(md.m, 1);
          }
-      } else if(this.H == s.H && var1 instanceof yw) {
-         ((yw)var1).c(0.025F * (float)(var2 + 1));
+      } else if(this.H == s.H && var1 instanceof Player) {
+         ((Player)var1).c(0.025F * (float)(var2 + 1));
       } else if((this.H != h.H || var1.bh()) && (this.H != i.H || !var1.bh())) {
          if(this.H == i.H && !var1.bh() || this.H == h.H && var1.bh()) {
             var1.a(md.m, 6 << var2);
@@ -87,7 +87,7 @@ public class aad {
 
    }
 
-   public void a(acq var1, acq var2, int var3, double var4) {
+   public void a(Mob var1, Mob var2, int var3, double var4) {
       int var6;
       if((this.H != h.H || var2.bh()) && (this.H != i.H || !var2.bh())) {
          if(this.H == i.H && !var2.bh() || this.H == h.H && var2.bh()) {

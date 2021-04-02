@@ -24,9 +24,9 @@ public class ada extends yg {
       }
 
       if(this.c == 0 && this.d == 0) {
-         oq var4 = new oq(this.a);
+         EnderDragon var4 = new EnderDragon(this.a);
          var4.c(0.0D, 128.0D, 0.0D, this.b.nextFloat() * 360.0F, 0.0F);
-         this.a.a((nn)var4);
+         this.a.a((BaseEntity)var4);
       }
 
    }

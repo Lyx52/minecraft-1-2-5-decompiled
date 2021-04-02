@@ -9,7 +9,7 @@ public class abx extends pb {
       this.bN = 26;
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 == 1) {
          return this.bN - 1;
       } else if(var5 == 0) {
@@ -44,11 +44,11 @@ public class abx extends pb {
       return var1 == 1?this.bN - 1:(var1 == 0?this.bN - 1:(var1 == 3?this.bN + 1:this.bN));
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       var1.g(var2, var3, var4, 0);
    }
 }

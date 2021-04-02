@@ -7,7 +7,7 @@ public class ra extends ve {
       this.f(1);
    }
 
-   public static aaj a(short var0, xd var1) {
+   public static aaj a(short var0, World var1) {
       //"map_" + var0;
       aaj var3 = (aaj)var1.a(aaj.class, "map_" + var0);
       if(var3 == null) {
@@ -20,15 +20,15 @@ public class ra extends ve {
       return var3;
    }
 
-   public aaj a(aan var1, xd var2) {
+   public aaj a(aan var1, World var2) {
       //"map_" + var1.i();
       aaj var4 = (aaj)var2.a(aaj.class, "map_" + var1.i());
       if(var4 == null) {
          var1.b(var2.b("map"));
          String var3 = "map_" + var1.i();
          var4 = new aaj(var3);
-         var4.b = var2.B().c();
-         var4.c = var2.B().e();
+         var4.b = var2.B().getSpawnX();
+         var4.c = var2.B().getSpawnZ();
          var4.e = 3;
          var4.d = (byte)var2.t.g;
          var4.a();
@@ -38,15 +38,15 @@ public class ra extends ve {
       return var4;
    }
 
-   public void a(xd var1, nn var2, aaj var3) {
+   public void a(World var1, BaseEntity var2, aaj var3) {
       if(var1.t.g == var3.d) {
          short var4 = 128;
          short var5 = 128;
          int var6 = 1 << var3.e;
          int var7 = var3.b;
          int var8 = var3.c;
-         int var9 = gk.c(var2.o - (double)var7) / var6 + var4 / 2;
-         int var10 = gk.c(var2.q - (double)var8) / var6 + var5 / 2;
+         int var9 = Utils.c(var2.o - (double)var7) / var6 + var4 / 2;
+         int var10 = Utils.c(var2.q - (double)var8) / var6 + var5 / 2;
          int var11 = 128 / var6;
          if(var1.t.e) {
             var11 /= 2;
@@ -201,11 +201,11 @@ public class ra extends ve {
       }
    }
 
-   public void a(aan var1, xd var2, nn var3, int var4, boolean var5) {
+   public void a(aan var1, World var2, BaseEntity var3, int var4, boolean var5) {
       if(!var2.F) {
          aaj var6 = this.a(var1, var2);
-         if(var3 instanceof yw) {
-            yw var7 = (yw)var3;
+         if(var3 instanceof Player) {
+            Player var7 = (Player)var3;
             var6.a(var7, var1);
          }
 
@@ -216,13 +216,13 @@ public class ra extends ve {
       }
    }
 
-   public void c(aan var1, xd var2, yw var3) {
+   public void c(aan var1, World var2, Player var3) {
       var1.b(var2.b("map"));
       String var4 = "map_" + var1.i();
       aaj var5 = new aaj(var4);
       var2.a(var4, (zk)var5);
-      var5.b = gk.c(var3.o);
-      var5.c = gk.c(var3.q);
+      var5.b = Utils.c(var3.o);
+      var5.c = Utils.c(var3.q);
       var5.e = 3;
       var5.d = (byte)var2.t.g;
       var5.a();

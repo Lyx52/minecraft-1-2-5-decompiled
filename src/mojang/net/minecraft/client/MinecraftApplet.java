@@ -3,101 +3,97 @@ package mojang.net.minecraft.client;
 import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import mojang.o;
-import mojang.n;
-import mojang.fc;
+import mojang.GameCanvas;
+import mojang.MinecraftChild;
+import mojang.CredentialManager;
 public class MinecraftApplet extends Applet {
 
-   private Canvas a;
-   private Minecraft b;
-   private Thread c = null;
+   private Canvas canvas;
+   private Minecraft minecraftApplication;
+   private Thread mainThread = null;
 
 
    public void init() {
-      this.a = new o(this);
-      boolean var1 = false;
+      this.canvas = new GameCanvas(this);
+      boolean fullscreen = false;
       if(this.getParameter("fullscreen") != null) {
-         var1 = this.getParameter("fullscreen").equalsIgnoreCase("true");
+         fullscreen = this.getParameter("fullscreen").equalsIgnoreCase("true");
       }
 
-      this.b = new n(this, this, this.a, this, this.getWidth(), this.getHeight(), var1);
-      this.b.l = this.getDocumentBase().getHost();
+      this.minecraftApplication = new MinecraftChild(this, this, this.canvas, this, this.getWidth(), this.getHeight(), fullscreen);
+      this.minecraftApplication.host = this.getDocumentBase().getHost();
       if(this.getDocumentBase().getPort() > 0) {
-         this.b.l = this.b.l + ":" + this.getDocumentBase().getPort();
+         this.minecraftApplication.host = this.minecraftApplication.host + ":" + this.getDocumentBase().getPort();
       }
 
       if(this.getParameter("username") != null && this.getParameter("sessionid") != null) {
-         this.b.k = new fc(this.getParameter("username"), this.getParameter("sessionid"));
-         System.out.println("Setting user: " + this.b.k.b + ", " + this.b.k.c);
+         this.minecraftApplication.credentials = new CredentialManager(this.getParameter("username"), this.getParameter("sessionid"));
+         System.out.println("Setting user: " + this.minecraftApplication.credentials.username + ", " + this.minecraftApplication.credentials.sessionid);
          if(this.getParameter("mppass") != null) {
-            this.b.k.d = this.getParameter("mppass");
+            this.minecraftApplication.credentials.mppass = this.getParameter("mppass");
          }
       } else {
-         this.b.k = new fc("Player", "");
+         this.minecraftApplication.credentials = new CredentialManager("Player", "");
       }
 
       if(this.getParameter("server") != null && this.getParameter("port") != null) {
-         this.b.a(this.getParameter("server"), Integer.parseInt(this.getParameter("port")));
+         this.minecraftApplication.setServer(this.getParameter("server"), Integer.parseInt(this.getParameter("port")));
       }
 
-      this.b.n = true;
+      this.minecraftApplication.appletMode = true;
       if ("true".equals(this.getParameter("stand-alone"))) {
-         this.b.n = false;
+         this.minecraftApplication.appletMode = false;
       }
 
       this.setLayout(new BorderLayout());
-      this.add(this.a, "Center");
-      this.a.setFocusable(true);
+      this.add(this.canvas, "Center");
+      this.canvas.setFocusable(true);
       this.validate();
    }
 
-   public void a() {
-      if(this.c == null) {
-         this.c = new Thread(this.b, "Minecraft main thread");
-         this.c.start();
+   public void startMainThread() {
+      if(this.mainThread == null) {
+         this.mainThread = new Thread(this.minecraftApplication, "Minecraft main thread");
+         this.mainThread.start();
       }
    }
 
    public void start() {
-      if(this.b != null) {
-         this.b.o = false;
+      if(this.minecraftApplication != null) {
+         this.minecraftApplication._running = false;
       }
 
    }
 
    public void stop() {
-      if(this.b != null) {
-         this.b.o = true;
+      if(this.minecraftApplication != null) {
+         this.minecraftApplication._running = true;
       }
 
    }
 
    public void destroy() {
-      this.b();
-   }
-
-   public void b() {
-      if(this.c != null) {
-         this.b.f();
+      if(this.mainThread != null) {
+         this.minecraftApplication.stop();
 
          try {
-            this.c.join(10000L);
+            this.mainThread.join(10000L);
          } catch (InterruptedException var4) {
             try {
-               this.b.d();
-            } catch (Exception var3) {
-               var3.printStackTrace();
+               this.minecraftApplication.d();
+            } catch (Exception e) {
+               e.printStackTrace();
             }
          }
 
-         this.c = null;
+         this.mainThread = null;
       }
    }
 
    public void c() {
-      this.a = null;
-      this.b = null;
-      this.c = null;
+      this.canvas = null;
+      this.minecraftApplication = null;
+      this.mainThread = null;
 
       try {
          this.removeAll();

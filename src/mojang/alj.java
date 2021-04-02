@@ -20,12 +20,12 @@ public class alj extends agy {
       return P.bO;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       this.h(var1, var2, var3, var4);
    }
 
-   private void h(xd var1, int var2, int var3, int var4) {
+   private void h(World var1, int var2, int var3, int var4) {
       if(!var1.F) {
          int var5 = var1.a(var2, var3, var4 - 1);
          int var6 = var1.a(var2, var3, var4 + 1);
@@ -52,7 +52,7 @@ public class alj extends agy {
       }
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 == 1) {
          return this.bN + 17;
       } else if(var5 == 0) {
@@ -67,7 +67,7 @@ public class alj extends agy {
       return var1 == 1?this.bN + 17:(var1 == 0?this.bN + 17:(var1 == 3?this.bN + 1:this.bN));
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {
@@ -80,7 +80,7 @@ public class alj extends agy {
       }
    }
 
-   private void c(xd var1, int var2, int var3, int var4, Random var5) {
+   private void c(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       byte var9 = 0;
       byte var10 = 0;
@@ -104,40 +104,40 @@ public class alj extends agy {
             var1.g(1001, var2, var3, var4, 0);
          } else {
             if(var12.c == yr.l.bQ) {
-               nm var19 = new nm(var1, var13, var15, var17);
+               Arrow var19 = new Arrow(var1, var13, var15, var17);
                var19.a((double)var9, 0.10000000149011612D, (double)var10, 1.1F, 6.0F);
                var19.a = true;
-               var1.a((nn)var19);
+               var1.a((BaseEntity)var19);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.aP.bQ) {
                qe var22 = new qe(var1, var13, var15, var17);
                var22.a((double)var9, 0.10000000149011612D, (double)var10, 1.1F, 6.0F);
-               var1.a((nn)var22);
+               var1.a((BaseEntity)var22);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.aD.bQ) {
-               uq var23 = new uq(var1, var13, var15, var17);
+               Snowball var23 = new Snowball(var1, var13, var15, var17);
                var23.a((double)var9, 0.10000000149011612D, (double)var10, 1.1F, 6.0F);
-               var1.a((nn)var23);
+               var1.a((BaseEntity)var23);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.bs.bQ && ei.c(var12.i())) {
-               bj var27 = new bj(var1, var13, var15, var17, var12.i());
+               ThrownPotion var27 = new ThrownPotion(var1, var13, var15, var17, var12.i());
                var27.a((double)var9, 0.10000000149011612D, (double)var10, 1.375F, 3.0F);
-               var1.a((nn)var27);
+               var1.a((BaseEntity)var27);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.bD.bQ) {
-               hf var24 = new hf(var1, var13, var15, var17);
+               ThrownExpBottle var24 = new ThrownExpBottle(var1, var13, var15, var17);
                var24.a((double)var9, 0.10000000149011612D, (double)var10, 1.375F, 3.0F);
-               var1.a((nn)var24);
+               var1.a((BaseEntity)var24);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.bC.bQ) {
                acv.a(var1, var12.i(), var13 + (double)var9 * 0.3D, var15 - 0.3D, var17 + (double)var10 * 0.3D);
                var1.g(1002, var2, var3, var4, 0);
             } else if(var12.c == yr.bE.bQ) {
-               qb var25 = new qb(var1, var13 + (double)var9 * 0.3D, var15, var17 + (double)var10 * 0.3D, (double)var9 + var5.nextGaussian() * 0.05D, var5.nextGaussian() * 0.05D, (double)var10 + var5.nextGaussian() * 0.05D);
-               var1.a((nn)var25);
+               SmallFireball var25 = new SmallFireball(var1, var13 + (double)var9 * 0.3D, var15, var17 + (double)var10 * 0.3D, (double)var9 + var5.nextGaussian() * 0.05D, var5.nextGaussian() * 0.05D, (double)var10 + var5.nextGaussian() * 0.05D);
+               var1.a((BaseEntity)var25);
                var1.g(1009, var2, var3, var4, 0);
             } else {
-               fq var26 = new fq(var1, var13, var15 - 0.3D, var17, var12);
+               Item var26 = new Item(var1, var13, var15 - 0.3D, var17, var12);
                double var20 = var5.nextDouble() * 0.1D + 0.2D;
                var26.r = (double)var9 * var20;
                var26.s = 0.20000000298023224D;
@@ -145,7 +145,7 @@ public class alj extends agy {
                var26.r += var5.nextGaussian() * 0.007499999832361937D * 6.0D;
                var26.s += var5.nextGaussian() * 0.007499999832361937D * 6.0D;
                var26.t += var5.nextGaussian() * 0.007499999832361937D * 6.0D;
-               var1.a((nn)var26);
+               var1.a((BaseEntity)var26);
                var1.g(1000, var2, var3, var4, 0);
             }
 
@@ -155,7 +155,7 @@ public class alj extends agy {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(var5 > 0 && m[var5].g()) {
          boolean var6 = var1.x(var2, var3, var4) || var1.x(var2, var3 + 1, var4);
          if(var6) {
@@ -165,7 +165,7 @@ public class alj extends agy {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F && (var1.x(var2, var3, var4) || var1.x(var2, var3 + 1, var4))) {
          this.c(var1, var2, var3, var4, var5);
       }
@@ -176,8 +176,8 @@ public class alj extends agy {
       return new az();
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
-      int var6 = gk.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
+      int var6 = Utils.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
       if(var6 == 0) {
          var1.f(var2, var3, var4, 2);
       }
@@ -196,7 +196,7 @@ public class alj extends agy {
 
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       az var5 = (az)var1.b(var2, var3, var4);
       if(var5 != null) {
          for(int var6 = 0; var6 < var5.a(); ++var6) {
@@ -213,16 +213,16 @@ public class alj extends agy {
                   }
 
                   var7.a -= var11;
-                  fq var12 = new fq(var1, (double)((float)var2 + var8), (double)((float)var3 + var9), (double)((float)var4 + var10), new aan(var7.c, var11, var7.i()));
+                  Item var12 = new Item(var1, (double)((float)var2 + var8), (double)((float)var3 + var9), (double)((float)var4 + var10), new aan(var7.c, var11, var7.i()));
                   if(var7.n()) {
-                     var12.a.d((ady)var7.o().b());
+                     var12.a.d((CompundTag)var7.o().b());
                   }
 
                   float var13 = 0.05F;
                   var12.r = (double)((float)this.a.nextGaussian() * var13);
                   var12.s = (double)((float)this.a.nextGaussian() * var13 + 0.2F);
                   var12.t = (double)((float)this.a.nextGaussian() * var13);
-                  var1.a((nn)var12);
+                  var1.a((BaseEntity)var12);
                }
             }
          }

@@ -18,12 +18,12 @@ public class iy extends abs {
 
    public iy() {}
 
-   public iy(yw var1) {
+   public iy(Player var1) {
       this.a = var1.f;
       this.b = var1.aA;
-      this.c = gk.c(var1.o * 32.0D);
-      this.d = gk.c(var1.p * 32.0D);
-      this.e = gk.c(var1.q * 32.0D);
+      this.c = Utils.c(var1.o * 32.0D);
+      this.d = Utils.c(var1.p * 32.0D);
+      this.e = Utils.c(var1.q * 32.0D);
       this.f = (byte)((int)(var1.u * 256.0F / 360.0F));
       this.g = (byte)((int)(var1.v * 256.0F / 360.0F));
       aan var2 = var1.ap.b();

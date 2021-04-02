@@ -2,7 +2,7 @@ package mojang;
 
 import java.util.List;
 
-public class act extends nn {
+public class act extends BaseEntity {
 
    private int d;
    private int e;
@@ -10,11 +10,11 @@ public class act extends nn {
    private int an;
    private boolean ao;
    public int a;
-   public yw b;
+   public Player b;
    private int ap;
    private int aq;
    private int ar;
-   public nn c;
+   public BaseEntity c;
    private int as;
    private double at;
    private double au;
@@ -26,7 +26,7 @@ public class act extends nn {
    private double aA;
 
 
-   public act(xd var1) {
+   public act(World var1) {
       super(var1);
       this.d = -1;
       this.e = -1;
@@ -41,13 +41,13 @@ public class act extends nn {
       this.ak = true;
    }
 
-   public act(xd var1, double var2, double var4, double var6) {
+   public act(World var1, double var2, double var4, double var6) {
       this(var1);
       this.d(var2, var4, var6);
       this.ak = true;
    }
 
-   public act(xd var1, yw var2) {
+   public act(World var1, Player var2) {
       super(var1);
       this.d = -1;
       this.e = -1;
@@ -63,15 +63,15 @@ public class act extends nn {
       this.b.aZ = this;
       this.a(0.25F, 0.25F);
       this.c(var2.o, var2.p + 1.62D - (double)var2.H, var2.q, var2.u, var2.v);
-      this.o -= (double)(gk.b(this.u / 180.0F * 3.1415927F) * 0.16F);
+      this.o -= (double)(Utils.cos(this.u / 180.0F * 3.1415927F) * 0.16F);
       this.p -= 0.10000000149011612D;
-      this.q -= (double)(gk.a(this.u / 180.0F * 3.1415927F) * 0.16F);
+      this.q -= (double)(Utils.sin(this.u / 180.0F * 3.1415927F) * 0.16F);
       this.d(this.o, this.p, this.q);
       this.H = 0.0F;
       float var3 = 0.4F;
-      this.r = (double)(-gk.a(this.u / 180.0F * 3.1415927F) * gk.b(this.v / 180.0F * 3.1415927F) * var3);
-      this.t = (double)(gk.b(this.u / 180.0F * 3.1415927F) * gk.b(this.v / 180.0F * 3.1415927F) * var3);
-      this.s = (double)(-gk.a(this.v / 180.0F * 3.1415927F) * var3);
+      this.r = (double)(-Utils.sin(this.u / 180.0F * 3.1415927F) * Utils.cos(this.v / 180.0F * 3.1415927F) * var3);
+      this.t = (double)(Utils.cos(this.u / 180.0F * 3.1415927F) * Utils.cos(this.v / 180.0F * 3.1415927F) * var3);
+      this.s = (double)(-Utils.sin(this.v / 180.0F * 3.1415927F) * var3);
       this.a(this.r, this.s, this.t, 1.5F, 1.0F);
    }
 
@@ -84,7 +84,7 @@ public class act extends nn {
    }
 
    public void a(double var1, double var3, double var5, float var7, float var8) {
-      float var9 = gk.a(var1 * var1 + var3 * var3 + var5 * var5);
+      float var9 = Utils.sqrt(var1 * var1 + var3 * var3 + var5 * var5);
       var1 /= (double)var9;
       var3 /= (double)var9;
       var5 /= (double)var9;
@@ -97,7 +97,7 @@ public class act extends nn {
       this.r = var1;
       this.s = var3;
       this.t = var5;
-      float var10 = gk.a(var1 * var1 + var5 * var5);
+      float var10 = Utils.sqrt(var1 * var1 + var5 * var5);
       this.w = this.u = (float)(Math.atan2(var1, var5) * 180.0D / 3.1415927410125732D);
       this.x = this.v = (float)(Math.atan2(var3, (double)var10) * 180.0D / 3.1415927410125732D);
       this.ap = 0;
@@ -197,13 +197,13 @@ public class act extends nn {
             var2 = bo.b(var3.f.a, var3.f.b, var3.f.c);
          }
 
-         nn var4 = null;
-         List var5 = this.k.b((nn)this, this.y.a(this.r, this.s, this.t).b(1.0D, 1.0D, 1.0D));
+         BaseEntity var4 = null;
+         List var5 = this.k.b((BaseEntity)this, this.y.a(this.r, this.s, this.t).b(1.0D, 1.0D, 1.0D));
          double var6 = 0.0D;
 
          double var13;
          for(int var8 = 0; var8 < var5.size(); ++var8) {
-            nn var9 = (nn)var5.get(var8);
+            BaseEntity var9 = (BaseEntity)var5.get(var8);
             if(var9.l_() && (var9 != this.b || this.aq >= 5)) {
                float var10 = 0.3F;
                wu var11 = var9.y.b((double)var10, (double)var10, (double)var10);
@@ -224,7 +224,7 @@ public class act extends nn {
 
          if(var3 != null) {
             if(var3.g != null) {
-               if(var3.g.a(md.a((nn)this, this.b), 0)) {
+               if(var3.g.a(md.a((BaseEntity)this, this.b), 0)) {
                   this.c = var3.g;
                }
             } else {
@@ -234,7 +234,7 @@ public class act extends nn {
 
          if(!this.ao) {
             this.b(this.r, this.s, this.t);
-            float var24 = gk.a(this.r * this.r + this.t * this.t);
+            float var24 = Utils.sqrt(this.r * this.r + this.t * this.t);
             this.u = (float)(Math.atan2(this.r, this.t) * 180.0D / 3.1415927410125732D);
 
             for(this.v = (float)(Math.atan2(this.s, (double)var24) * 180.0D / 3.1415927410125732D); this.v - this.x < -180.0F; this.x -= 360.0F) {
@@ -277,7 +277,7 @@ public class act extends nn {
                   --this.ar;
                } else {
                   short var29 = 500;
-                  if(this.k.y(gk.c(this.o), gk.c(this.p) + 1, gk.c(this.q))) {
+                  if(this.k.y(Utils.c(this.o), Utils.c(this.p) + 1, Utils.c(this.q))) {
                      var29 = 300;
                   }
 
@@ -285,7 +285,7 @@ public class act extends nn {
                      this.ar = this.U.nextInt(30) + 10;
                      this.s -= 0.20000000298023224D;
                      this.k.a(this, "random.splash", 0.25F, 1.0F + (this.U.nextFloat() - this.U.nextFloat()) * 0.4F);
-                     float var30 = (float)gk.c(this.y.b);
+                     float var30 = (float) Utils.c(this.y.b);
 
                      int var15;
                      float var17;
@@ -324,22 +324,22 @@ public class act extends nn {
       }
    }
 
-   public void b(ady var1) {
-      var1.a("xTile", (short)this.d);
-      var1.a("yTile", (short)this.e);
-      var1.a("zTile", (short)this.am);
-      var1.a("inTile", (byte)this.an);
-      var1.a("shake", (byte)this.a);
-      var1.a("inGround", (byte)(this.ao?1:0));
+   public void b(CompundTag var1) {
+      var1.addShort("xTile", (short)this.d);
+      var1.addShort("yTile", (short)this.e);
+      var1.addShort("zTile", (short)this.am);
+      var1.addByte("inTile", (byte)this.an);
+      var1.addByte("shake", (byte)this.a);
+      var1.addByte("inGround", (byte)(this.ao?1:0));
    }
 
-   public void a(ady var1) {
-      this.d = var1.e("xTile");
-      this.e = var1.e("yTile");
-      this.am = var1.e("zTile");
-      this.an = var1.d("inTile") & 255;
-      this.a = var1.d("shake") & 255;
-      this.ao = var1.d("inGround") == 1;
+   public void a(CompundTag var1) {
+      this.d = var1.getShort("xTile");
+      this.e = var1.getShort("yTile");
+      this.am = var1.getShort("zTile");
+      this.an = var1.getByte("inTile") & 255;
+      this.a = var1.getByte("shake") & 255;
+      this.ao = var1.getByte("inGround") == 1;
    }
 
    public float h_() {
@@ -352,23 +352,23 @@ public class act extends nn {
          double var2 = this.b.o - this.o;
          double var4 = this.b.p - this.p;
          double var6 = this.b.q - this.q;
-         double var8 = (double)gk.a(var2 * var2 + var4 * var4 + var6 * var6);
+         double var8 = (double) Utils.sqrt(var2 * var2 + var4 * var4 + var6 * var6);
          double var10 = 0.1D;
          this.c.r += var2 * var10;
-         this.c.s += var4 * var10 + (double)gk.a(var8) * 0.08D;
+         this.c.s += var4 * var10 + (double) Utils.sqrt(var8) * 0.08D;
          this.c.t += var6 * var10;
          var1 = 3;
       } else if(this.ar > 0) {
-         fq var13 = new fq(this.k, this.o, this.p, this.q, new aan(yr.aU));
+         Item var13 = new Item(this.k, this.o, this.p, this.q, new aan(yr.aU));
          double var3 = this.b.o - this.o;
          double var5 = this.b.p - this.p;
          double var7 = this.b.q - this.q;
-         double var9 = (double)gk.a(var3 * var3 + var5 * var5 + var7 * var7);
+         double var9 = (double) Utils.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
          double var11 = 0.1D;
          var13.r = var3 * var11;
-         var13.s = var5 * var11 + (double)gk.a(var9) * 0.08D;
+         var13.s = var5 * var11 + (double) Utils.sqrt(var9) * 0.08D;
          var13.t = var7 * var11;
-         this.k.a((nn)var13);
+         this.k.a((BaseEntity)var13);
          this.b.a(gv.B, 1);
          var1 = 1;
       }

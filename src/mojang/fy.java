@@ -19,7 +19,7 @@ public class fy extends rc {
       } else if(!this.a.z) {
          return false;
       } else {
-         acq var1 = this.a.ah();
+         Mob var1 = this.a.ah();
          return var1 == null?true:(this.a.f(var1) < 144.0D && var1.aP() != null?false:this.b);
       }
    }

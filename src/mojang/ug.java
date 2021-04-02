@@ -65,7 +65,7 @@ public class ug extends dd {
 
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return this.a.a_(var1);
    }
 

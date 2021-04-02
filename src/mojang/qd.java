@@ -3,7 +3,7 @@ package mojang;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class qd extends oo {
+public class qd extends InterfaceRendererUtils {
 
    private Minecraft a;
    private int b;
@@ -38,16 +38,16 @@ public class qd extends oo {
    }
 
    private void b() {
-      GL11.glViewport(0, 0, this.a.d, this.a.e);
+      GL11.glViewport(0, 0, this.a.width, this.a.height);
       GL11.glMatrixMode(5889);
       GL11.glLoadIdentity();
       GL11.glMatrixMode(5888);
       GL11.glLoadIdentity();
-      this.b = this.a.d;
-      this.c = this.a.e;
-      agd var1 = new agd(this.a.A, this.a.d, this.a.e);
-      this.b = var1.a();
-      this.c = var1.b();
+      this.b = this.a.width;
+      this.c = this.a.height;
+      WindowScaler var1 = new WindowScaler(this.a.options, this.a.width, this.a.height);
+      this.b = var1.getWidth();
+      this.c = var1.getHeight();
       GL11.glClear(256);
       GL11.glMatrixMode(5889);
       GL11.glLoadIdentity();

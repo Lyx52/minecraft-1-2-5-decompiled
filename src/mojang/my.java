@@ -24,7 +24,7 @@ public class my extends qk {
       return var1 == 0?16777215:gu.c();
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       return var5 == 0?16777215:var1.a(var2, var4).k();
    }
@@ -37,7 +37,7 @@ public class my extends qk {
       return 1 + var2.nextInt(var1 * 2 + 1);
    }
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       if(!var1.F && var2.av() != null && var2.av().c == yr.be.bQ) {
          var2.a(gv.C[this.bO], 1);
          this.a(var1, var3, var4, var5, new aan(X, 1, var6));

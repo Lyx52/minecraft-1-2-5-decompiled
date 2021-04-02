@@ -1,6 +1,6 @@
 package mojang;
 
-public class uw extends vp {
+public class uw extends GUIManager {
 
    private String a;
    private String b;

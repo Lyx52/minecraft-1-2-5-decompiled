@@ -2,7 +2,7 @@ package mojang;
 
 import mojang.net.minecraft.client.Minecraft;
 
-public class ajy extends vp {
+public class ajy extends GUIManager {
 
    private adl a;
    private boolean b = false;
@@ -10,7 +10,7 @@ public class ajy extends vp {
 
    public ajy(Minecraft var1, String var2, int var3) {
       System.out.println("Connecting to " + var2 + ", " + var3);
-      var1.a((xd)null);
+      var1.a((World)null);
       (new ala(this, var1, var2, var3)).start();
    }
 
@@ -24,31 +24,31 @@ public class ajy extends vp {
    protected void a(char var1, int var2) {}
 
    public void c() {
-      adn var1 = adn.a();
-      this.s.clear();
-      this.s.add(new abp(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.b("mojang.gui.cancel")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.clear();
+      this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.cancel")));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 0) {
          this.b = true;
          if(this.a != null) {
             this.a.c();
          }
 
-         this.p.a((vp)(new xt()));
+         this.minecraft.a((GUIManager)(new xt()));
       }
 
    }
 
    public void a(int var1, int var2, float var3) {
       this.k();
-      adn var4 = adn.a();
+      LocalizationManager var4 = LocalizationManager.getInstance();
       if(this.a == null) {
-         this.a(this.u, var4.b("connect.connecting"), this.q / 2, this.r / 2 - 50, 16777215);
+         this.a(this.u, var4.getLocaleStringByName("connect.connecting"), this.q / 2, this.r / 2 - 50, 16777215);
          this.a(this.u, "", this.q / 2, this.r / 2 - 10, 16777215);
       } else {
-         this.a(this.u, var4.b("connect.authorizing"), this.q / 2, this.r / 2 - 50, 16777215);
+         this.a(this.u, var4.getLocaleStringByName("connect.authorizing"), this.q / 2, this.r / 2 - 50, 16777215);
          this.a(this.u, this.a.a, this.q / 2, this.r / 2 - 10, 16777215);
       }
 

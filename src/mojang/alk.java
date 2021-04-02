@@ -6,7 +6,7 @@ public class alk extends pb {
       super(var1, var2, acn.p);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -22,15 +22,15 @@ public class alk extends pb {
       return 12;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       return var5 == 1 && var1.h(var2, var3 - 1, var4)?true:(var5 == 2 && var1.h(var2, var3, var4 + 1)?true:(var5 == 3 && var1.h(var2, var3, var4 - 1)?true:(var5 == 4 && var1.h(var2 + 1, var3, var4)?true:var5 == 5 && var1.h(var2 - 1, var3, var4))));
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2 - 1, var3, var4)?true:(var1.h(var2 + 1, var3, var4)?true:(var1.h(var2, var3, var4 - 1)?true:(var1.h(var2, var3, var4 + 1)?true:var1.h(var2, var3 - 1, var4))));
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       int var7 = var6 & 8;
       var6 &= 7;
@@ -63,7 +63,7 @@ public class alk extends pb {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(this.h(var1, var2, var3, var4)) {
          int var6 = var1.e(var2, var3, var4) & 7;
          boolean var7 = false;
@@ -99,7 +99,7 @@ public class alk extends pb {
 
    }
 
-   private boolean h(xd var1, int var2, int var3, int var4) {
+   private boolean h(World var1, int var2, int var3, int var4) {
       if(!this.e(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -109,7 +109,7 @@ public class alk extends pb {
       }
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4) & 7;
       float var6 = 0.1875F;
       if(var5 == 1) {
@@ -127,11 +127,11 @@ public class alk extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.b(var1, var2, var3, var4, var5);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.F) {
          return true;
       } else {
@@ -158,7 +158,7 @@ public class alk extends pb {
       }
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       if((var5 & 8) > 0) {
          var1.j(var2, var3, var4, this.bO);
@@ -179,11 +179,11 @@ public class alk extends pb {
       super.b_(var1, var2, var3, var4);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return (var1.e(var2, var3, var4) & 8) > 0;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       if((var6 & 8) == 0) {
          return false;

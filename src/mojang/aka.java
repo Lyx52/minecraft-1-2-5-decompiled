@@ -17,10 +17,10 @@ public class aka {
 
    public aka(Component var1) {
       this.c = var1;
-      IntBuffer var2 = ew.d(1);
+      IntBuffer var2 = BufferManager.createIntBuffer(1);
       var2.put(0);
       var2.flip();
-      IntBuffer var3 = ew.d(1024);
+      IntBuffer var3 = BufferManager.createIntBuffer(1024);
 
       try {
          this.d = new Cursor(32, 32, 16, 16, 1, var3, var2);

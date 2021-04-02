@@ -3,7 +3,7 @@ package mojang;
 public class ya extends rn {
 
    wd a;
-   acq b;
+   Mob b;
 
 
    public ya(wd var1) {
@@ -16,7 +16,7 @@ public class ya extends rn {
       if(!this.a.G_()) {
          return false;
       } else {
-         acq var1 = this.a.ah();
+         Mob var1 = this.a.ah();
          if(var1 == null) {
             return false;
          } else {

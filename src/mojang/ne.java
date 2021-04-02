@@ -18,7 +18,7 @@ public class ne {
       this.a(var1.q(), var1.r());
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       int var2 = var1.k.q;
       this.e = this.a;
       if(this.c > 4.0F) {
@@ -51,21 +51,21 @@ public class ne {
 
    }
 
-   public void a(ady var1) {
-      if(var1.c("foodLevel")) {
-         this.a = var1.f("foodLevel");
-         this.d = var1.f("foodTickTimer");
-         this.b = var1.h("foodSaturationLevel");
-         this.c = var1.h("foodExhaustionLevel");
+   public void a(CompundTag var1) {
+      if(var1.containsKey("foodLevel")) {
+         this.a = var1.getInt("foodLevel");
+         this.d = var1.getInt("foodTickTimer");
+         this.b = var1.getFloat("foodSaturationLevel");
+         this.c = var1.getFloat("foodExhaustionLevel");
       }
 
    }
 
-   public void b(ady var1) {
-      var1.a("foodLevel", this.a);
-      var1.a("foodTickTimer", this.d);
-      var1.a("foodSaturationLevel", this.b);
-      var1.a("foodExhaustionLevel", this.c);
+   public void b(CompundTag var1) {
+      var1.addInt("foodLevel", this.a);
+      var1.addInt("foodTickTimer", this.d);
+      var1.addFloat("foodSaturationLevel", this.b);
+      var1.addFloat("foodExhaustionLevel", this.c);
    }
 
    public int a() {

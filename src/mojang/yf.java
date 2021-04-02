@@ -7,7 +7,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
-public class yf extends vp {
+public class yf extends GUIManager {
 
    private String b = "";
    private int c = -1;
@@ -29,7 +29,7 @@ public class yf extends vp {
 
    public void c() {
       Keyboard.enableRepeatEvents(true);
-      this.c = this.p.w.c().size();
+      this.c = this.minecraft.w.c().size();
       this.a = new agu(this.u, 4, this.r - 12, this.q - 4, 12);
       this.a.f(100);
       this.a.a(false);
@@ -40,7 +40,7 @@ public class yf extends vp {
 
    public void e() {
       Keyboard.enableRepeatEvents(false);
-      this.p.w.d();
+      this.minecraft.w.d();
    }
 
    public void a() {
@@ -55,22 +55,22 @@ public class yf extends vp {
       }
 
       if(var2 == 1) {
-         this.p.a((vp)null);
+         this.minecraft.a((GUIManager)null);
       } else if(var2 == 28) {
          String var3 = this.a.b().trim();
-         if(var3.length() > 0 && !this.p.c(var3)) {
-            this.p.h.a(var3);
+         if(var3.length() > 0 && !this.minecraft.startsWithSlash(var3)) {
+            this.minecraft.h.a(var3);
          }
 
-         this.p.a((vp)null);
+         this.minecraft.a((GUIManager)null);
       } else if(var2 == 200) {
          this.a(-1);
       } else if(var2 == 208) {
          this.a(1);
       } else if(var2 == 201) {
-         this.p.w.a(19);
+         this.minecraft.w.a(19);
       } else if(var2 == 209) {
-         this.p.w.a(-19);
+         this.minecraft.w.a(-19);
       } else {
          this.a.a(var1, var2);
       }
@@ -93,19 +93,19 @@ public class yf extends vp {
             var1 *= 7;
          }
 
-         this.p.w.a(var1);
+         this.minecraft.w.a(var1);
       }
 
    }
 
    protected void a(int var1, int var2, int var3) {
       if(var3 == 0) {
-         dx var4 = this.p.w.a(Mouse.getX(), Mouse.getY());
+         dx var4 = this.minecraft.w.a(Mouse.getX(), Mouse.getY());
          if(var4 != null) {
             URI var5 = var4.b();
             if(var5 != null) {
                this.j = var5;
-               this.p.a((vp)(new be(this, this, var4.a(), 0, var4)));
+               this.minecraft.a((GUIManager)(new be(this, this, var4.a(), 0, var4)));
                return;
             }
          }
@@ -128,7 +128,7 @@ public class yf extends vp {
          }
 
          this.j = null;
-         this.p.a((vp)this);
+         this.minecraft.a((GUIManager)this);
       }
 
    }
@@ -150,7 +150,7 @@ public class yf extends vp {
          this.i.clear();
          this.e = this.a.b().substring(var1);
          this.f = this.e.toLowerCase();
-         var2 = ((ahv)this.p.h).cl.c.iterator();
+         var2 = ((ahv)this.minecraft.h).cl.c.iterator();
 
          while(var2.hasNext()) {
             var3 = (ah)var2.next();
@@ -178,7 +178,7 @@ public class yf extends vp {
             }
          }
 
-         this.p.w.a(var4.toString());
+         this.minecraft.w.a(var4.toString());
       }
 
       this.a.b(((ah)this.i.get(this.h++)).a);
@@ -186,7 +186,7 @@ public class yf extends vp {
 
    public void a(int var1) {
       int var2 = this.c + var1;
-      int var3 = this.p.w.c().size();
+      int var3 = this.minecraft.w.c().size();
       if(var2 < 0) {
          var2 = 0;
       }
@@ -204,7 +204,7 @@ public class yf extends vp {
                this.b = this.a.b();
             }
 
-            this.a.a((String)this.p.w.c().get(var2));
+            this.a.a((String)this.minecraft.w.c().get(var2));
             this.c = var2;
          }
       }

@@ -1,13 +1,13 @@
 package mojang;
 
-public class ja {
+public class StopGameException {
 
-   public final String a;
-   public final Throwable b;
+   public final String exceptionString;
+   public final Throwable exception;
 
 
-   public ja(String var1, Throwable var2) {
-      this.a = var1;
-      this.b = var2;
+   public StopGameException(String exceptionString, Throwable exception) {
+      this.exceptionString = exceptionString;
+      this.exception = exception;
    }
 }

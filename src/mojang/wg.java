@@ -5,7 +5,7 @@ import java.util.List;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class wg extends oo {
+public class wg extends InterfaceRendererUtils {
 
    private List a = new ArrayList();
    private Minecraft b;

@@ -2,9 +2,9 @@ package mojang;
 
 public class sf extends rc {
 
-   xd a;
-   acq b;
-   acq c;
+   World a;
+   Mob b;
+   Mob c;
    int d = 0;
    float e;
    int f = 0;
@@ -12,7 +12,7 @@ public class sf extends rc {
    int h;
 
 
-   public sf(acq var1, float var2, int var3, int var4) {
+   public sf(Mob var1, float var2, int var3, int var4) {
       this.b = var1;
       this.a = var1.k;
       this.e = var2;
@@ -22,7 +22,7 @@ public class sf extends rc {
    }
 
    public boolean a() {
-      acq var1 = this.b.aT();
+      Mob var1 = this.b.aT();
       if(var1 == null) {
          return false;
       } else {
@@ -67,18 +67,18 @@ public class sf extends rc {
 
    private void h() {
       if(this.g == 1) {
-         nm var1 = new nm(this.a, this.b, this.c, 1.6F, 12.0F);
+         Arrow var1 = new Arrow(this.a, this.b, this.c, 1.6F, 12.0F);
          this.a.a(this.b, "random.bow", 1.0F, 1.0F / (this.b.aO().nextFloat() * 0.4F + 0.8F));
-         this.a.a((nn)var1);
+         this.a.a((BaseEntity)var1);
       } else if(this.g == 2) {
-         uq var9 = new uq(this.a, this.b);
+         Snowball var9 = new Snowball(this.a, this.b);
          double var2 = this.c.o - this.b.o;
          double var4 = this.c.p + (double)this.c.I() - 1.100000023841858D - var9.p;
          double var6 = this.c.q - this.b.q;
-         float var8 = gk.a(var2 * var2 + var6 * var6) * 0.2F;
+         float var8 = Utils.sqrt(var2 * var2 + var6 * var6) * 0.2F;
          var9.a(var2, var4 + (double)var8, var6, 1.6F, 12.0F);
          this.a.a(this.b, "random.bow", 1.0F, 1.0F / (this.b.aO().nextFloat() * 0.4F + 0.8F));
-         this.a.a((nn)var9);
+         this.a.a((BaseEntity)var9);
       }
 
    }

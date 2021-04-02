@@ -25,7 +25,7 @@ public class ce implements Runnable {
 
    private void b() {
       for(int var1 = 0; var1 < this.b.size(); ++var1) {
-         eu var2 = (eu)this.b.get(var1);
+         ChunkInterface var2 = (ChunkInterface)this.b.get(var1);
          boolean var3 = var2.a();
          if(!var3) {
             this.b.remove(var1--);
@@ -53,7 +53,7 @@ public class ce implements Runnable {
 
    }
 
-   public void a(eu var1) {
+   public void a(ChunkInterface var1) {
       if(!this.b.contains(var1)) {
          ++this.c;
          this.b.add(var1);

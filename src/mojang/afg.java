@@ -5,9 +5,9 @@ import org.lwjgl.opengl.GL11;
 
 public class afg extends um {
 
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("D > NN");
-      adz var10 = adz.a;
+      Tessalator var10 = Tessalator.a;
       GL11.glDisable(3553);
       GL11.glDisable(2896);
       GL11.glEnable(3042);

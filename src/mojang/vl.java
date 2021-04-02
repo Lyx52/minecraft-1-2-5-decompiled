@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 
 public class vl {
 
-   public ali a;
+   public WorldInterface a;
    private int d = -1;
    private boolean e = false;
    private boolean f = false;
@@ -96,7 +96,7 @@ public class vl {
    private boolean aK;
 
 
-   public vl(ali var1) {
+   public vl(WorldInterface var1) {
       this.a = var1;
    }
 
@@ -155,7 +155,7 @@ public class vl {
    }
 
    private boolean t(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = this.a.e(var2, var3, var4);
       int var7 = pm.a(var6);
       boolean var8 = pm.e(var6);
@@ -291,7 +291,7 @@ public class vl {
       var1.a(0.125F, 0.0F, 0.5625F, 0.5F, 0.125F, 0.9375F);
       this.o(var1, var2, var3, var4);
       this.a();
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       var5.b(var1.d(this.a, var2, var3, var4));
       float var6 = 1.0F;
       int var7 = var1.c(this.a, var2, var3, var4);
@@ -348,7 +348,7 @@ public class vl {
 
    private boolean a(xm var1, int var2, int var3, int var4) {
       this.o(var1, var2, var3, var4);
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       var5.b(var1.d(this.a, var2, var3, var4));
       float var6 = 1.0F;
       int var7 = var1.c(this.a, var2, var3, var4);
@@ -390,7 +390,7 @@ public class vl {
 
    public boolean c(pb var1, int var2, int var3, int var4) {
       int var5 = this.a.e(var2, var3, var4);
-      adz var6 = adz.a;
+      Tessalator var6 = Tessalator.a;
       var6.b(var1.d(this.a, var2, var3, var4));
       var6.a(1.0F, 1.0F, 1.0F);
       double var7 = 0.4000000059604645D;
@@ -416,7 +416,7 @@ public class vl {
       int var6 = var5 & 3;
       int var7 = (var5 & 12) >> 2;
       this.o(var1, var2, var3, var4);
-      adz var8 = adz.a;
+      Tessalator var8 = Tessalator.a;
       var8.b(var1.d(this.a, var2, var3, var4));
       var8.a(1.0F, 1.0F, 1.0F);
       double var9 = -0.1875D;
@@ -595,7 +595,7 @@ public class vl {
 
       int var17 = (var16 & 15) << 4;
       int var18 = var16 & 240;
-      adz var19 = adz.a;
+      Tessalator var19 = Tessalator.a;
       double var20 = (double)((float)(var17 + 0) / 256.0F);
       double var22 = (double)((float)(var18 + 0) / 256.0F);
       double var24 = ((double)var17 + var14 - 0.01D) / 256.0D;
@@ -615,7 +615,7 @@ public class vl {
 
       int var17 = (var16 & 15) << 4;
       int var18 = var16 & 240;
-      adz var19 = adz.a;
+      Tessalator var19 = Tessalator.a;
       double var20 = (double)((float)(var17 + 0) / 256.0F);
       double var22 = (double)((float)(var18 + 0) / 256.0F);
       double var24 = ((double)var17 + var14 - 0.01D) / 256.0D;
@@ -635,7 +635,7 @@ public class vl {
 
       int var17 = (var16 & 15) << 4;
       int var18 = var16 & 240;
-      adz var19 = adz.a;
+      Tessalator var19 = Tessalator.a;
       double var20 = (double)((float)(var17 + 0) / 256.0F);
       double var22 = (double)((float)(var18 + 0) / 256.0F);
       double var24 = ((double)var17 + var14 - 0.01D) / 256.0D;
@@ -741,7 +741,7 @@ public class vl {
       int var5 = this.a.e(var2, var3, var4);
       int var6 = var5 & 7;
       boolean var7 = (var5 & 8) > 0;
-      adz var8 = adz.a;
+      Tessalator var8 = Tessalator.a;
       boolean var9 = this.d >= 0;
       if(!var9) {
          this.d = pb.w.bN;
@@ -902,7 +902,7 @@ public class vl {
    }
 
    public boolean f(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = var1.a_(0);
       if(this.d >= 0) {
          var6 = this.d;
@@ -1090,7 +1090,7 @@ public class vl {
    }
 
    public boolean g(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = this.a.e(var2, var3, var4);
       int var7 = var1.a(1, var6);
       if(this.d >= 0) {
@@ -1290,7 +1290,7 @@ public class vl {
    }
 
    public boolean a(aez var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = this.a.e(var2, var3, var4);
       int var7 = var1.a(0, var6);
       if(this.d >= 0) {
@@ -1363,7 +1363,7 @@ public class vl {
    }
 
    public boolean h(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = var1.a_(0);
       if(this.d >= 0) {
          var6 = this.d;
@@ -1413,7 +1413,7 @@ public class vl {
    }
 
    public boolean i(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = var1.a_(0);
       if(this.d >= 0) {
          var6 = this.d;
@@ -1490,7 +1490,7 @@ public class vl {
 
    public boolean a(akq var1, int var2, int var3, int var4) {
       int var5 = this.a.b();
-      adz var6 = adz.a;
+      Tessalator var6 = Tessalator.a;
       var6.b(var1.d(this.a, var2, var3, var4));
       float var7 = 1.0F;
       int var8 = var1.c(this.a, var2, var3, var4);
@@ -1875,7 +1875,7 @@ public class vl {
    }
 
    public boolean j(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       var5.b(var1.d(this.a, var2, var3, var4));
       float var6 = 1.0F;
       int var7 = var1.c(this.a, var2, var3, var4);
@@ -1909,7 +1909,7 @@ public class vl {
 
    public boolean k(pb var1, int var2, int var3, int var4) {
       aei var5 = (aei)var1;
-      adz var6 = adz.a;
+      Tessalator var6 = Tessalator.a;
       var6.b(var5.d(this.a, var2, var3, var4));
       float var7 = 1.0F;
       int var8 = var5.c(this.a, var2, var3, var4);
@@ -1939,7 +1939,7 @@ public class vl {
    }
 
    public boolean l(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       var5.b(var1.d(this.a, var2, var3, var4));
       var5.a(1.0F, 1.0F, 1.0F);
       this.b(var1, this.a.e(var2, var3, var4), (double)var2, (double)((float)var3 - 0.0625F), (double)var4);
@@ -1947,7 +1947,7 @@ public class vl {
    }
 
    public void a(pb var1, double var2, double var4, double var6, double var8, double var10) {
-      adz var12 = adz.a;
+      Tessalator var12 = Tessalator.a;
       int var13 = var1.a_(0);
       if(this.d >= 0) {
          var13 = this.d;
@@ -1994,7 +1994,7 @@ public class vl {
    }
 
    public void a(pb var1, int var2, double var3, double var5, double var7) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       int var10 = var1.a(0, var2);
       if(this.d >= 0) {
          var10 = this.d;
@@ -2029,7 +2029,7 @@ public class vl {
    }
 
    public void a(pb var1, int var2, double var3, double var5, double var7, double var9) {
-      adz var11 = adz.a;
+      Tessalator var11 = Tessalator.a;
       int var12 = var1.a(0, var2);
       if(this.d >= 0) {
          var12 = this.d;
@@ -2064,7 +2064,7 @@ public class vl {
    }
 
    public boolean m(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = var1.bN;
       if(this.d >= 0) {
          var6 = this.d;
@@ -2099,7 +2099,7 @@ public class vl {
    }
 
    public void a(pb var1, int var2, int var3, double var4, double var6, double var8, double var10) {
-      adz var12 = adz.a;
+      Tessalator var12 = Tessalator.a;
       int var13 = var1.a(0, var2) + 16;
       if(this.d >= 0) {
          var13 = this.d;
@@ -2146,7 +2146,7 @@ public class vl {
    }
 
    public void b(pb var1, int var2, double var3, double var5, double var7) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       int var10 = var1.a(0, var2);
       if(this.d >= 0) {
          var10 = this.d;
@@ -2201,7 +2201,7 @@ public class vl {
    }
 
    public boolean n(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       int var6 = var1.c(this.a, var2, var3, var4);
       float var7 = (float)(var6 >> 16 & 255) / 255.0F;
       float var8 = (float)(var6 >> 8 & 255) / 255.0F;
@@ -2251,8 +2251,8 @@ public class vl {
                var40 = (double)((float)(var37 + 16) / 256.0F);
             }
 
-            double var42 = (double)(gk.a(var35) * 8.0F) / 256.0D;
-            double var44 = (double)(gk.b(var35) * 8.0F) / 256.0D;
+            double var42 = (double)(Utils.sin(var35) * 8.0F) / 256.0D;
+            double var44 = (double)(Utils.cos(var35) * 8.0F) / 256.0D;
             var5.b(var1.d(this.a, var2, var3, var4));
             float var46 = 1.0F;
             var5.a(var15 * var46 * var7, var15 * var46 * var8, var15 * var46 * var9);
@@ -2387,14 +2387,14 @@ public class vl {
       return 1.0F - var6 / (float)var5;
    }
 
-   public void a(pb var1, xd var2, int var3, int var4, int var5) {
+   public void a(pb var1, World var2, int var3, int var4, int var5) {
       float var6 = 0.5F;
       float var7 = 1.0F;
       float var8 = 0.8F;
       float var9 = 0.6F;
-      adz var10 = adz.a;
+      Tessalator var10 = Tessalator.a;
       var10.b();
-      var10.b(var1.d((ali)var2, var3, var4, var5));
+      var10.b(var1.d((WorldInterface)var2, var3, var4, var5));
       float var11 = 1.0F;
       float var12 = 1.0F;
       if(var12 < var11) {
@@ -2509,7 +2509,7 @@ public class vl {
          var25 = var1.d(this.a, var2, var3, var4 + 1);
       }
 
-      adz var26 = adz.a;
+      Tessalator var26 = Tessalator.a;
       var26.b(983055);
       this.aA = pb.p[this.a.a(var2 + 1, var3 + 1, var4)];
       this.aI = pb.p[this.a.a(var2 + 1, var3 - 1, var4)];
@@ -3140,7 +3140,7 @@ public class vl {
 
    public boolean b(pb var1, int var2, int var3, int var4, float var5, float var6, float var7) {
       this.m = false;
-      adz var8 = adz.a;
+      Tessalator var8 = Tessalator.a;
       boolean var9 = false;
       float var10 = 0.5F;
       float var11 = 1.0F;
@@ -3259,7 +3259,7 @@ public class vl {
    }
 
    public boolean c(pb var1, int var2, int var3, int var4, float var5, float var6, float var7) {
-      adz var8 = adz.a;
+      Tessalator var8 = Tessalator.a;
       boolean var9 = false;
       float var10 = 0.5F;
       float var11 = 1.0F;
@@ -3625,7 +3625,7 @@ public class vl {
    }
 
    public boolean r(pb var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       acb var6 = (acb)var1;
       boolean var7 = false;
       float var8 = 0.5F;
@@ -3689,7 +3689,7 @@ public class vl {
    }
 
    public void a(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -3775,7 +3775,7 @@ public class vl {
    }
 
    public void b(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -3861,7 +3861,7 @@ public class vl {
    }
 
    public void c(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -3954,7 +3954,7 @@ public class vl {
    }
 
    public void d(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -4047,7 +4047,7 @@ public class vl {
    }
 
    public void e(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -4140,7 +4140,7 @@ public class vl {
    }
 
    public void f(pb var1, double var2, double var4, double var6, int var8) {
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       if(this.d >= 0) {
          var8 = this.d;
       }
@@ -4233,7 +4233,7 @@ public class vl {
    }
 
    public void a(pb var1, int var2, float var3) {
-      adz var4 = adz.a;
+      Tessalator var4 = Tessalator.a;
       boolean var5 = var1.bO == pb.u.bO;
       int var6;
       float var7;

@@ -26,7 +26,7 @@ public class abz extends jt {
       return 5;
    }
 
-   public int a(int var1, acq var2) {
+   public int a(int var1, Mob var2) {
       return this.z == 0?var1 * 3:(this.z == 1 && var2.s() == bk.b?var1 * 4:(this.z == 2 && var2.s() == bk.c?var1 * 4:0));
    }
 

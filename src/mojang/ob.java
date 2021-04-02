@@ -2,15 +2,15 @@ package mojang;
 
 public class ob extends rc {
 
-   private acq a;
-   private nn b;
+   private Mob a;
+   private BaseEntity b;
    private float c;
    private int d;
    private float e;
    private Class f;
 
 
-   public ob(acq var1, Class var2, float var3) {
+   public ob(Mob var1, Class var2, float var3) {
       this.a = var1;
       this.f = var2;
       this.c = var3;
@@ -18,7 +18,7 @@ public class ob extends rc {
       this.a(2);
    }
 
-   public ob(acq var1, Class var2, float var3, float var4) {
+   public ob(Mob var1, Class var2, float var3, float var4) {
       this.a = var1;
       this.f = var2;
       this.c = var3;
@@ -30,7 +30,7 @@ public class ob extends rc {
       if(this.a.aO().nextFloat() >= this.e) {
          return false;
       } else {
-         if(this.f == yw.class) {
+         if(this.f == Player.class) {
             this.b = this.a.k.a(this.a, (double)this.c);
          } else {
             this.b = this.a.k.a(this.f, this.a.y.b((double)this.c, 3.0D, (double)this.c), this.a);

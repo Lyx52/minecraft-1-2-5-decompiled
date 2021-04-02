@@ -16,22 +16,22 @@ public class tw extends um {
       this.h = 0.75F;
    }
    @Override
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       this.d.setSeed(187L);
-      aan var10 = ((fq)var1).a;
+      aan var10 = ((Item)var1).a;
       GL11.glPushMatrix();
-      float var11 = gk.a(((float)((fq)var1).b + var9) / 10.0F + ((fq)var1).d) * 0.1F + 0.1F;
-      float var12 = (((float)((fq)var1).b + var9) / 20.0F + ((fq)var1).d) * 57.295776F;
+      float var11 = Utils.sin(((float)((Item)var1).b + var9) / 10.0F + ((Item)var1).d) * 0.1F + 0.1F;
+      float var12 = (((float)((Item)var1).b + var9) / 20.0F + ((Item)var1).d) * 57.295776F;
       byte var13 = 1;
-      if(((fq)var1).a.a > 1) {
+      if(((Item)var1).a.a > 1) {
          var13 = 2;
       }
 
-      if(((fq)var1).a.a > 5) {
+      if(((Item)var1).a.a > 5) {
          var13 = 3;
       }
 
-      if(((fq)var1).a.a > 20) {
+      if(((Item)var1).a.a > 20) {
          var13 = 4;
       }
 
@@ -112,7 +112,7 @@ public class tw extends um {
    }
 
    private void a(int var1, int var2) {
-      adz var3 = adz.a;
+      Tessalator var3 = Tessalator.a;
       float var4 = (float)(var1 % 16 * 16 + 0) / 256.0F;
       float var5 = (float)(var1 % 16 * 16 + 16) / 256.0F;
       float var6 = (float)(var1 / 16 * 16 + 0) / 256.0F;
@@ -143,7 +143,7 @@ public class tw extends um {
 
    }
 
-   public void a(nl var1, aaw var2, int var3, int var4, int var5, int var6, int var7) {
+   public void a(nl var1, Texture var2, int var3, int var4, int var5, int var6, int var7) {
       int var10;
       float var11;
       float var12;
@@ -215,7 +215,7 @@ public class tw extends um {
       GL11.glEnable(2884);
    }
 
-   public void a(nl var1, aaw var2, aan var3, int var4, int var5) {
+   public void a(nl var1, Texture var2, aan var3, int var4, int var5) {
       if(var3 != null) {
          this.a(var1, var2, var3.c, var3.i(), var3.b(), var4, var5);
          if(var3 != null && var3.r()) {
@@ -252,7 +252,7 @@ public class tw extends um {
          float var8 = 0.00390625F;
          float var9 = (float)(System.currentTimeMillis() % (long)(3000 + var6 * 1873)) / (3000.0F + (float)(var6 * 1873)) * 256.0F;
          float var10 = 0.0F;
-         adz var11 = adz.a;
+         Tessalator var11 = Tessalator.a;
          float var12 = 4.0F;
          if(var6 == 1) {
             var12 = -1.0F;
@@ -268,7 +268,7 @@ public class tw extends um {
 
    }
 
-   public void b(nl var1, aaw var2, aan var3, int var4, int var5) {
+   public void b(nl var1, Texture var2, aan var3, int var4, int var5) {
       if(var3 != null) {
          if(var3.a > 1) {
             String var6 = "" + var3.a;
@@ -285,7 +285,7 @@ public class tw extends um {
             GL11.glDisable(2896);
             GL11.glDisable(2929);
             GL11.glDisable(3553);
-            adz var8 = adz.a;
+            Tessalator var8 = Tessalator.a;
             int var9 = 255 - var7 << 16 | var7 << 8;
             int var10 = (255 - var7) / 4 << 16 | 16128;
             this.a(var8, var4 + 2, var5 + 13, 13, 2, 0);
@@ -300,7 +300,7 @@ public class tw extends um {
       }
    }
 
-   private void a(adz var1, int var2, int var3, int var4, int var5, int var6) {
+   private void a(Tessalator var1, int var2, int var3, int var4, int var5, int var6) {
       var1.b();
       var1.c(var6);
       var1.a((double)(var2 + 0), (double)(var3 + 0), 0.0D);
@@ -313,7 +313,7 @@ public class tw extends um {
    public void a(int var1, int var2, int var3, int var4, int var5, int var6) {
       float var7 = 0.00390625F;
       float var8 = 0.00390625F;
-      adz var9 = adz.a;
+      Tessalator var9 = Tessalator.a;
       var9.b();
       var9.a((double)(var1 + 0), (double)(var2 + var6), (double)this.b, (double)((float)(var3 + 0) * var7), (double)((float)(var4 + var6) * var8));
       var9.a((double)(var1 + var5), (double)(var2 + var6), (double)this.b, (double)((float)(var3 + var5) * var7), (double)((float)(var4 + var6) * var8));

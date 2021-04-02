@@ -2,14 +2,14 @@ package mojang;
 
 public class wi extends rc {
 
-   private yo a;
-   private yw b;
-   private xd c;
+   private Wolf a;
+   private Player b;
+   private World c;
    private float d;
    private int e;
 
 
-   public wi(yo var1, float var2) {
+   public wi(Wolf var1, float var2) {
       this.a = var1;
       this.c = var1.k;
       this.d = var2;
@@ -40,7 +40,7 @@ public class wi extends rc {
       --this.e;
    }
 
-   private boolean a(yw var1) {
+   private boolean a(Player var1) {
       aan var2 = var1.ap.b();
       return var2 == null?false:(!this.a.G_() && var2.c == yr.aX.bQ?true:this.a.a(var2));
    }

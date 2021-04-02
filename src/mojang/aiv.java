@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class aiv implements eu, ua {
+public class aiv implements ChunkInterface, ua {
 
    private List a = new ArrayList();
    private Set b = new HashSet();
@@ -19,8 +19,8 @@ public class aiv implements eu, ua {
       this.d = var1;
    }
 
-   public ack a(xd var1, int var2, int var3) throws IOException {
-      ady var4 = null;
+   public ack a(World var1, int var2, int var3) throws IOException {
+      CompundTag var4 = null;
       sj var5 = new sj(var2, var3);
       Object var6 = this.c;
       synchronized(this.c) {
@@ -46,20 +46,20 @@ public class aiv implements eu, ua {
       return this.a(var1, var2, var3, var4);
    }
 
-   protected ack a(xd var1, int var2, int var3, ady var4) {
-      if(!var4.c("Level")) {
+   protected ack a(World var1, int var2, int var3, CompundTag var4) {
+      if(!var4.containsKey("Level")) {
          System.out.println("Chunk file at " + var2 + "," + var3 + " is missing level data, skipping");
          return null;
-      } else if(!var4.m("Level").c("Sections")) {
+      } else if(!var4.getCompundTag("Level").containsKey("Sections")) {
          System.out.println("Chunk file at " + var2 + "," + var3 + " is missing block data, skipping");
          return null;
       } else {
-         ack var5 = this.a(var1, var4.m("Level"));
+         ack var5 = this.a(var1, var4.getCompundTag("Level"));
          if(!var5.a(var2, var3)) {
             System.out.println("Chunk file at " + var2 + "," + var3 + " is in the wrong location; relocating. (Expected " + var2 + ", " + var3 + ", got " + var5.g + ", " + var5.h + ")");
-            var4.a("xPos", var2);
-            var4.a("zPos", var3);
-            var5 = this.a(var1, var4.m("Level"));
+            var4.addInt("xPos", var2);
+            var4.addInt("zPos", var3);
+            var5 = this.a(var1, var4.getCompundTag("Level"));
          }
 
          var5.j();
@@ -67,13 +67,13 @@ public class aiv implements eu, ua {
       }
    }
 
-   public void a(xd var1, ack var2) {
+   public void a(World var1, ack var2) {
       var1.u();
 
       try {
-         ady var3 = new ady();
-         ady var4 = new ady();
-         var3.a("Level", (gh)var4);
+         CompundTag var3 = new CompundTag();
+         CompundTag var4 = new CompundTag();
+         var3.addBaseTag("Level", (BaseTag)var4);
          this.a(var2, var1, var4);
          this.a(var2.l(), var3);
       } catch (Exception var5) {
@@ -82,7 +82,7 @@ public class aiv implements eu, ua {
 
    }
 
-   protected void a(sj var1, ady var2) {
+   protected void a(sj var1, CompundTag var2) {
       Object var3 = this.c;
       synchronized(this.c) {
          if(this.b.contains(var1)) {
@@ -129,131 +129,131 @@ public class aiv implements eu, ua {
       var2.close();
    }
 
-   public void b(xd var1, ack var2) {}
+   public void b(World var1, ack var2) {}
 
    public void b() {}
 
    public void c() {}
 
-   private void a(ack var1, xd var2, ady var3) {
-      var2.u();
-      var3.a("xPos", var1.g);
-      var3.a("zPos", var1.h);
-      var3.a("LastUpdate", var2.w());
-      var3.a("HeightMap", var1.f);
-      var3.a("TerrainPopulated", var1.k);
+   private void a(ack var1, World world, CompundTag var3) {
+      world.u();
+      var3.addInt("xPos", var1.g);
+      var3.addInt("zPos", var1.h);
+      var3.addLong("LastUpdate", world.w());
+      var3.addIntArray("HeightMap", var1.f);
+      var3.addBoolean("TerrainPopulated", var1.k);
       zg[] var4 = var1.i();
-      no var5 = new no("Sections");
+      ListTag var5 = new ListTag("Sections");
       zg[] var6 = var4;
       int var7 = var4.length;
 
-      ady var10;
+      CompundTag var10;
       for(int var8 = 0; var8 < var7; ++var8) {
          zg var9 = var6[var8];
          if(var9 != null && var9.f() != 0) {
-            var10 = new ady();
-            var10.a("Y", (byte)(var9.c() >> 4 & 255));
-            var10.a("Blocks", var9.g());
+            var10 = new CompundTag();
+            var10.addByte("Y", (byte)(var9.c() >> 4 & 255));
+            var10.addByteArray("Blocks", var9.g());
             if(var9.i() != null) {
-               var10.a("Add", var9.i().a);
+               var10.addByteArray("Add", var9.i().a);
             }
 
-            var10.a("Data", var9.j().a);
-            var10.a("SkyLight", var9.l().a);
-            var10.a("BlockLight", var9.k().a);
-            var5.a((gh)var10);
+            var10.addByteArray("Data", var9.j().a);
+            var10.addByteArray("SkyLight", var9.l().a);
+            var10.addByteArray("BlockLight", var9.k().a);
+            var5.a(var10);
          }
       }
 
-      var3.a("Sections", (gh)var5);
-      var3.a("Biomes", var1.m());
+      var3.addBaseTag("Sections", (BaseTag)var5);
+      var3.addByteArray("Biomes", var1.m());
       var1.m = false;
-      no var15 = new no();
+      ListTag var15 = new ListTag();
 
       Iterator var17;
       for(var7 = 0; var7 < var1.j.length; ++var7) {
          var17 = var1.j[var7].iterator();
 
          while(var17.hasNext()) {
-            nn var19 = (nn)var17.next();
+            BaseEntity var19 = (BaseEntity)var17.next();
             var1.m = true;
-            var10 = new ady();
+            var10 = new CompundTag();
             if(var19.c(var10)) {
-               var15.a((gh)var10);
+               var15.a((BaseTag)var10);
             }
          }
       }
 
-      var3.a("Entities", (gh)var15);
-      no var16 = new no();
+      var3.addBaseTag("Entities", (BaseTag)var15);
+      ListTag var16 = new ListTag();
       var17 = var1.i.values().iterator();
 
       while(var17.hasNext()) {
          kw var20 = (kw)var17.next();
-         var10 = new ady();
+         var10 = new CompundTag();
          var20.b(var10);
-         var16.a((gh)var10);
+         var16.a((BaseTag)var10);
       }
 
-      var3.a("TileEntities", (gh)var16);
-      List var18 = var2.a(var1, false);
+      var3.addBaseTag("TileEntities", (BaseTag)var16);
+      List var18 = world.a(var1, false);
       if(var18 != null) {
-         long var21 = var2.w();
-         no var11 = new no();
+         long var21 = world.w();
+         ListTag var11 = new ListTag();
          Iterator var12 = var18.iterator();
 
          while(var12.hasNext()) {
             ml var13 = (ml)var12.next();
-            ady var14 = new ady();
-            var14.a("i", var13.d);
-            var14.a("x", var13.a);
-            var14.a("y", var13.b);
-            var14.a("z", var13.c);
-            var14.a("t", (int)(var13.e - var21));
-            var11.a((gh)var14);
+            CompundTag var14 = new CompundTag();
+            var14.addInt("i", var13.d);
+            var14.addInt("x", var13.a);
+            var14.addInt("y", var13.b);
+            var14.addInt("z", var13.c);
+            var14.addInt("t", (int)(var13.e - var21));
+            var11.a((BaseTag)var14);
          }
 
-         var3.a("TileTicks", (gh)var11);
+         var3.addBaseTag("TileTicks", (BaseTag)var11);
       }
 
    }
 
-   private ack a(xd var1, ady var2) {
-      int var3 = var2.f("xPos");
-      int var4 = var2.f("zPos");
+   private ack a(World var1, CompundTag var2) {
+      int var3 = var2.getInt("xPos");
+      int var4 = var2.getInt("zPos");
       ack var5 = new ack(var1, var3, var4);
-      var5.f = var2.l("HeightMap");
-      var5.k = var2.o("TerrainPopulated");
-      no var6 = var2.n("Sections");
+      var5.f = var2.getIntArray("HeightMap");
+      var5.k = var2.getBoolean("TerrainPopulated");
+      ListTag var6 = var2.getListTag("Sections");
       byte var7 = 16;
       zg[] var8 = new zg[var7];
 
       for(int var9 = 0; var9 < var6.d(); ++var9) {
-         ady var10 = (ady)var6.a(var9);
-         byte var11 = var10.d("Y");
+         CompundTag var10 = (CompundTag)var6.a(var9);
+         byte var11 = var10.getByte("Y");
          zg var12 = new zg(var11 << 4);
-         var12.a(var10.k("Blocks"));
-         if(var10.c("Add")) {
-            var12.a(new qq(var10.k("Add"), 4));
+         var12.a(var10.getByteArray("Blocks"));
+         if(var10.containsKey("Add")) {
+            var12.a(new qq(var10.getByteArray("Add"), 4));
          }
 
-         var12.b(new qq(var10.k("Data"), 4));
-         var12.d(new qq(var10.k("SkyLight"), 4));
-         var12.c(new qq(var10.k("BlockLight"), 4));
+         var12.b(new qq(var10.getByteArray("Data"), 4));
+         var12.d(new qq(var10.getByteArray("SkyLight"), 4));
+         var12.c(new qq(var10.getByteArray("BlockLight"), 4));
          var12.d();
          var8[var11] = var12;
       }
 
       var5.a(var8);
-      if(var2.c("Biomes")) {
-         var5.a(var2.k("Biomes"));
+      if(var2.containsKey("Biomes")) {
+         var5.a(var2.getByteArray("Biomes"));
       }
 
-      no var14 = var2.n("Entities");
+      ListTag var14 = var2.getListTag("Entities");
       if(var14 != null) {
          for(int var15 = 0; var15 < var14.d(); ++var15) {
-            ady var17 = (ady)var14.a(var15);
-            nn var19 = aao.a(var17, var1);
+            CompundTag var17 = (CompundTag)var14.a(var15);
+            BaseEntity var19 = EntityManager.a(var17, var1);
             var5.m = true;
             if(var19 != null) {
                var5.a(var19);
@@ -261,10 +261,10 @@ public class aiv implements eu, ua {
          }
       }
 
-      no var16 = var2.n("TileEntities");
+      ListTag var16 = var2.getListTag("TileEntities");
       if(var16 != null) {
          for(int var18 = 0; var18 < var16.d(); ++var18) {
-            ady var21 = (ady)var16.a(var18);
+            CompundTag var21 = (CompundTag)var16.a(var18);
             kw var13 = kw.c(var21);
             if(var13 != null) {
                var5.a(var13);
@@ -272,12 +272,12 @@ public class aiv implements eu, ua {
          }
       }
 
-      if(var2.c("TileTicks")) {
-         no var20 = var2.n("TileTicks");
+      if(var2.containsKey("TileTicks")) {
+         ListTag var20 = var2.getListTag("TileTicks");
          if(var20 != null) {
             for(int var22 = 0; var22 < var20.d(); ++var22) {
-               ady var23 = (ady)var20.a(var22);
-               var1.e(var23.f("x"), var23.f("y"), var23.f("z"), var23.f("i"), var23.f("t"));
+               CompundTag var23 = (CompundTag)var20.a(var22);
+               var1.e(var23.getInt("x"), var23.getInt("y"), var23.getInt("z"), var23.getInt("i"), var23.getInt("t"));
             }
          }
       }

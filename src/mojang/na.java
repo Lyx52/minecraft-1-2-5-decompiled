@@ -9,7 +9,7 @@ public class na extends rc {
    private double c;
    private double d;
    private float e;
-   private xd f;
+   private World f;
 
 
    public na(aaa var1, float var2) {
@@ -24,7 +24,7 @@ public class na extends rc {
          return false;
       } else if(!this.a.T()) {
          return false;
-      } else if(!this.f.m(gk.c(this.a.o), (int)this.a.y.b, gk.c(this.a.q))) {
+      } else if(!this.f.m(Utils.c(this.a.o), (int)this.a.y.b, Utils.c(this.a.q))) {
          return false;
       } else {
          bo var1 = this.h();
@@ -51,9 +51,9 @@ public class na extends rc {
       Random var1 = this.a.aO();
 
       for(int var2 = 0; var2 < 10; ++var2) {
-         int var3 = gk.c(this.a.o + (double)var1.nextInt(20) - 10.0D);
-         int var4 = gk.c(this.a.y.b + (double)var1.nextInt(6) - 3.0D);
-         int var5 = gk.c(this.a.q + (double)var1.nextInt(20) - 10.0D);
+         int var3 = Utils.c(this.a.o + (double)var1.nextInt(20) - 10.0D);
+         int var4 = Utils.c(this.a.y.b + (double)var1.nextInt(6) - 3.0D);
+         int var5 = Utils.c(this.a.q + (double)var1.nextInt(20) - 10.0D);
          if(!this.f.m(var3, var4, var5) && this.a.a(var3, var4, var5) < 0.0F) {
             return bo.b((double)var3, (double)var4, (double)var5);
          }

@@ -9,7 +9,7 @@ public class km extends pb {
       this.a(true);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -25,15 +25,15 @@ public class km extends pb {
       return false;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       return var5 == 2 && var1.h(var2, var3, var4 + 1)?true:(var5 == 3 && var1.h(var2, var3, var4 - 1)?true:(var5 == 4 && var1.h(var2 + 1, var3, var4)?true:var5 == 5 && var1.h(var2 - 1, var3, var4)));
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2 - 1, var3, var4)?true:(var1.h(var2 + 1, var3, var4)?true:(var1.h(var2, var3, var4 - 1)?true:var1.h(var2, var3, var4 + 1)));
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       int var7 = var6 & 8;
       var6 &= 7;
@@ -52,11 +52,11 @@ public class km extends pb {
       var1.f(var2, var3, var4, var6 + var7);
    }
 
-   private int h(xd var1, int var2, int var3, int var4) {
+   private int h(World var1, int var2, int var3, int var4) {
       return var1.h(var2 - 1, var3, var4)?1:(var1.h(var2 + 1, var3, var4)?2:(var1.h(var2, var3, var4 - 1)?3:(var1.h(var2, var3, var4 + 1)?4:1)));
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(this.i(var1, var2, var3, var4)) {
          int var6 = var1.e(var2, var3, var4) & 7;
          boolean var7 = false;
@@ -84,7 +84,7 @@ public class km extends pb {
 
    }
 
-   private boolean i(xd var1, int var2, int var3, int var4) {
+   private boolean i(World var1, int var2, int var3, int var4) {
       if(!this.e(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -94,7 +94,7 @@ public class km extends pb {
       }
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       int var6 = var5 & 7;
       boolean var7 = (var5 & 8) > 0;
@@ -118,11 +118,11 @@ public class km extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.b(var1, var2, var3, var4, var5);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       int var6 = var1.e(var2, var3, var4);
       int var7 = var6 & 7;
       int var8 = 8 - (var6 & 8);
@@ -150,7 +150,7 @@ public class km extends pb {
       }
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       if((var5 & 8) > 0) {
          var1.j(var2, var3, var4, this.bO);
@@ -171,11 +171,11 @@ public class km extends pb {
       super.b_(var1, var2, var3, var4);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return (var1.e(var2, var3, var4) & 8) > 0;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       if((var6 & 8) == 0) {
          return false;
@@ -189,7 +189,7 @@ public class km extends pb {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          if((var6 & 8) != 0) {

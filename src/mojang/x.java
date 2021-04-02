@@ -2,7 +2,7 @@ package mojang;
 
 public class x extends rc {
 
-   private final uo a;
+   private final Ozelot a;
    private final float b;
    private int c = 0;
    private int h = 0;
@@ -12,7 +12,7 @@ public class x extends rc {
    private int g = 0;
 
 
-   public x(uo var1, float var2) {
+   public x(Ozelot var1, float var2) {
       this.a = var1;
       this.b = var2;
       this.a(5);
@@ -74,7 +74,7 @@ public class x extends rc {
       return var2 < 2.147483647E9D;
    }
 
-   private boolean a(xd var1, int var2, int var3, int var4) {
+   private boolean a(World var1, int var2, int var3, int var4) {
       int var5 = var1.a(var2, var3, var4);
       int var6 = var1.e(var2, var3, var4);
       if(var5 == pb.au.bO) {

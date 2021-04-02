@@ -44,14 +44,14 @@ public class vu {
       this.b = var1;
    }
 
-   public bo a(nn var1, int var2) {
+   public bo a(BaseEntity var1, int var2) {
       double var3 = (double)this.a[var2].a + (double)((int)(var1.I + 1.0F)) * 0.5D;
       double var5 = (double)this.a[var2].b;
       double var7 = (double)this.a[var2].c + (double)((int)(var1.I + 1.0F)) * 0.5D;
       return bo.b(var3, var5, var7);
    }
 
-   public bo a(nn var1) {
+   public bo a(BaseEntity var1) {
       return this.a(var1, this.b);
    }
 

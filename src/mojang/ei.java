@@ -30,7 +30,7 @@ public class ei extends yr {
       return var2;
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       --var1.a;
       if(!var2.F) {
          List var4 = this.a_(var1);
@@ -60,12 +60,12 @@ public class ei extends yr {
       return aaq.c;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       if(c(var1.i())) {
          --var1.a;
          var2.a(var3, "random.bow", 0.5F, 0.4F / (d.nextFloat() * 0.4F + 0.8F));
          if(!var2.F) {
-            var2.a((nn)(new bj(var2, var3, var1.i())));
+            var2.a((BaseEntity)(new ThrownPotion(var2, var3, var1.i())));
          }
 
          return var1;
@@ -75,7 +75,7 @@ public class ei extends yr {
       }
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       return false;
    }
 

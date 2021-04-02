@@ -1,11 +1,11 @@
 package mojang;
 
-public class ajn extends acq {
+public class ajn extends Mob {
 
    protected int aA = 100;
 
 
-   public ajn(xd var1) {
+   public ajn(World var1) {
       super(var1);
    }
 

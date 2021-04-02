@@ -8,22 +8,22 @@ public class qu {
    public boolean d = false;
 
 
-   public void a(ady var1) {
-      ady var2 = new ady();
-      var2.a("invulnerable", this.a);
-      var2.a("flying", this.b);
-      var2.a("mayfly", this.c);
-      var2.a("instabuild", this.d);
-      var1.a("abilities", (gh)var2);
+   public void a(CompundTag var1) {
+      CompundTag var2 = new CompundTag();
+      var2.addBoolean("invulnerable", this.a);
+      var2.addBoolean("flying", this.b);
+      var2.addBoolean("mayfly", this.c);
+      var2.addBoolean("instabuild", this.d);
+      var1.addBaseTag("abilities", (BaseTag)var2);
    }
 
-   public void b(ady var1) {
-      if(var1.c("abilities")) {
-         ady var2 = var1.m("abilities");
-         this.a = var2.o("invulnerable");
-         this.b = var2.o("flying");
-         this.c = var2.o("mayfly");
-         this.d = var2.o("instabuild");
+   public void b(CompundTag var1) {
+      if(var1.containsKey("abilities")) {
+         CompundTag var2 = var1.getCompundTag("abilities");
+         this.a = var2.getBoolean("invulnerable");
+         this.b = var2.getBoolean("flying");
+         this.c = var2.getBoolean("mayfly");
+         this.d = var2.getBoolean("instabuild");
       }
 
    }

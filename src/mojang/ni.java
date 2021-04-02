@@ -3,8 +3,8 @@ package mojang;
 public class ni extends rc {
 
    private wd d;
-   private acq e;
-   xd a;
+   private Mob e;
+   World a;
    private float f;
    private rh g;
    private int h;
@@ -24,7 +24,7 @@ public class ni extends rc {
    }
 
    public boolean a() {
-      acq var1 = this.d.ah();
+      Mob var1 = this.d.ah();
       if(var1 == null) {
          return false;
       } else if(this.d.af()) {
@@ -60,9 +60,9 @@ public class ni extends rc {
             this.h = 10;
             if(!this.g.a(this.e, this.f)) {
                if(this.d.f(this.e) >= 144.0D) {
-                  int var1 = gk.c(this.e.o) - 2;
-                  int var2 = gk.c(this.e.q) - 2;
-                  int var3 = gk.c(this.e.y.b);
+                  int var1 = Utils.c(this.e.o) - 2;
+                  int var2 = Utils.c(this.e.q) - 2;
+                  int var3 = Utils.c(this.e.y.b);
 
                   for(int var4 = 0; var4 <= 4; ++var4) {
                      for(int var5 = 0; var5 <= 4; ++var5) {

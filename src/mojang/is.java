@@ -2,7 +2,7 @@ package mojang;
 
 public abstract class is extends rc {
 
-   protected acq a;
+   protected Mob a;
    protected int b;
    protected int c;
    protected int d;
@@ -12,7 +12,7 @@ public abstract class is extends rc {
    float h;
 
 
-   public is(acq var1) {
+   public is(Mob var1) {
       this.a = var1;
    }
 
@@ -36,9 +36,9 @@ public abstract class is extends rc {
                }
             }
 
-            this.b = gk.c(this.a.o);
-            this.c = gk.c(this.a.p + 1.0D);
-            this.d = gk.c(this.a.q);
+            this.b = Utils.c(this.a.o);
+            this.c = Utils.c(this.a.p + 1.0D);
+            this.d = Utils.c(this.a.q);
             this.e = this.a(this.b, this.c, this.d);
             return this.e != null;
          } else {

@@ -13,7 +13,7 @@ public class ye extends qk {
       return 23;
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return wu.b((double)var2 + this.bV, (double)var3 + this.bW, (double)var4 + this.bX, (double)var2 + this.bY, (double)var3 + this.bZ, (double)var4 + this.ca);
    }
 
@@ -25,11 +25,11 @@ public class ye extends qk {
       return 2129968;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return super.e(var1, var2, var3, var4);
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       return 2129968;
    }
 
@@ -37,7 +37,7 @@ public class ye extends qk {
       return var1 == B.bO;
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return var3 >= 0 && var3 < 256?var1.f(var2, var3 - 1, var4) == acn.g && var1.e(var2, var3 - 1, var4) == 0:false;
    }
 }

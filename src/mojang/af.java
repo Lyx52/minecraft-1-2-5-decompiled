@@ -13,9 +13,9 @@ public class af extends aar {
       System.out.println("CJ > KW");
       GL11.glPushMatrix();
       GL11.glTranslatef((float)var2 + 0.5F, (float)var4, (float)var6 + 0.5F);
-      nn var9 = (nn)this.a.get(((cj)var1).a());
+      BaseEntity var9 = (BaseEntity)this.a.get(((cj)var1).a());
       if(var9 == null) {
-         var9 = aao.a(((cj)var1).a(), (xd)null);
+         var9 = EntityManager.a(((cj)var1).a(), (World)null);
          this.a.put(((cj)var1).a(), var9);
       }
 

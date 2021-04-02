@@ -12,7 +12,7 @@ public class mt extends yr {
       this.b = var3;
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var7 != 1) {
          return false;
       } else if(var2.e(var4, var5, var6) && var2.e(var4, var5 + 1, var6)) {

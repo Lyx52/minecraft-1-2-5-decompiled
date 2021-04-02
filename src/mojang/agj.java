@@ -6,7 +6,7 @@ public class agj extends abn {
 
    public agj(int var1) {
       super(var1);
-      this.K.add(new bg(yo.class, 5, 4, 4));
+      this.K.add(new bg(Wolf.class, 5, 4, 4));
       this.I.z = 10;
       this.I.B = 2;
    }

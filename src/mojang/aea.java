@@ -13,11 +13,11 @@ public class aea extends agv {
 
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return this.cd != acn.h;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       super.a(var1, var2, var3, var4, var5);
       if(var1.a(var2, var3, var4) == this.bO) {
          this.j(var1, var2, var3, var4);
@@ -25,7 +25,7 @@ public class aea extends agv {
 
    }
 
-   private void j(xd var1, int var2, int var3, int var4) {
+   private void j(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       var1.o = true;
       var1.b(var2, var3, var4, this.bO - 1, var5);
@@ -34,7 +34,7 @@ public class aea extends agv {
       var1.o = false;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(this.cd == acn.h) {
          int var6 = var5.nextInt(3);
 
@@ -71,7 +71,7 @@ public class aea extends agv {
 
    }
 
-   private boolean k(xd var1, int var2, int var3, int var4) {
+   private boolean k(World var1, int var2, int var3, int var4) {
       return var1.f(var2, var3, var4).g();
    }
 }

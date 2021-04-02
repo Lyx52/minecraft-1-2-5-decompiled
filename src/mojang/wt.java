@@ -25,7 +25,7 @@ public class wt extends vd {
       return super.e() + "." + amh.a[var2];
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var1.a == 0) {
          return false;
       } else if(!var2.e(var4, var5, var6)) {
@@ -48,7 +48,7 @@ public class wt extends vd {
       }
    }
 
-   private static boolean b(aan var0, yw var1, xd var2, int var3, int var4, int var5, int var6) {
+   private static boolean b(aan var0, Player var1, World var2, int var3, int var4, int var5, int var6) {
       if(var6 == 0) {
          --var4;
       }

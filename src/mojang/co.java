@@ -12,11 +12,11 @@ public class co extends fe {
       this.c = (te)this.a;
    }
 
-   public void a(tl var1, double var2, double var4, double var6, float var8, float var9) {
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+   public void a(VillagerGolem var1, double var2, double var4, double var6, float var8, float var9) {
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 
-   protected void a(tl var1, float var2, float var3, float var4) {
+   protected void a(VillagerGolem var1, float var2, float var3, float var4) {
       super.a(var1, var2, var3, var4);
       if((double)var1.bM >= 0.01D) {
          float var5 = 13.0F;
@@ -26,7 +26,7 @@ public class co extends fe {
       }
    }
 
-   protected void a(tl var1, float var2) {
+   protected void a(VillagerGolem var1, float var2) {
       super.b(var1, var2);
       if(var1.E_() != 0) {
          GL11.glEnable('\u803a');
@@ -39,7 +39,7 @@ public class co extends fe {
          int var4 = var1.b(var2);
          int var5 = var4 % 65536;
          int var6 = var4 / 65536;
-         es.a(es.b, (float)var5 / 1.0F, (float)var6 / 1.0F);
+         ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var5 / 1.0F, (float)var6 / 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.a("/mojang/terrain.png");

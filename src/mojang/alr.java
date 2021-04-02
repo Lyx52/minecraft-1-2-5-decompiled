@@ -14,7 +14,7 @@ public class alr extends pb {
       return var1 == 1?78:(var1 == 0?2:77);
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 == 1) {
          return 78;
       } else if(var5 == 0) {
@@ -25,7 +25,7 @@ public class alr extends pb {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          if(var1.o(var2, var3 + 1, var4) < 4 && o[var1.a(var2, var3 + 1, var4)] > 2) {
             var1.g(var2, var3, var4, v.bO);
@@ -44,7 +44,7 @@ public class alr extends pb {
       }
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       super.b(var1, var2, var3, var4, var5);
       if(var5.nextInt(10) == 0) {
          var1.a("townaura", (double)((float)var2 + var5.nextFloat()), (double)((float)var3 + 1.1F), (double)((float)var4 + var5.nextFloat()), 0.0D, 0.0D, 0.0D);

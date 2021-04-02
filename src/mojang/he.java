@@ -18,7 +18,7 @@ public abstract class he {
 
    public void a(he var1, List var2, Random var3) {}
 
-   public abstract boolean a(xd var1, Random var2, qg var3);
+   public abstract boolean a(World var1, Random var2, qg var3);
 
    public qg b() {
       return this.g;
@@ -47,7 +47,7 @@ public abstract class he {
       return new qo(this.g.e(), this.g.f(), this.g.g());
    }
 
-   protected boolean a(xd var1, qg var2) {
+   protected boolean a(World var1, qg var2) {
       int var3 = Math.max(this.g.a - 1, var2.a);
       int var4 = Math.max(this.g.b - 1, var2.b);
       int var5 = Math.max(this.g.c - 1, var2.c);
@@ -293,7 +293,7 @@ public abstract class he {
       return var2;
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, int var6, qg var7) {
+   protected void a(World var1, int var2, int var3, int var4, int var5, int var6, qg var7) {
       int var8 = this.a(var4, var6);
       int var9 = this.b(var5);
       int var10 = this.b(var4, var6);
@@ -302,14 +302,14 @@ public abstract class he {
       }
    }
 
-   protected int a(xd var1, int var2, int var3, int var4, qg var5) {
+   protected int a(World var1, int var2, int var3, int var4, qg var5) {
       int var6 = this.a(var2, var4);
       int var7 = this.b(var3);
       int var8 = this.b(var2, var4);
       return !var5.b(var6, var7, var8)?0:var1.a(var6, var7, var8);
    }
 
-   protected void a(xd var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, boolean var11) {
+   protected void a(World var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, boolean var11) {
       for(int var12 = var4; var12 <= var7; ++var12) {
          for(int var13 = var3; var13 <= var6; ++var13) {
             for(int var14 = var5; var14 <= var8; ++var14) {
@@ -326,7 +326,7 @@ public abstract class he {
 
    }
 
-   protected void a(xd var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Random var10, up var11) {
+   protected void a(World var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Random var10, up var11) {
       for(int var12 = var4; var12 <= var7; ++var12) {
          for(int var13 = var3; var13 <= var6; ++var13) {
             for(int var14 = var5; var14 <= var8; ++var14) {
@@ -340,7 +340,7 @@ public abstract class he {
 
    }
 
-   protected void a(xd var1, qg var2, Random var3, float var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, boolean var13) {
+   protected void a(World var1, qg var2, Random var3, float var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, boolean var13) {
       for(int var14 = var6; var14 <= var9; ++var14) {
          for(int var15 = var5; var15 <= var8; ++var15) {
             for(int var16 = var7; var16 <= var10; ++var16) {
@@ -357,14 +357,14 @@ public abstract class he {
 
    }
 
-   protected void a(xd var1, qg var2, Random var3, float var4, int var5, int var6, int var7, int var8, int var9) {
+   protected void a(World var1, qg var2, Random var3, float var4, int var5, int var6, int var7, int var8, int var9) {
       if(var3.nextFloat() < var4) {
          this.a(var1, var8, var9, var5, var6, var7, var2);
       }
 
    }
 
-   protected void a(xd var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, boolean var10) {
+   protected void a(World var1, qg var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, boolean var10) {
       float var11 = (float)(var6 - var3 + 1);
       float var12 = (float)(var7 - var4 + 1);
       float var13 = (float)(var8 - var5 + 1);
@@ -391,7 +391,7 @@ public abstract class he {
 
    }
 
-   protected void b(xd var1, int var2, int var3, int var4, qg var5) {
+   protected void b(World var1, int var2, int var3, int var4, qg var5) {
       int var6 = this.a(var2, var4);
       int var7 = this.b(var3);
       int var8 = this.b(var2, var4);
@@ -404,7 +404,7 @@ public abstract class he {
       }
    }
 
-   protected void b(xd var1, int var2, int var3, int var4, int var5, int var6, qg var7) {
+   protected void b(World var1, int var2, int var3, int var4, int var5, int var6, qg var7) {
       int var8 = this.a(var4, var6);
       int var9 = this.b(var5);
       int var10 = this.b(var4, var6);
@@ -417,7 +417,7 @@ public abstract class he {
       }
    }
 
-   protected void a(xd var1, qg var2, Random var3, int var4, int var5, int var6, fx[] var7, int var8) {
+   protected void a(World var1, qg var2, Random var3, int var4, int var5, int var6, fx[] var7, int var8) {
       int var9 = this.a(var4, var6);
       int var10 = this.b(var5);
       int var11 = this.b(var4, var6);
@@ -446,7 +446,7 @@ public abstract class he {
 
    }
 
-   protected void a(xd var1, qg var2, Random var3, int var4, int var5, int var6, int var7) {
+   protected void a(World var1, qg var2, Random var3, int var4, int var5, int var6, int var7) {
       int var8 = this.a(var4, var6);
       int var9 = this.b(var5);
       int var10 = this.b(var4, var6);

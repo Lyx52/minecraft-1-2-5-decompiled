@@ -31,16 +31,16 @@ public class xa extends w {
       return var1 == 1?this.bN:(var1 == 0?this.bN:(var1 == 3?this.bN + 1 + 16:this.bN + 16));
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       if(var1.a(var2, var3 - 1, var4) == aU.bO && var1.a(var2, var3 - 2, var4) == aU.bO) {
          if(!var1.F) {
             var1.d(var2, var3, var4, 0);
             var1.d(var2, var3 - 1, var4, 0);
             var1.d(var2, var3 - 2, var4, 0);
-            q var9 = new q(var1);
+            SnowMan var9 = new SnowMan(var1);
             var9.c((double)var2 + 0.5D, (double)var3 - 1.95D, (double)var4 + 0.5D, 0.0F, 0.0F);
-            var1.a((nn)var9);
+            var1.a((BaseEntity)var9);
             var1.h(var2, var3, var4, 0);
             var1.h(var2, var3 - 1, var4, 0);
             var1.h(var2, var3 - 2, var4, 0);
@@ -64,10 +64,10 @@ public class xa extends w {
                var1.d(var2, var3 - 1, var4 + 1, 0);
             }
 
-            tl var7 = new tl(var1);
+            VillagerGolem var7 = new VillagerGolem(var1);
             var7.b(true);
             var7.c((double)var2 + 0.5D, (double)var3 - 1.95D, (double)var4 + 0.5D, 0.0F, 0.0F);
-            var1.a((nn)var7);
+            var1.a((BaseEntity)var7);
 
             for(int var8 = 0; var8 < 120; ++var8) {
                var1.a("snowballpoof", (double)var2 + var1.r.nextDouble(), (double)(var3 - 2) + var1.r.nextDouble() * 3.9D, (double)var4 + var1.r.nextDouble(), 0.0D, 0.0D, 0.0D);
@@ -88,13 +88,13 @@ public class xa extends w {
 
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       int var5 = var1.a(var2, var3, var4);
       return (var5 == 0 || m[var5].cd.i()) && var1.h(var2, var3 - 1, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
-      int var6 = gk.c((double)(var5.u * 4.0F / 360.0F) + 2.5D) & 3;
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
+      int var6 = Utils.c((double)(var5.u * 4.0F / 360.0F) + 2.5D) & 3;
       var1.f(var2, var3, var4, var6);
    }
 }

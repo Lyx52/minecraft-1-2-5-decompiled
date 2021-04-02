@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 
 public class tf {
 
-   private static FloatBuffer a = ew.e(16);
+   private static FloatBuffer a = BufferManager.createFloatBuffer(16);
 
 
    public static void a() {

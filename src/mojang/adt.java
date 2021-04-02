@@ -35,7 +35,7 @@ public class adt extends ho {
       this.a[5].f = -1.5707964F;
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a[5].d = 4.0F - var4;
 
       for(int var8 = 0; var8 < 6; ++var8) {

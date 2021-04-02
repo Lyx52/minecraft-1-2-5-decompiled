@@ -2,9 +2,9 @@ package mojang;
 
 public class ax extends rc {
 
-   xd a;
-   acq b;
-   acq c;
+   World a;
+   Mob b;
+   Mob c;
    int d;
    float e;
    boolean f;
@@ -13,12 +13,12 @@ public class ax extends rc {
    private int i;
 
 
-   public ax(acq var1, Class var2, float var3, boolean var4) {
+   public ax(Mob var1, Class var2, float var3, boolean var4) {
       this(var1, var3, var4);
       this.h = var2;
    }
 
-   public ax(acq var1, float var2, boolean var3) {
+   public ax(Mob var1, float var2, boolean var3) {
       this.d = 0;
       this.b = var1;
       this.a = var1.k;
@@ -28,7 +28,7 @@ public class ax extends rc {
    }
 
    public boolean a() {
-      acq var1 = this.b.aT();
+      Mob var1 = this.b.aT();
       if(var1 == null) {
          return false;
       } else if(this.h != null && !this.h.isAssignableFrom(var1.getClass())) {
@@ -41,8 +41,8 @@ public class ax extends rc {
    }
 
    public boolean b() {
-      acq var1 = this.b.aT();
-      return var1 == null?false:(!this.c.M()?false:(!this.f?!this.b.aM().e():this.b.f(gk.c(this.c.o), gk.c(this.c.p), gk.c(this.c.q))));
+      Mob var1 = this.b.aT();
+      return var1 == null?false:(!this.c.M()?false:(!this.f?!this.b.aM().e():this.b.f(Utils.c(this.c.o), Utils.c(this.c.p), Utils.c(this.c.q))));
    }
 
    public void c() {
@@ -67,7 +67,7 @@ public class ax extends rc {
       if(this.b.f(this.c.o, this.c.y.b, this.c.q) <= var1) {
          if(this.d <= 0) {
             this.d = 20;
-            this.b.c((nn)this.c);
+            this.b.c((BaseEntity)this.c);
          }
       }
    }

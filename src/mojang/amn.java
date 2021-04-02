@@ -3,11 +3,11 @@ package mojang;
 public class amn extends yu {
 
    private final io a;
-   private yw f;
+   private Player f;
    private int g;
 
 
-   public amn(yw var1, io var2, io var3, int var4, int var5, int var6) {
+   public amn(Player var1, io var2, io var3, int var4, int var5, int var6) {
       super(var3, var4, var5, var6);
       this.f = var1;
       this.a = var2;

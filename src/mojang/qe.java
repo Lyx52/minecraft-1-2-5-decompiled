@@ -2,20 +2,20 @@ package mojang;
 
 public class qe extends av {
 
-   public qe(xd var1) {
+   public qe(World var1) {
       super(var1);
    }
 
-   public qe(xd var1, acq var2) {
+   public qe(World var1, Mob var2) {
       super(var1, var2);
    }
 
-   public qe(xd var1, double var2, double var4, double var6) {
+   public qe(World var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6);
    }
 
    protected void a(pl var1) {
-      if(var1.g != null && var1.g.a(md.a((nn)this, this.c), 0)) {
+      if(var1.g != null && var1.g.a(md.a((BaseEntity)this, this.c), 0)) {
          ;
       }
 
@@ -26,10 +26,10 @@ public class qe extends av {
          }
 
          for(int var3 = 0; var3 < var2; ++var3) {
-            rd var4 = new rd(this.k);
+            Chicken var4 = new Chicken(this.k);
             var4.d(-24000);
             var4.c(this.o, this.p, this.q, this.u, 0.0F);
-            this.k.a((nn)var4);
+            this.k.a((BaseEntity)var4);
          }
       }
 

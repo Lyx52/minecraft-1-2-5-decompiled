@@ -6,7 +6,7 @@ public class sp extends abn {
 
    public sp(int var1) {
       super(var1);
-      this.K.add(new bg(yo.class, 8, 4, 4));
+      this.K.add(new bg(Wolf.class, 8, 4, 4));
       this.I.z = 10;
       this.I.B = 1;
    }

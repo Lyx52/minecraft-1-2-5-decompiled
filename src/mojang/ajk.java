@@ -9,18 +9,18 @@ public class ajk extends yr {
       this.bR = 1;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       float var4 = 1.0F;
       float var5 = var3.x + (var3.v - var3.x) * var4;
       float var6 = var3.w + (var3.u - var3.w) * var4;
-      double var7 = var3.l + (var3.o - var3.l) * (double)var4;
-      double var9 = var3.m + (var3.p - var3.m) * (double)var4 + 1.62D - (double)var3.H;
-      double var11 = var3.n + (var3.q - var3.n) * (double)var4;
+      double var7 = var3.sandX + (var3.o - var3.sandX) * (double)var4;
+      double var9 = var3.sandY + (var3.p - var3.sandY) * (double)var4 + 1.62D - (double)var3.H;
+      double var11 = var3.sandZ + (var3.q - var3.sandZ) * (double)var4;
       bo var13 = mojang.bo.b(var7, var9, var11);
-      float var14 = gk.b(-var6 * 0.017453292F - 3.1415927F);
-      float var15 = gk.a(-var6 * 0.017453292F - 3.1415927F);
-      float var16 = -gk.b(-var5 * 0.017453292F);
-      float var17 = gk.a(-var5 * 0.017453292F);
+      float var14 = Utils.cos(-var6 * 0.017453292F - 3.1415927F);
+      float var15 = Utils.sin(-var6 * 0.017453292F - 3.1415927F);
+      float var16 = -Utils.cos(-var5 * 0.017453292F);
+      float var17 = Utils.sin(-var5 * 0.017453292F);
       float var18 = var15 * var16;
       float var20 = var14 * var16;
       double var21 = 5.0D;
@@ -32,10 +32,10 @@ public class ajk extends yr {
          bo var25 = var3.k(var4);
          boolean var26 = false;
          float var27 = 1.0F;
-         List var28 = var2.b((nn)var3, var3.y.a(var25.a * var21, var25.b * var21, var25.c * var21).b((double)var27, (double)var27, (double)var27));
+         List var28 = var2.b((BaseEntity)var3, var3.y.a(var25.a * var21, var25.b * var21, var25.c * var21).b((double)var27, (double)var27, (double)var27));
 
          for(int var29 = 0; var29 < var28.size(); ++var29) {
-            nn var30 = (nn)var28.get(var29);
+            BaseEntity var30 = (BaseEntity)var28.get(var29);
             if(var30.l_()) {
                float var31 = var30.j_();
                wu var32 = var30.y.b((double)var31, (double)var31, (double)var31);
@@ -57,7 +57,7 @@ public class ajk extends yr {
                      --var34;
                   }
 
-                  var2.a((nn)(new ep(var2, (double)((float)var33 + 0.5F), (double)((float)var34 + 1.0F), (double)((float)var35 + 0.5F))));
+                  var2.a((BaseEntity)(new Boat(var2, (double)((float)var33 + 0.5F), (double)((float)var34 + 1.0F), (double)((float)var35 + 0.5F))));
                }
 
                if(!var3.aT.d) {

@@ -11,7 +11,7 @@ public class oc {
    private double d;
    private double e;
    private double f;
-   private IntBuffer g = ew.d(65536);
+   private IntBuffer g = BufferManager.createIntBuffer(65536);
    private boolean h = false;
    private boolean i = false;
 

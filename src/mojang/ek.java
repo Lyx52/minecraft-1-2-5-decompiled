@@ -26,7 +26,7 @@ public class ek extends rc {
          Iterator var5 = var1.iterator();
 
          while(var5.hasNext()) {
-            nn var6 = (nn)var5.next();
+            BaseEntity var6 = (BaseEntity)var5.next();
             bc var7 = (bc)var6;
             if(var7.av() >= 0) {
                double var8 = this.a.f(var7);
@@ -68,7 +68,7 @@ public class ek extends rc {
    public void e() {
       if(--this.d <= 0) {
          this.d = 10;
-         this.a.aM().a((acq)this.b, this.c);
+         this.a.aM().a((Mob)this.b, this.c);
       }
    }
 }

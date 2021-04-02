@@ -8,11 +8,11 @@ public class al extends gz {
       super(var1, var2, acn.B, false);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       float var5;
       float var6;
       if(var1.a(var2 - 1, var3, var4) != this.bO && var1.a(var2 + 1, var3, var4) != this.bO) {
@@ -35,7 +35,7 @@ public class al extends gz {
       return false;
    }
 
-   public boolean a_(xd var1, int var2, int var3, int var4) {
+   public boolean a_(World var1, int var2, int var3, int var4) {
       byte var5 = 0;
       byte var6 = 0;
       if(var1.a(var2 - 1, var3, var4) == ap.bO || var1.a(var2 + 1, var3, var4) == ap.bO) {
@@ -85,7 +85,7 @@ public class al extends gz {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       byte var6 = 0;
       byte var7 = 1;
       if(var1.a(var2 - 1, var3, var4) == this.bO || var1.a(var2 + 1, var3, var4) == this.bO) {
@@ -120,7 +120,7 @@ public class al extends gz {
       }
    }
 
-   public boolean a(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean a(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var1.a(var2, var3, var4) == this.bO) {
          return false;
       } else {
@@ -142,14 +142,14 @@ public class al extends gz {
       return 1;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5) {
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5) {
       if(var5.j == null && var5.i == null) {
          var5.R();
       }
 
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       if(var5.nextInt(100) == 0) {
          var1.a((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "portal.portal", 0.5F, var5.nextFloat() * 0.4F + 0.8F);
       }

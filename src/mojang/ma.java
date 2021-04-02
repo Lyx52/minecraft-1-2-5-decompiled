@@ -36,7 +36,7 @@ public class ma extends aas {
       return a(var7) && a(var0, var7) == null?new ma(var6, var1, var7, var5):null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       this.a(var1, var3, 7, 3, 0, 11, 4, 18, pb.bA.bO, pb.bA.bO, false);
       this.a(var1, var3, 0, 3, 7, 18, 4, 11, pb.bA.bO, pb.bA.bO, false);
       this.a(var1, var3, 8, 5, 0, 10, 7, 18, 0, 0, false);

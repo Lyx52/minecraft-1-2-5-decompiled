@@ -7,7 +7,7 @@ public class ajj extends yr {
       this.bR = 1;
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var7 == 0) {
          return false;
       } else if(!var3.f(var4, var5, var6).a()) {
@@ -39,7 +39,7 @@ public class ajj extends yr {
             return false;
          } else {
             if(var7 == 1) {
-               int var8 = gk.c((double)((var2.u + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15;
+               int var8 = Utils.c((double)((var2.u + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15;
                var3.d(var4, var5, var6, pb.aD.bO, var8);
             } else {
                var3.d(var4, var5, var6, pb.aI.bO, var7);

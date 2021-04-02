@@ -5,7 +5,7 @@ import java.util.List;
 
 class pv {
 
-   private xd b;
+   private World b;
    private int c;
    private int d;
    private int e;
@@ -15,7 +15,7 @@ class pv {
    final aez a;
 
 
-   public pv(aez var1, xd var2, int var3, int var4, int var5) {
+   public pv(aez var1, World var2, int var3, int var4, int var5) {
       this.a = var1;
       this.g = new ArrayList();
       this.b = var2;

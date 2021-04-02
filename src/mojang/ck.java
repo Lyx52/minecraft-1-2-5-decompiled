@@ -108,23 +108,26 @@ public class ck extends Thread {
 
    }
 
-   private void a(URL var1, File var2, long var3) throws IOException {
-      byte[] var5 = new byte[4096];
-      DataInputStream var6 = new DataInputStream(var1.openStream());
-      DataOutputStream var7 = new DataOutputStream(new FileOutputStream(var2));
-      boolean var8 = false;
+   private void a(URL var1, File var2, long var3) {
+      try {
+         byte[] var5 = new byte[4096];
+         DataInputStream var6 = new DataInputStream(var1.openStream());
+         DataOutputStream var7 = new DataOutputStream(new FileOutputStream(var2));
+         boolean var8 = false;
 
-      do {
-         int var9;
-         if((var9 = var6.read(var5)) < 0) {
-            var6.close();
-            var7.close();
-            return;
-         }
+         do {
+            int var9;
+            if ((var9 = var6.read(var5)) < 0) {
+               var6.close();
+               var7.close();
+               return;
+            }
 
-         var7.write(var5, 0, var9);
-      } while(!this.c);
+            var7.write(var5, 0, var9);
+         } while (!this.c);
+      } catch (IOException ignored) {
 
+      }
    }
 
    public void b() {

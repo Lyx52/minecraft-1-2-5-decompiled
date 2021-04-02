@@ -8,7 +8,7 @@ public class mm extends yr {
       this.g(384);
    }
 
-   public void a(aan var1, xd var2, yw var3, int var4) {
+   public void a(aan var1, World var2, Player var3, int var4) {
       boolean var5 = var3.aT.d || ais.a(jt.v.w, var1) > 0;
       if(var5 || var3.ap.e(yr.l.bQ)) {
          int var6 = this.b(var1) - var4;
@@ -22,7 +22,7 @@ public class mm extends yr {
             var7 = 1.0F;
          }
 
-         nm var8 = new nm(var2, var3, var7 * 2.0F);
+         Arrow var8 = new Arrow(var2, var3, var7 * 2.0F);
          if(var7 == 1.0F) {
             var8.d = true;
          }
@@ -50,13 +50,13 @@ public class mm extends yr {
          }
 
          if(!var2.F) {
-            var2.a((nn)var8);
+            var2.a((BaseEntity)var8);
          }
       }
 
    }
 
-   public aan b(aan var1, xd var2, yw var3) {
+   public aan b(aan var1, World var2, Player var3) {
       return var1;
    }
 
@@ -68,7 +68,7 @@ public class mm extends yr {
       return aaq.e;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       if(var3.aT.d || var3.ap.e(yr.l.bQ)) {
          var3.c(var1, this.b(var1));
       }

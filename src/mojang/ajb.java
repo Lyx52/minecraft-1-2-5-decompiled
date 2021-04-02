@@ -5,7 +5,7 @@ public class ajb extends rt {
    float a;
 
 
-   public ajb(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public ajb(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, 0.0D, 0.0D, 0.0D);
       float var14 = 2.5F;
       this.r *= 0.10000000149011612D;
@@ -23,7 +23,7 @@ public class ajb extends rt {
       this.S = false;
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = ((float)this.d + var2) / (float)this.e * 32.0F;
       if(var8 < 0.0F) {
          var8 = 0.0F;
@@ -38,9 +38,9 @@ public class ajb extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       if(this.d++ >= this.e) {
          this.A();
       }
@@ -50,7 +50,7 @@ public class ajb extends rt {
       this.r *= 0.9599999785423279D;
       this.s *= 0.9599999785423279D;
       this.t *= 0.9599999785423279D;
-      yw var1 = this.k.a(this, 2.0D);
+      Player var1 = this.k.a(this, 2.0D);
       if(var1 != null && this.p > var1.y.b) {
          this.p += (var1.y.b - this.p) * 0.2D;
          this.s += (var1.s - this.s) * 0.2D;

@@ -15,15 +15,15 @@ public abstract class li {
       this.a = var1;
    }
 
-   public abstract boolean a(xd var1, Random var2, int var3, int var4, int var5);
+   public abstract boolean a(World var1, Random var2, int var3, int var4, int var5);
 
    public void a(double var1, double var3, double var5) {}
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5) {
+   protected void a(World var1, int var2, int var3, int var4, int var5) {
       this.a(var1, var2, var3, var4, var5, 0);
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, int var6) {
+   protected void a(World var1, int var2, int var3, int var4, int var5, int var6) {
       if(this.a) {
          var1.d(var2, var3, var4, var5, var6);
       } else if(var1.j(var2, var3, var4) && var1.c(var2, var4).o) {

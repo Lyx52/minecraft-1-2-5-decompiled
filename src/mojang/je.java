@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
-public class je extends xd {
+public class je extends World {
 
    private LinkedList G = new LinkedList();
    private adl H;
@@ -15,7 +15,7 @@ public class je extends xd {
    private Set L = new HashSet();
 
 
-   public je(adl var1, fj var2, int var3, int var4) {
+   public je(adl var1, WorldStub var2, int var3, int var4) {
       super(new akx(), "MpServer", alb.a(var3), var2);
       this.H = var1;
       this.q = var4;
@@ -28,7 +28,7 @@ public class je extends xd {
 
       int var1;
       for(var1 = 0; var1 < 10 && !this.L.isEmpty(); ++var1) {
-         nn var2 = (nn)this.L.iterator().next();
+         BaseEntity var2 = (BaseEntity)this.L.iterator().next();
          this.L.remove(var2);
          if(!this.b.contains(var2)) {
             this.a(var2);
@@ -104,7 +104,7 @@ public class je extends xd {
 
    }
 
-   public boolean a(nn var1) {
+   public boolean a(BaseEntity var1) {
       boolean var2 = super.a(var1);
       this.K.add(var1);
       if(!var2) {
@@ -114,12 +114,12 @@ public class je extends xd {
       return var2;
    }
 
-   public void b(nn var1) {
+   public void b(BaseEntity var1) {
       super.b(var1);
       this.K.remove(var1);
    }
 
-   protected void c(nn var1) {
+   protected void c(BaseEntity var1) {
       super.c(var1);
       if(this.L.contains(var1)) {
          this.L.remove(var1);
@@ -127,7 +127,7 @@ public class je extends xd {
 
    }
 
-   protected void d(nn var1) {
+   protected void d(BaseEntity var1) {
       super.d(var1);
       if(this.K.contains(var1)) {
          if(var1.M()) {
@@ -139,8 +139,8 @@ public class je extends xd {
 
    }
 
-   public void a(int var1, nn var2) {
-      nn var3 = this.a(var1);
+   public void a(int var1, BaseEntity var2) {
+      BaseEntity var3 = this.a(var1);
       if(var3 != null) {
          this.b(var3);
       }
@@ -154,12 +154,12 @@ public class je extends xd {
       this.J.a(var1, var2);
    }
 
-   public nn a(int var1) {
-      return (nn)this.J.a(var1);
+   public BaseEntity a(int var1) {
+      return (BaseEntity)this.J.a(var1);
    }
 
-   public nn b(int var1) {
-      nn var2 = (nn)this.J.d(var1);
+   public BaseEntity b(int var1) {
+      BaseEntity var2 = (BaseEntity)this.J.d(var1);
       if(var2 != null) {
          this.K.remove(var2);
          this.b(var2);
@@ -184,7 +184,7 @@ public class je extends xd {
          }
 
          this.i = this.j;
-         if(this.x.o()) {
+         if(this.x.isRaining()) {
             this.j = (float)((double)this.j + 0.01D);
          } else {
             this.j = (float)((double)this.j - 0.01D);
@@ -199,7 +199,7 @@ public class je extends xd {
          }
 
          this.k = this.l;
-         if(this.x.m()) {
+         if(this.x.isThundering()) {
             this.l = (float)((double)this.l + 0.01D);
          } else {
             this.l = (float)((double)this.l - 0.01D);

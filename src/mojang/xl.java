@@ -10,7 +10,7 @@ public class xl extends agy {
       return this.bN + (var1 == 1?1:0);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(var1.e(var2, var3, var4) == 0) {
          return false;
       } else {
@@ -19,7 +19,7 @@ public class xl extends agy {
       }
    }
 
-   public void f(xd var1, int var2, int var3, int var4, int var5) {
+   public void f(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F) {
          dk var6 = (dk)var1.b(var2, var3, var4);
          if(var6 != null) {
@@ -30,7 +30,7 @@ public class xl extends agy {
       }
    }
 
-   public void h(xd var1, int var2, int var3, int var4) {
+   public void h(World var1, int var2, int var3, int var4) {
       if(!var1.F) {
          dk var5 = (dk)var1.b(var2, var3, var4);
          if(var5 != null) {
@@ -45,20 +45,20 @@ public class xl extends agy {
                double var9 = (double)(var1.r.nextFloat() * var8) + (double)(1.0F - var8) * 0.5D;
                double var11 = (double)(var1.r.nextFloat() * var8) + (double)(1.0F - var8) * 0.2D + 0.6D;
                double var13 = (double)(var1.r.nextFloat() * var8) + (double)(1.0F - var8) * 0.5D;
-               fq var15 = new fq(var1, (double)var2 + var9, (double)var3 + var11, (double)var4 + var13, new aan(var6, 1, 0));
+               Item var15 = new Item(var1, (double)var2 + var9, (double)var3 + var11, (double)var4 + var13, new aan(var6, 1, 0));
                var15.c = 10;
-               var1.a((nn)var15);
+               var1.a((BaseEntity)var15);
             }
          }
       }
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       this.h(var1, var2, var3, var4);
       super.b_(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!var1.F) {
          super.a(var1, var2, var3, var4, var5, var6, 0);
       }

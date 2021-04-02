@@ -16,7 +16,7 @@ public class qc extends abs {
 
    public qc() {}
 
-   public qc(mk var1) {
+   public qc(Painting var1) {
       this.a = var1.f;
       this.b = var1.b;
       this.c = var1.c;

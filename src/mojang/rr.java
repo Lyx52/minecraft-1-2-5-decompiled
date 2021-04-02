@@ -15,11 +15,11 @@ public class rr extends qk {
       return var1 == bc.bO;
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return this.f_(var1.a(var2, var3 - 1, var4));
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       if(var6 < 3) {
          abn var7 = var1.a(var2, var4);
@@ -40,7 +40,7 @@ public class rr extends qk {
       return 6;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!var1.F) {
          int var8 = 1;
          if(var5 >= 3) {

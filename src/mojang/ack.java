@@ -16,7 +16,7 @@ public class ack {
    public int[] b;
    public boolean[] c;
    public boolean d;
-   public xd e;
+   public World e;
    public int[] f;
    public final int g;
    public final int h;
@@ -32,7 +32,7 @@ public class ack {
    boolean p;
 
 
-   public ack(xd var1, int var2, int var3) {
+   public ack(World var1, int var2, int var3) {
       this.q = new zg[16];
       this.r = new byte[256];
       this.b = new int[256];
@@ -60,7 +60,7 @@ public class ack {
       Arrays.fill(this.r, (byte)-1);
    }
 
-   public ack(xd var1, byte[] var2, int var3, int var4) {
+   public ack(World var1, byte[] var2, int var3, int var4) {
       this(var1, var3, var4);
       int var5 = var2.length / 256;
 
@@ -517,16 +517,16 @@ public class ack {
       }
    }
 
-   public void a(nn var1) {
+   public void a(BaseEntity var1) {
       this.m = true;
-      int var2 = gk.c(var1.o / 16.0D);
-      int var3 = gk.c(var1.q / 16.0D);
+      int var2 = Utils.c(var1.o / 16.0D);
+      int var3 = Utils.c(var1.q / 16.0D);
       if(var2 != this.g || var3 != this.h) {
          System.out.println("Wrong location! " + var1);
          Thread.dumpStack();
       }
 
-      int var4 = gk.c(var1.p / 16.0D);
+      int var4 = Utils.c(var1.p / 16.0D);
       if(var4 < 0) {
          var4 = 0;
       }
@@ -542,11 +542,11 @@ public class ack {
       this.j[var4].add(var1);
    }
 
-   public void b(nn var1) {
+   public void b(BaseEntity var1) {
       this.a(var1, var1.af);
    }
 
-   public void a(nn var1, int var2) {
+   public void a(BaseEntity var1, int var2) {
       if(var2 < 0) {
          var2 = 0;
       }
@@ -650,9 +650,9 @@ public class ack {
       this.l = true;
    }
 
-   public void a(nn var1, wu var2, List var3) {
-      int var4 = gk.c((var2.b - 2.0D) / 16.0D);
-      int var5 = gk.c((var2.e + 2.0D) / 16.0D);
+   public void a(BaseEntity var1, wu var2, List var3) {
+      int var4 = Utils.c((var2.b - 2.0D) / 16.0D);
+      int var5 = Utils.c((var2.e + 2.0D) / 16.0D);
       if(var4 < 0) {
          var4 = 0;
       }
@@ -665,10 +665,10 @@ public class ack {
          List var7 = this.j[var6];
 
          for(int var8 = 0; var8 < var7.size(); ++var8) {
-            nn var9 = (nn)var7.get(var8);
+            BaseEntity var9 = (BaseEntity)var7.get(var8);
             if(var9 != var1 && var9.y.a(var2)) {
                var3.add(var9);
-               nn[] var10 = var9.Z();
+               BaseEntity[] var10 = var9.Z();
                if(var10 != null) {
                   for(int var11 = 0; var11 < var10.length; ++var11) {
                      var9 = var10[var11];
@@ -684,8 +684,8 @@ public class ack {
    }
 
    public void a(Class var1, wu var2, List var3) {
-      int var4 = gk.c((var2.b - 2.0D) / 16.0D);
-      int var5 = gk.c((var2.e + 2.0D) / 16.0D);
+      int var4 = Utils.c((var2.b - 2.0D) / 16.0D);
+      int var5 = Utils.c((var2.e + 2.0D) / 16.0D);
       if(var4 < 0) {
          var4 = 0;
       } else if(var4 >= this.j.length) {
@@ -702,7 +702,7 @@ public class ack {
          List var7 = this.j[var6];
 
          for(int var8 = 0; var8 < var7.size(); ++var8) {
-            nn var9 = (nn)var7.get(var8);
+            BaseEntity var9 = (BaseEntity)var7.get(var8);
             if(var1.isAssignableFrom(var9.getClass()) && var9.y.a(var2)) {
                var3.add(var9);
             }

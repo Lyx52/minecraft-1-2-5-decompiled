@@ -13,7 +13,7 @@ public class agm extends li {
       this.a = var2;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var15;
       for(boolean var6 = false; ((var15 = var1.a(var3, var4, var5)) == 0 || var15 == pb.K.bO) && var4 > 0; --var4) {
          ;

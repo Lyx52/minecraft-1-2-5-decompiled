@@ -14,26 +14,26 @@ class cn extends iff {
    }
 
    protected int a() {
-      List var1 = em.b(this.a).E.b();
+      List var1 = em.b(this.a).texturePackManager.b();
       return var1.size();
    }
 
    protected void a(int var1, boolean var2) {
-      List var3 = em.c(this.a).E.b();
+      List var3 = em.c(this.a).texturePackManager.b();
 
       try {
-         em.d(this.a).E.a((h)var3.get(var1));
+         em.d(this.a).texturePackManager.setTexturePack((Resource)var3.get(var1));
          em.e(this.a).p.b();
       } catch (Exception var5) {
-         em.f(this.a).E.a((h)var3.get(0));
+         em.f(this.a).texturePackManager.setTexturePack((Resource)var3.get(0));
          em.g(this.a).p.b();
       }
 
    }
 
    protected boolean b_(int var1) {
-      List var2 = em.h(this.a).E.b();
-      return em.i(this.a).E.a == var2.get(var1);
+      List var2 = em.h(this.a).texturePackManager.b();
+      return em.i(this.a).texturePackManager.resource == var2.get(var1);
    }
 
    protected int b() {
@@ -44,8 +44,8 @@ class cn extends iff {
       this.a.k();
    }
 
-   protected void a(int var1, int var2, int var3, int var4, adz var5) {
-      h var6 = (h)em.j(this.a).E.b().get(var1);
+   protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
+      Resource var6 = (Resource)em.j(this.a).texturePackManager.b().get(var1);
       var6.c(em.k(this.a));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var5.b();

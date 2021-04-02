@@ -1,6 +1,5 @@
 package mojang;
 
-import java.io.IOException;
 import java.util.List;
 
 public class hy implements ca {
@@ -9,7 +8,7 @@ public class hy implements ca {
    private ca d;
    private ua e;
    private ack[] f;
-   private xd g;
+   private World g;
    int a;
    int b;
    private ack h;
@@ -208,7 +207,7 @@ public class hy implements ca {
       return this.d.a(var1, var2, var3, var4);
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return this.d.a(var1, var2, var3, var4, var5);
    }
 }

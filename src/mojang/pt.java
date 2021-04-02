@@ -9,7 +9,7 @@ public class pt extends pb {
       this.a(true);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -25,7 +25,7 @@ public class pt extends pb {
       return 2;
    }
 
-   private boolean h(xd var1, int var2, int var3, int var4) {
+   private boolean h(World var1, int var2, int var3, int var4) {
       if(var1.b(var2, var3, var4, true)) {
          return true;
       } else {
@@ -45,11 +45,11 @@ public class pt extends pb {
       }
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.b(var2 - 1, var3, var4, true)?true:(var1.b(var2 + 1, var3, var4, true)?true:(var1.b(var2, var3, var4 - 1, true)?true:(var1.b(var2, var3, var4 + 1, true)?true:this.h(var1, var2, var3 - 1, var4))));
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       if(var5 == 1 && this.h(var1, var2, var3 - 1, var4)) {
          var6 = 5;
@@ -74,7 +74,7 @@ public class pt extends pb {
       var1.f(var2, var3, var4, var6);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       super.a(var1, var2, var3, var4, var5);
       if(var1.e(var2, var3, var4) == 0) {
          this.a(var1, var2, var3, var4);
@@ -82,7 +82,7 @@ public class pt extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(var1.b(var2 - 1, var3, var4, true)) {
          var1.f(var2, var3, var4, 1);
       } else if(var1.b(var2 + 1, var3, var4, true)) {
@@ -98,7 +98,7 @@ public class pt extends pb {
       this.i(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(this.i(var1, var2, var3, var4)) {
          int var6 = var1.e(var2, var3, var4);
          boolean var7 = false;
@@ -130,7 +130,7 @@ public class pt extends pb {
 
    }
 
-   private boolean i(xd var1, int var2, int var3, int var4) {
+   private boolean i(World var1, int var2, int var3, int var4) {
       if(!this.e(var1, var2, var3, var4)) {
          if(var1.a(var2, var3, var4) == this.bO) {
             this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
@@ -143,7 +143,7 @@ public class pt extends pb {
       }
    }
 
-   public pl a(xd var1, int var2, int var3, int var4, bo var5, bo var6) {
+   public pl a(World var1, int var2, int var3, int var4, bo var5, bo var6) {
       int var7 = var1.e(var2, var3, var4) & 7;
       float var8 = 0.15F;
       if(var7 == 1) {
@@ -162,7 +162,7 @@ public class pt extends pb {
       return super.a(var1, var2, var3, var4, var5, var6);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       double var7 = (double)((float)var2 + 0.5F);
       double var9 = (double)((float)var3 + 0.7F);

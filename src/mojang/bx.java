@@ -35,7 +35,7 @@ class bx extends gq {
       this.d = new ex(this, var1);
    }
 
-   protected void a(int var1, int var2, adz var3) {
+   protected void a(int var1, int var2, Tessalator var3) {
       super.a(var1, var2, var3);
       if(this.b == 0) {
          dc.a(this.a, var1 + 115 - 18 + 1, var2 + 1 + 1, 72, 18);
@@ -57,7 +57,7 @@ class bx extends gq {
 
    }
 
-   protected void a(int var1, int var2, int var3, int var4, adz var5) {
+   protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
       aii var6 = this.b(var1);
       int var7 = var6.b();
       dc.a(this.a, var2 + 40, var3, var7);

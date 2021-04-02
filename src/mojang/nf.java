@@ -53,7 +53,7 @@ public class nf extends ho {
       this.q.a(4.0F, (float)var2, -1.0F);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.a.a(var7);
       this.b.a(var7);
@@ -90,14 +90,14 @@ public class nf extends ho {
       this.o.g = var9 * 1.0F - var8;
       this.p.g = -var9 * 2.0F + var8;
       this.q.g = var9 * 2.0F - var8;
-      float var10 = -(gk.b(var1 * 0.6662F * 2.0F + 0.0F) * 0.4F) * var2;
-      float var11 = -(gk.b(var1 * 0.6662F * 2.0F + 3.1415927F) * 0.4F) * var2;
-      float var12 = -(gk.b(var1 * 0.6662F * 2.0F + 1.5707964F) * 0.4F) * var2;
-      float var13 = -(gk.b(var1 * 0.6662F * 2.0F + 4.712389F) * 0.4F) * var2;
-      float var14 = Math.abs(gk.a(var1 * 0.6662F + 0.0F) * 0.4F) * var2;
-      float var15 = Math.abs(gk.a(var1 * 0.6662F + 3.1415927F) * 0.4F) * var2;
-      float var16 = Math.abs(gk.a(var1 * 0.6662F + 1.5707964F) * 0.4F) * var2;
-      float var17 = Math.abs(gk.a(var1 * 0.6662F + 4.712389F) * 0.4F) * var2;
+      float var10 = -(Utils.cos(var1 * 0.6662F * 2.0F + 0.0F) * 0.4F) * var2;
+      float var11 = -(Utils.cos(var1 * 0.6662F * 2.0F + 3.1415927F) * 0.4F) * var2;
+      float var12 = -(Utils.cos(var1 * 0.6662F * 2.0F + 1.5707964F) * 0.4F) * var2;
+      float var13 = -(Utils.cos(var1 * 0.6662F * 2.0F + 4.712389F) * 0.4F) * var2;
+      float var14 = Math.abs(Utils.sin(var1 * 0.6662F + 0.0F) * 0.4F) * var2;
+      float var15 = Math.abs(Utils.sin(var1 * 0.6662F + 3.1415927F) * 0.4F) * var2;
+      float var16 = Math.abs(Utils.sin(var1 * 0.6662F + 1.5707964F) * 0.4F) * var2;
+      float var17 = Math.abs(Utils.sin(var1 * 0.6662F + 4.712389F) * 0.4F) * var2;
       this.d.g += var10;
       this.e.g += -var10;
       this.f.g += var11;

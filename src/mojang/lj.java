@@ -15,11 +15,11 @@ public class lj extends abs {
 
    public lj() {}
 
-   public lj(bz var1) {
+   public lj(XPOrb var1) {
       this.a = var1.f;
-      this.b = gk.c(var1.o * 32.0D);
-      this.c = gk.c(var1.p * 32.0D);
-      this.d = gk.c(var1.q * 32.0D);
+      this.b = Utils.c(var1.o * 32.0D);
+      this.c = Utils.c(var1.p * 32.0D);
+      this.d = Utils.c(var1.q * 32.0D);
       this.e = var1.h();
    }
 

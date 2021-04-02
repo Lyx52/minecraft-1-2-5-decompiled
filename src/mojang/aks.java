@@ -97,13 +97,13 @@ public class aks extends ho {
       this.g.a(this.o);
    }
 
-   public void a(acq var1, float var2, float var3, float var4) {
+   public void a(Mob var1, float var2, float var3, float var4) {
       this.s = var4;
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       GL11.glPushMatrix();
-      oq var8 = (oq)var1;
+      EnderDragon var8 = (EnderDragon)var1;
       float var9 = var8.au + (var8.av - var8.au) * this.s;
       this.c.f = (float)(Math.sin((double)(var9 * 3.1415927F * 2.0F)) + 1.0D) * 0.2F;
       float var10 = (float)(Math.sin((double)(var9 * 3.1415927F * 2.0F - 1.0F)) + 1.0D);

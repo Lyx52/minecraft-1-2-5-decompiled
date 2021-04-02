@@ -10,12 +10,12 @@ public class kx extends abs {
    public int b;
    public int c;
    public int d;
-   public vx e;
+   public WorldGeneratorTypes e;
 
 
    public kx() {}
 
-   public kx(int var1, byte var2, vx var3, int var4, int var5) {
+   public kx(int var1, byte var2, WorldGeneratorTypes var3, int var4, int var5) {
       this.a = var1;
       this.b = var2;
       this.c = var4;
@@ -34,9 +34,9 @@ public class kx extends abs {
          this.d = var1.readByte();
          this.c = var1.readShort();
          String var2 = a(var1, 16);
-         this.e = vx.a(var2);
+         this.e = WorldGeneratorTypes.getGenerator(var2);
          if(this.e == null) {
-            this.e = vx.b;
+            this.e = WorldGeneratorTypes.defaultWorld;
          }
       } catch (IOException e) {
          e.printStackTrace();

@@ -31,7 +31,7 @@ public class wy extends ho {
       this.a[3].g = 3.1415927F;
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       for(int var8 = 0; var8 < 5; ++var8) {
          this.a[var8].a(var7);
       }

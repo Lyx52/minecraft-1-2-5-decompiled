@@ -2,7 +2,7 @@ package mojang;
 
 public class nk {
 
-   public final yw a;
+   public final Player a;
    public int[] b;
    public int[] c;
    private int e;
@@ -11,7 +11,7 @@ public class nk {
    final aaj d;
 
 
-   public nk(aaj var1, yw var2) {
+   public nk(aaj var1, Player var2) {
       this.d = var1;
       this.b = new int[128];
       this.c = new int[128];

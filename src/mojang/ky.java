@@ -2,7 +2,7 @@ package mojang;
 
 public class ky extends rt {
 
-   public ky(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public ky(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4 - 0.125D, var6, var8, var10, var12);
       this.ao = 0.4F;
       this.ap = 0.4F;
@@ -17,11 +17,11 @@ public class ky extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       this.b(this.r, this.s, this.t);
-      if(this.k.f(gk.c(this.o), gk.c(this.p), gk.c(this.q)) != acn.g) {
+      if(this.k.f(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q)) != acn.g) {
          this.A();
       }
 

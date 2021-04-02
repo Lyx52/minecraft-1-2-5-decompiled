@@ -1,34 +1,34 @@
 package mojang;
 
-public class afv extends vp {
+public class afv extends GUIManager {
 
-   protected vp a;
+   protected GUIManager a;
    private int b = -1;
    private yk c;
-   private final hu d;
+   private final OptionParser d;
    private z e;
 
 
-   public afv(vp var1, hu var2) {
+   public afv(GUIManager var1, OptionParser var2) {
       this.a = var1;
       this.d = var2;
    }
 
    public void c() {
-      adn var1 = adn.a();
-      this.s.add(this.e = new z(6, this.q / 2 - 75, this.r - 38, var1.b("mojang.gui.done")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.add(this.e = new z(6, this.q / 2 - 75, this.r - 38, var1.getLocaleStringByName("mojang.gui.done")));
       this.c = new yk(this);
-      this.c.alist(this.s, 7, 8);
+      this.c.alist(this.buttonList, 7, 8);
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          switch(var1.f) {
          case 5:
             break;
          case 6:
             this.d.b();
-            this.p.a(this.a);
+            this.minecraft.a(this.a);
             break;
          default:
             this.c.a(var1);
@@ -48,13 +48,13 @@ public class afv extends vp {
    public void a(int var1, int var2, float var3) {
       this.c.a(var1, var2, var3);
       if(this.b <= 0) {
-         this.p.E.a();
+         this.minecraft.texturePackManager.readTexturePacks();
          this.b += 20;
       }
 
-      adn var4 = adn.a();
-      this.a(this.u, var4.b("options.language"), this.q / 2, 16, 16777215);
-      this.a(this.u, "(" + var4.b("options.languageWarning") + ")", this.q / 2, this.r - 56, 8421504);
+      LocalizationManager var4 = LocalizationManager.getInstance();
+      this.a(this.u, var4.getLocaleStringByName("options.language"), this.q / 2, 16, 16777215);
+      this.a(this.u, "(" + var4.getLocaleStringByName("options.languageWarning") + ")", this.q / 2, this.r - 56, 8421504);
       super.a(var1, var2, var3);
    }
 
@@ -64,7 +64,7 @@ public class afv extends vp {
    }
 
    // $FF: synthetic method
-   static hu a(afv var0) {
+   static OptionParser a(afv var0) {
       return var0.d;
    }
 

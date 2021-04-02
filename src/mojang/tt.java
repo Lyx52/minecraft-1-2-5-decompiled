@@ -18,7 +18,7 @@ public class tt {
 
    public void a() {}
 
-   public void a(aaw var1) {
+   public void a(Texture var1) {
       if(this.k == 0) {
          GL11.glBindTexture(3553, var1.b("/mojang/terrain.png"));
       } else if(this.k == 1) {

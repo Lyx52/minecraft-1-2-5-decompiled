@@ -16,7 +16,7 @@ public class jx extends qk {
       return var1 == aA.bO;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       super.a(var1, var2, var3, var4, var5);
       if(var1.o(var2, var3 + 1, var4) >= 9) {
          int var6 = var1.e(var2, var3, var4);
@@ -31,11 +31,11 @@ public class jx extends qk {
 
    }
 
-   public void f(xd var1, int var2, int var3, int var4) {
+   public void f(World var1, int var2, int var3, int var4) {
       var1.f(var2, var3, var4, 7);
    }
 
-   private float i(xd var1, int var2, int var3, int var4) {
+   private float i(World var1, int var2, int var3, int var4) {
       float var5 = 1.0F;
       int var6 = var1.a(var2, var3, var4 - 1);
       int var7 = var1.a(var2, var3, var4 + 1);
@@ -87,7 +87,7 @@ public class jx extends qk {
       return 6;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       super.a(var1, var2, var3, var4, var5, var6, 0);
       if(!var1.F) {
          int var8 = 3 + var7;
@@ -98,9 +98,9 @@ public class jx extends qk {
                float var11 = var1.r.nextFloat() * var10 + (1.0F - var10) * 0.5F;
                float var12 = var1.r.nextFloat() * var10 + (1.0F - var10) * 0.5F;
                float var13 = var1.r.nextFloat() * var10 + (1.0F - var10) * 0.5F;
-               fq var14 = new fq(var1, (double)((float)var2 + var11), (double)((float)var3 + var12), (double)((float)var4 + var13), new aan(yr.S));
+               Item var14 = new Item(var1, (double)((float)var2 + var11), (double)((float)var3 + var12), (double)((float)var4 + var13), new aan(yr.S));
                var14.c = 10;
-               var1.a((nn)var14);
+               var1.a((BaseEntity)var14);
             }
          }
 

@@ -22,7 +22,7 @@ public class ajx extends aas {
       return a(var7) && a(var0, var7) == null?new ajx(var6, var1, var7, var5):null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       this.a(var1, var3, 0, 0, 0, 6, 1, 6, pb.bA.bO, pb.bA.bO, false);
       this.a(var1, var3, 0, 2, 0, 6, 7, 6, 0, 0, false);
       this.a(var1, var3, 0, 2, 0, 1, 6, 0, pb.bA.bO, pb.bA.bO, false);

@@ -6,7 +6,7 @@ public class ga extends rt {
    private int au;
 
 
-   public ga(xd var1, double var2, double var4, double var6, acn var8) {
+   public ga(World var1, double var2, double var4, double var6, acn var8) {
       super(var1, var2, var4, var6, 0.0D, 0.0D, 0.0D);
       this.r = this.s = this.t = 0.0D;
       if(var8 == acn.g) {
@@ -37,9 +37,9 @@ public class ga extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       if(this.a == acn.g) {
          this.ao = 0.2F;
          this.ap = 0.3F;
@@ -80,9 +80,9 @@ public class ga extends rt {
          this.t *= 0.699999988079071D;
       }
 
-      acn var1 = this.k.f(gk.c(this.o), gk.c(this.p), gk.c(this.q));
+      acn var1 = this.k.f(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q));
       if(var1.d() || var1.a()) {
-         double var2 = (double)((float)(gk.c(this.p) + 1) - agv.e(this.k.e(gk.c(this.o), gk.c(this.p), gk.c(this.q))));
+         double var2 = (double)((float)(Utils.c(this.p) + 1) - agv.e(this.k.e(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q))));
          if(this.p < var2) {
             this.A();
          }

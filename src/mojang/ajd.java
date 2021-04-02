@@ -16,7 +16,7 @@ public class ajd extends li {
       this.c = var4;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6 = var2.nextInt(3) + this.a;
       boolean var7 = true;
       if(var4 >= 1 && var4 + var6 + 1 <= 256) {
@@ -61,13 +61,13 @@ public class ajd extends li {
 
                for(int var14 = var4 + var6 - 2 - var2.nextInt(4); var14 > var4 + var6 / 2; var14 -= 2 + var2.nextInt(4)) {
                   float var15 = var2.nextFloat() * 3.1415927F * 2.0F;
-                  var11 = var3 + (int)(0.5F + gk.b(var15) * 4.0F);
-                  var12 = var5 + (int)(0.5F + gk.a(var15) * 4.0F);
+                  var11 = var3 + (int)(0.5F + Utils.cos(var15) * 4.0F);
+                  var12 = var5 + (int)(0.5F + Utils.sin(var15) * 4.0F);
                   this.a(var1, var11, var12, var14, 0, var2);
 
                   for(int var13 = 0; var13 < 5; ++var13) {
-                     var11 = var3 + (int)(1.5F + gk.b(var15) * (float)var13);
-                     var12 = var5 + (int)(1.5F + gk.a(var15) * (float)var13);
+                     var11 = var3 + (int)(1.5F + Utils.cos(var15) * (float)var13);
+                     var12 = var5 + (int)(1.5F + Utils.sin(var15) * (float)var13);
                      this.a(var1, var11, var14 - 3 + var13 / 2, var12, pb.J.bO, this.b);
                   }
                }
@@ -142,7 +142,7 @@ public class ajd extends li {
       }
    }
 
-   private void a(xd var1, int var2, int var3, int var4, int var5, Random var6) {
+   private void a(World var1, int var2, int var3, int var4, int var5, Random var6) {
       byte var7 = 2;
 
       for(int var8 = var4 - var7; var8 <= var4; ++var8) {

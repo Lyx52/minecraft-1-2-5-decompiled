@@ -14,7 +14,7 @@ public class vo extends pt {
       return var1 == 1? av.a(var1, var2):super.a(var1, var2);
    }
 
-   private boolean a(xd var1, int var2, int var3, int var4, boolean var5) {
+   private boolean a(World var1, int var2, int var3, int var4, boolean var5) {
       if(var5) {
          b.add(new alm(var2, var3, var4, var1.w()));
       }
@@ -44,7 +44,7 @@ public class vo extends pt {
       return 2;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(var1.e(var2, var3, var4) == 0) {
          super.a(var1, var2, var3, var4);
       }
@@ -60,7 +60,7 @@ public class vo extends pt {
 
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       if(this.a) {
          var1.j(var2, var3 - 1, var4, this.bO);
          var1.j(var2, var3 + 1, var4, this.bO);
@@ -72,7 +72,7 @@ public class vo extends pt {
 
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(!this.a) {
          return false;
       } else {
@@ -81,12 +81,12 @@ public class vo extends pt {
       }
    }
 
-   private boolean h(xd var1, int var2, int var3, int var4) {
+   private boolean h(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       return var5 == 5 && var1.l(var2, var3 - 1, var4, 0)?true:(var5 == 3 && var1.l(var2, var3, var4 - 1, 2)?true:(var5 == 4 && var1.l(var2, var3, var4 + 1, 3)?true:(var5 == 1 && var1.l(var2 - 1, var3, var4, 4)?true:var5 == 2 && var1.l(var2 + 1, var3, var4, 5))));
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       boolean var6 = this.h(var1, var2, var3, var4);
 
       while(b.size() > 0 && var1.w() - ((alm)b.get(0)).d > 60L) {
@@ -113,13 +113,13 @@ public class vo extends pt {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       super.a(var1, var2, var3, var4, var5);
       var1.a(var2, var3, var4, this.bO, this.e());
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
-      return var5 == 0 ? this.b((ali)var1, var2, var3, var4, var5) : false;
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
+      return var5 == 0 ? this.b((WorldInterface)var1, var2, var3, var4, var5) : false;
    }
 
    public int a(int var1, Random var2, int var3) {
@@ -130,7 +130,7 @@ public class vo extends pt {
       return true;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       if(this.a) {
          int var6 = var1.e(var2, var3, var4);
          double var7 = (double)((float)var2 + 0.5F) + (double)(var5.nextFloat() - 0.5F) * 0.2D;

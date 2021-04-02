@@ -74,17 +74,17 @@ public abstract class abn {
       this.M = var1;
       a[var1] = this;
       this.I = this.a();
-      this.K.add(new bg(cu.class, 12, 4, 4));
-      this.K.add(new bg(qr.class, 10, 4, 4));
-      this.K.add(new bg(rd.class, 10, 4, 4));
-      this.K.add(new bg(un.class, 8, 4, 4));
-      this.J.add(new bg(cb.class, 10, 4, 4));
-      this.J.add(new bg(ajg.class, 10, 4, 4));
-      this.J.add(new bg(xr.class, 10, 4, 4));
-      this.J.add(new bg(yd.class, 10, 4, 4));
-      this.J.add(new bg(aja.class, 10, 4, 4));
-      this.J.add(new bg(jg.class, 1, 1, 4));
-      this.L.add(new bg(all.class, 10, 4, 4));
+      this.K.add(new bg(Sheep.class, 12, 4, 4));
+      this.K.add(new bg(Pig.class, 10, 4, 4));
+      this.K.add(new bg(Chicken.class, 10, 4, 4));
+      this.K.add(new bg(Cow.class, 8, 4, 4));
+      this.J.add(new bg(Spider.class, 10, 4, 4));
+      this.J.add(new bg(Zombie.class, 10, 4, 4));
+      this.J.add(new bg(Skeleton.class, 10, 4, 4));
+      this.J.add(new bg(Creeper.class, 10, 4, 4));
+      this.J.add(new bg(Slime.class, 10, 4, 4));
+      this.J.add(new bg(Enderman.class, 1, 1, 4));
+      this.L.add(new bg(Squid.class, 10, 4, 4));
    }
 
    protected yg a() {
@@ -189,19 +189,19 @@ public abstract class abn {
       return this.F;
    }
 
-   public void a(xd var1, Random var2, int var3, int var4) {
+   public void a(World var1, Random var2, int var3, int var4) {
       this.I.a(var1, var2, var3, var4);
    }
 
    public int k() {
-      double var1 = (double)gk.a(this.j(), 0.0F, 1.0F);
-      double var3 = (double)gk.a(this.i(), 0.0F, 1.0F);
+      double var1 = (double) Utils.a(this.j(), 0.0F, 1.0F);
+      double var3 = (double) Utils.a(this.i(), 0.0F, 1.0F);
       return zv.a(var1, var3);
    }
 
    public int l() {
-      double var1 = (double)gk.a(this.j(), 0.0F, 1.0F);
-      double var3 = (double)gk.a(this.i(), 0.0F, 1.0F);
+      double var1 = (double) Utils.a(this.j(), 0.0F, 1.0F);
+      double var3 = (double) Utils.a(this.i(), 0.0F, 1.0F);
       return gu.a(var1, var3);
    }
 

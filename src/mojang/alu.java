@@ -3,7 +3,7 @@ package mojang;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-public class alu extends vp {
+public class alu extends GUIManager {
 
    private static final String e = xn.a;
    protected String a = "Edit sign message:";
@@ -17,16 +17,16 @@ public class alu extends vp {
    }
 
    public void c() {
-      this.s.clear();
+      this.buttonList.clear();
       Keyboard.enableRepeatEvents(true);
-      this.s.add(new abp(0, this.q / 2 - 100, this.r / 4 + 120, "Done"));
+      this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120, "Done"));
       this.b.a(false);
    }
 
    public void e() {
       Keyboard.enableRepeatEvents(false);
-      if(this.p.f.F) {
-         this.p.q().c(new aiu(this.b.j, this.b.k, this.b.l, this.b.a));
+      if(this.minecraft.f.F) {
+         this.minecraft.q().c(new aiu(this.b.j, this.b.k, this.b.l, this.b.a));
       }
 
       this.b.a(true);
@@ -36,11 +36,11 @@ public class alu extends vp {
       ++this.c;
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          if(var1.f == 0) {
             this.b.j();
-            this.p.a((vp)null);
+            this.minecraft.a((GUIManager)null);
          }
 
       }

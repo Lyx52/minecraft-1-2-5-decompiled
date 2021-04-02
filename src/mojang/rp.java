@@ -11,7 +11,7 @@ public class rp extends li {
       this.a = var1;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       if(var1.a(var3, var4 + 1, var5) != pb.t.bO) {
          return false;
       } else if(var1.a(var3, var4 - 1, var5) != pb.t.bO) {

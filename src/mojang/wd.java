@@ -5,7 +5,7 @@ public abstract class wd extends bc {
    protected fy a = new fy(this);
 
 
-   public wd(xd var1) {
+   public wd(World var1) {
       super(var1);
    }
 
@@ -15,26 +15,26 @@ public abstract class wd extends bc {
       this.ac.a(17, "");
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
       if(this.ag() == null) {
-         var1.a("Owner", "");
+         var1.addString("Owner", "");
       } else {
-         var1.a("Owner", this.ag());
+         var1.addString("Owner", this.ag());
       }
 
-      var1.a("Sitting", this.af());
+      var1.addBoolean("Sitting", this.af());
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      String var2 = var1.j("Owner");
+      String var2 = var1.getString("Owner");
       if(var2.length() > 0) {
          this.a(var2);
          this.b(true);
       }
 
-      this.a.a(var1.o("Sitting"));
+      this.a.a(var1.getBoolean("Sitting"));
    }
 
    protected void a(boolean var1) {
@@ -99,7 +99,7 @@ public abstract class wd extends bc {
       this.ac.b(17, var1);
    }
 
-   public acq ah() {
+   public Mob ah() {
       return this.k.a(this.ag());
    }
 

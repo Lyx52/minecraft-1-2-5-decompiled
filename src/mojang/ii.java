@@ -22,7 +22,7 @@ public class ii extends alb {
 
    public bo b(float var1, float var2) {
       int var3 = 8421536;
-      float var4 = gk.b(var1 * 3.1415927F * 2.0F) * 2.0F + 0.5F;
+      float var4 = Utils.cos(var1 * 3.1415927F * 2.0F) * 2.0F + 0.5F;
       if(var4 < 0.0F) {
          var4 = 0.0F;
       }

@@ -2,7 +2,7 @@ package mojang;
 
 import mojang.net.minecraft.client.Minecraft;
 
-public class vq extends yw {
+public class vq extends Player {
 
    public oy a;
    protected Minecraft b;
@@ -17,15 +17,15 @@ public class vq extends yw {
    private ch cn = new ch();
 
 
-   public vq(Minecraft var1, xd var2, fc var3, int var4) {
+   public vq(Minecraft var1, World var2, CredentialManager var3, int var4) {
       super(var2);
       this.b = var1;
       this.aB = var4;
-      if(var3 != null && var3.b != null && var3.b.length() > 0) {
-         this.Z = "https://s3.amazonaws.com/MinecraftSkins/" + var3.b + ".png";
+      if(var3 != null && var3.username != null && var3.username.length() > 0) {
+         this.Z = "https://s3.amazonaws.com/MinecraftSkins/" + var3.username + ".png";
       }
 
-      this.aA = var3.b;
+      this.aA = var3.username;
    }
 
    public void b(double var1, double var3, double var5) {
@@ -75,15 +75,15 @@ public class vq extends yw {
          boolean var1;
          if(this.aQ) {
             if(!this.k.F && this.j != null) {
-               this.h((nn)null);
+               this.h((BaseEntity)null);
             }
 
-            if(this.b.s != null) {
-               this.b.a((vp)null);
+            if(this.b.guiManager != null) {
+               this.b.a((GUIManager)null);
             }
 
             if(this.aR == 0.0F) {
-               this.b.C.a("portal.trigger", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
+               this.b.soundManager.a("portal.trigger", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
             }
 
             this.aR += 0.0125F;
@@ -91,7 +91,7 @@ public class vq extends yw {
                this.aR = 1.0F;
                if(!this.k.F) {
                   this.aP = 10;
-                  this.b.C.a("portal.travel", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
+                  this.b.soundManager.a("portal.travel", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
                   var1 = false;
                   byte var5;
                   if(this.aB == -1) {
@@ -194,10 +194,10 @@ public class vq extends yw {
       if(!this.k.F) {
          if(this.aB == 1 && var1 == 1) {
             this.a((ajw)dp.C);
-            this.b.a((vp)(new c()));
+            this.b.a((GUIManager)(new c()));
          } else {
             this.a((ajw)dp.B);
-            this.b.C.a("portal.travel", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
+            this.b.soundManager.a("portal.travel", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
             this.b.a(1);
          }
 
@@ -226,59 +226,59 @@ public class vq extends yw {
       return var1;
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("Score", this.av);
+      var1.addInt("Score", this.av);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.av = var1.f("Score");
+      this.av = var1.getInt("Score");
    }
 
    public void af() {
       super.af();
-      this.b.a((vp)null);
+      this.b.a((GUIManager)null);
    }
 
    public void a(sc var1) {
-      this.b.a((vp)(new alu(var1)));
+      this.b.a((GUIManager)(new alu(var1)));
    }
 
    public void a(io var1) {
-      this.b.a((vp)(new zn(this.ap, var1)));
+      this.b.a((GUIManager)(new zn(this.ap, var1)));
    }
 
    public void a(int var1, int var2, int var3) {
-      this.b.a((vp)(new aen(this.ap, this.k, var1, var2, var3)));
+      this.b.a((GUIManager)(new aen(this.ap, this.k, var1, var2, var3)));
    }
 
    public void c(int var1, int var2, int var3) {
-      this.b.a((vp)(new sm(this.ap, this.k, var1, var2, var3)));
+      this.b.a((GUIManager)(new sm(this.ap, this.k, var1, var2, var3)));
    }
 
    public void a(ahg var1) {
-      this.b.a((vp)(new kv(this.ap, var1)));
+      this.b.a((GUIManager)(new kv(this.ap, var1)));
    }
 
    public void a(amc var1) {
-      this.b.a((vp)(new hg(this.ap, var1)));
+      this.b.a((GUIManager)(new hg(this.ap, var1)));
    }
 
    public void a(az var1) {
-      this.b.a((vp)(new fb(this.ap, var1)));
+      this.b.a((GUIManager)(new fb(this.ap, var1)));
    }
 
-   public void d(nn var1) {
+   public void d(BaseEntity var1) {
       this.b.j.a((rt)(new fs(this.b.f, var1)));
    }
 
-   public void i(nn var1) {
+   public void i(BaseEntity var1) {
       fs var2 = new fs(this.b.f, var1, "magicCrit");
       this.b.j.a((rt)var2);
    }
 
-   public void b(nn var1, int var2) {
+   public void b(BaseEntity var1, int var2) {
       this.b.j.a((rt)(new ws(this.b.f, var1, this, -0.5F)));
    }
 
@@ -338,9 +338,9 @@ public class vq extends yw {
    }
 
    protected boolean h(double var1, double var3, double var5) {
-      int var7 = gk.c(var1);
-      int var8 = gk.c(var3);
-      int var9 = gk.c(var5);
+      int var7 = Utils.c(var1);
+      int var8 = Utils.c(var3);
+      int var9 = Utils.c(var5);
       double var10 = var1 - (double)var7;
       double var12 = var5 - (double)var9;
       if(this.g(var7, var8, var9) || this.g(var7, var8 + 1, var9)) {

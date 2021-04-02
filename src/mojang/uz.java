@@ -21,7 +21,7 @@ public class uz extends kw {
       super.n_();
       this.g = this.f;
       this.p = this.h;
-      yw var1 = this.i.a((double)((float)this.j + 0.5F), (double)((float)this.k + 0.5F), (double)((float)this.l + 0.5F), 3.0D);
+      Player var1 = this.i.a((double)((float)this.j + 0.5F), (double)((float)this.k + 0.5F), (double)((float)this.l + 0.5F), 3.0D);
       if(var1 != null) {
          double var2 = var1.o - (double)((float)this.j + 0.5F);
          double var4 = var1.q - (double)((float)this.l + 0.5F);

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class aln extends li {
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       while(var1.i(var3, var4, var5) && var4 > 2) {
          --var4;
       }

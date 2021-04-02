@@ -5,13 +5,13 @@ import java.util.Random;
 
 public class yh implements ca {
 
-   private xd a;
+   private World a;
    private Random b;
    private final boolean c;
    private an d = new an(1);
 
 
-   public yh(xd var1, long var2, boolean var4) {
+   public yh(World var1, long var2, boolean var4) {
       this.a = var1;
       this.c = var4;
       this.b = new Random(var2);
@@ -98,7 +98,7 @@ public class yh implements ca {
       return var5 == null?null:var5.a(var1);
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return null;
    }
 }

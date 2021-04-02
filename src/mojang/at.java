@@ -6,10 +6,10 @@ import java.util.zip.GZIPOutputStream;
 
 public class at {
 
-   public static ady a(InputStream var0) throws IOException {
+   public static CompundTag readLevelData(InputStream var0) throws IOException {
       DataInputStream var1 = new DataInputStream(new BufferedInputStream(new GZIPInputStream(var0)));
 
-      ady var2;
+      CompundTag var2;
       try {
          var2 = a((DataInput)var1);
       } finally {
@@ -19,7 +19,7 @@ public class at {
       return var2;
    }
 
-   public static void a(ady var0, OutputStream var1) throws IOException {
+   public static void a(CompundTag var0, OutputStream var1) throws IOException {
       DataOutputStream var2 = new DataOutputStream(new GZIPOutputStream(var1));
 
       try {
@@ -30,10 +30,10 @@ public class at {
 
    }
 
-   public static ady a(byte[] var0) throws IOException {
+   public static CompundTag a(byte[] var0) throws IOException {
       DataInputStream var1 = new DataInputStream(new BufferedInputStream(new GZIPInputStream(new ByteArrayInputStream(var0))));
 
-      ady var2;
+      CompundTag var2;
       try {
          var2 = a((DataInput)var1);
       } finally {
@@ -43,7 +43,7 @@ public class at {
       return var2;
    }
 
-   public static byte[] a(ady var0) throws IOException {
+   public static byte[] a(CompundTag var0) throws IOException {
       ByteArrayOutputStream var1 = new ByteArrayOutputStream();
       DataOutputStream var2 = new DataOutputStream(new GZIPOutputStream(var1));
 
@@ -56,7 +56,7 @@ public class at {
       return var1.toByteArray();
    }
 
-   public static void a(ady var0, File var1) throws IOException {
+   public static void a(CompundTag var0, File var1) throws IOException {
       File var2 = new File(var1.getAbsolutePath() + "_tmp");
       if(var2.exists()) {
          var2.delete();
@@ -74,7 +74,7 @@ public class at {
       }
    }
 
-   public static void b(ady var0, File var1) throws IOException {
+   public static void b(CompundTag var0, File var1) throws IOException {
       DataOutputStream var2 = new DataOutputStream(new FileOutputStream(var1));
 
       try {
@@ -85,13 +85,13 @@ public class at {
 
    }
 
-   public static ady a(File var0) throws IOException {
+   public static CompundTag a(File var0) throws IOException {
       if(!var0.exists()) {
          return null;
       } else {
          DataInputStream var1 = new DataInputStream(new FileInputStream(var0));
 
-         ady var2;
+         CompundTag var2;
          try {
             var2 = a((DataInput)var1);
          } finally {
@@ -102,16 +102,16 @@ public class at {
       }
    }
 
-   public static ady a(DataInput var0) throws IOException {
-      gh var1 = gh.b(var0);
-      if(var1 instanceof ady) {
-         return (ady)var1;
+   public static CompundTag a(DataInput var0) throws IOException {
+      BaseTag var1 = BaseTag.readTag(var0);
+      if(var1 instanceof CompundTag) {
+         return (CompundTag)var1;
       } else {
          throw new IOException("Root tag must be a named compound tag");
       }
    }
 
-   public static void a(ady var0, DataOutput var1) throws IOException {
-      gh.a(var0, var1);
+   public static void a(CompundTag var0, DataOutput var1) throws IOException {
+      BaseTag.writeTag(var0, var1);
    }
 }

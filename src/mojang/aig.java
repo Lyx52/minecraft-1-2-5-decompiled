@@ -12,7 +12,7 @@ public class aig extends abs {
 
    public aig() {}
 
-   public aig(nn var1, int var2) {
+   public aig(BaseEntity var1, int var2) {
       this.a = var1.f;
       this.b = var2;
    }

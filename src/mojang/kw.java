@@ -7,7 +7,7 @@ public class kw {
 
    private static Map a = new HashMap();
    private static Map b = new HashMap();
-   public xd i;
+   public World i;
    public int j;
    public int k;
    public int l;
@@ -25,31 +25,31 @@ public class kw {
       }
    }
 
-   public void a(ady var1) {
-      this.j = var1.f("x");
-      this.k = var1.f("y");
-      this.l = var1.f("z");
+   public void a(CompundTag var1) {
+      this.j = var1.getInt("x");
+      this.k = var1.getInt("y");
+      this.l = var1.getInt("z");
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       String var2 = (String)b.get(this.getClass());
       if(var2 == null) {
          throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");
       } else {
-         var1.a("id", var2);
-         var1.a("x", this.j);
-         var1.a("y", this.k);
-         var1.a("z", this.l);
+         var1.addString("id", var2);
+         var1.addInt("x", this.j);
+         var1.addInt("y", this.k);
+         var1.addInt("z", this.l);
       }
    }
 
    public void n_() {}
 
-   public static kw c(ady var0) {
+   public static kw c(CompundTag var0) {
       kw var1 = null;
 
       try {
-         Class var2 = (Class)a.get(var0.j("id"));
+         Class var2 = (Class)a.get(var0.getString("id"));
          if(var2 != null) {
             var1 = (kw)var2.newInstance();
          }
@@ -60,7 +60,7 @@ public class kw {
       if(var1 != null) {
          var1.a(var0);
       } else {
-         System.out.println("Skipping TileEntity with id " + var0.j("id"));
+         System.out.println("Skipping TileEntity with id " + var0.getString("id"));
       }
 
       return var1;

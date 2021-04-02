@@ -12,7 +12,7 @@ public class alz extends fe {
       this.c = var3;
    }
 
-   protected void a(kh var1, float var2) {
+   protected void a(Giant var1, float var2) {
       GL11.glScalef(this.c, this.c, this.c);
    }
 }

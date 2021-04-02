@@ -6,22 +6,21 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 import org.lwjgl.input.Keyboard;
 
-public class acp extends vp {
+public class acp extends GUIManager {
 
    private static int a = 0;
    private static Object b = new Object();
-   private vp c;
+   private GUIManager c;
    private qh d;
    private List e = new ArrayList();
    private int f = -1;
-   private abp h;
-   private abp i;
-   private abp j;
+   private Button h;
+   private Button i;
+   private Button j;
    private boolean k = false;
    private boolean l = false;
    private boolean m = false;
@@ -30,7 +29,7 @@ public class acp extends vp {
    private oa w = null;
 
 
-   public acp(vp var1) {
+   public acp(GUIManager var1) {
       this.c = var1;
    }
 
@@ -39,19 +38,19 @@ public class acp extends vp {
    public void c() {
       this.q();
       Keyboard.enableRepeatEvents(true);
-      this.s.clear();
+      this.buttonList.clear();
       this.d = new qh(this);
       this.d();
    }
 
    private void q() {
       try {
-         ady var1 = at.a(new File(this.p.F, "servers.dat"));
-         no var2 = var1.n("servers");
+         CompundTag var1 = at.a(new File(this.minecraft.gameDirectory, "servers.dat"));
+         ListTag var2 = var1.getListTag("servers");
          this.e.clear();
 
          for(int var3 = 0; var3 < var2.d(); ++var3) {
-            this.e.add(oa.a((ady)var2.a(var3)));
+            this.e.add(oa.a((CompundTag)var2.a(var3)));
          }
       } catch (Exception var4) {
          var4.printStackTrace();
@@ -61,15 +60,15 @@ public class acp extends vp {
 
    private void r() {
       try {
-         no var1 = new no();
+         ListTag var1 = new ListTag();
 
          for(int var2 = 0; var2 < this.e.size(); ++var2) {
-            var1.a((gh)((oa)this.e.get(var2)).a());
+            var1.a((BaseTag)((oa)this.e.get(var2)).a());
          }
 
-         ady var4 = new ady();
-         var4.a("servers", (gh)var1);
-         at.a(var4, new File(this.p.F, "servers.dat"));
+         CompundTag var4 = new CompundTag();
+         var4.addBaseTag("servers", (BaseTag)var1);
+         at.a(var4, new File(this.minecraft.gameDirectory, "servers.dat"));
       } catch (Exception var3) {
          var3.printStackTrace();
       }
@@ -77,14 +76,14 @@ public class acp extends vp {
    }
 
    public void d() {
-      adn var1 = adn.a();
-      this.s.add(this.h = new abp(7, this.q / 2 - 154, this.r - 28, 70, 20, var1.b("selectServer.edit")));
-      this.s.add(this.j = new abp(2, this.q / 2 - 74, this.r - 28, 70, 20, var1.b("selectServer.delete")));
-      this.s.add(this.i = new abp(1, this.q / 2 - 154, this.r - 52, 100, 20, var1.b("selectServer.select")));
-      this.s.add(new abp(4, this.q / 2 - 50, this.r - 52, 100, 20, var1.b("selectServer.direct")));
-      this.s.add(new abp(3, this.q / 2 + 4 + 50, this.r - 52, 100, 20, var1.b("selectServer.add")));
-      this.s.add(new abp(8, this.q / 2 + 4, this.r - 28, 70, 20, var1.b("selectServer.refresh")));
-      this.s.add(new abp(0, this.q / 2 + 4 + 76, this.r - 28, 75, 20, var1.b("mojang.gui.cancel")));
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.buttonList.add(this.h = new Button(7, this.q / 2 - 154, this.r - 28, 70, 20, var1.getLocaleStringByName("selectServer.edit")));
+      this.buttonList.add(this.j = new Button(2, this.q / 2 - 74, this.r - 28, 70, 20, var1.getLocaleStringByName("selectServer.delete")));
+      this.buttonList.add(this.i = new Button(1, this.q / 2 - 154, this.r - 52, 100, 20, var1.getLocaleStringByName("selectServer.select")));
+      this.buttonList.add(new Button(4, this.q / 2 - 50, this.r - 52, 100, 20, var1.getLocaleStringByName("selectServer.direct")));
+      this.buttonList.add(new Button(3, this.q / 2 + 4 + 50, this.r - 52, 100, 20, var1.getLocaleStringByName("selectServer.add")));
+      this.buttonList.add(new Button(8, this.q / 2 + 4, this.r - 28, 70, 20, var1.getLocaleStringByName("selectServer.refresh")));
+      this.buttonList.add(new Button(0, this.q / 2 + 4 + 76, this.r - 28, 75, 20, var1.getLocaleStringByName("mojang.gui.cancel")));
       boolean var2 = this.f >= 0 && this.f < this.d.a();
       this.i.h = var2;
       this.h.h = var2;
@@ -95,36 +94,36 @@ public class acp extends vp {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          if(var1.f == 2) {
             String var2 = ((oa)this.e.get(this.f)).a;
             if(var2 != null) {
                this.k = true;
-               adn var3 = adn.a();
-               String var4 = var3.b("selectServer.deleteQuestion");
-               String var5 = "\'" + var2 + "\' " + var3.b("selectServer.deleteWarning");
-               String var6 = var3.b("selectServer.deleteButton");
-               String var7 = var3.b("mojang.gui.cancel");
+               LocalizationManager var3 = LocalizationManager.getInstance();
+               String var4 = var3.getLocaleStringByName("selectServer.deleteQuestion");
+               String var5 = "\'" + var2 + "\' " + var3.getLocaleStringByName("selectServer.deleteWarning");
+               String var6 = var3.getLocaleStringByName("selectServer.deleteButton");
+               String var7 = var3.getLocaleStringByName("mojang.gui.cancel");
                mi var8 = new mi(this, var4, var5, var6, var7, this.f);
-               this.p.a((vp)var8);
+               this.minecraft.a((GUIManager)var8);
             }
          } else if(var1.f == 1) {
             this.a(this.f);
          } else if(var1.f == 4) {
             this.n = true;
-            this.p.a((vp)(new acz(this, this.w = new oa(cy.a("selectServer.defaultName"), ""))));
+            this.minecraft.a((GUIManager)(new acz(this, this.w = new oa(cy.a("selectServer.defaultName"), ""))));
          } else if(var1.f == 3) {
             this.l = true;
-            this.p.a((vp)(new xs(this, this.w = new oa(cy.a("selectServer.defaultName"), ""))));
+            this.minecraft.a((GUIManager)(new xs(this, this.w = new oa(cy.a("selectServer.defaultName"), ""))));
          } else if(var1.f == 7) {
             this.m = true;
             oa var9 = (oa)this.e.get(this.f);
-            this.p.a((vp)(new xs(this, this.w = new oa(var9.a, var9.b))));
+            this.minecraft.a((GUIManager)(new xs(this, this.w = new oa(var9.a, var9.b))));
          } else if(var1.f == 0) {
-            this.p.a(this.c);
+            this.minecraft.a(this.c);
          } else if(var1.f == 8) {
-            this.p.a((vp)(new acp(this.c)));
+            this.minecraft.a((GUIManager)(new acp(this.c)));
          } else {
             this.d.a(var1);
          }
@@ -140,13 +139,13 @@ public class acp extends vp {
             this.r();
          }
 
-         this.p.a((vp)this);
+         this.minecraft.a((GUIManager)this);
       } else if(this.n) {
          this.n = false;
          if(var1) {
             this.a(this.w);
          } else {
-            this.p.a((vp)this);
+            this.minecraft.a((GUIManager)this);
          }
       } else if(this.l) {
          this.l = false;
@@ -155,7 +154,7 @@ public class acp extends vp {
             this.r();
          }
 
-         this.p.a((vp)this);
+         this.minecraft.a((GUIManager)this);
       } else if(this.m) {
          this.m = false;
          if(var1) {
@@ -165,7 +164,7 @@ public class acp extends vp {
             this.r();
          }
 
-         this.p.a((vp)this);
+         this.minecraft.a((GUIManager)this);
       }
 
    }
@@ -180,7 +179,7 @@ public class acp extends vp {
 
    protected void a(char var1, int var2) {
       if(var1 == 13) {
-         this.a((abp)this.s.get(2));
+         this.a((Button)this.buttonList.get(2));
       }
 
    }
@@ -191,10 +190,10 @@ public class acp extends vp {
 
    public void a(int var1, int var2, float var3) {
       this.o = null;
-      adn var4 = adn.a();
+      LocalizationManager var4 = LocalizationManager.getInstance();
       this.k();
       this.d.a(var1, var2, var3);
-      this.a(this.u, var4.b("multiplayer.title"), this.q / 2, 20, 16777215);
+      this.a(this.u, var4.getLocaleStringByName("multiplayer.title"), this.q / 2, 20, 16777215);
       super.a(var1, var2, var3);
       if(this.o != null) {
          this.a(this.o, var1, var2);
@@ -227,7 +226,7 @@ public class acp extends vp {
          var3 = new String[]{var2};
       }
 
-      this.p.a((vp)(new ajy(this.p, var3[0], var3.length > 1?this.a(var3[1], 25565):25565)));
+      this.minecraft.a((GUIManager)(new ajy(this.minecraft, var3[0], var3.length > 1?this.a(var3[1], 25565):25565)));
    }
 
    private void b(oa var1) throws IOException {
@@ -354,17 +353,17 @@ public class acp extends vp {
    }
 
    // $FF: synthetic method
-   static abp c(acp var0) {
+   static Button c(acp var0) {
       return var0.i;
    }
 
    // $FF: synthetic method
-   static abp d(acp var0) {
+   static Button d(acp var0) {
       return var0.h;
    }
 
    // $FF: synthetic method
-   static abp e(acp var0) {
+   static Button e(acp var0) {
       return var0.j;
    }
 

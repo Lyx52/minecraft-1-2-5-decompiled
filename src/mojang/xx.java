@@ -10,7 +10,7 @@ class xx extends pg {
    private boolean c = false;
 
 
-   public xx(xd var1, Random var2, int var3, int var4, int var5) {
+   public xx(World var1, Random var2, int var3, int var4, int var5) {
       ArrayList var7 = rz.a(var2, var5);
       g var8 = new g(var1.i(), 0, var2, (var3 << 4) + 2, (var4 << 4) + 2, var7, var5);
       this.a.add(var8);

@@ -14,7 +14,7 @@ public class qo {
    }
 
    public qo(bo var1) {
-      this(gk.c(var1.a), gk.c(var1.b), gk.c(var1.c));
+      this(Utils.c(var1.a), Utils.c(var1.b), Utils.c(var1.c));
    }
 
    public boolean equals(Object var1) {

@@ -47,7 +47,7 @@ public class akk implements io {
 
    public void j() {}
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return true;
    }
 

@@ -14,7 +14,7 @@ public class qy extends pb {
       return var1 == 1?0:(var1 == 0?2:3);
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 == 1) {
          return 0;
       } else if(var5 == 0) {
@@ -35,7 +35,7 @@ public class qy extends pb {
       return this.i();
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = 0;
       int var6 = 0;
       int var7 = 0;
@@ -52,7 +52,7 @@ public class qy extends pb {
       return (var5 / 9 & 255) << 16 | (var6 / 9 & 255) << 8 | var7 / 9 & 255;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          if(var1.o(var2, var3 + 1, var4) < 4 && o[var1.a(var2, var3 + 1, var4)] > 2) {
             var1.g(var2, var3, var4, v.bO);

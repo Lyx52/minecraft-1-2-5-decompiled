@@ -2,10 +2,10 @@ package mojang;
 
 public class aje extends rc {
 
-   private acq a;
+   private Mob a;
 
 
-   public aje(acq var1) {
+   public aje(Mob var1) {
       this.a = var1;
       this.a(4);
       var1.aM().e(true);

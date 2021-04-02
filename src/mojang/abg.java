@@ -10,11 +10,11 @@ public class abg extends pb {
       super(var1, var2, var3);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return super.e(var1, var2, var3, var4);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       boolean var5 = this.g(var1, var2, var3, var4 - 1);
       boolean var6 = this.g(var1, var2, var3, var4 + 1);
       boolean var7 = this.g(var1, var2 - 1, var3, var4);
@@ -42,7 +42,7 @@ public class abg extends pb {
       return wu.b((double)((float)var2 + var9), (double)var3, (double)((float)var4 + var11), (double)((float)var2 + var10), (double)((float)var3 + 1.5F), (double)((float)var4 + var12));
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       boolean var5 = this.g(var1, var2, var3, var4 - 1);
       boolean var6 = this.g(var1, var2, var3, var4 + 1);
       boolean var7 = this.g(var1, var2 - 1, var3, var4);
@@ -78,7 +78,7 @@ public class abg extends pb {
       return false;
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return false;
    }
 
@@ -86,7 +86,7 @@ public class abg extends pb {
       return 11;
    }
 
-   public boolean g(ali var1, int var2, int var3, int var4) {
+   public boolean g(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.a(var2, var3, var4);
       if(var5 != this.bO && var5 != bv.bO) {
          pb var6 = m[var5];

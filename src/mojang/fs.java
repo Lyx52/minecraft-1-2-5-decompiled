@@ -2,17 +2,17 @@ package mojang;
 
 public class fs extends rt {
 
-   private nn a;
+   private BaseEntity a;
    private int au;
    private int av;
    private String aw;
 
 
-   public fs(xd var1, nn var2) {
+   public fs(World var1, BaseEntity var2) {
       this(var1, var2, "crit");
    }
 
-   public fs(xd var1, nn var2, String var3) {
+   public fs(World var1, BaseEntity var2, String var3) {
       super(var1, var2.o, var2.y.b + (double)(var2.J / 2.0F), var2.q, var2.r, var2.s, var2.t);
       this.au = 0;
       this.av = 0;
@@ -22,7 +22,7 @@ public class fs extends rt {
       this.J_();
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {}
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {}
 
    public void J_() {
       for(int var1 = 0; var1 < 16; ++var1) {

@@ -22,27 +22,27 @@ public class md {
    public String n;
 
 
-   public static md a(acq var0) {
+   public static md a(Mob var0) {
       return new fl("mojang/mob", var0);
    }
 
-   public static md a(yw var0) {
+   public static md a(Player var0) {
       return new fl("player", var0);
    }
 
-   public static md a(nm var0, nn var1) {
+   public static md a(Arrow var0, BaseEntity var1) {
       return (new ft("arrow", var0, var1)).d();
    }
 
-   public static md a(bt var0, nn var1) {
+   public static md a(Fireball var0, BaseEntity var1) {
       return (new ft("fireball", var0, var1)).j().d();
    }
 
-   public static md a(nn var0, nn var1) {
+   public static md a(BaseEntity var0, BaseEntity var1) {
       return (new ft("thrown", var0, var1)).d();
    }
 
-   public static md b(nn var0, nn var1) {
+   public static md b(BaseEntity var0, BaseEntity var1) {
       return (new ft("indirectMagic", var0, var1)).h();
    }
 
@@ -71,11 +71,11 @@ public class md {
       this.n = var1;
    }
 
-   public nn b() {
+   public BaseEntity b() {
       return this.a();
    }
 
-   public nn a() {
+   public BaseEntity a() {
       return null;
    }
 

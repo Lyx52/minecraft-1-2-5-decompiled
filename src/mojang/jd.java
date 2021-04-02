@@ -12,7 +12,7 @@ public class jd extends fe {
       this.c = var2;
    }
 
-   protected int a(aja var1, int var2, float var3) {
+   protected int a(Slime var1, int var2, float var3) {
       if(var2 == 0) {
          this.a(this.c);
          GL11.glEnable(2977);
@@ -29,7 +29,7 @@ public class jd extends fe {
       }
    }
 
-   protected void a(aja var1, float var2) {
+   protected void a(Slime var1, float var2) {
       int var3 = var1.ap();
       float var4 = (var1.c + (var1.b - var1.c) * var2) / ((float)var3 * 0.5F + 1.0F);
       float var5 = 1.0F / (var4 + 1.0F);

@@ -19,7 +19,7 @@ public class ahv extends vq {
    private boolean cn = false;
 
 
-   public ahv(Minecraft var1, xd var2, fc var3, adl var4) {
+   public ahv(Minecraft var1, World var2, CredentialManager var3, adl var4) {
       super(var1, var2, var3, 0);
       this.cl = var4;
    }
@@ -31,7 +31,7 @@ public class ahv extends vq {
    public void k(int var1) {}
 
    public void J_() {
-      if(this.k.j(gk.c(this.o), 0, gk.c(this.q))) {
+      if(this.k.j(Utils.c(this.o), 0, Utils.c(this.q))) {
          super.J_();
          this.bj();
       }
@@ -113,12 +113,12 @@ public class ahv extends vq {
 
    }
 
-   public fq as() {
+   public Item as() {
       this.cl.c(new hc(4, 0, 0, 0, 0));
       return null;
    }
 
-   protected void a(fq var1) {}
+   protected void a(Item var1) {}
 
    public void a(String var1) {
       if(this.b.w.c().size() == 0 || !((String)this.b.w.c().get(this.b.w.c().size() - 1)).equals(var1)) {
@@ -134,7 +134,7 @@ public class ahv extends vq {
    }
 
    public void ag() {
-      this.cl.c(new kx(this.aB, (byte)this.k.q, this.k.B().t(), this.k.b(), 0));
+      this.cl.c(new kx(this.aB, (byte)this.k.q, this.k.B().getGenerator(), this.k.b(), 0));
    }
 
    protected void c(md var1, int var2) {

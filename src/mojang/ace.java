@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class ace extends ack {
 
-   public ace(xd var1, int var2, int var3) {
+   public ace(World var1, int var2, int var3) {
       super(var1, var2, var3);
    }
 
@@ -57,11 +57,11 @@ public class ace extends ack {
       return 0;
    }
 
-   public void a(nn var1) {}
+   public void a(BaseEntity var1) {}
 
-   public void b(nn var1) {}
+   public void b(BaseEntity var1) {}
 
-   public void a(nn var1, int var2) {}
+   public void a(BaseEntity var1, int var2) {}
 
    public boolean d(int var1, int var2, int var3) {
       return false;
@@ -83,7 +83,7 @@ public class ace extends ack {
 
    public void f() {}
 
-   public void a(nn var1, wu var2, List var3) {}
+   public void a(BaseEntity var1, wu var2, List var3) {}
 
    public void a(Class var1, wu var2, List var3) {}
 

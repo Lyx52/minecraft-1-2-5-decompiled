@@ -13,6 +13,6 @@ public class gl extends abn {
       this.J.clear();
       this.K.clear();
       this.L.clear();
-      this.K.add(new bg(of.class, 8, 4, 8));
+      this.K.add(new bg(MushroomCow.class, 8, 4, 8));
    }
 }

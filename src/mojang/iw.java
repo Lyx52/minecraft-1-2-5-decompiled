@@ -4,10 +4,10 @@ import java.util.Comparator;
 
 public class iw implements Comparator {
 
-   private acq a;
+   private Mob a;
 
 
-   public iw(acq var1) {
+   public iw(Mob var1) {
       this.a = var1;
    }
 
@@ -17,8 +17,8 @@ public class iw implements Comparator {
       } else if(var2.l && !var1.l) {
          return -1;
       } else {
-         double var3 = (double)var1.a((nn)this.a);
-         double var5 = (double)var2.a((nn)this.a);
+         double var3 = (double)var1.a((BaseEntity)this.a);
+         double var5 = (double)var2.a((BaseEntity)this.a);
          return var3 < var5?1:(var3 > var5?-1:(var1.s < var2.s?1:-1));
       }
    }

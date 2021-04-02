@@ -13,9 +13,9 @@ class yk extends iff {
 
 
    public yk(afv var1) {
-      super(var1.p, var1.q, var1.r, 32, var1.r - 65 + 4, 18);
+      super(var1.minecraft, var1.q, var1.r, 32, var1.r - 65 + 4, 18);
       this.a = var1;
-      this.c = adn.a().b();
+      this.c = LocalizationManager.getInstance().b();
       this.b = new ArrayList();
       Iterator var2 = this.c.keySet().iterator();
 
@@ -31,15 +31,15 @@ class yk extends iff {
    }
 
    protected void a(int var1, boolean var2) {
-      adn.a().a((String)this.b.get(var1));
-      this.a.p.q.a(adn.a().d());
-      afv.a(this.a).R = (String)this.b.get(var1);
-      this.a.u.b(adn.d(afv.a(this.a).R));
-      afv.b(this.a).e = adn.a().b("gui.done");
+      LocalizationManager.getInstance().a((String)this.b.get(var1));
+      this.a.minecraft.q.a(LocalizationManager.getInstance().d());
+      afv.a(this.a).lang = (String)this.b.get(var1);
+      this.a.u.b(LocalizationManager.d(afv.a(this.a).lang));
+      afv.b(this.a).title = LocalizationManager.getInstance().getLocaleStringByName("gui.done");
    }
 
    protected boolean b_(int var1) {
-      return ((String)this.b.get(var1)).equals(adn.a().c());
+      return ((String)this.b.get(var1)).equals(LocalizationManager.getInstance().c());
    }
 
    protected int b() {
@@ -50,9 +50,9 @@ class yk extends iff {
       this.a.k();
    }
 
-   protected void a(int var1, int var2, int var3, int var4, adz var5) {
+   protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
       this.a.u.b(true);
       this.a.a(this.a.u, (String)this.c.get(this.b.get(var1)), this.a.q / 2, var3 + 1, 16777215);
-      this.a.u.b(adn.d(afv.a(this.a).R));
+      this.a.u.b(LocalizationManager.d(afv.a(this.a).lang));
    }
 }

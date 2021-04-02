@@ -2,7 +2,7 @@ package mojang;
 
 public class vz {
 
-   private acq a;
+   private Mob a;
    private float b;
    private float c;
    private boolean d = false;
@@ -11,14 +11,14 @@ public class vz {
    private double g;
 
 
-   public vz(acq var1) {
+   public vz(Mob var1) {
       this.a = var1;
    }
 
-   public void a(nn var1, float var2, float var3) {
+   public void a(BaseEntity var1, float var2, float var3) {
       this.e = var1.o;
-      if(var1 instanceof acq) {
-         this.f = var1.p + (double)((acq)var1).I();
+      if(var1 instanceof Mob) {
+         this.f = var1.p + (double)((Mob)var1).I();
       } else {
          this.f = (var1.y.b + var1.y.e) / 2.0D;
       }
@@ -45,7 +45,7 @@ public class vz {
          double var1 = this.e - this.a.o;
          double var3 = this.f - (this.a.p + (double)this.a.I());
          double var5 = this.g - this.a.q;
-         double var7 = (double)gk.a(var1 * var1 + var5 * var5);
+         double var7 = (double) Utils.sqrt(var1 * var1 + var5 * var5);
          float var9 = (float)(Math.atan2(var5, var1) * 180.0D / 3.1415927410125732D) - 90.0F;
          float var10 = (float)(-(Math.atan2(var3, var7) * 180.0D / 3.1415927410125732D));
          this.a.v = this.a(this.a.v, var10, this.c);

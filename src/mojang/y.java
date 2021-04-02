@@ -47,7 +47,7 @@ public class y extends dd {
       this.b.a(0, fr.a().a(this.a));
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       super.a(var1);
 
       for(int var2 = 0; var2 < 4; ++var2) {
@@ -60,7 +60,7 @@ public class y extends dd {
       this.b.a(0, (aan)null);
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return true;
    }
 

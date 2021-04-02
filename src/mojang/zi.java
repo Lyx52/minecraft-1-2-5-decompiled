@@ -2,12 +2,12 @@ package mojang;
 
 public class zi extends rc {
 
-   private acq b;
-   private xd c;
+   private Mob b;
+   private World c;
    int a = 0;
 
 
-   public zi(acq var1) {
+   public zi(Mob var1) {
       this.b = var1;
       this.c = var1.k;
       this.a(7);
@@ -17,9 +17,9 @@ public class zi extends rc {
       if(this.b.aO().nextInt(this.b.bi()?50:1000) != 0) {
          return false;
       } else {
-         int var1 = gk.c(this.b.o);
-         int var2 = gk.c(this.b.p);
-         int var3 = gk.c(this.b.q);
+         int var1 = Utils.c(this.b.o);
+         int var2 = Utils.c(this.b.p);
+         int var3 = Utils.c(this.b.q);
          return this.c.a(var1, var2, var3) == pb.X.bO && this.c.e(var1, var2, var3) == 1?true:this.c.a(var1, var2 - 1, var3) == pb.u.bO;
       }
    }
@@ -45,9 +45,9 @@ public class zi extends rc {
    public void e() {
       this.a = Math.max(0, this.a - 1);
       if(this.a == 4) {
-         int var1 = gk.c(this.b.o);
-         int var2 = gk.c(this.b.p);
-         int var3 = gk.c(this.b.q);
+         int var1 = Utils.c(this.b.o);
+         int var2 = Utils.c(this.b.p);
+         int var3 = Utils.c(this.b.q);
          if(this.c.a(var1, var2, var3) == pb.X.bO) {
             this.c.g(2001, var1, var2, var3, pb.X.bO + 4096);
             this.c.g(var1, var2, var3, 0);

@@ -13,18 +13,18 @@ public class kr extends agv {
       super(var1, var2);
    }
 
-   private void j(xd var1, int var2, int var3, int var4) {
+   private void j(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       var1.b(var2, var3, var4, this.bO + 1, var5);
       var1.c(var2, var3, var4, var2, var3, var4);
       var1.k(var2, var3, var4);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return this.cd != acn.h;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = this.h(var1, var2, var3, var4);
       byte var7 = 1;
       if(this.cd == acn.h && !var1.t.d) {
@@ -125,7 +125,7 @@ public class kr extends agv {
 
    }
 
-   private void g(xd var1, int var2, int var3, int var4, int var5) {
+   private void g(World var1, int var2, int var3, int var4, int var5) {
       if(this.m(var1, var2, var3, var4)) {
          int var6 = var1.a(var2, var3, var4);
          if(var6 > 0) {
@@ -141,7 +141,7 @@ public class kr extends agv {
 
    }
 
-   private int c(xd var1, int var2, int var3, int var4, int var5, int var6) {
+   private int c(World var1, int var2, int var3, int var4, int var5, int var6) {
       int var7 = 1000;
 
       for(int var8 = 0; var8 < 4; ++var8) {
@@ -182,7 +182,7 @@ public class kr extends agv {
       return var7;
    }
 
-   private boolean[] k(xd var1, int var2, int var3, int var4) {
+   private boolean[] k(World var1, int var2, int var3, int var4) {
       int var5;
       int var6;
       for(var5 = 0; var5 < 4; ++var5) {
@@ -229,7 +229,7 @@ public class kr extends agv {
       return this.b;
    }
 
-   private boolean l(xd var1, int var2, int var3, int var4) {
+   private boolean l(World var1, int var2, int var3, int var4) {
       int var5 = var1.a(var2, var3, var4);
       if(var5 != aE.bO && var5 != aL.bO && var5 != aD.bO && var5 != aF.bO && var5 != aX.bO) {
          if(var5 == 0) {
@@ -243,7 +243,7 @@ public class kr extends agv {
       }
    }
 
-   protected int f(xd var1, int var2, int var3, int var4, int var5) {
+   protected int f(World var1, int var2, int var3, int var4, int var5) {
       int var6 = this.h(var1, var2, var3, var4);
       if(var6 < 0) {
          return var5;
@@ -260,12 +260,12 @@ public class kr extends agv {
       }
    }
 
-   private boolean m(xd var1, int var2, int var3, int var4) {
+   private boolean m(World var1, int var2, int var3, int var4) {
       acn var5 = var1.f(var2, var3, var4);
       return var5 == this.cd?false:(var5 == acn.h?false:!this.l(var1, var2, var3, var4));
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       if(var1.a(var2, var3, var4) == this.bO) {
          var1.a(var2, var3, var4, this.bO, this.e());

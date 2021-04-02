@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class abk {
 
-   acq a;
+   Mob a;
    ArrayList b = new ArrayList();
    ArrayList c = new ArrayList();
 
 
-   public abk(acq var1) {
+   public abk(Mob var1) {
       this.a = var1;
    }
 
@@ -18,7 +18,7 @@ public class abk {
       this.c.clear();
    }
 
-   public boolean a(nn var1) {
+   public boolean a(BaseEntity var1) {
       if(this.b.contains(var1)) {
          return true;
       } else if(this.c.contains(var1)) {

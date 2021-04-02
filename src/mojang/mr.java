@@ -16,11 +16,11 @@ public class mr extends abs {
 
    public mr() {}
 
-   public mr(nn var1) {
+   public mr(BaseEntity var1) {
       this.a = var1.f;
-      this.b = gk.c(var1.o * 32.0D);
-      this.c = gk.c(var1.p * 32.0D);
-      this.d = gk.c(var1.q * 32.0D);
+      this.b = Utils.c(var1.o * 32.0D);
+      this.c = Utils.c(var1.p * 32.0D);
+      this.d = Utils.c(var1.q * 32.0D);
       this.e = (byte)((int)(var1.u * 256.0F / 360.0F));
       this.f = (byte)((int)(var1.v * 256.0F / 360.0F));
    }

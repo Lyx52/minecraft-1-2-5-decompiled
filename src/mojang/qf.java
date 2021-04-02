@@ -21,7 +21,7 @@ public class qf extends aih {
       return a(var7) && a(var0, var7) == null?new qf(var6, var1, var7, var5):null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       if(this.a < 0) {
          this.a = this.b(var1, var3);
          if(this.a < 0) {
@@ -42,10 +42,10 @@ public class qf extends aih {
 
       int var4;
       for(var4 = 1; var4 <= 7; ++var4) {
-         this.a(var1, pb.az.bO, gk.a(var2, 2, 7), 1, 1, var4, var3);
-         this.a(var1, pb.az.bO, gk.a(var2, 2, 7), 2, 1, var4, var3);
-         this.a(var1, pb.az.bO, gk.a(var2, 2, 7), 4, 1, var4, var3);
-         this.a(var1, pb.az.bO, gk.a(var2, 2, 7), 5, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 1, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 2, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 4, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 5, 1, var4, var3);
       }
 
       for(var4 = 0; var4 < 9; ++var4) {

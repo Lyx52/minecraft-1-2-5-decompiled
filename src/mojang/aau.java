@@ -10,10 +10,10 @@ public class aau {
    public static float a = 0.0F;
    public static float b = 0.0F;
    public static float c = 0.0F;
-   private static IntBuffer i = ew.d(16);
-   private static FloatBuffer j = ew.e(16);
-   private static FloatBuffer k = ew.e(16);
-   private static FloatBuffer l = ew.e(3);
+   private static IntBuffer i = BufferManager.createIntBuffer(16);
+   private static FloatBuffer j = BufferManager.createFloatBuffer(16);
+   private static FloatBuffer k = BufferManager.createFloatBuffer(16);
+   private static FloatBuffer l = BufferManager.createFloatBuffer(3);
    public static float d;
    public static float e;
    public static float f;
@@ -21,7 +21,7 @@ public class aau {
    public static float h;
 
 
-   public static void a(yw var0, boolean var1) {
+   public static void a(Player var0, boolean var1) {
       GL11.glGetFloat(2982, j);
       GL11.glGetFloat(2983, k);
       GL11.glGetInteger(2978, i);
@@ -34,24 +34,24 @@ public class aau {
       int var4 = var1?1:0;
       float var5 = var0.v;
       float var6 = var0.u;
-      d = gk.b(var6 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
-      f = gk.a(var6 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
-      g = -f * gk.a(var5 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
-      h = d * gk.a(var5 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
-      e = gk.b(var5 * 3.1415927F / 180.0F);
+      d = Utils.cos(var6 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
+      f = Utils.sin(var6 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
+      g = -f * Utils.sin(var5 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
+      h = d * Utils.sin(var5 * 3.1415927F / 180.0F) * (float)(1 - var4 * 2);
+      e = Utils.cos(var5 * 3.1415927F / 180.0F);
    }
 
-   public static bo a(acq var0, double var1) {
-      double var3 = var0.l + (var0.o - var0.l) * var1;
-      double var5 = var0.m + (var0.p - var0.m) * var1 + (double)var0.I();
-      double var7 = var0.n + (var0.q - var0.n) * var1;
+   public static bo a(Mob var0, double var1) {
+      double var3 = var0.sandX + (var0.o - var0.sandX) * var1;
+      double var5 = var0.sandY + (var0.p - var0.sandY) * var1 + (double)var0.I();
+      double var7 = var0.sandZ + (var0.q - var0.sandZ) * var1;
       double var9 = var3 + (double)(a * 1.0F);
       double var11 = var5 + (double)(b * 1.0F);
       double var13 = var7 + (double)(c * 1.0F);
       return bo.b(var9, var11, var13);
    }
 
-   public static int a(xd var0, acq var1, float var2) {
+   public static int a(World var0, Mob var1, float var2) {
       bo var3 = a(var1, (double)var2);
       qo var4 = new qo(var3);
       int var5 = var0.a(var4.a, var4.b, var4.c);

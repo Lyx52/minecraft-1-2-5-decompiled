@@ -2,11 +2,11 @@ package mojang;
 
 public class hd extends rn {
 
-   tl a;
-   acq b;
+   VillagerGolem a;
+   Mob b;
 
 
-   public hd(tl var1) {
+   public hd(VillagerGolem var1) {
       super(var1, 16.0F, false, true);
       this.a = var1;
       this.a(1);

@@ -9,7 +9,7 @@ public class ov extends pb {
       this.a(true);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       float var6 = 0.0625F;
       float var7 = (float)(1 + var5 * 2) / 16.0F;
@@ -23,7 +23,7 @@ public class ov extends pb {
       this.a(var1, 0.0F, var1, 1.0F - var1, var2, 1.0F - var1);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       float var6 = 0.0625F;
       float var7 = (float)(1 + var5 * 2) / 16.0F;
@@ -31,7 +31,7 @@ public class ov extends pb {
       return wu.b((double)((float)var2 + var7), (double)var3, (double)((float)var4 + var6), (double)((float)(var2 + 1) - var6), (double)((float)var3 + var8 - var6), (double)((float)(var4 + 1) - var6));
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       float var6 = 0.0625F;
       float var7 = (float)(1 + var5 * 2) / 16.0F;
@@ -55,16 +55,16 @@ public class ov extends pb {
       return false;
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       this.c(var1, var2, var3, var4, var5);
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.c(var1, var2, var3, var4, var5);
    }
 
-   private void c(xd var1, int var2, int var3, int var4, yw var5) {
+   private void c(World var1, int var2, int var3, int var4, Player var5) {
       if(var5.a(false)) {
          var5.aF().a(2, 0.1F);
          int var6 = var1.e(var2, var3, var4) + 1;
@@ -78,11 +78,11 @@ public class ov extends pb {
 
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return !super.e(var1, var2, var3, var4)?false:this.g(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!this.g(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -90,7 +90,7 @@ public class ov extends pb {
 
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return var1.f(var2, var3 - 1, var4).a();
    }
 

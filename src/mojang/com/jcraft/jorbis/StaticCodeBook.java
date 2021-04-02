@@ -1,5 +1,6 @@
 package mojang.com.jcraft.jorbis;
 
+import mojang.Utils;
 import mojang.com.jcraft.jogg.Buffer;
 
 class StaticCodeBook {
@@ -230,7 +231,7 @@ class StaticCodeBook {
    }
 
    private int maptype1_quantvals() {
-      int var1 = mojang.gk.c(Math.pow((double)this.entries, 1.0D / (double)this.dim));
+      int var1 = Utils.c(Math.pow((double)this.entries, 1.0D / (double)this.dim));
 
       while(true) {
          int var2 = 1;
@@ -314,7 +315,7 @@ class StaticCodeBook {
          var0 = -var0;
       }
 
-      int var2 = mojang.gk.c(Math.log((double)var0) / Math.log(2.0D));
+      int var2 = Utils.c(Math.log((double)var0) / Math.log(2.0D));
       int var3 = (int)Math.rint(Math.pow((double)var0, (double)(20 - var2)));
       var2 = var2 + 768 << 21;
       return (long)(var1 | var2 | var3);

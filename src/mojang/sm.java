@@ -19,7 +19,7 @@ public class sm extends gb {
    aan o;
 
 
-   public sm(aak var1, xd var2, int var3, int var4, int var5) {
+   public sm(aak var1, World var2, int var3, int var4, int var5) {
       super(new gm(var1, var2, var3, var4, var5));
       this.y = (gm)this.d;
    }
@@ -46,17 +46,17 @@ public class sm extends gb {
       for(int var6 = 0; var6 < 3; ++var6) {
          int var7 = var1 - (var4 + 60);
          int var8 = var2 - (var5 + 14 + 19 * var6);
-         if(var7 >= 0 && var8 >= 0 && var7 < 108 && var8 < 19 && this.y.a(this.p.h, var6)) {
-            this.p.c.a(this.y.f, var6);
+         if(var7 >= 0 && var8 >= 0 && var7 < 108 && var8 < 19 && this.y.a(this.minecraft.h, var6)) {
+            this.minecraft.c.a(this.y.f, var6);
          }
       }
 
    }
 
    protected void a(float var1, int var2, int var3) {
-      int var4 = this.p.p.b("/mojang/gui/enchant.png");
+      int var4 = this.minecraft.p.b("/mojang/gui/enchant.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.p.p.b(var4);
+      this.minecraft.p.b(var4);
       int var5 = (this.q - this.b) / 2;
       int var6 = (this.r - this.c) / 2;
       this.b(var5, var6, 0, 0, this.b, this.c);
@@ -64,8 +64,8 @@ public class sm extends gb {
       GL11.glMatrixMode(5889);
       GL11.glPushMatrix();
       GL11.glLoadIdentity();
-      agd var7 = new agd(this.p.A, this.p.d, this.p.e);
-      GL11.glViewport((var7.a() - 320) / 2 * var7.c, (var7.b() - 240) / 2 * var7.c, 320 * var7.c, 240 * var7.c);
+      WindowScaler var7 = new WindowScaler(this.minecraft.options, this.minecraft.width, this.minecraft.height);
+      GL11.glViewport((var7.getWidth() - 320) / 2 * var7.scale, (var7.getHeight() - 240) / 2 * var7.scale, 320 * var7.scale, 240 * var7.scale);
       GL11.glTranslatef(-0.34F, 0.23F, 0.0F);
       GLU.gluPerspective(90.0F, 1.3333334F, 9.0F, 80.0F);
       float var8 = 1.0F;
@@ -77,7 +77,7 @@ public class sm extends gb {
       float var9 = 5.0F;
       GL11.glScalef(var9, var9, var9);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-      this.p.p.b(this.p.p.b("/mojang/item/book.png"));
+      this.minecraft.p.b(this.minecraft.p.b("/mojang/item/book.png"));
       GL11.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);
       float var10 = this.n + (this.m - this.n) * var1;
       GL11.glTranslatef((1.0F - var10) * 0.2F, (1.0F - var10) * 0.1F, (1.0F - var10) * 0.25F);
@@ -85,8 +85,8 @@ public class sm extends gb {
       GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
       float var11 = this.j + (this.i - this.j) * var1 + 0.25F;
       float var12 = this.j + (this.i - this.j) * var1 + 0.75F;
-      var11 = (var11 - (float)gk.b((double)var11)) * 1.6F - 0.3F;
-      var12 = (var12 - (float)gk.b((double)var12)) * 1.6F - 0.3F;
+      var11 = (var11 - (float) Utils.b((double)var11)) * 1.6F - 0.3F;
+      var12 = (var12 - (float) Utils.b((double)var12)) * 1.6F - 0.3F;
       if(var11 < 0.0F) {
          var11 = 0.0F;
       }
@@ -104,35 +104,35 @@ public class sm extends gb {
       }
 
       GL11.glEnable('\u803a');
-      w.a((nn)null, 0.0F, var11, var12, var10, 0.0F, 0.0625F);
+      w.a((BaseEntity)null, 0.0F, var11, var12, var10, 0.0F, 0.0625F);
       GL11.glDisable('\u803a');
       tf.a();
       GL11.glMatrixMode(5889);
-      GL11.glViewport(0, 0, this.p.d, this.p.e);
+      GL11.glViewport(0, 0, this.minecraft.width, this.minecraft.height);
       GL11.glPopMatrix();
       GL11.glMatrixMode(5888);
       GL11.glPopMatrix();
       tf.a();
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.p.p.b(var4);
+      this.minecraft.p.b(var4);
       gy.a.a(this.y.b);
 
       for(int var13 = 0; var13 < 3; ++var13) {
          String var14 = gy.a.a();
          this.g = 0.0F;
-         this.p.p.b(var4);
+         this.minecraft.p.b(var4);
          int var15 = this.y.c[var13];
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          if(var15 == 0) {
             this.b(var5 + 60, var6 + 14 + 19 * var13, 0, 185, 108, 19);
          } else {
             String var16 = "" + var15;
-            nl var17 = this.p.r;
+            nl var17 = this.minecraft.r;
             int var18 = 6839882;
-            if(this.p.h.aU < var15 && !this.p.h.aT.d) {
+            if(this.minecraft.h.aU < var15 && !this.minecraft.h.aT.d) {
                this.b(var5 + 60, var6 + 14 + 19 * var13, 0, 185, 108, 19);
                var17.a(var14, var5 + 62, var6 + 16 + 19 * var13, 104, (var18 & 16711422) >> 1);
-               var17 = this.p.q;
+               var17 = this.minecraft.q;
                var18 = 4226832;
                var17.a(var16, var5 + 62 + 104 - var17.a(var16), var6 + 16 + 19 * var13 + 7, var18);
             } else {
@@ -146,7 +146,7 @@ public class sm extends gb {
                }
 
                var17.a(var14, var5 + 62, var6 + 16 + 19 * var13, 104, var18);
-               var17 = this.p.q;
+               var17 = this.minecraft.q;
                var18 = 8453920;
                var17.a(var16, var5 + 62 + 104 - var17.a(var16), var6 + 16 + 19 * var13 + 7, var18);
             }

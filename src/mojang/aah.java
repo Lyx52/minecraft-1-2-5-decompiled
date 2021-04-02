@@ -4,13 +4,13 @@ public class aah extends dd {
 
    public ade a = new ade(this, 3, 3);
    public io b = new akk();
-   private xd c;
+   private World c;
    private int h;
    private int i;
    private int j;
 
 
-   public aah(aak var1, xd var2, int var3, int var4, int var5) {
+   public aah(aak var1, World var2, int var3, int var4, int var5) {
       this.c = var2;
       this.h = var3;
       this.i = var4;
@@ -42,7 +42,7 @@ public class aah extends dd {
       this.b.a(0, fr.a().a(this.a));
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       super.a(var1);
       if(!this.c.F) {
          for(int var2 = 0; var2 < 9; ++var2) {
@@ -55,7 +55,7 @@ public class aah extends dd {
       }
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return this.c.a(this.h, this.i, this.j) != pb.ay.bO?false:var1.f((double)this.h + 0.5D, (double)this.i + 0.5D, (double)this.j + 0.5D) <= 64.0D;
    }
 

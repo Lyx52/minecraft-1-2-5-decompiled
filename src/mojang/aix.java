@@ -66,7 +66,7 @@ public class aix {
    }
 
    public void a(mp var1) {
-      xd var2 = var1.b;
+      World var2 = var1.b;
       if(var2 == null) {
          var1.f = true;
          var1.e = true;

@@ -19,15 +19,15 @@ public class qx extends w {
       return false;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return !var1.h(var2, var3 - 1, var4)?false:super.e(var1, var2, var3, var4);
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return !var1.h(var2, var3 - 1, var4)?false:super.g(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       boolean var7 = this.f(var1, var2, var3, var4, var6);
       if(this.c && !var7) {
@@ -46,7 +46,7 @@ public class qx extends w {
       return var1 == 0?(this.c?99:115):(var1 == 1?(this.c?147:131):5);
    }
 
-   public boolean a(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean a(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return var5 != 0 && var5 != 1;
    }
 
@@ -58,11 +58,11 @@ public class qx extends w {
       return this.a(var1, 0);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
-      return this.b((ali)var1, var2, var3, var4, var5);
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
+      return this.b((WorldInterface)var1, var2, var3, var4, var5);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(!this.c) {
          return false;
       } else {
@@ -71,7 +71,7 @@ public class qx extends w {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!this.g(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -94,7 +94,7 @@ public class qx extends w {
       }
    }
 
-   private boolean f(xd var1, int var2, int var3, int var4, int var5) {
+   private boolean f(World var1, int var2, int var3, int var4, int var5) {
       int var6 = a(var5);
       switch(var6) {
       case 0:
@@ -110,7 +110,7 @@ public class qx extends w {
       }
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       int var6 = var1.e(var2, var3, var4);
       int var7 = (var6 & 12) >> 2;
       var7 = var7 + 1 << 2 & 12;
@@ -122,8 +122,8 @@ public class qx extends w {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
-      int var6 = ((gk.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4;
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
+      int var6 = ((Utils.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4;
       var1.f(var2, var3, var4, var6);
       boolean var7 = this.f(var1, var2, var3, var4, var6);
       if(var7) {
@@ -132,7 +132,7 @@ public class qx extends w {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       var1.j(var2 + 1, var3, var4, this.bO);
       var1.j(var2 - 1, var3, var4, this.bO);
       var1.j(var2, var3, var4 + 1, this.bO);
@@ -141,7 +141,7 @@ public class qx extends w {
       var1.j(var2, var3 + 1, var4, this.bO);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, int var5) {
+   public void b(World var1, int var2, int var3, int var4, int var5) {
       if(this.c) {
          var1.j(var2 + 1, var3, var4, this.bO);
          var1.j(var2 - 1, var3, var4, this.bO);
@@ -162,7 +162,7 @@ public class qx extends w {
       return yr.bb.bQ;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       if(this.c) {
          int var6 = var1.e(var2, var3, var4);
          int var7 = a(var6);

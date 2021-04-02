@@ -6,9 +6,9 @@ import org.lwjgl.opengl.GL11;
 public class r extends wc {
 
    private static r e = new r();
-   private FloatBuffer f = ew.e(16);
-   private FloatBuffer g = ew.e(16);
-   private FloatBuffer h = ew.e(16);
+   private FloatBuffer f = BufferManager.createFloatBuffer(16);
+   private FloatBuffer g = BufferManager.createFloatBuffer(16);
+   private FloatBuffer h = BufferManager.createFloatBuffer(16);
 
 
    public static wc a() {
@@ -17,7 +17,7 @@ public class r extends wc {
    }
 
    private void a(float[][] var1, int var2) {
-      float var3 = gk.c(var1[var2][0] * var1[var2][0] + var1[var2][1] * var1[var2][1] + var1[var2][2] * var1[var2][2]);
+      float var3 = Utils.sqrt(var1[var2][0] * var1[var2][0] + var1[var2][1] * var1[var2][1] + var1[var2][2] * var1[var2][2]);
       var1[var2][0] /= var3;
       var1[var2][1] /= var3;
       var1[var2][2] /= var3;

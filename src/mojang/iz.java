@@ -5,24 +5,24 @@ import java.util.Date;
 class iz extends iff {
 
    // $FF: synthetic field
-   final mw a;
+   final WorldSelectionMenu a;
 
 
-   public iz(mw var1) {
-      super(var1.p, var1.q, var1.r, 32, var1.r - 64, 36);
+   public iz(WorldSelectionMenu var1) {
+      super(var1.minecraft, var1.q, var1.r, 32, var1.r - 64, 36);
       this.a = var1;
    }
 
    protected int a() {
-      return mw.a(this.a).size();
+      return WorldSelectionMenu.a(this.a).size();
    }
 
    protected void a(int var1, boolean var2) {
-      mw.a(this.a, var1);
-      boolean var3 = mw.b(this.a) >= 0 && mw.b(this.a) < this.a();
-      mw.c(this.a).h = var3;
-      mw.d(this.a).h = var3;
-      mw.e(this.a).h = var3;
+      WorldSelectionMenu.a(this.a, var1);
+      boolean var3 = WorldSelectionMenu.b(this.a) >= 0 && WorldSelectionMenu.b(this.a) < this.a();
+      WorldSelectionMenu.c(this.a).h = var3;
+      WorldSelectionMenu.d(this.a).h = var3;
+      WorldSelectionMenu.e(this.a).h = var3;
       if(var2 && var3) {
          this.a.c(var1);
       }
@@ -30,33 +30,33 @@ class iz extends iff {
    }
 
    protected boolean b_(int var1) {
-      return var1 == mw.b(this.a);
+      return var1 == WorldSelectionMenu.b(this.a);
    }
 
    protected int b() {
-      return mw.a(this.a).size() * 36;
+      return WorldSelectionMenu.a(this.a).size() * 36;
    }
 
    protected void c() {
       this.a.k();
    }
 
-   protected void a(int var1, int var2, int var3, int var4, adz var5) {
-      pj var6 = (pj)mw.a(this.a).get(var1);
-      String var7 = var6.b();
-      if(var7 == null || gk.a(var7)) {
-         var7 = mw.f(this.a) + " " + (var1 + 1);
+   protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
+      WorldListItem var6 = (WorldListItem) WorldSelectionMenu.a(this.a).get(var1);
+      String var7 = var6.getWorldName();
+      if(var7 == null || Utils.isWorldNameValid(var7)) {
+         var7 = WorldSelectionMenu.f(this.a) + " " + (var1 + 1);
       }
 
-      String var8 = var6.a();
-      var8 = var8 + " (" + mw.g(this.a).format(new Date(var6.d()));
+      String var8 = var6.getWorldLocation();
+      var8 = var8 + " (" + WorldSelectionMenu.g(this.a).format(new Date(var6.getLastPlayed()));
       var8 = var8 + ")";
       String var9 = "";
-      if(var6.c()) {
-         var9 = mw.h(this.a) + " " + var9;
+      if(var6.getNeedsConversion()) {
+         var9 = WorldSelectionMenu.h(this.a) + " " + var9;
       } else {
-         var9 = mw.i(this.a)[var6.e()];
-         if(var6.f()) {
+         var9 = WorldSelectionMenu.i(this.a)[var6.getGameType()];
+         if(var6.isHardcore()) {
             var9 = "§4" + cy.a("gameMode.hardcore") + "§8";
          }
       }

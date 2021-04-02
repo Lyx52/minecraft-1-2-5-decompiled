@@ -1,6 +1,6 @@
 package mojang;
 
-public class dg extends nn {
+public class dg extends BaseEntity {
 
    public final ajn a;
    public final String b;
@@ -15,9 +15,9 @@ public class dg extends nn {
 
    protected void b() {}
 
-   protected void a(ady var1) {}
+   protected void a(CompundTag var1) {}
 
-   protected void b(ady var1) {}
+   protected void b(CompundTag var1) {}
 
    public boolean l_() {
       return true;
@@ -27,7 +27,7 @@ public class dg extends nn {
       return this.a.a(this, var1, var2);
    }
 
-   public boolean a(nn var1) {
+   public boolean a(BaseEntity var1) {
       return this == var1 || this.a == var1;
    }
 }

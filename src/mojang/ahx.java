@@ -11,7 +11,7 @@ public class ahx extends qk {
       this.a(true);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(var5.nextInt(25) == 0) {
          byte var6 = 4;
          int var7 = 5;
@@ -55,7 +55,7 @@ public class ahx extends qk {
 
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return super.e(var1, var2, var3, var4) && this.g(var1, var2, var3, var4);
    }
 
@@ -63,7 +63,7 @@ public class ahx extends qk {
       return n[var1];
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       if(var3 >= 0 && var3 < 256) {
          int var5 = var1.a(var2, var3 - 1, var4);
          return var5 == by.bO || var1.n(var2, var3, var4) < 13 && this.f_(var5);
@@ -72,7 +72,7 @@ public class ahx extends qk {
       }
    }
 
-   public boolean c(xd var1, int var2, int var3, int var4, Random var5) {
+   public boolean c(World var1, int var2, int var3, int var4, Random var5) {
       int var6 = var1.e(var2, var3, var4);
       var1.d(var2, var3, var4, 0);
       qm var7 = null;

@@ -82,7 +82,7 @@ public class me implements io {
 
    }
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return true;
    }
 

@@ -8,7 +8,7 @@ public class cx extends pb {
       super(var1, var2, acn.p);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       float var6 = 0.125F;
       if(var5 == 2) {
@@ -30,7 +30,7 @@ public class cx extends pb {
       return super.c(var1, var2, var3, var4);
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       float var6 = 0.125F;
       if(var5 == 2) {
@@ -64,11 +64,11 @@ public class cx extends pb {
       return 8;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2 - 1, var3, var4)?true:(var1.h(var2 + 1, var3, var4)?true:(var1.h(var2, var3, var4 - 1)?true:var1.h(var2, var3, var4 + 1)));
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       if((var6 == 0 || var5 == 2) && var1.h(var2, var3, var4 + 1)) {
          var6 = 2;
@@ -89,7 +89,7 @@ public class cx extends pb {
       var1.f(var2, var3, var4, var6);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       boolean var7 = false;
       if(var6 == 2 && var1.h(var2, var3, var4 + 1)) {

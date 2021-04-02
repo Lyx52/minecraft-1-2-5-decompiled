@@ -25,7 +25,7 @@ public class aem extends pb {
       return false;
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var6 = var1.e(var2, var3, var4);
       float var7 = 1.0F;
       float var8 = 1.0F;
@@ -86,11 +86,11 @@ public class aem extends pb {
       this.a(var7, var8, var9, var10, var11, var12);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       switch(var5) {
       case 1:
          return this.e(var1.a(var2, var3 + 1, var4));
@@ -116,7 +116,7 @@ public class aem extends pb {
       }
    }
 
-   private boolean h(xd var1, int var2, int var3, int var4) {
+   private boolean h(World var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       int var6 = var5;
       if(var5 > 0) {
@@ -147,11 +147,11 @@ public class aem extends pb {
       return gu.c();
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       return var1.a(var2, var4).l();
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F && !this.h(var1, var2, var3, var4)) {
          this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
          var1.g(var2, var3, var4, 0);
@@ -159,7 +159,7 @@ public class aem extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F && var1.r.nextInt(4) == 0) {
          byte var6 = 4;
          int var7 = 5;
@@ -252,7 +252,7 @@ public class aem extends pb {
 
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       byte var6 = 0;
       switch(var5) {
       case 2:
@@ -282,7 +282,7 @@ public class aem extends pb {
       return 0;
    }
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       if(!var1.F && var2.av() != null && var2.av().c == yr.be.bQ) {
          var2.a(gv.C[this.bO], 1);
          this.a(var1, var3, var4, var5, new aan(bu, 1, 0));

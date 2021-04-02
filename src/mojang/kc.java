@@ -12,7 +12,7 @@ public class kc extends abs {
 
    public kc() {}
 
-   public kc(nn var1, int var2) {
+   public kc(BaseEntity var1, int var2) {
       this.a = var1.f;
       this.b = var2;
    }

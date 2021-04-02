@@ -6,7 +6,7 @@ import java.util.List;
 
 public class kd {
 
-   private final xd a;
+   private final World a;
    private final List b = new ArrayList();
    private final uh c = new uh(0, 0, 0);
    private final uh d = new uh(0, 0, 0);
@@ -18,7 +18,7 @@ public class kd {
    private int j = 0;
 
 
-   public kd(xd var1) {
+   public kd(World var1) {
       this.a = var1;
    }
 
@@ -36,11 +36,11 @@ public class kd {
 
       int var2 = this.h / 16;
       if(this.j < var2 && this.b.size() > 20 && this.a.r.nextInt(7000) == 0) {
-         bo var3 = this.a(gk.d((float)this.d.a), gk.d((float)this.d.b), gk.d((float)this.d.c), 2, 4, 2);
+         bo var3 = this.a(Utils.d((float)this.d.a), Utils.d((float)this.d.b), Utils.d((float)this.d.c), 2, 4, 2);
          if(var3 != null) {
-            tl var4 = new tl(this.a);
+            VillagerGolem var4 = new VillagerGolem(this.a);
             var4.d(var3.a, var3.b, var3.c);
-            this.a.a((nn)var4);
+            this.a.a((BaseEntity)var4);
             ++this.j;
          }
       }
@@ -82,12 +82,12 @@ public class kd {
    }
 
    private void h() {
-      List var1 = this.a.a(tl.class, wu.b((double)(this.d.a - this.e), (double)(this.d.b - 4), (double)(this.d.c - this.e), (double)(this.d.a + this.e), (double)(this.d.b + 4), (double)(this.d.c + this.e)));
+      List var1 = this.a.a(VillagerGolem.class, wu.b((double)(this.d.a - this.e), (double)(this.d.b - 4), (double)(this.d.c - this.e), (double)(this.d.a + this.e), (double)(this.d.b + 4), (double)(this.d.c + this.e)));
       this.j = var1.size();
    }
 
    private void i() {
-      List var1 = this.a.a(ed.class, wu.b((double)(this.d.a - this.e), (double)(this.d.b - 4), (double)(this.d.c - this.e), (double)(this.d.a + this.e), (double)(this.d.b + 4), (double)(this.d.c + this.e)));
+      List var1 = this.a.a(Villager.class, wu.b((double)(this.d.a - this.e), (double)(this.d.b - 4), (double)(this.d.c - this.e), (double)(this.d.a + this.e), (double)(this.d.b + 4), (double)(this.d.c + this.e)));
       this.h = var1.size();
    }
 
@@ -191,7 +191,7 @@ public class kd {
       return this.b.isEmpty();
    }
 
-   public void a(acq var1) {
+   public void a(Mob var1) {
       Iterator var2 = this.i.iterator();
 
       afr var3;
@@ -207,7 +207,7 @@ public class kd {
       var3.b = this.g;
    }
 
-   public acq b(acq var1) {
+   public Mob b(Mob var1) {
       double var2 = Double.MAX_VALUE;
       afr var4 = null;
 

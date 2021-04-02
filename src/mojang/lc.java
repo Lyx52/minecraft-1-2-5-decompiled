@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import mojang.net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class lc extends h {
+public class lc extends Resource {
 
    private int e = -1;
    private BufferedImage f;
@@ -24,22 +24,22 @@ public class lc extends h {
 
    }
 
-   public void b(Minecraft var1) {
+   public void b(Minecraft minecraft) {
       if(this.f != null) {
-         var1.p.a(this.e);
+         minecraft.p.a(this.e);
       }
 
    }
 
-   public void c(Minecraft var1) {
+   public void c(Minecraft minecraft) {
       if(this.f != null && this.e < 0) {
-         this.e = var1.p.a(this.f);
+         this.e = minecraft.p.a(this.f);
       }
 
       if(this.f != null) {
-         var1.p.b(this.e);
+         minecraft.p.b(this.e);
       } else {
-         GL11.glBindTexture(3553, var1.p.b("/mojang/gui/unknown_pack.png"));
+         GL11.glBindTexture(3553, minecraft.p.b("/mojang/gui/unknown_pack.png"));
       }
 
    }

@@ -13,16 +13,16 @@ public class hm extends yr {
    }
 
    public int b(int var1) {
-      int var2 = gk.a(var1, 0, 15);
+      int var2 = Utils.a(var1, 0, 15);
       return this.bS + var2 % 8 * 16 + var2 / 8;
    }
 
    public String a(aan var1) {
-      int var2 = gk.a(var1.i(), 0, 15);
+      int var2 = Utils.a(var1.i(), 0, 15);
       return super.e() + "." + a[var2];
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(!var2.e(var4, var5, var6)) {
          return false;
       } else {
@@ -102,9 +102,9 @@ public class hm extends yr {
       }
    }
 
-   public void a(aan var1, acq var2) {
-      if(var2 instanceof cu) {
-         cu var3 = (cu)var2;
+   public void a(aan var1, Mob var2) {
+      if(var2 instanceof Sheep) {
+         Sheep var3 = (Sheep)var2;
          int var4 = wo.e(var1.i());
          if(!var3.u() && var3.t() != var4) {
             var3.c_(var4);

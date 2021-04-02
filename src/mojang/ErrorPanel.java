@@ -12,33 +12,33 @@ import java.util.Date;
 import org.lwjgl.Sys;
 import org.lwjgl.opengl.GL11;
 
-public class uu extends Panel {
+public class ErrorPanel extends Panel {
 
-   public uu(StopGameException var1) {
+   public ErrorPanel(StopGameException exception) {
       this.setBackground(new Color(3028036));
       this.setLayout(new BorderLayout());
-      StringWriter var2 = new StringWriter();
-      var1.exception.printStackTrace(new PrintWriter(var2));
-      String var3 = var2.toString();
+      StringWriter writer = new StringWriter();
+      exception.exception.printStackTrace(new PrintWriter(writer));
+      String var3 = writer.toString();
       String var4 = "";
-      String var5 = "";
+      String panelBody = "";
 
       try {
-         var5 = var5 + "Generated " + (new SimpleDateFormat()).format(new Date()) + "\n";
-         var5 = var5 + "\n";
-         var5 = var5 + "Minecraft: Minecraft 1.2.5\n";
-         var5 = var5 + "OS: " + System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version") + "\n";
-         var5 = var5 + "Java: " + System.getProperty("java.version") + ", " + System.getProperty("java.vendor") + "\n";
-         var5 = var5 + "VM: " + System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor") + "\n";
-         var5 = var5 + "LWJGL: " + Sys.getVersion() + "\n";
+         panelBody = panelBody + "Generated " + (new SimpleDateFormat()).format(new Date()) + "\n";
+         panelBody = panelBody + "\n";
+         panelBody = panelBody + "Minecraft: Minecraft 1.2.5\n";
+         panelBody = panelBody + "OS: " + System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version") + "\n";
+         panelBody = panelBody + "Java: " + System.getProperty("java.version") + ", " + System.getProperty("java.vendor") + "\n";
+         panelBody = panelBody + "VM: " + System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor") + "\n";
+         panelBody = panelBody + "LWJGL: " + Sys.getVersion() + "\n";
          var4 = GL11.glGetString(7936);
-         var5 = var5 + "OpenGL: " + GL11.glGetString(7937) + " version " + GL11.glGetString(7938) + ", " + GL11.glGetString(7936) + "\n";
+         panelBody = panelBody + "OpenGL: " + GL11.glGetString(7937) + " version " + GL11.glGetString(7938) + ", " + GL11.glGetString(7936) + "\n";
       } catch (Throwable var8) {
-         var5 = var5 + "[failed to get system properties (" + var8 + ")]\n";
+         panelBody = panelBody + "[failed to get system properties (" + var8 + ")]\n";
       }
 
-      var5 = var5 + "\n";
-      var5 = var5 + var3;
+      panelBody = panelBody + "\n";
+      panelBody = panelBody + var3;
       String var6 = "";
       var6 = var6 + "\n";
       var6 = var6 + "\n";
@@ -69,7 +69,7 @@ public class uu extends Panel {
       var6 = var6 + "\n";
       var6 = var6 + "\n";
       var6 = var6 + "--- BEGIN ERROR REPORT " + Integer.toHexString(var6.hashCode()) + " --------\n";
-      var6 = var6 + var5;
+      var6 = var6 + panelBody;
       var6 = var6 + "--- END ERROR REPORT " + Integer.toHexString(var6.hashCode()) + " ----------\n";
       var6 = var6 + "\n";
       var6 = var6 + "\n";

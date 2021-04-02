@@ -5,13 +5,13 @@ import java.util.List;
 
 public class ux extends rc {
 
-   private ed a;
-   private acq b;
+   private Villager a;
+   private Mob b;
    private float c;
    private int d;
 
 
-   public ux(ed var1, float var2) {
+   public ux(Villager var1, float var2) {
       this.a = var1;
       this.c = var2;
       this.a(1);
@@ -23,14 +23,14 @@ public class ux extends rc {
       } else if(this.a.aO().nextInt(400) != 0) {
          return false;
       } else {
-         List var1 = this.a.k.a(ed.class, this.a.y.b(6.0D, 3.0D, 6.0D));
+         List var1 = this.a.k.a(Villager.class, this.a.y.b(6.0D, 3.0D, 6.0D));
          double var2 = Double.MAX_VALUE;
          Iterator var4 = var1.iterator();
 
          while(var4.hasNext()) {
-            nn var5 = (nn)var4.next();
+            BaseEntity var5 = (BaseEntity)var4.next();
             if(var5 != this.a) {
-               ed var6 = (ed)var5;
+               Villager var6 = (Villager)var5;
                if(!var6.x() && var6.av() < 0) {
                   double var7 = var6.f(this.a);
                   if(var7 <= var2) {

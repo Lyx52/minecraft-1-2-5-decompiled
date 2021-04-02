@@ -118,37 +118,37 @@ public class amc extends kw implements io {
       return var2 == null?var1:(yr.e[var2.c].p()?hx.a(var1, yr.e[var2.c].o()):var1);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      no var2 = var1.n("Items");
+      ListTag var2 = var1.getListTag("Items");
       this.a = new aan[this.a()];
 
       for(int var3 = 0; var3 < var2.d(); ++var3) {
-         ady var4 = (ady)var2.a(var3);
-         byte var5 = var4.d("Slot");
+         CompundTag var4 = (CompundTag)var2.a(var3);
+         byte var5 = var4.getByte("Slot");
          if(var5 >= 0 && var5 < this.a.length) {
             this.a[var5] = aan.a(var4);
          }
       }
 
-      this.b = var1.e("BrewTime");
+      this.b = var1.getShort("BrewTime");
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("BrewTime", (short)this.b);
-      no var2 = new no();
+      var1.addShort("BrewTime", (short)this.b);
+      ListTag var2 = new ListTag();
 
       for(int var3 = 0; var3 < this.a.length; ++var3) {
          if(this.a[var3] != null) {
-            ady var4 = new ady();
-            var4.a("Slot", (byte)var3);
+            CompundTag var4 = new CompundTag();
+            var4.addByte("Slot", (byte)var3);
             this.a[var3].b(var4);
-            var2.a((gh)var4);
+            var2.a((BaseTag)var4);
          }
       }
 
-      var1.a("Items", (gh)var2);
+      var1.addBaseTag("Items", (BaseTag)var2);
    }
 
    public aan k_(int var1) {
@@ -186,7 +186,7 @@ public class amc extends kw implements io {
       return 1;
    }
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return this.i.b(this.j, this.k, this.l) != this?false:var1.f((double)this.j + 0.5D, (double)this.k + 0.5D, (double)this.l + 0.5D) <= 64.0D;
    }
 

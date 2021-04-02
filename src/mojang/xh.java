@@ -3,9 +3,9 @@ package mojang;
 import java.util.Random;
 import org.lwjgl.input.Keyboard;
 
-public class xh extends vp {
+public class xh extends GUIManager {
 
-   private vp a;
+   private GUIManager a;
    private agu b;
    private agu c;
    private String d;
@@ -14,10 +14,10 @@ public class xh extends vp {
    private boolean h = false;
    private boolean i;
    private boolean j;
-   private abp k;
-   private abp l;
-   private abp m;
-   private abp n;
+   private Button k;
+   private Button l;
+   private Button m;
+   private Button n;
    private String o;
    private String w;
    private String x;
@@ -25,7 +25,7 @@ public class xh extends vp {
    private int z = 0;
 
 
-   public xh(vp var1) {
+   public xh(GUIManager var1) {
       this.a = var1;
       this.x = "";
       this.y = cy.a("selectWorld.newWorld");
@@ -37,16 +37,16 @@ public class xh extends vp {
    }
 
    public void c() {
-      adn var1 = adn.a();
+      LocalizationManager var1 = LocalizationManager.getInstance();
       Keyboard.enableRepeatEvents(true);
-      this.s.clear();
-      this.s.add(new abp(0, this.q / 2 - 155, this.r - 28, 150, 20, var1.b("selectWorld.create")));
-      this.s.add(new abp(1, this.q / 2 + 5, this.r - 28, 150, 20, var1.b("mojang.gui.cancel")));
-      this.s.add(this.k = new abp(2, this.q / 2 - 75, 100, 150, 20, var1.b("selectWorld.gameMode")));
-      this.s.add(this.l = new abp(3, this.q / 2 - 75, 172, 150, 20, var1.b("selectWorld.moreWorldOptions")));
-      this.s.add(this.m = new abp(4, this.q / 2 - 155, 100, 150, 20, var1.b("selectWorld.mapFeatures")));
+      this.buttonList.clear();
+      this.buttonList.add(new Button(0, this.q / 2 - 155, this.r - 28, 150, 20, var1.getLocaleStringByName("selectWorld.create")));
+      this.buttonList.add(new Button(1, this.q / 2 + 5, this.r - 28, 150, 20, var1.getLocaleStringByName("mojang.gui.cancel")));
+      this.buttonList.add(this.k = new Button(2, this.q / 2 - 75, 100, 150, 20, var1.getLocaleStringByName("selectWorld.gameMode")));
+      this.buttonList.add(this.l = new Button(3, this.q / 2 - 75, 172, 150, 20, var1.getLocaleStringByName("selectWorld.moreWorldOptions")));
+      this.buttonList.add(this.m = new Button(4, this.q / 2 - 155, 100, 150, 20, var1.getLocaleStringByName("selectWorld.mapFeatures")));
       this.m.i = false;
-      this.s.add(this.n = new abp(5, this.q / 2 + 5, 100, 150, 20, var1.b("selectWorld.mapType")));
+      this.buttonList.add(this.n = new Button(5, this.q / 2 + 5, 100, 150, 20, var1.getLocaleStringByName("selectWorld.mapType")));
       this.n.i = false;
       this.b = new agu(this.u, this.q / 2 - 100, 60, 200, 20);
       this.b.b(true);
@@ -67,30 +67,30 @@ public class xh extends vp {
          this.d = this.d.replace(var4, '_');
       }
 
-      if(gk.a(this.d)) {
+      if(Utils.isWorldNameValid(this.d)) {
          this.d = "World";
       }
 
-      this.d = a(this.p.c(), this.d);
+      this.d = a(this.minecraft.getSaveFileManager(), this.d);
    }
 
    private void g() {
-      adn var1 = adn.a();
-      this.k.e = var1.b("selectWorld.gameMode") + " " + var1.b("selectWorld.gameMode." + this.e);
-      this.o = var1.b("selectWorld.gameMode." + this.e + ".line1");
-      this.w = var1.b("selectWorld.gameMode." + this.e + ".line2");
-      this.m.e = var1.b("selectWorld.mapFeatures") + " ";
+      LocalizationManager var1 = LocalizationManager.getInstance();
+      this.k.title = var1.getLocaleStringByName("selectWorld.gameMode") + " " + var1.getLocaleStringByName("selectWorld.gameMode." + this.e);
+      this.o = var1.getLocaleStringByName("selectWorld.gameMode." + this.e + ".line1");
+      this.w = var1.getLocaleStringByName("selectWorld.gameMode." + this.e + ".line2");
+      this.m.title = var1.getLocaleStringByName("selectWorld.mapFeatures") + " ";
       if(this.f) {
-         this.m.e = this.m.e + var1.b("options.on");
+         this.m.title = this.m.title + var1.getLocaleStringByName("options.on");
       } else {
-         this.m.e = this.m.e + var1.b("options.off");
+         this.m.title = this.m.title + var1.getLocaleStringByName("options.off");
       }
 
-      this.n.e = var1.b("selectWorld.mapType") + " " + var1.b(vx.a[this.z].b());
+      this.n.title = var1.getLocaleStringByName("selectWorld.mapType") + " " + var1.getLocaleStringByName(WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z].b());
    }
 
-   public static String a(kb var0, String var1) {
-      for(var1 = var1.replaceAll("[\\./\"]|COM", "_"); var0.b(var1) != null; var1 = var1 + "-") {
+   public static String a(SaveFileInterface var0, String var1) {
+      for(var1 = var1.replaceAll("[\\./\"]|COM", "_"); var0.parseSaveFile(var1) != null; var1 = var1 + "-") {
          ;
       }
 
@@ -101,12 +101,12 @@ public class xh extends vp {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          if(var1.f == 1) {
-            this.p.a(this.a);
+            this.minecraft.a(this.a);
          } else if(var1.f == 0) {
-            this.p.a((vp)null);
+            this.minecraft.a((GUIManager)null);
             if(this.i) {
                return;
             }
@@ -114,7 +114,7 @@ public class xh extends vp {
             this.i = true;
             long var2 = (new Random()).nextLong();
             String var4 = this.c.b();
-            if(!gk.a(var4)) {
+            if(!Utils.isWorldNameValid(var4)) {
                try {
                   long var5 = Long.parseLong(var4);
                   if(var5 != 0L) {
@@ -128,25 +128,25 @@ public class xh extends vp {
             byte var9 = 0;
             if(this.e.equals("creative")) {
                var9 = 1;
-               this.p.c = new aff(this.p);
+               this.minecraft.c = new aff(this.minecraft);
             } else {
-               this.p.c = new aes(this.p);
+               this.minecraft.c = new aes(this.minecraft);
             }
 
-            this.p.a(this.d, this.b.b(), new fj(var2, var9, this.f, this.h, vx.a[this.z]));
-            this.p.a((vp)null);
+            this.minecraft.a(this.d, this.b.b(), new WorldStub(var2, var9, this.f, this.h, WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z]));
+            this.minecraft.a((GUIManager)null);
          } else if(var1.f == 3) {
             this.j = !this.j;
             this.k.i = !this.j;
             this.m.i = this.j;
             this.n.i = this.j;
-            adn var8;
+            LocalizationManager var8;
             if(this.j) {
-               var8 = adn.a();
-               this.l.e = var8.b("mojang.gui.done");
+               var8 = LocalizationManager.getInstance();
+               this.l.title = var8.getLocaleStringByName("mojang.gui.done");
             } else {
-               var8 = adn.a();
-               this.l.e = var8.b("selectWorld.moreWorldOptions");
+               var8 = LocalizationManager.getInstance();
+               this.l.title = var8.getLocaleStringByName("selectWorld.moreWorldOptions");
             }
          } else if(var1.f == 2) {
             if(this.e.equals("survival")) {
@@ -171,13 +171,13 @@ public class xh extends vp {
             this.g();
          } else if(var1.f == 5) {
             ++this.z;
-            if(this.z >= vx.a.length) {
+            if(this.z >= WorldGeneratorTypes.WORLD_GENERATOR_TYPES.length) {
                this.z = 0;
             }
 
-            while(vx.a[this.z] == null || !vx.a[this.z].d()) {
+            while(WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z] == null || !WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z].d()) {
                ++this.z;
-               if(this.z >= vx.a.length) {
+               if(this.z >= WorldGeneratorTypes.WORLD_GENERATOR_TYPES.length) {
                   this.z = 0;
                }
             }
@@ -198,10 +198,10 @@ public class xh extends vp {
       }
 
       if(var1 == 13) {
-         this.a((abp)this.s.get(0));
+         this.a((Button)this.buttonList.get(0));
       }
 
-      ((abp)this.s.get(0)).h = this.b.b().length() > 0;
+      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0;
       this.d();
    }
 
@@ -216,19 +216,19 @@ public class xh extends vp {
    }
 
    public void a(int var1, int var2, float var3) {
-      adn var4 = adn.a();
+      LocalizationManager var4 = LocalizationManager.getInstance();
       this.k();
-      this.a(this.u, var4.b("selectWorld.create"), this.q / 2, 20, 16777215);
+      this.a(this.u, var4.getLocaleStringByName("selectWorld.create"), this.q / 2, 20, 16777215);
       if(!this.j) {
-         this.b(this.u, var4.b("selectWorld.enterName"), this.q / 2 - 100, 47, 10526880);
-         this.b(this.u, var4.b("selectWorld.resultFolder") + " " + this.d, this.q / 2 - 100, 85, 10526880);
+         this.b(this.u, var4.getLocaleStringByName("selectWorld.enterName"), this.q / 2 - 100, 47, 10526880);
+         this.b(this.u, var4.getLocaleStringByName("selectWorld.resultFolder") + " " + this.d, this.q / 2 - 100, 85, 10526880);
          this.b.f();
          this.b(this.u, this.o, this.q / 2 - 100, 122, 10526880);
          this.b(this.u, this.w, this.q / 2 - 100, 134, 10526880);
       } else {
-         this.b(this.u, var4.b("selectWorld.enterSeed"), this.q / 2 - 100, 47, 10526880);
-         this.b(this.u, var4.b("selectWorld.seedInfo"), this.q / 2 - 100, 85, 10526880);
-         this.b(this.u, var4.b("selectWorld.mapFeatures.info"), this.q / 2 - 150, 122, 10526880);
+         this.b(this.u, var4.getLocaleStringByName("selectWorld.enterSeed"), this.q / 2 - 100, 47, 10526880);
+         this.b(this.u, var4.getLocaleStringByName("selectWorld.seedInfo"), this.q / 2 - 100, 85, 10526880);
+         this.b(this.u, var4.getLocaleStringByName("selectWorld.mapFeatures.info"), this.q / 2 - 150, 122, 10526880);
          this.c.f();
       }
 

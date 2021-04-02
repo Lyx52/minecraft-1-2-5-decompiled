@@ -11,15 +11,15 @@ public abstract class um {
    protected float h = 1.0F;
 
 
-   public abstract void a(nn var1, double var2, double var4, double var6, float var8, float var9);
+   public abstract void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9);
 
    protected void a(String var1) {
-      aaw var2 = this.e.e;
+      Texture var2 = this.e.e;
       var2.b(var2.b(var1));
    }
 
    protected boolean a(String var1, String var2) {
-      aaw var3 = this.e.e;
+      Texture var3 = this.e.e;
       int var4 = var3.a(var1, var2);
       if(var4 >= 0) {
          var3.b(var4);
@@ -29,7 +29,7 @@ public abstract class um {
       }
    }
 
-   private void a(nn var1, double var2, double var4, double var6, float var8) {
+   private void a(BaseEntity var1, double var2, double var4, double var6, float var8) {
       GL11.glDisable(2896);
       int var9 = pb.ar.bN;
       int var10 = (var9 & 15) << 4;
@@ -43,7 +43,7 @@ public abstract class um {
       float var16 = var1.I * 1.4F;
       GL11.glScalef(var16, var16, var16);
       this.a("/mojang/terrain.png");
-      adz var17 = adz.a;
+      Tessalator var17 = Tessalator.a;
       float var18 = 0.5F;
       float var19 = 0.0F;
       float var20 = var1.J / var16;
@@ -90,16 +90,16 @@ public abstract class um {
       GL11.glEnable(2896);
    }
 
-   private void c(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   private void c(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
-      aaw var10 = this.e.e;
+      Texture var10 = this.e.e;
       var10.b(var10.b("%clamp%/mojang.misc/shadow.png"));
-      xd var11 = this.b();
+      World var11 = this.b();
       GL11.glDepthMask(false);
       float var12 = this.g;
-      if(var1 instanceof acq) {
-         acq var13 = (acq)var1;
+      if(var1 instanceof Mob) {
+         Mob var13 = (Mob)var1;
          var12 *= var13.bd();
          if(var13 instanceof bc) {
             bc var14 = (bc)var13;
@@ -112,16 +112,16 @@ public abstract class um {
       double var36 = var1.N + (var1.o - var1.N) * (double)var9;
       double var15 = var1.O + (var1.p - var1.O) * (double)var9 + (double)var1.h_();
       double var17 = var1.P + (var1.q - var1.P) * (double)var9;
-      int var19 = gk.c(var36 - (double)var12);
-      int var20 = gk.c(var36 + (double)var12);
-      int var21 = gk.c(var15 - (double)var12);
-      int var22 = gk.c(var15);
-      int var23 = gk.c(var17 - (double)var12);
-      int var24 = gk.c(var17 + (double)var12);
+      int var19 = Utils.c(var36 - (double)var12);
+      int var20 = Utils.c(var36 + (double)var12);
+      int var21 = Utils.c(var15 - (double)var12);
+      int var22 = Utils.c(var15);
+      int var23 = Utils.c(var17 - (double)var12);
+      int var24 = Utils.c(var17 + (double)var12);
       double var25 = var2 - var36;
       double var27 = var4 - var15;
       double var29 = var6 - var17;
-      adz var31 = adz.a;
+      Tessalator var31 = Tessalator.a;
       var31.b();
 
       for(int var32 = var19; var32 <= var20; ++var32) {
@@ -141,12 +141,12 @@ public abstract class um {
       GL11.glDepthMask(true);
    }
 
-   private xd b() {
+   private World b() {
       return this.e.g;
    }
 
    private void a(pb var1, double var2, double var4, double var6, int var8, int var9, int var10, float var11, float var12, double var13, double var15, double var17) {
-      adz var19 = adz.a;
+      Tessalator var19 = Tessalator.a;
       if(var1.b()) {
          double var20 = ((double)var11 - (var4 - ((double)var9 + var15)) / 2.0D) * 0.5D * (double)this.b().c(var8, var9, var10);
          if(var20 >= 0.0D) {
@@ -174,7 +174,7 @@ public abstract class um {
 
    public static void a(wu var0, double var1, double var3, double var5) {
       GL11.glDisable(3553);
-      adz var7 = adz.a;
+      Tessalator var7 = Tessalator.a;
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var7.b();
       var7.b(var1, var3, var5);
@@ -214,7 +214,7 @@ public abstract class um {
    }
 
    public static void a(wu var0) {
-      adz var1 = adz.a;
+      Tessalator var1 = Tessalator.a;
       var1.b();
       var1.a(var0.a, var0.e, var0.c);
       var1.a(var0.d, var0.e, var0.c);
@@ -247,8 +247,8 @@ public abstract class um {
       this.e = var1;
    }
 
-   public void b(nn var1, double var2, double var4, double var6, float var8, float var9) {
-      if(this.e.k.j && this.g > 0.0F) {
+   public void b(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
+      if(this.e.k.fancyGraphics && this.g > 0.0F) {
          double var10 = this.e.a(var1.o, var1.p, var1.q);
          float var12 = (float)((1.0D - var10 / 256.0D) * (double)this.h);
          if(var12 > 0.0F) {

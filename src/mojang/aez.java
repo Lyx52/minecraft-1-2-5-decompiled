@@ -7,7 +7,7 @@ public class aez extends pb {
    private final boolean a;
 
 
-   public static final boolean h(xd var0, int var1, int var2, int var3) {
+   public static final boolean h(World var0, int var1, int var2, int var3) {
       int var4 = var0.a(var1, var2, var3);
       return var4 == aG.bO || var4 == T.bO || var4 == U.bO;
    }
@@ -26,7 +26,7 @@ public class aez extends pb {
       return this.a;
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -34,12 +34,12 @@ public class aez extends pb {
       return false;
    }
 
-   public pl a(xd var1, int var2, int var3, int var4, bo var5, bo var6) {
-      this.a((ali)var1, var2, var3, var4);
+   public pl a(World var1, int var2, int var3, int var4, bo var5, bo var6) {
+      this.a((WorldInterface)var1, var2, var3, var4);
       return super.a(var1, var2, var3, var4, var5, var6);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       if(var5 >= 2 && var5 <= 5) {
          this.a(0.0F, 0.0F, 0.0F, 1.0F, 0.625F, 1.0F);
@@ -73,11 +73,11 @@ public class aez extends pb {
       return 1;
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var1.h(var2, var3 - 1, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(!var1.F) {
          this.a(var1, var2, var3, var4, true);
          if(this.bO == T.bO) {
@@ -87,7 +87,7 @@ public class aez extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          int var7 = var6;
@@ -144,13 +144,13 @@ public class aez extends pb {
       }
    }
 
-   private void a(xd var1, int var2, int var3, int var4, boolean var5) {
+   private void a(World var1, int var2, int var3, int var4, boolean var5) {
       if(!var1.F) {
          (new pv(this, var1, var2, var3, var4)).a(var1.x(var2, var3, var4), var5);
       }
    }
 
-   private boolean a(xd var1, int var2, int var3, int var4, int var5, boolean var6, int var7) {
+   private boolean a(World var1, int var2, int var3, int var4, int var5, boolean var6, int var7) {
       if(var7 >= 8) {
          return false;
       } else {
@@ -220,7 +220,7 @@ public class aez extends pb {
       }
    }
 
-   private boolean a(xd var1, int var2, int var3, int var4, boolean var5, int var6, int var7) {
+   private boolean a(World var1, int var2, int var3, int var4, boolean var5, int var6, int var7) {
       int var8 = var1.a(var2, var3, var4);
       if(var8 == T.bO) {
          int var9 = var1.e(var2, var3, var4);

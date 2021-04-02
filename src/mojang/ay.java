@@ -6,7 +6,7 @@ import java.util.Random;
 
 class ay extends pg {
 
-   public ay(xd var1, Random var2, int var3, int var4) {
+   public ay(World var1, Random var2, int var3, int var4) {
       aga var5 = new aga(var2, (var3 << 4) + 2, (var4 << 4) + 2);
       this.a.add(var5);
       var5.a(var5, this.a, var2);

@@ -15,7 +15,7 @@ class eo extends Canvas {
 
    public eo() {
       try {
-         this.a = ImageIO.read(uu.class.getResource("/mojang/gui/crash_logo.png"));
+         this.a = ImageIO.read(ErrorPanel.class.getResource("/mojang/gui/crash_logo.png"));
       } catch (IOException var2) {
          ;
       }

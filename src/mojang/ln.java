@@ -6,14 +6,14 @@ import java.util.List;
 
 public class ln {
 
-   private xd a;
+   private World a;
    private final List b = new ArrayList();
    private final List c = new ArrayList();
    private final List d = new ArrayList();
    private int e = 0;
 
 
-   public ln(xd var1) {
+   public ln(World var1) {
       this.a = var1;
    }
 

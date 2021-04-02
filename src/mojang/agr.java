@@ -11,11 +11,11 @@ public class agr extends yr {
       this.a = var2;
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       int var8 = var3.a(var4, var5, var6);
       if(aez.e(var8)) {
          if(!var3.F) {
-            var3.a((nn)(new ama(var3, (double)((float)var4 + 0.5F), (double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), this.a)));
+            var3.a((BaseEntity)(new Minecart(var3, (double)((float)var4 + 0.5F), (double)((float)var5 + 0.5F), (double)((float)var6 + 0.5F), this.a)));
          }
 
          --var1.a;

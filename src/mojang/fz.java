@@ -7,7 +7,7 @@ public class fz extends abn {
       this.J.clear();
       this.K.clear();
       this.L.clear();
-      this.J.add(new bg(jg.class, 10, 4, 4));
+      this.J.add(new bg(Enderman.class, 10, 4, 4));
       this.A = (byte)pb.v.bO;
       this.B = (byte)pb.v.bO;
       this.I = new ada(this);

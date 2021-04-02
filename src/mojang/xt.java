@@ -11,12 +11,12 @@ import java.util.Random;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 
-public class xt extends vp {
+public class xt extends GUIManager {
 
    private static final Random a = new Random();
    private float b = 0.0F;
    private String c = "missingno";
-   private abp d;
+   private Button d;
    private int e = 0;
    private int f;
 
@@ -55,7 +55,7 @@ public class xt extends vp {
    protected void a(char var1, int var2) {}
 
    public void c() {
-      this.f = this.p.p.a(new BufferedImage(256, 256, 2));
+      this.f = this.minecraft.p.a(new BufferedImage(256, 256, 2));
       Calendar var1 = Calendar.getInstance();
       var1.setTime(new Date());
       if(var1.get(2) + 1 == 11 && var1.get(5) == 9) {
@@ -68,54 +68,54 @@ public class xt extends vp {
          this.c = "Happy new year!";
       }
 
-      adn var2 = adn.a();
+      LocalizationManager var2 = LocalizationManager.getInstance();
       int var4 = this.r / 4 + 48;
-      this.s.add(new abp(1, this.q / 2 - 100, var4, var2.b("menu.singleplayer")));
-      this.s.add(this.d = new abp(2, this.q / 2 - 100, var4 + 24, var2.b("menu.multiplayer")));
-      this.s.add(new abp(3, this.q / 2 - 100, var4 + 48, var2.b("menu.mods")));
-      if(this.p.n) {
-         this.s.add(new abp(0, this.q / 2 - 100, var4 + 72, var2.b("menu.options")));
+      this.buttonList.add(new Button(1, this.q / 2 - 100, var4, var2.getLocaleStringByName("menu.singleplayer")));
+      this.buttonList.add(this.d = new Button(2, this.q / 2 - 100, var4 + 24, var2.getLocaleStringByName("menu.multiplayer")));
+      this.buttonList.add(new Button(3, this.q / 2 - 100, var4 + 48, var2.getLocaleStringByName("menu.mods")));
+      if(this.minecraft.appletMode) {
+         this.buttonList.add(new Button(0, this.q / 2 - 100, var4 + 72, var2.getLocaleStringByName("menu.options")));
       } else {
-         this.s.add(new abp(0, this.q / 2 - 100, var4 + 72 + 12, 98, 20, var2.b("menu.options")));
-         this.s.add(new abp(4, this.q / 2 + 2, var4 + 72 + 12, 98, 20, var2.b("menu.quit")));
+         this.buttonList.add(new Button(0, this.q / 2 - 100, var4 + 72 + 12, 98, 20, var2.getLocaleStringByName("menu.options")));
+         this.buttonList.add(new Button(4, this.q / 2 + 2, var4 + 72 + 12, 98, 20, var2.getLocaleStringByName("menu.quit")));
       }
 
-      this.s.add(new adr(5, this.q / 2 - 124, var4 + 72 + 12));
-      if(this.p.k == null) {
+      this.buttonList.add(new adr(5, this.q / 2 - 124, var4 + 72 + 12));
+      if(this.minecraft.credentials == null) {
          this.d.h = false;
       }
 
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 0) {
-         this.p.a((vp)(new cd(this, this.p.A)));
+         this.minecraft.a((GUIManager)(new cd(this, this.minecraft.options)));
       }
 
       if(var1.f == 5) {
-         this.p.a((vp)(new afv(this, this.p.A)));
+         this.minecraft.a((GUIManager)(new afv(this, this.minecraft.options)));
       }
 
       if(var1.f == 1) {
-         this.p.a((vp)(new mw(this)));
+         this.minecraft.a((GUIManager)(new WorldSelectionMenu(this)));
       }
 
       if(var1.f == 2) {
-         this.p.a((vp)(new acp(this)));
+         this.minecraft.a((GUIManager)(new acp(this)));
       }
 
       if(var1.f == 3) {
-         this.p.a((vp)(new em(this)));
+         this.minecraft.a((GUIManager)(new em(this)));
       }
 
       if(var1.f == 4) {
-         this.p.f();
+         this.minecraft.stop();
       }
 
    }
 
    private void b(int var1, int var2, float var3) {
-      adz var4 = adz.a;
+      Tessalator var4 = Tessalator.a;
       GL11.glMatrixMode(5889);
       GL11.glPushMatrix();
       GL11.glLoadIdentity();
@@ -138,7 +138,7 @@ public class xt extends vp {
          float var8 = ((float)(var6 / var5) / (float)var5 - 0.5F) / 64.0F;
          float var9 = 0.0F;
          GL11.glTranslatef(var7, var8, var9);
-         GL11.glRotatef(gk.a(((float)this.e + var3) / 400.0F) * 25.0F + 20.0F, 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(Utils.sin(((float)this.e + var3) / 400.0F) * 25.0F + 20.0F, 1.0F, 0.0F, 0.0F);
          GL11.glRotatef(-((float)this.e + var3) * 0.1F, 0.0F, 1.0F, 0.0F);
 
          for(int var10 = 0; var10 < 6; ++var10) {
@@ -163,7 +163,7 @@ public class xt extends vp {
                GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
             }
 
-            GL11.glBindTexture(3553, this.p.p.b("/mojang/title/bg/panorama" + var10 + ".png"));
+            GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/bg/panorama" + var10 + ".png"));
             var4.b();
             var4.a(16777215, 255 / (var6 + 1));
             float var11 = 0.0F;
@@ -197,7 +197,7 @@ public class xt extends vp {
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       GL11.glColorMask(true, true, true, false);
-      adz var2 = adz.a;
+      Tessalator var2 = Tessalator.a;
       var2.b();
       byte var3 = 3;
 
@@ -229,8 +229,8 @@ public class xt extends vp {
       this.a(var3);
       this.a(var3);
       this.a(var3);
-      GL11.glViewport(0, 0, this.p.d, this.p.e);
-      adz var4 = adz.a;
+      GL11.glViewport(0, 0, this.minecraft.width, this.minecraft.height);
+      Tessalator var4 = Tessalator.a;
       var4.b();
       float var5 = this.q > this.r?120.0F / (float)this.q:120.0F / (float)this.r;
       float var6 = (float)this.r * var5 / 256.0F;
@@ -249,13 +249,13 @@ public class xt extends vp {
 
    public void a(int var1, int var2, float var3) {
       this.c(var1, var2, var3);
-      adz var4 = adz.a;
+      Tessalator var4 = Tessalator.a;
       short var5 = 274;
       int var6 = this.q / 2 - var5 / 2;
       byte var7 = 30;
       this.a(0, 0, this.q, this.r, -2130706433, 16777215);
       this.a(0, 0, this.q, this.r, 0, Integer.MIN_VALUE);
-      GL11.glBindTexture(3553, this.p.p.b("/mojang/title/mclogo.png"));
+      GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/mclogo.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       if((double)this.b < 1.0E-4D) {
          this.b(var6 + 0, var7 + 0, 0, 0, 99, 44);
@@ -272,7 +272,7 @@ public class xt extends vp {
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.q / 2 + 90), 70.0F, 0.0F);
       GL11.glRotatef(-20.0F, 0.0F, 0.0F, 1.0F);
-      float var8 = 1.8F - gk.e(gk.a((float)(System.currentTimeMillis() % 1000L) / 1000.0F * 3.1415927F * 2.0F) * 0.1F);
+      float var8 = 1.8F - Utils.e(Utils.sin((float)(System.currentTimeMillis() % 1000L) / 1000.0F * 3.1415927F * 2.0F) * 0.1F);
       var8 = var8 * 100.0F / (float)(this.u.a(this.c) + 32);
       GL11.glScalef(var8, var8, var8);
       this.a(this.u, this.c, 0, -8, 16776960);

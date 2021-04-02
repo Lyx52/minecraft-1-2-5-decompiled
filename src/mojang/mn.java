@@ -16,10 +16,10 @@ public class mn {
 
    public mn(Minecraft var1) {
       this.a = var1;
-      this.f = new aal(var1.q, var1.A, var1.p);
+      this.f = new aal(var1.q, var1.options, var1.p);
    }
 
-   public void a(acq var1, aan var2, int var3) {
+   public void a(Mob var1, aan var2, int var3) {
       GL11.glPushMatrix();
       if(var2.c < 256 && vl.a(pb.m[var2.c].d())) {
          GL11.glBindTexture(3553, this.a.p.b("/mojang/terrain.png"));
@@ -31,7 +31,7 @@ public class mn {
             GL11.glBindTexture(3553, this.a.p.b("/mojang/gui/items.png"));
          }
 
-         adz var4 = adz.a;
+         Tessalator var4 = Tessalator.a;
          int var5 = var1.b(var2, var3);
          float var6 = ((float)(var5 % 16 * 16) + 0.0F) / 256.0F;
          float var7 = ((float)(var5 % 16 * 16) + 15.99F) / 256.0F;
@@ -83,7 +83,7 @@ public class mn {
       GL11.glPopMatrix();
    }
 
-   private void a(adz var1, float var2, float var3, float var4, float var5) {
+   private void a(Tessalator var1, float var2, float var3, float var4, float var5) {
       float var6 = 1.0F;
       float var7 = 0.0625F;
       var1.b();
@@ -182,12 +182,12 @@ public class mn {
       }
 
       aan var14 = this.b;
-      var6 = this.a.f.c(gk.c(var3.o), gk.c(var3.p), gk.c(var3.q));
+      var6 = this.a.f.c(Utils.c(var3.o), Utils.c(var3.p), Utils.c(var3.q));
       var6 = 1.0F;
-      int var15 = this.a.f.b(gk.c(var3.o), gk.c(var3.p), gk.c(var3.q), 0);
+      int var15 = this.a.f.b(Utils.c(var3.o), Utils.c(var3.p), Utils.c(var3.q), 0);
       int var8 = var15 % 65536;
       int var9 = var15 / 65536;
-      es.a(es.b, (float)var8 / 1.0F, (float)var9 / 1.0F);
+      ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var8 / 1.0F, (float)var9 / 1.0F);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10;
       float var16;
@@ -208,9 +208,9 @@ public class mn {
          GL11.glPushMatrix();
          var7 = 0.8F;
          var16 = var3.i(var1);
-         var18 = gk.a(var16 * 3.1415927F);
-         var10 = gk.a(gk.c(var16) * 3.1415927F);
-         GL11.glTranslatef(-var10 * 0.4F, gk.a(gk.c(var16) * 3.1415927F * 2.0F) * 0.2F, -var18 * 0.2F);
+         var18 = Utils.sin(var16 * 3.1415927F);
+         var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
+         GL11.glTranslatef(-var10 * 0.4F, Utils.sin(Utils.sqrt(var16) * 3.1415927F * 2.0F) * 0.2F, -var18 * 0.2F);
          var16 = 1.0F - var4 / 45.0F + 0.1F;
          if(var16 < 0.0F) {
             var16 = 0.0F;
@@ -220,7 +220,7 @@ public class mn {
             var16 = 1.0F;
          }
 
-         var16 = -gk.b(var16 * 3.1415927F) * 0.5F + 0.5F;
+         var16 = -Utils.cos(var16 * 3.1415927F) * 0.5F + 0.5F;
          GL11.glTranslatef(0.0F, 0.0F * var7 - (1.0F - var2) * 1.2F - var16 * 0.5F + 0.04F, -0.9F * var7);
          GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(var16 * -85.0F, 0.0F, 0.0F, 1.0F);
@@ -235,7 +235,7 @@ public class mn {
             GL11.glRotatef(-90.0F, 0.0F, 0.0F, 1.0F);
             GL11.glRotatef(59.0F, 0.0F, 0.0F, 1.0F);
             GL11.glRotatef((float)(-65 * var24), 0.0F, 1.0F, 0.0F);
-            um var22 = ahu.a.a((nn)this.a.h);
+            um var22 = ahu.a.a((BaseEntity)this.a.h);
             we var26 = (we)var22;
             var13 = 1.0F;
             GL11.glScalef(var13, var13, var13);
@@ -244,8 +244,8 @@ public class mn {
          }
 
          var18 = var3.i(var1);
-         var10 = gk.a(var18 * var18 * 3.1415927F);
-         var11 = gk.a(gk.c(var18) * 3.1415927F);
+         var10 = Utils.sin(var18 * var18 * 3.1415927F);
+         var11 = Utils.sin(Utils.sqrt(var18) * 3.1415927F);
          GL11.glRotatef(-var10 * 20.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(-var11 * 20.0F, 0.0F, 0.0F, 1.0F);
          GL11.glRotatef(-var11 * 80.0F, 1.0F, 0.0F, 0.0F);
@@ -257,7 +257,7 @@ public class mn {
          var10 = 0.015625F;
          GL11.glScalef(var10, var10, var10);
          this.a.p.b(this.a.p.b("/mojang/misc/mapbg.png"));
-         adz var23 = adz.a;
+         Tessalator var23 = Tessalator.a;
          GL11.glNormal3f(0.0F, 0.0F, -1.0F);
          var23.b();
          byte var27 = 7;
@@ -283,7 +283,7 @@ public class mn {
                var12 = var12 * var12 * var12;
                var12 = var12 * var12 * var12;
                var13 = 1.0F - var12;
-               GL11.glTranslatef(0.0F, gk.e(gk.b(var18 / 4.0F * 3.1415927F) * 0.1F) * (float)((double)var10 > 0.2D?1:0), 0.0F);
+               GL11.glTranslatef(0.0F, Utils.e(Utils.cos(var18 / 4.0F * 3.1415927F) * 0.1F) * (float)((double)var10 > 0.2D?1:0), 0.0F);
                GL11.glTranslatef(var13 * 0.6F, -var13 * 0.5F, 0.0F);
                GL11.glRotatef(var13 * 90.0F, 0.0F, 1.0F, 0.0F);
                GL11.glRotatef(var13 * 10.0F, 1.0F, 0.0F, 0.0F);
@@ -291,17 +291,17 @@ public class mn {
             }
          } else {
             var16 = var3.i(var1);
-            var18 = gk.a(var16 * 3.1415927F);
-            var10 = gk.a(gk.c(var16) * 3.1415927F);
-            GL11.glTranslatef(-var10 * 0.4F, gk.a(gk.c(var16) * 3.1415927F * 2.0F) * 0.2F, -var18 * 0.2F);
+            var18 = Utils.sin(var16 * 3.1415927F);
+            var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
+            GL11.glTranslatef(-var10 * 0.4F, Utils.sin(Utils.sqrt(var16) * 3.1415927F * 2.0F) * 0.2F, -var18 * 0.2F);
          }
 
          GL11.glTranslatef(0.7F * var7, -0.65F * var7 - (1.0F - var2) * 0.6F, -0.9F * var7);
          GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
          GL11.glEnable('\u803a');
          var16 = var3.i(var1);
-         var18 = gk.a(var16 * var16 * 3.1415927F);
-         var10 = gk.a(gk.c(var16) * 3.1415927F);
+         var18 = Utils.sin(var16 * var16 * 3.1415927F);
+         var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
          GL11.glRotatef(-var18 * 20.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(-var10 * 20.0F, 0.0F, 0.0F, 1.0F);
          GL11.glRotatef(-var10 * 80.0F, 1.0F, 0.0F, 0.0F);
@@ -327,7 +327,7 @@ public class mn {
                }
 
                if(var11 > 0.1F) {
-                  GL11.glTranslatef(0.0F, gk.a((var10 - 0.1F) * 1.3F) * 0.01F * (var11 - 0.1F), 0.0F);
+                  GL11.glTranslatef(0.0F, Utils.sin((var10 - 0.1F) * 1.3F) * 0.01F * (var11 - 0.1F), 0.0F);
                }
 
                GL11.glTranslatef(0.0F, 0.0F, var11 * 0.1F);
@@ -363,15 +363,15 @@ public class mn {
          GL11.glPushMatrix();
          var7 = 0.8F;
          var16 = var3.i(var1);
-         var18 = gk.a(var16 * 3.1415927F);
-         var10 = gk.a(gk.c(var16) * 3.1415927F);
-         GL11.glTranslatef(-var10 * 0.3F, gk.a(gk.c(var16) * 3.1415927F * 2.0F) * 0.4F, -var18 * 0.4F);
+         var18 = Utils.sin(var16 * 3.1415927F);
+         var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
+         GL11.glTranslatef(-var10 * 0.3F, Utils.sin(Utils.sqrt(var16) * 3.1415927F * 2.0F) * 0.4F, -var18 * 0.4F);
          GL11.glTranslatef(0.8F * var7, -0.75F * var7 - (1.0F - var2) * 0.6F, -0.9F * var7);
          GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
          GL11.glEnable('\u803a');
          var16 = var3.i(var1);
-         var18 = gk.a(var16 * var16 * 3.1415927F);
-         var10 = gk.a(gk.c(var16) * 3.1415927F);
+         var18 = Utils.sin(var16 * var16 * 3.1415927F);
+         var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
          GL11.glRotatef(var10 * 70.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(-var18 * 20.0F, 0.0F, 0.0F, 1.0F);
          GL11.glBindTexture(3553, this.a.p.a(this.a.h.Z, this.a.h.v_()));
@@ -381,7 +381,7 @@ public class mn {
          GL11.glRotatef(-135.0F, 0.0F, 1.0F, 0.0F);
          GL11.glScalef(1.0F, 1.0F, 1.0F);
          GL11.glTranslatef(5.6F, 0.0F, 0.0F);
-         um var19 = ahu.a.a((nn)this.a.h);
+         um var19 = ahu.a.a((BaseEntity)this.a.h);
          we var21 = (we)var19;
          var10 = 1.0F;
          GL11.glScalef(var10, var10, var10);
@@ -403,9 +403,9 @@ public class mn {
       }
 
       if(this.a.h.N()) {
-         var2 = gk.c(this.a.h.o);
-         int var3 = gk.c(this.a.h.p);
-         int var4 = gk.c(this.a.h.q);
+         var2 = Utils.c(this.a.h.o);
+         int var3 = Utils.c(this.a.h.p);
+         int var4 = Utils.c(this.a.h.q);
          int var5 = this.a.p.b("/mojang/terrain.png");
          GL11.glBindTexture(3553, var5);
          int var6 = this.a.f.a(var2, var3, var4);
@@ -416,9 +416,9 @@ public class mn {
                float var8 = ((float)((var7 >> 0) % 2) - 0.5F) * this.a.h.I * 0.9F;
                float var9 = ((float)((var7 >> 1) % 2) - 0.5F) * this.a.h.J * 0.2F;
                float var10 = ((float)((var7 >> 2) % 2) - 0.5F) * this.a.h.I * 0.9F;
-               int var11 = gk.d((float)var2 + var8);
-               int var12 = gk.d((float)var3 + var9);
-               int var13 = gk.d((float)var4 + var10);
+               int var11 = Utils.d((float)var2 + var8);
+               int var12 = Utils.d((float)var3 + var9);
+               int var13 = Utils.d((float)var4 + var10);
                if(this.a.f.h(var11, var12, var13)) {
                   var6 = this.a.f.a(var11, var12, var13);
                }
@@ -440,7 +440,7 @@ public class mn {
    }
 
    private void a(float var1, int var2) {
-      adz var3 = adz.a;
+      Tessalator var3 = Tessalator.a;
       this.a.h.a(var1);
       float var4 = 0.1F;
       GL11.glColor4f(var4, var4, var4, 0.5F);
@@ -466,7 +466,7 @@ public class mn {
    }
 
    private void c(float var1) {
-      adz var2 = adz.a;
+      Tessalator var2 = Tessalator.a;
       float var3 = this.a.h.a(var1);
       GL11.glColor4f(var3, var3, var3, 0.5F);
       GL11.glEnable(3042);
@@ -492,7 +492,7 @@ public class mn {
    }
 
    private void d(float var1) {
-      adz var2 = adz.a;
+      Tessalator var2 = Tessalator.a;
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.9F);
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);

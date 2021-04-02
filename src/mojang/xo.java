@@ -11,7 +11,7 @@ public class xo implements ca {
    private op l;
    public op a;
    public op b;
-   private xd m;
+   private World m;
    private double[] n;
    private abn[] o;
    double[] c;
@@ -22,7 +22,7 @@ public class xo implements ca {
    int[][] h = new int[32][32];
 
 
-   public xo(xd var1, long var2) {
+   public xo(World var1, long var2) {
       this.m = var1;
       this.i = new Random(var2);
       this.j = new op(this.i, 16);
@@ -181,7 +181,7 @@ public class xo implements ca {
             var18 = var18 * 3.0D - 2.0D;
             float var20 = (float)(var14 + var2 - 0) / 1.0F;
             float var21 = (float)(var15 + var4 - 0) / 1.0F;
-            float var22 = 100.0F - gk.c(var20 * var20 + var21 * var21) * 8.0F;
+            float var22 = 100.0F - Utils.sqrt(var20 * var20 + var21 * var21) * 8.0F;
             if(var22 > 80.0F) {
                var22 = 80.0F;
             }
@@ -289,7 +289,7 @@ public class xo implements ca {
       return var5 == null?null:var5.a(var1);
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return null;
    }
 }

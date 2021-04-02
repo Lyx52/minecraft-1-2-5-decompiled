@@ -71,7 +71,7 @@ public class aie extends cf {
    }
 
    public static qg a(g var0, List var1, Random var2, int var3, int var4, int var5, int var6) {
-      for(int var7 = 7 * gk.a(var2, 3, 5); var7 >= 7; var7 -= 7) {
+      for(int var7 = 7 * Utils.a(var2, 3, 5); var7 >= 7; var7 -= 7) {
          qg var8 = qg.a(var3, var4, var5, 0, 0, 0, 3, 3, var7, var6);
          if(he.a(var1, var8) == null) {
             return var8;
@@ -81,7 +81,7 @@ public class aie extends cf {
       return null;
    }
 
-   public boolean a(xd var1, Random var2, qg var3) {
+   public boolean a(World var1, Random var2, qg var3) {
       for(int var4 = this.g.a; var4 <= this.g.d; ++var4) {
          for(int var5 = this.g.c; var5 <= this.g.f; ++var5) {
             if(var3.b(var4, 64, var5)) {

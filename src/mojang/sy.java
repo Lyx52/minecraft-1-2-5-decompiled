@@ -32,8 +32,8 @@ public class sy extends ho {
 
    public void a(float var1, float var2, float var3, float var4, float var5, float var6) {}
 
-   public void a(acq var1, float var2, float var3, float var4) {
-      aic var5 = (aic)var1;
+   public void a(Mob var1, float var2, float var3, float var4) {
+      LavaSlime var5 = (LavaSlime)var1;
       float var6 = var5.c + (var5.b - var5.c) * var4;
       if(var6 < 0.0F) {
          var6 = 0.0F;
@@ -45,7 +45,7 @@ public class sy extends ho {
 
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       this.b.a(var7);
 

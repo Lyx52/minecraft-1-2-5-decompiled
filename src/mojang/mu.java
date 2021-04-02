@@ -50,7 +50,7 @@ public class mu extends ho {
       this.d.a(-1.2F, 13.8F, -5.0F);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       if(this.k) {
          float var8 = 2.0F;
@@ -89,28 +89,28 @@ public class mu extends ho {
       if(this.o != 3) {
          this.n.f = 1.5707964F;
          if(this.o == 2) {
-            this.a.f = gk.b(var1 * 0.6662F) * 1.0F * var2;
-            this.b.f = gk.b(var1 * 0.6662F + 0.3F) * 1.0F * var2;
-            this.c.f = gk.b(var1 * 0.6662F + 3.1415927F + 0.3F) * 1.0F * var2;
-            this.d.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
-            this.f.f = 1.7278761F + 0.31415927F * gk.b(var1) * var2;
+            this.a.f = Utils.cos(var1 * 0.6662F) * 1.0F * var2;
+            this.b.f = Utils.cos(var1 * 0.6662F + 0.3F) * 1.0F * var2;
+            this.c.f = Utils.cos(var1 * 0.6662F + 3.1415927F + 0.3F) * 1.0F * var2;
+            this.d.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
+            this.f.f = 1.7278761F + 0.31415927F * Utils.cos(var1) * var2;
          } else {
-            this.a.f = gk.b(var1 * 0.6662F) * 1.0F * var2;
-            this.b.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
-            this.c.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
-            this.d.f = gk.b(var1 * 0.6662F) * 1.0F * var2;
+            this.a.f = Utils.cos(var1 * 0.6662F) * 1.0F * var2;
+            this.b.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
+            this.c.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.0F * var2;
+            this.d.f = Utils.cos(var1 * 0.6662F) * 1.0F * var2;
             if(this.o == 1) {
-               this.f.f = 1.7278761F + 0.7853982F * gk.b(var1) * var2;
+               this.f.f = 1.7278761F + 0.7853982F * Utils.cos(var1) * var2;
             } else {
-               this.f.f = 1.7278761F + 0.47123894F * gk.b(var1) * var2;
+               this.f.f = 1.7278761F + 0.47123894F * Utils.cos(var1) * var2;
             }
          }
       }
 
    }
 
-   public void a(acq var1, float var2, float var3, float var4) {
-      uo var5 = (uo)var1;
+   public void a(Mob var1, float var2, float var3, float var4) {
+      Ozelot var5 = (Ozelot)var1;
       this.n.d = 12.0F;
       this.n.e = -10.0F;
       this.g.d = 15.0F;

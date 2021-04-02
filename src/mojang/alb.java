@@ -2,8 +2,8 @@ package mojang;
 
 public abstract class alb {
 
-   public xd a;
-   public vx b;
+   public World a;
+   public WorldGeneratorTypes b;
    public rs c;
    public boolean d = false;
    public boolean e = false;
@@ -12,9 +12,9 @@ public abstract class alb {
    private float[] h = new float[4];
 
 
-   public final void a(xd var1) {
+   public final void a(World var1) {
       this.a = var1;
-      this.b = var1.B().t();
+      this.b = var1.B().getGenerator();
       this.a();
       this.i();
    }
@@ -30,7 +30,7 @@ public abstract class alb {
    }
 
    protected void a() {
-      if(this.a.B().t() == vx.c) {
+      if(this.a.B().getGenerator() == WorldGeneratorTypes.flatWorld) {
          this.c = new fm(abn.c, 0.5F, 0.5F);
       } else {
          this.c = new rs(this.a);
@@ -39,7 +39,7 @@ public abstract class alb {
    }
 
    public ca b() {
-      return (ca)(this.b == vx.c?new yh(this.a, this.a.v(), this.a.B().r()):new aly(this.a, this.a.v(), this.a.B().r()));
+      return (ca)(this.b == WorldGeneratorTypes.flatWorld ?new yh(this.a, this.a.v(), this.a.B().hasMapFeatures()):new aly(this.a, this.a.v(), this.a.B().hasMapFeatures()));
    }
 
    public boolean a(int var1, int var2) {
@@ -74,11 +74,11 @@ public abstract class alb {
 
    public float[] a(float var1, float var2) {
       float var3 = 0.4F;
-      float var4 = gk.b(var1 * 3.1415927F * 2.0F) - 0.0F;
+      float var4 = Utils.cos(var1 * 3.1415927F * 2.0F) - 0.0F;
       float var5 = -0.0F;
       if(var4 >= var5 - var3 && var4 <= var5 + var3) {
          float var6 = (var4 - var5) / var3 * 0.5F + 0.5F;
-         float var7 = 1.0F - (1.0F - gk.a(var6 * 3.1415927F)) * 0.99F;
+         float var7 = 1.0F - (1.0F - Utils.sin(var6 * 3.1415927F)) * 0.99F;
          var7 *= var7;
          this.h[0] = var6 * 0.3F + 0.7F;
          this.h[1] = var6 * var6 * 0.7F + 0.2F;
@@ -91,7 +91,7 @@ public abstract class alb {
    }
 
    public bo b(float var1, float var2) {
-      float var3 = gk.b(var1 * 3.1415927F * 2.0F) * 2.0F + 0.5F;
+      float var3 = Utils.cos(var1 * 3.1415927F * 2.0F) * 2.0F + 0.5F;
       if(var3 < 0.0F) {
          var3 = 0.0F;
       }
@@ -130,15 +130,15 @@ public abstract class alb {
    }
 
    public int h() {
-      return this.b == vx.c?4:64;
+      return this.b == WorldGeneratorTypes.flatWorld ?4:64;
    }
 
    public boolean j() {
-      return this.b != vx.c && !this.e;
+      return this.b != WorldGeneratorTypes.flatWorld && !this.e;
    }
 
    public double k() {
-      return this.b == vx.c?1.0D:0.03125D;
+      return this.b == WorldGeneratorTypes.flatWorld ?1.0D:0.03125D;
    }
 
    public boolean b(int var1, int var2) {

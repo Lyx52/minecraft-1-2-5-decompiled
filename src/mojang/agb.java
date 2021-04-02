@@ -13,7 +13,7 @@ public class agb implements ca {
    private op n;
    public op a;
    public op b;
-   private xd o;
+   private World o;
    private double[] p;
    public abv c = new abv();
    private double[] q = new double[256];
@@ -27,7 +27,7 @@ public class agb implements ca {
    double[] h;
 
 
-   public agb(xd var1, long var2) {
+   public agb(World var1, long var2) {
       this.o = var1;
       this.i = new Random(var2);
       this.j = new op(this.i, 16);
@@ -397,7 +397,7 @@ public class agb implements ca {
       }
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return null;
    }
 }

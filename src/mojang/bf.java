@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class bf extends li {
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       int var6;
       for(var6 = var2.nextInt(4) + 5; var1.f(var3, var4 - 1, var5) == acn.g; --var4) {
          ;
@@ -113,7 +113,7 @@ public class bf extends li {
       }
    }
 
-   private void b(xd var1, int var2, int var3, int var4, int var5) {
+   private void b(World var1, int var2, int var3, int var4, int var5) {
       this.a(var1, var2, var3, var4, pb.bu.bO, var5);
       int var6 = 4;
 

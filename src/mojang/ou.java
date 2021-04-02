@@ -75,13 +75,13 @@ public class ou extends kw {
 
       wu var3 = pb.ac.b(this.i, this.j, this.k, this.l, this.a, var1, this.c);
       if(var3 != null) {
-         List var4 = this.i.b((nn)null, var3);
+         List var4 = this.i.b((BaseEntity)null, var3);
          if(!var4.isEmpty()) {
             h.addAll(var4);
             Iterator var5 = h.iterator();
 
             while(var5.hasNext()) {
-               nn var6 = (nn)var5.next();
+               BaseEntity var6 = (BaseEntity)var5.next();
                var6.b((double)(var2 * (float)qs.b[this.c]), (double)(var2 * (float)qs.c[this.c]), (double)(var2 * (float)qs.d[this.c]));
             }
 
@@ -126,22 +126,22 @@ public class ou extends kw {
       }
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.a = var1.f("blockId");
-      this.b = var1.f("blockData");
-      this.c = var1.f("facing");
-      this.g = this.f = var1.h("progress");
-      this.d = var1.o("extending");
+      this.a = var1.getInt("blockId");
+      this.b = var1.getInt("blockData");
+      this.c = var1.getInt("facing");
+      this.g = this.f = var1.getFloat("progress");
+      this.d = var1.getBoolean("extending");
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("blockId", this.a);
-      var1.a("blockData", this.b);
-      var1.a("facing", this.c);
-      var1.a("progress", this.g);
-      var1.a("extending", this.d);
+      var1.addInt("blockId", this.a);
+      var1.addInt("blockData", this.b);
+      var1.addInt("facing", this.c);
+      var1.addFloat("progress", this.g);
+      var1.addBoolean("extending", this.d);
    }
 
 }

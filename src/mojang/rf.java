@@ -7,7 +7,7 @@ public class rf extends pb {
       this.bN = 48;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {}
+   public void a(World var1, int var2, int var3, int var4) {}
 
-   public void b_(xd var1, int var2, int var3, int var4) {}
+   public void b_(World var1, int var2, int var3, int var4) {}
 }

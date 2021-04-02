@@ -25,8 +25,8 @@ public class aia extends eg {
       }
    }
 
-   public void a(wq var1, List var2) {
-      var1.d(19133);
+   public void a(WorldParser var1, List var2) {
+      var1.setVersion(19133);
       super.a(var1, var2);
    }
 }

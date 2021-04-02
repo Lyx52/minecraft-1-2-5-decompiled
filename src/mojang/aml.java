@@ -17,7 +17,7 @@ public class aml extends ho {
       this.c.a(0, 16).a(-6.0F, 0.0F, -6.0F, 12, 4, 12);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       GL11.glPushMatrix();
       GL11.glScalef(2.0F, 2.0F, 2.0F);
       GL11.glTranslatef(0.0F, -0.5F, 0.0F);

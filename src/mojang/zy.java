@@ -8,7 +8,7 @@ public class zy extends rn {
    boolean a;
 
 
-   public zy(acq var1, boolean var2) {
+   public zy(Mob var1, boolean var2) {
       super(var1, 16.0F, false);
       this.a = var2;
       this.a(1);
@@ -25,8 +25,8 @@ public class zy extends rn {
          Iterator var2 = var1.iterator();
 
          while(var2.hasNext()) {
-            nn var3 = (nn)var2.next();
-            acq var4 = (acq)var3;
+            BaseEntity var3 = (BaseEntity)var2.next();
+            Mob var4 = (Mob)var3;
             if(this.c != var4 && var4.aT() == null) {
                var4.c(this.c.aP());
             }

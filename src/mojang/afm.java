@@ -13,7 +13,7 @@ public class afm extends fe {
       this.a(this.c);
    }
 
-   protected void a(q var1, float var2) {
+   protected void a(SnowMan var1, float var2) {
       super.b(var1, var2);
       aan var3 = new aan(pb.ba, 1);
       if(var3 != null && var3.a().bQ < 256) {

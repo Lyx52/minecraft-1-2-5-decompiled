@@ -8,7 +8,7 @@ public class lm extends fe {
       super(new acm(), 0.5F);
    }
 
-   protected void a(ui var1, float var2) {
+   protected void a(Ghast var1, float var2) {
       float var4 = ((float)var1.e + (float)(var1.am - var1.e) * var2) / 20.0F;
       if(var4 < 0.0F) {
          var4 = 0.0F;

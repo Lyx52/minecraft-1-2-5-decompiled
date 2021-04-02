@@ -46,7 +46,7 @@ public class sx extends ho {
       this.a.a(0, 10).a(-1.5F, 0.0F, -5.0F, 3, 3, 4, var1);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       super.a(var1, var2, var3, var4, var5, var6, var7);
       this.a(var2, var3, var4, var5, var6, var7);
       if(this.k) {
@@ -79,12 +79,12 @@ public class sx extends ho {
 
    }
 
-   public void a(acq var1, float var2, float var3, float var4) {
-      yo var5 = (yo)var1;
+   public void a(Mob var1, float var2, float var3, float var4) {
+      Wolf var5 = (Wolf)var1;
       if(var5.am()) {
          this.g.g = 0.0F;
       } else {
-         this.g.g = gk.b(var2 * 0.6662F) * 1.4F * var3;
+         this.g.g = Utils.cos(var2 * 0.6662F) * 1.4F * var3;
       }
 
       if(var5.af()) {
@@ -112,10 +112,10 @@ public class sx extends ho {
          this.d.a(0.5F, 16.0F, 7.0F);
          this.e.a(-2.5F, 16.0F, -4.0F);
          this.f.a(0.5F, 16.0F, -4.0F);
-         this.c.f = gk.b(var2 * 0.6662F) * 1.4F * var3;
-         this.d.f = gk.b(var2 * 0.6662F + 3.1415927F) * 1.4F * var3;
-         this.e.f = gk.b(var2 * 0.6662F + 3.1415927F) * 1.4F * var3;
-         this.f.f = gk.b(var2 * 0.6662F) * 1.4F * var3;
+         this.c.f = Utils.cos(var2 * 0.6662F) * 1.4F * var3;
+         this.d.f = Utils.cos(var2 * 0.6662F + 3.1415927F) * 1.4F * var3;
+         this.e.f = Utils.cos(var2 * 0.6662F + 3.1415927F) * 1.4F * var3;
+         this.f.f = Utils.cos(var2 * 0.6662F) * 1.4F * var3;
       }
 
       this.a.h = var5.d(var4) + var5.d(var4, 0.0F);

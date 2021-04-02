@@ -4,14 +4,14 @@ import java.util.Random;
 
 public class xe extends rc {
 
-   private ed b;
-   private ed c;
-   private xd d;
+   private Villager b;
+   private Villager c;
+   private World d;
    private int e = 0;
    kd a;
 
 
-   public xe(ed var1) {
+   public xe(Villager var1) {
       this.b = var1;
       this.d = var1.k;
       this.a(3);
@@ -23,17 +23,17 @@ public class xe extends rc {
       } else if(this.b.aO().nextInt(500) != 0) {
          return false;
       } else {
-         this.a = this.d.A.a(gk.c(this.b.o), gk.c(this.b.p), gk.c(this.b.q), 0);
+         this.a = this.d.A.a(Utils.c(this.b.o), Utils.c(this.b.p), Utils.c(this.b.q), 0);
          if(this.a == null) {
             return false;
          } else if(!this.h()) {
             return false;
          } else {
-            nn var1 = this.d.a(ed.class, this.b.y.b(8.0D, 3.0D, 8.0D), this.b);
+            BaseEntity var1 = this.d.a(Villager.class, this.b.y.b(8.0D, 3.0D, 8.0D), this.b);
             if(var1 == null) {
                return false;
             } else {
-               this.c = (ed)var1;
+               this.c = (Villager)var1;
                return this.c.av() == 0;
             }
          }
@@ -59,7 +59,7 @@ public class xe extends rc {
       --this.e;
       this.b.aJ().a(this.c, 10.0F, 30.0F);
       if(this.b.f(this.c) > 2.25D) {
-         this.b.aM().a((acq)this.c, 0.25F);
+         this.b.aM().a((Mob)this.c, 0.25F);
       } else if(this.e == 0 && this.c.x_()) {
          this.i();
       }
@@ -76,17 +76,17 @@ public class xe extends rc {
    }
 
    private void i() {
-      ed var1 = new ed(this.d);
+      Villager var1 = new Villager(this.d);
       this.c.d(6000);
       this.b.d(6000);
       var1.d(-24000);
       var1.d_(this.b.aO().nextInt(5));
       var1.c(this.b.o, this.b.p, this.b.q, 0.0F, 0.0F);
-      this.d.a((nn)var1);
+      this.d.a((BaseEntity)var1);
       this.a(var1);
    }
 
-   private void a(acq var1) {
+   private void a(Mob var1) {
       Random var2 = var1.aO();
 
       for(int var3 = 0; var3 < 5; ++var3) {

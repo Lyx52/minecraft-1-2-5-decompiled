@@ -13,8 +13,8 @@ import org.lwjgl.opengl.GL11;
 public class l implements afk {
 
    public List a = new ArrayList();
-   private xd i;
-   private aaw j;
+   private World i;
+   private Texture j;
    private List k = new ArrayList();
    private ct[] l;
    private ct[] m;
@@ -42,7 +42,7 @@ public class l implements afk {
    private int I;
    private int J;
    int[] b = new int['\uc350'];
-   IntBuffer c = ew.d(64);
+   IntBuffer c = BufferManager.createIntBuffer(64);
    private int K;
    private int L;
    private int M;
@@ -59,29 +59,29 @@ public class l implements afk {
    int h = 0;
 
 
-   public l(Minecraft var1, aaw var2) {
+   public l(Minecraft var1, Texture var2) {
       this.r = var1;
       this.j = var2;
       byte var3 = 34;
       byte var4 = 32;
-      this.q = ew.a(var3 * var3 * var4 * 3);
+      this.q = BufferManager.createGLList(var3 * var3 * var4 * 3);
       this.u = vm.a();
       if(this.u) {
          this.c.clear();
-         this.t = ew.d(var3 * var3 * var4);
+         this.t = BufferManager.createIntBuffer(var3 * var3 * var4);
          this.t.clear();
          this.t.position(0);
          this.t.limit(var3 * var3 * var4);
          ARBOcclusionQuery.glGenQueriesARB(this.t);
       }
 
-      this.w = ew.a(3);
+      this.w = BufferManager.createGLList(3);
       GL11.glPushMatrix();
       GL11.glNewList(this.w, 4864);
       this.f();
       GL11.glEndList();
       GL11.glPopMatrix();
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       this.x = this.w + 1;
       GL11.glNewList(this.x, 4864);
       byte var7 = 64;
@@ -122,7 +122,7 @@ public class l implements afk {
 
    private void f() {
       Random var1 = new Random(10842L);
-      adz var2 = adz.a;
+      Tessalator var2 = Tessalator.a;
       var2.b();
 
       for(int var3 = 0; var3 < 1500; ++var3) {
@@ -167,7 +167,7 @@ public class l implements afk {
       var2.a();
    }
 
-   public void a(xd var1) {
+   public void a(World var1) {
       if(this.i != null) {
          this.i.b((afk)this);
       }
@@ -187,8 +187,8 @@ public class l implements afk {
 
    public void a() {
       if(this.i != null) {
-         pb.K.b(this.r.A.j);
-         this.F = this.r.A.e;
+         pb.K.b(this.r.options.fancyGraphics);
+         this.F = this.r.options.viewDistance;
          int var1;
          if(this.m != null) {
             for(var1 = 0; var1 < this.m.length; ++var1) {
@@ -244,9 +244,9 @@ public class l implements afk {
          }
 
          if(this.i != null) {
-            acq var7 = this.r.i;
+            Mob var7 = this.r.i;
             if(var7 != null) {
-               this.c(gk.c(var7.o), gk.c(var7.p), gk.c(var7.q));
+               this.c(Utils.c(var7.o), Utils.c(var7.p), Utils.c(var7.q));
                Arrays.sort(this.l, new gw(var7));
             }
          }
@@ -261,12 +261,12 @@ public class l implements afk {
       } else {
          lv.a("prepare");
          ach.a.a(this.i, this.j, this.r.q, this.r.i, var3);
-         ahu.a.a(this.i, this.j, this.r.q, this.r.i, this.r.A, var3);
+         ahu.a.a(this.i, this.j, this.r.q, this.r.i, this.r.options, var3);
          ach.a.a();
          this.H = 0;
          this.I = 0;
          this.J = 0;
-         acq var4 = this.r.i;
+         Mob var4 = this.r.i;
          ahu.b = var4.N + (var4.o - var4.N) * (double)var3;
          ahu.c = var4.O + (var4.p - var4.O) * (double)var3;
          ahu.d = var4.P + (var4.q - var4.P) * (double)var3;
@@ -279,9 +279,9 @@ public class l implements afk {
          this.H = var5.size();
 
          int var6;
-         nn var7;
+         BaseEntity var7;
          for(var6 = 0; var6 < this.i.e.size(); ++var6) {
-            var7 = (nn)this.i.e.get(var6);
+            var7 = (BaseEntity)this.i.e.get(var6);
             ++this.I;
             if(var7.a(var1)) {
                ahu.a.a(var7, var3);
@@ -291,8 +291,8 @@ public class l implements afk {
          lv.c("entities");
 
          for(var6 = 0; var6 < var5.size(); ++var6) {
-            var7 = (nn)var5.get(var6);
-            if(var7.a(var1) && (var7.ak || var2.a(var7.y)) && (var7 != this.r.i || this.r.A.E != 0 || this.r.i.az()) && this.i.j(gk.c(var7.o), 0, gk.c(var7.q))) {
+            var7 = (BaseEntity)var5.get(var6);
+            if(var7.a(var1) && (var7.ak || var2.a(var7.y)) && (var7 != this.r.i || this.r.options.E != 0 || this.r.i.az()) && this.i.j(Utils.c(var7.o), 0, Utils.c(var7.q))) {
                ++this.I;
                ahu.a.a(var7, var3);
             }
@@ -387,7 +387,7 @@ public class l implements afk {
 
    }
 
-   public int a(acq var1, int var2, double var3) {
+   public int a(Mob var1, int var2, double var3) {
       lv.a("sortchunks");
 
       for(int var5 = 0; var5 < 10; ++var5) {
@@ -398,7 +398,7 @@ public class l implements afk {
          }
       }
 
-      if(this.r.A.e != this.F) {
+      if(this.r.options.viewDistance != this.F) {
          this.a();
       }
 
@@ -421,14 +421,14 @@ public class l implements afk {
          this.d = var1.o;
          this.e = var1.p;
          this.f = var1.q;
-         this.c(gk.c(var1.o), gk.c(var1.p), gk.c(var1.q));
+         this.c(Utils.c(var1.o), Utils.c(var1.p), Utils.c(var1.q));
          Arrays.sort(this.l, new gw(var1));
       }
 
       tf.a();
       byte var17 = 0;
       int var34;
-      if(this.u && this.r.A.h && !this.r.A.g && var2 == 0) {
+      if(this.u && this.r.options.advancedOpenGL && !this.r.options.glyph3d && var2 == 0) {
          byte var18 = 0;
          int var19 = 16;
          this.a(var18, var19);
@@ -471,7 +471,7 @@ public class l implements afk {
                   }
 
                   if(this.l[var23].l && !this.l[var23].u) {
-                     float var24 = gk.c(this.l[var23].a((nn)var1));
+                     float var24 = Utils.sqrt(this.l[var23].a((BaseEntity)var1));
                      int var25 = (int)(1.0F + var24 / 128.0F);
                      if(this.v % var25 == var23 % var25) {
                         ct var26 = this.l[var23];
@@ -500,7 +500,7 @@ public class l implements afk {
             }
 
             GL11.glPopMatrix();
-            if(this.r.A.g) {
+            if(this.r.options.glyph3d) {
                if(lr.b == 0) {
                   GL11.glColorMask(false, true, true, true);
                } else {
@@ -569,7 +569,7 @@ public class l implements afk {
          }
       }
 
-      acq var19 = this.r.i;
+      Mob var19 = this.r.i;
       double var20 = var19.N + (var19.o - var19.N) * var4;
       double var10 = var19.O + (var19.p - var19.O) * var4;
       double var12 = var19.P + (var19.q - var19.P) * var4;
@@ -625,7 +625,7 @@ public class l implements afk {
          tf.a();
          GL11.glDepthMask(false);
          this.j.b(this.j.b("/mojang/misc/tunnel.png"));
-         adz var19 = adz.a;
+         Tessalator var19 = Tessalator.a;
 
          for(int var20 = 0; var20 < 6; ++var20) {
             GL11.glPushMatrix();
@@ -670,7 +670,7 @@ public class l implements afk {
          float var5 = (float)var2.c;
          float var7;
          float var8;
-         if(this.r.A.g) {
+         if(this.r.options.glyph3d) {
             float var6 = (var3 * 30.0F + var4 * 59.0F + var5 * 11.0F) / 100.0F;
             var7 = (var3 * 30.0F + var4 * 70.0F) / 100.0F;
             var8 = (var3 * 30.0F + var5 * 70.0F) / 100.0F;
@@ -680,7 +680,7 @@ public class l implements afk {
          }
 
          GL11.glColor3f(var3, var4, var5);
-         adz var21 = adz.a;
+         Tessalator var21 = Tessalator.a;
          GL11.glDepthMask(false);
          GL11.glEnable(2912);
          GL11.glColor3f(var3, var4, var5);
@@ -702,13 +702,13 @@ public class l implements afk {
             GL11.glShadeModel(7425);
             GL11.glPushMatrix();
             GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
-            GL11.glRotatef(gk.a(this.i.e(var1)) < 0.0F?180.0F:0.0F, 0.0F, 0.0F, 1.0F);
+            GL11.glRotatef(Utils.sin(this.i.e(var1)) < 0.0F?180.0F:0.0F, 0.0F, 0.0F, 1.0F);
             GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
             var8 = var22[0];
             var9 = var22[1];
             var10 = var22[2];
             float var13;
-            if(this.r.A.g) {
+            if(this.r.options.glyph3d) {
                var11 = (var8 * 30.0F + var9 * 59.0F + var10 * 11.0F) / 100.0F;
                var12 = (var8 * 30.0F + var9 * 70.0F) / 100.0F;
                var13 = (var8 * 30.0F + var10 * 70.0F) / 100.0F;
@@ -725,8 +725,8 @@ public class l implements afk {
 
             for(var25 = 0; var25 <= var24; ++var25) {
                var13 = (float)var25 * 3.1415927F * 2.0F / (float)var24;
-               float var14 = gk.a(var13);
-               var15 = gk.b(var13);
+               float var14 = Utils.sin(var13);
+               var15 = Utils.cos(var13);
                var21.a((double)(var14 * 120.0F), (double)(var15 * 120.0F), (double)(-var15 * 40.0F * var22[3]));
             }
 
@@ -834,14 +834,14 @@ public class l implements afk {
 
    public void b(float var1) {
       if(this.r.f.t.e()) {
-         if(this.r.A.j) {
+         if(this.r.options.fancyGraphics) {
             this.c(var1);
          } else {
             GL11.glDisable(2884);
             float var2 = (float)(this.r.i.O + (this.r.i.p - this.r.i.O) * (double)var1);
             byte var3 = 32;
             int var4 = 256 / var3;
-            adz var5 = adz.a;
+            Tessalator var5 = Tessalator.a;
             GL11.glBindTexture(3553, this.j.b("/mojang/environment/clouds.png"));
             GL11.glEnable(3042);
             GL11.glBlendFunc(770, 771);
@@ -850,7 +850,7 @@ public class l implements afk {
             float var8 = (float)var6.b;
             float var9 = (float)var6.c;
             float var10;
-            if(this.r.A.g) {
+            if(this.r.options.glyph3d) {
                var10 = (var7 * 30.0F + var8 * 59.0F + var9 * 11.0F) / 100.0F;
                float var11 = (var7 * 30.0F + var8 * 70.0F) / 100.0F;
                float var12 = (var7 * 30.0F + var9 * 70.0F) / 100.0F;
@@ -861,10 +861,10 @@ public class l implements afk {
 
             var10 = 4.8828125E-4F;
             double var24 = (double)((float)this.v + var1);
-            double var13 = this.r.i.l + (this.r.i.o - this.r.i.l) * (double)var1 + var24 * 0.029999999329447746D;
-            double var15 = this.r.i.n + (this.r.i.q - this.r.i.n) * (double)var1;
-            int var17 = gk.c(var13 / 2048.0D);
-            int var18 = gk.c(var15 / 2048.0D);
+            double var13 = this.r.i.sandX + (this.r.i.o - this.r.i.sandX) * (double)var1 + var24 * 0.029999999329447746D;
+            double var15 = this.r.i.sandZ + (this.r.i.q - this.r.i.sandZ) * (double)var1;
+            int var17 = Utils.c(var13 / 2048.0D);
+            int var18 = Utils.c(var15 / 2048.0D);
             var13 -= (double)(var17 * 2048);
             var15 -= (double)(var18 * 2048);
             float var19 = this.i.t.f() - var2 + 0.33F;
@@ -897,15 +897,15 @@ public class l implements afk {
    public void c(float var1) {
       GL11.glDisable(2884);
       float var2 = (float)(this.r.i.O + (this.r.i.p - this.r.i.O) * (double)var1);
-      adz var3 = adz.a;
+      Tessalator var3 = Tessalator.a;
       float var4 = 12.0F;
       float var5 = 4.0F;
       double var6 = (double)((float)this.v + var1);
-      double var8 = (this.r.i.l + (this.r.i.o - this.r.i.l) * (double)var1 + var6 * 0.029999999329447746D) / (double)var4;
-      double var10 = (this.r.i.n + (this.r.i.q - this.r.i.n) * (double)var1) / (double)var4 + 0.33000001311302185D;
+      double var8 = (this.r.i.sandX + (this.r.i.o - this.r.i.sandX) * (double)var1 + var6 * 0.029999999329447746D) / (double)var4;
+      double var10 = (this.r.i.sandZ + (this.r.i.q - this.r.i.sandZ) * (double)var1) / (double)var4 + 0.33000001311302185D;
       float var12 = this.i.t.f() - var2 + 0.33F;
-      int var13 = gk.c(var8 / 2048.0D);
-      int var14 = gk.c(var10 / 2048.0D);
+      int var13 = Utils.c(var8 / 2048.0D);
+      int var14 = Utils.c(var10 / 2048.0D);
       var8 -= (double)(var13 * 2048);
       var10 -= (double)(var14 * 2048);
       GL11.glBindTexture(3553, this.j.b("/mojang/environment/clouds.png"));
@@ -918,7 +918,7 @@ public class l implements afk {
       float var19;
       float var20;
       float var21;
-      if(this.r.A.g) {
+      if(this.r.options.glyph3d) {
          var19 = (var16 * 30.0F + var17 * 59.0F + var18 * 11.0F) / 100.0F;
          var20 = (var16 * 30.0F + var17 * 70.0F) / 100.0F;
          var21 = (var16 * 30.0F + var18 * 70.0F) / 100.0F;
@@ -930,10 +930,10 @@ public class l implements afk {
       var19 = (float)(var8 * 0.0D);
       var20 = (float)(var10 * 0.0D);
       var21 = 0.00390625F;
-      var19 = (float)gk.c(var8) * var21;
-      var20 = (float)gk.c(var10) * var21;
-      float var22 = (float)(var8 - (double)gk.c(var8));
-      float var23 = (float)(var10 - (double)gk.c(var10));
+      var19 = (float) Utils.c(var8) * var21;
+      var20 = (float) Utils.c(var10) * var21;
+      float var22 = (float)(var8 - (double) Utils.c(var8));
+      float var23 = (float)(var10 - (double) Utils.c(var10));
       byte var24 = 8;
       byte var25 = 4;
       float var26 = 9.765625E-4F;
@@ -942,7 +942,7 @@ public class l implements afk {
       for(int var27 = 0; var27 < 2; ++var27) {
          if(var27 == 0) {
             GL11.glColorMask(false, false, false, false);
-         } else if(this.r.A.g) {
+         } else if(this.r.options.glyph3d) {
             if(lr.b == 0) {
                GL11.glColorMask(false, true, true, true);
             } else {
@@ -1034,7 +1034,7 @@ public class l implements afk {
       GL11.glEnable(2884);
    }
 
-   public boolean a(acq var1, boolean var2) {
+   public boolean a(Mob var1, boolean var2) {
       boolean var3 = false;
       if(var3) {
          Collections.sort(this.k, new iw(var1));
@@ -1044,7 +1044,7 @@ public class l implements afk {
          for(int var19 = 0; var19 < var18; ++var19) {
             ct var20 = (ct)this.k.get(var17 - var19);
             if(!var2) {
-               if(var20.a((nn)var1) > 256.0F) {
+               if(var20.a((BaseEntity)var1) > 256.0F) {
                   if(var20.l) {
                      if(var19 >= 30) {
                         return false;
@@ -1079,7 +1079,7 @@ public class l implements afk {
          for(var10 = 0; var10 < var8; ++var10) {
             var11 = (ct)this.k.get(var10);
             if(!var2) {
-               if(var11.a((nn)var1) > 256.0F) {
+               if(var11.a((BaseEntity)var1) > 256.0F) {
                   for(var12 = 0; var12 < var4 && (var6[var12] == null || var5.a(var6[var12], var11) <= 0); ++var12) {
                      ;
                   }
@@ -1178,12 +1178,12 @@ public class l implements afk {
       }
    }
 
-   public void a(yw var1, pl var2, int var3, aan var4, float var5) {
-      adz var6 = adz.a;
+   public void a(Player var1, pl var2, int var3, aan var4, float var5) {
+      Tessalator var6 = Tessalator.a;
       GL11.glEnable(3042);
       GL11.glEnable(3008);
       GL11.glBlendFunc(770, 1);
-      GL11.glColor4f(1.0F, 1.0F, 1.0F, (gk.a((float)System.currentTimeMillis() / 100.0F) * 0.2F + 0.4F) * 0.5F);
+      GL11.glColor4f(1.0F, 1.0F, 1.0F, (Utils.sin((float)System.currentTimeMillis() / 100.0F) * 0.2F + 0.4F) * 0.5F);
       int var8;
       if(var3 == 0) {
          if(this.g > 0.0F) {
@@ -1220,8 +1220,8 @@ public class l implements afk {
          }
       } else if(var4 != null) {
          GL11.glBlendFunc(770, 771);
-         float var16 = gk.a((float)System.currentTimeMillis() / 100.0F) * 0.2F + 0.8F;
-         GL11.glColor4f(var16, var16, var16, gk.a((float)System.currentTimeMillis() / 200.0F) * 0.2F + 0.5F);
+         float var16 = Utils.sin((float)System.currentTimeMillis() / 100.0F) * 0.2F + 0.8F;
+         GL11.glColor4f(var16, var16, var16, Utils.sin((float)System.currentTimeMillis() / 200.0F) * 0.2F + 0.5F);
          var8 = this.j.b("/mojang/terrain.png");
          GL11.glBindTexture(3553, var8);
          int var17 = var2.b;
@@ -1256,7 +1256,7 @@ public class l implements afk {
       GL11.glDisable(3008);
    }
 
-   public void b(yw var1, pl var2, int var3, aan var4, float var5) {
+   public void b(Player var1, pl var2, int var3, aan var4, float var5) {
       if(var3 == 0 && var2.a == aat.a) {
          GL11.glEnable(3042);
          GL11.glBlendFunc(770, 771);
@@ -1267,7 +1267,7 @@ public class l implements afk {
          float var6 = 0.002F;
          int var7 = this.i.a(var2.b, var2.c, var2.d);
          if(var7 > 0) {
-            pb.m[var7].a((ali)this.i, var2.b, var2.c, var2.d);
+            pb.m[var7].a((WorldInterface)this.i, var2.b, var2.c, var2.d);
             double var8 = var1.N + (var1.o - var1.N) * (double)var5;
             double var10 = var1.O + (var1.p - var1.O) * (double)var5;
             double var12 = var1.P + (var1.q - var1.P) * (double)var5;
@@ -1282,7 +1282,7 @@ public class l implements afk {
    }
 
    private void a(wu var1) {
-      adz var2 = adz.a;
+      Tessalator var2 = Tessalator.a;
       var2.a(3);
       var2.a(var1.a, var1.b, var1.c);
       var2.a(var1.d, var1.b, var1.c);
@@ -1310,12 +1310,12 @@ public class l implements afk {
    }
 
    public void a(int var1, int var2, int var3, int var4, int var5, int var6) {
-      int var7 = gk.a(var1, 16);
-      int var8 = gk.a(var2, 16);
-      int var9 = gk.a(var3, 16);
-      int var10 = gk.a(var4, 16);
-      int var11 = gk.a(var5, 16);
-      int var12 = gk.a(var6, 16);
+      int var7 = Utils.a(var1, 16);
+      int var8 = Utils.a(var2, 16);
+      int var9 = Utils.a(var3, 16);
+      int var10 = Utils.a(var4, 16);
+      int var11 = Utils.a(var5, 16);
+      int var12 = Utils.a(var6, 16);
 
       for(int var13 = var7; var13 <= var10; ++var13) {
          int var14 = var13 % this.n;
@@ -1374,7 +1374,7 @@ public class l implements afk {
          this.r.w.b("C418 - " + var1);
       }
 
-      this.r.C.a(var1, (float)var2, (float)var3, (float)var4, 1.0F, 1.0F);
+      this.r.soundManager.a(var1, (float)var2, (float)var3, (float)var4, 1.0F, 1.0F);
    }
 
    public void a(String var1, double var2, double var4, double var6, float var8, float var9) {
@@ -1384,7 +1384,7 @@ public class l implements afk {
       }
 
       if(this.r.i.f(var2, var4, var6) < (double)(var10 * var10)) {
-         this.r.C.b(var1, (float)var2, (float)var4, (float)var6, var8, var9);
+         this.r.soundManager.b(var1, (float)var2, (float)var4, (float)var6, var8, var9);
       }
 
    }
@@ -1395,7 +1395,7 @@ public class l implements afk {
 
    public rt b(String var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       if(this.r != null && this.r.i != null && this.r.j != null) {
-         int var14 = this.r.A.Q;
+         int var14 = this.r.options.particleSettings;
          if(var14 == 1 && this.i.r.nextInt(3) == 0) {
             var14 = 2;
          }
@@ -1500,7 +1500,7 @@ public class l implements afk {
       }
    }
 
-   public void a(nn var1) {
+   public void a(BaseEntity var1) {
       var1.S();
       if(var1.Z != null) {
          this.j.a(var1.Z, (js)(new mx()));
@@ -1512,7 +1512,7 @@ public class l implements afk {
 
    }
 
-   public void b(nn var1) {
+   public void b(BaseEntity var1) {
       if(var1.Z != null) {
          this.j.c(var1.Z);
       }
@@ -1526,10 +1526,10 @@ public class l implements afk {
    public void a(int var1, int var2, int var3, kw var4) {}
 
    public void e() {
-      ew.b(this.q);
+      BufferManager.removeTexture(this.q);
    }
 
-   public void a(yw var1, int var2, int var3, int var4, int var5, int var6) {
+   public void a(Player var1, int var2, int var3, int var4, int var5, int var6) {
       Random var7 = this.i.r;
       int var8;
       double var10;
@@ -1607,7 +1607,7 @@ public class l implements afk {
          var8 = var6 & 4095;
          if(var8 > 0) {
             pb var34 = pb.m[var8];
-            this.r.C.b(var34.cb.a(), (float)var3 + 0.5F, (float)var4 + 0.5F, (float)var5 + 0.5F, (var34.cb.b() + 1.0F) / 2.0F, var34.cb.c() * 0.8F);
+            this.r.soundManager.b(var34.cb.a(), (float)var3 + 0.5F, (float)var4 + 0.5F, (float)var5 + 0.5F, (var34.cb.b() + 1.0F) / 2.0F, var34.cb.c() * 0.8F);
          }
 
          this.r.j.a(var3, var4, var5, var6 & 4095, var6 >> 12 & 255);

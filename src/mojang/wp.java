@@ -8,7 +8,7 @@ public abstract class wp {
    private long d;
 
 
-   public static wp[] a(long var0, vx var2) {
+   public static wp[] a(long var0, WorldGeneratorTypes var2) {
       aey var3 = new aey(1L);
       ako var9 = new ako(2000L, var3);
       uv var10 = new uv(1L, var9);

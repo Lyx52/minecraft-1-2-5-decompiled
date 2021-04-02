@@ -42,7 +42,7 @@ public class ahp extends ho {
       this.f.a(4.0F, (float)(-3 + var1), 0.0F);
    }
 
-   public void a(nn var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(BaseEntity var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.a(var2, var3, var4, var5, var6, var7);
       if(this.k) {
          float var8 = 2.0F;
@@ -82,8 +82,8 @@ public class ahp extends ho {
       this.n.f = this.a.f;
       this.n.g = this.a.g;
       this.b.f = 1.5707964F;
-      this.c.f = gk.b(var1 * 0.6662F) * 1.4F * var2;
-      this.d.f = gk.b(var1 * 0.6662F + 3.1415927F) * 1.4F * var2;
+      this.c.f = Utils.cos(var1 * 0.6662F) * 1.4F * var2;
+      this.d.f = Utils.cos(var1 * 0.6662F + 3.1415927F) * 1.4F * var2;
       this.e.h = var3;
       this.f.h = -var3;
    }

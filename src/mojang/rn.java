@@ -2,7 +2,7 @@ package mojang;
 
 public abstract class rn extends rc {
 
-   protected acq c;
+   protected Mob c;
    protected float d;
    protected boolean e;
    private boolean a;
@@ -11,11 +11,11 @@ public abstract class rn extends rc {
    private int g;
 
 
-   public rn(acq var1, float var2, boolean var3) {
+   public rn(Mob var1, float var2, boolean var3) {
       this(var1, var2, var3, false);
    }
 
-   public rn(acq var1, float var2, boolean var3, boolean var4) {
+   public rn(Mob var1, float var2, boolean var3, boolean var4) {
       this.b = 0;
       this.f = 0;
       this.g = 0;
@@ -26,7 +26,7 @@ public abstract class rn extends rc {
    }
 
    public boolean b() {
-      acq var1 = this.c.aT();
+      Mob var1 = this.c.aT();
       if(var1 == null) {
          return false;
       } else if(!var1.M()) {
@@ -55,10 +55,10 @@ public abstract class rn extends rc {
    }
 
    public void d() {
-      this.c.c((acq)null);
+      this.c.c((Mob)null);
    }
 
-   protected boolean a(acq var1, boolean var2) {
+   protected boolean a(Mob var1, boolean var2) {
       if(var1 == null) {
          return false;
       } else if(var1 == this.c) {
@@ -77,11 +77,11 @@ public abstract class rn extends rc {
                if(var1 == ((wd)this.c).ah()) {
                   return false;
                }
-            } else if(var1 instanceof yw && !var2 && ((yw)var1).aT.a) {
+            } else if(var1 instanceof Player && !var2 && ((Player)var1).aT.a) {
                return false;
             }
 
-            if(!this.c.f(gk.c(var1.o), gk.c(var1.p), gk.c(var1.q))) {
+            if(!this.c.f(Utils.c(var1.o), Utils.c(var1.p), Utils.c(var1.q))) {
                return false;
             } else if(this.e && !this.c.aN().a(var1)) {
                return false;
@@ -108,7 +108,7 @@ public abstract class rn extends rc {
       }
    }
 
-   private boolean a(acq var1) {
+   private boolean a(Mob var1) {
       this.f = 10 + this.c.aO().nextInt(5);
       vu var2 = this.c.aM().a(var1);
       if(var2 == null) {
@@ -118,8 +118,8 @@ public abstract class rn extends rc {
          if(var3 == null) {
             return false;
          } else {
-            int var4 = var3.a - gk.c(var1.o);
-            int var5 = var3.c - gk.c(var1.q);
+            int var4 = var3.a - Utils.c(var1.o);
+            int var5 = var3.c - Utils.c(var1.q);
             return (double)(var4 * var4 + var5 * var5) <= 2.25D;
          }
       }

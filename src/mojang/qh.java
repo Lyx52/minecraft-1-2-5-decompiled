@@ -9,7 +9,7 @@ class qh extends iff {
 
 
    public qh(acp var1) {
-      super(var1.p, var1.q, var1.r, 32, var1.r - 64, 36);
+      super(var1.minecraft, var1.q, var1.r, 32, var1.r - 64, 36);
       this.a = var1;
    }
 
@@ -41,7 +41,7 @@ class qh extends iff {
       this.a.k();
    }
 
-   protected void a(int var1, int var2, int var3, int var4, adz var5) {
+   protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
       oa var6 = (oa)acp.a(this.a).get(var1);
       synchronized(acp.g()) {
          if(acp.n() < 5 && !var6.f) {
@@ -59,7 +59,7 @@ class qh extends iff {
       this.a.b(this.a.u, var6.c, var2 + 215 - this.a.u.a(var6.c), var3 + 12, 8421504);
       this.a.b(this.a.u, var6.b, var2 + 2, var3 + 12 + 11, 3158064);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.a.p.p.b(this.a.p.p.b("/gui/icons.png"));
+      this.a.minecraft.p.b(this.a.minecraft.p.b("/gui/icons.png"));
       String var9 = "";
       byte var7;
       int var8;

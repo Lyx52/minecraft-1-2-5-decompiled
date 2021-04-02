@@ -16,7 +16,7 @@ public class acb extends pb {
       this.a(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, var4, 0.5F + var3);
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 != 0 && var5 != 1) {
          int var6 = this.i(var1, var2, var3, var4);
          int var7 = this.bN;
@@ -60,7 +60,7 @@ public class acb extends pb {
       return false;
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = this.i(var1, var2, var3, var4);
       return (var5 & 4) != 0;
    }
@@ -73,25 +73,25 @@ public class acb extends pb {
       return 7;
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4);
       return super.d(var1, var2, var3, var4);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4);
       return super.c(var1, var2, var3, var4);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       this.e(this.i(var1, var2, var3, var4));
    }
 
-   public int gint(ali var1, int var2, int var3, int var4) {
+   public int gint(WorldInterface var1, int var2, int var3, int var4) {
       return this.i(var1, var2, var3, var4) & 3;
    }
 
-   public boolean h(ali var1, int var2, int var3, int var4) {
+   public boolean h(WorldInterface var1, int var2, int var3, int var4) {
       return (this.i(var1, var2, var3, var4) & 4) != 0;
    }
 
@@ -137,11 +137,11 @@ public class acb extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.b(var1, var2, var3, var4, var5);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       if(this.cd == acn.f) {
          return true;
       } else {
@@ -161,7 +161,7 @@ public class acb extends pb {
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, boolean var5) {
+   public void a(World var1, int var2, int var3, int var4, boolean var5) {
       int var6 = this.i(var1, var2, var3, var4);
       boolean var7 = (var6 & 4) != 0;
       if(var7 != var5) {
@@ -175,11 +175,11 @@ public class acb extends pb {
             var1.c(var2, var3, var4, var2, var3, var4);
          }
 
-         var1.a((yw)null, 1003, var2, var3, var4, 0);
+         var1.a((Player)null, 1003, var2, var3, var4, 0);
       }
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       int var6 = var1.e(var2, var3, var4);
       if((var6 & 8) != 0) {
          if(var1.a(var2, var3 - 1, var4) != this.bO) {
@@ -222,12 +222,12 @@ public class acb extends pb {
       return (var1 & 8) != 0?0:(this.cd == acn.f?yr.aB.bQ:yr.av.bQ);
    }
 
-   public pl a(xd var1, int var2, int var3, int var4, bo var5, bo var6) {
+   public pl a(World var1, int var2, int var3, int var4, bo var5, bo var6) {
       this.a(var1, var2, var3, var4);
       return super.a(var1, var2, var3, var4, var5, var6);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return var3 >= 255?false:var1.h(var2, var3 - 1, var4) && super.e(var1, var2, var3, var4) && super.e(var1, var2, var3 + 1, var4);
    }
 
@@ -235,7 +235,7 @@ public class acb extends pb {
       return 1;
    }
 
-   public int i(ali var1, int var2, int var3, int var4) {
+   public int i(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       boolean var6 = (var5 & 8) != 0;
       int var7;

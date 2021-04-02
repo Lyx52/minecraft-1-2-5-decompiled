@@ -18,7 +18,7 @@ public final class hl extends WindowAdapter {
    }
 
    public void windowClosing(WindowEvent var1) {
-      this.a.f();
+      this.a.stop();
 
       try {
          this.b.join();

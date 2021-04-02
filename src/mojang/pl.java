@@ -8,7 +8,7 @@ public class pl {
    public int d;
    public int e;
    public bo f;
-   public nn g;
+   public BaseEntity g;
 
 
    public pl(int var1, int var2, int var3, int var4, bo var5) {
@@ -20,7 +20,7 @@ public class pl {
       this.f = bo.b(var5.a, var5.b, var5.c);
    }
 
-   public pl(nn var1) {
+   public pl(BaseEntity var1) {
       this.a = aat.b;
       this.g = var1;
       this.f = bo.b(var1.o, var1.p, var1.q);

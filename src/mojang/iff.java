@@ -66,9 +66,9 @@ public abstract class iff {
 
    protected abstract void c();
 
-   protected abstract void a(int var1, int var2, int var3, int var4, adz var5);
+   protected abstract void a(int var1, int var2, int var3, int var4, Tessalator var5);
 
-   protected void a(int var1, int var2, adz var3) {}
+   protected void a(int var1, int var2, Tessalator var3) {}
 
    protected void a(int var1, int var2) {}
 
@@ -103,7 +103,7 @@ public abstract class iff {
 
    }
 
-   public void a(abp var1) {
+   public void a(Button var1) {
       if(var1.h) {
          if(var1.f == this.f) {
             this.o -= (float)(this.j * 2 / 3);
@@ -201,7 +201,7 @@ public abstract class iff {
       this.d();
       GL11.glDisable(2896);
       GL11.glDisable(2912);
-      adz var18 = adz.a;
+      Tessalator var18 = Tessalator.a;
       GL11.glBindTexture(3553, this.a.p.b("/gui/background.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var17 = 32.0F;
@@ -319,7 +319,7 @@ public abstract class iff {
    }
 
    private void a(int var1, int var2, int var3, int var4) {
-      adz var5 = adz.a;
+      Tessalator var5 = Tessalator.a;
       GL11.glBindTexture(3553, this.a.p.b("/gui/background.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;

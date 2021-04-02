@@ -9,10 +9,10 @@ import java.util.Random;
 public final class vf {
 
    private static HashMap b = new HashMap();
-   protected static final Class[] a = new Class[]{cb.class, ajg.class, xr.class};
+   protected static final Class[] a = new Class[]{Spider.class, Zombie.class, Skeleton.class};
 
 
-   protected static qo a(xd var0, int var1, int var2) {
+   protected static qo a(World var0, int var1, int var2) {
       ack var3 = var0.d(var1, var2);
       int var4 = var1 * 16 + var0.r.nextInt(16);
       int var5 = var0.r.nextInt(var3 == null?128:Math.max(128, var3.h()));
@@ -20,7 +20,7 @@ public final class vf {
       return new qo(var4, var5, var6);
    }
 
-   public static final int a(xd var0, boolean var1, boolean var2) {
+   public static final int a(World var0, boolean var1, boolean var2) {
       if(!var1 && !var2) {
          return 0;
       } else {
@@ -29,9 +29,9 @@ public final class vf {
          int var3;
          int var6;
          for(var3 = 0; var3 < var0.d.size(); ++var3) {
-            yw var4 = (yw)var0.d.get(var3);
-            int var5 = gk.c(var4.o / 16.0D);
-            var6 = gk.c(var4.q / 16.0D);
+            Player var4 = (Player)var0.d.get(var3);
+            int var5 = Utils.c(var4.o / 16.0D);
+            var6 = Utils.c(var4.q / 16.0D);
             byte var7 = 8;
 
             for(int var8 = -var7; var8 <= var7; ++var8) {
@@ -100,9 +100,9 @@ public final class vf {
                                                 }
                                              }
 
-                                             acq var38;
+                                             Mob var38;
                                              try {
-                                                var38 = (acq)var21.a.getConstructor(new Class[]{xd.class}).newInstance(new Object[]{var0});
+                                                var38 = (Mob)var21.a.getConstructor(new Class[]{World.class}).newInstance(new Object[]{var0});
                                              } catch (Exception var30) {
                                                 var30.printStackTrace();
                                                 return var3;
@@ -111,7 +111,7 @@ public final class vf {
                                              var38.c((double)var23, (double)var24, (double)var25, var0.r.nextFloat() * 360.0F, 0.0F);
                                              if(var38.i()) {
                                                 ++var15;
-                                                var0.a((nn)var38);
+                                                var0.a((BaseEntity)var38);
                                                 a(var38, var0, var23, var24, var25);
                                                 if(var15 >= var38.ac()) {
                                                    continue label108;
@@ -142,7 +142,7 @@ public final class vf {
       }
    }
 
-   public static boolean a(acf var0, xd var1, int var2, int var3, int var4) {
+   public static boolean a(acf var0, World var1, int var2, int var3, int var4) {
       if(var0.c() == acn.g) {
          return var1.f(var2, var3, var4).d() && !var1.h(var2, var3 + 1, var4);
       } else {
@@ -151,26 +151,26 @@ public final class vf {
       }
    }
 
-   private static void a(acq var0, xd var1, float var2, float var3, float var4) {
-      if(var0 instanceof cb && var1.r.nextInt(100) == 0) {
-         xr var7 = new xr(var1);
+   private static void a(Mob var0, World var1, float var2, float var3, float var4) {
+      if(var0 instanceof Spider && var1.r.nextInt(100) == 0) {
+         Skeleton var7 = new Skeleton(var1);
          var7.c((double)var2, (double)var3, (double)var4, var0.u, 0.0F);
-         var1.a((nn)var7);
+         var1.a((BaseEntity)var7);
          var7.h(var0);
-      } else if(var0 instanceof cu) {
-         ((cu)var0).c_(cu.a(var1.r));
-      } else if(var0 instanceof uo && var1.r.nextInt(7) == 0) {
+      } else if(var0 instanceof Sheep) {
+         ((Sheep)var0).c_(Sheep.a(var1.r));
+      } else if(var0 instanceof Ozelot && var1.r.nextInt(7) == 0) {
          for(int var5 = 0; var5 < 2; ++var5) {
-            uo var6 = new uo(var1);
+            Ozelot var6 = new Ozelot(var1);
             var6.c((double)var2, (double)var3, (double)var4, var0.u, 0.0F);
             var6.d(-24000);
-            var1.a((nn)var6);
+            var1.a((BaseEntity)var6);
          }
       }
 
    }
 
-   public static void a(xd var0, abn var1, int var2, int var3, int var4, int var5, Random var6) {
+   public static void a(World var0, abn var1, int var2, int var3, int var4, int var5, Random var6) {
       List var7 = var1.a(acf.b);
       if(!var7.isEmpty()) {
          while(var6.nextFloat() < var1.f()) {
@@ -191,16 +191,16 @@ public final class vf {
                      float var19 = (float)var17;
                      float var20 = (float)var11 + 0.5F;
 
-                     acq var21;
+                     Mob var21;
                      try {
-                        var21 = (acq)var8.a.getConstructor(new Class[]{xd.class}).newInstance(new Object[]{var0});
+                        var21 = (Mob)var8.a.getConstructor(new Class[]{World.class}).newInstance(new Object[]{var0});
                      } catch (Exception var23) {
                         var23.printStackTrace();
                         continue;
                      }
 
                      var21.c((double)var18, (double)var19, (double)var20, var6.nextFloat() * 360.0F, 0.0F);
-                     var0.a((nn)var21);
+                     var0.a((BaseEntity)var21);
                      a(var21, var0, var18, var19, var20);
                      var15 = true;
                   }

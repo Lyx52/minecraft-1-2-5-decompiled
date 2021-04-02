@@ -25,7 +25,7 @@ public class IsomCanvas extends Canvas implements KeyListener, MouseListener, Mo
    private int a = 0;
    private int b = 2;
    private boolean c = true;
-   private xd d;
+   private World d;
    private File e = this.a();
    private boolean f = true;
    private List g = Collections.synchronizedList(new LinkedList());
@@ -82,7 +82,7 @@ public class IsomCanvas extends Canvas implements KeyListener, MouseListener, Mo
    public IsomCanvas() {
       for(int var1 = 0; var1 < 64; ++var1) {
          for(int var2 = 0; var2 < 64; ++var2) {
-            this.h[var1][var2] = new mp((xd)null, var1, var2);
+            this.h[var1][var2] = new mp((World)null, var1, var2);
          }
       }
 
@@ -96,7 +96,7 @@ public class IsomCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
    public void b(String var1) {
       this.i = this.j = 0;
-      this.d = new xd(new eg(new File(this.e, "saves"), var1, false), var1, new fj((new Random()).nextLong(), 0, true, false, vx.b));
+      this.d = new World(new eg(new File(this.e, "saves"), var1, false), var1, new WorldStub((new Random()).nextLong(), 0, true, false, WorldGeneratorTypes.defaultWorld));
       this.d.f = 0;
       List var2 = this.g;
       synchronized(this.g) {

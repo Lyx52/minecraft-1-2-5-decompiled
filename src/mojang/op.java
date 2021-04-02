@@ -33,8 +33,8 @@ public class op extends cp {
          double var17 = (double)var2 * var27 * var8;
          double var19 = (double)var3 * var27 * var10;
          double var21 = (double)var4 * var27 * var12;
-         long var23 = gk.d(var17);
-         long var25 = gk.d(var21);
+         long var23 = Utils.d(var17);
+         long var25 = Utils.d(var21);
          var17 -= (double)var23;
          var21 -= (double)var25;
          var23 %= 16777216L;

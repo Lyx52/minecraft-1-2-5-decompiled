@@ -5,7 +5,7 @@ public class ue extends is {
    private int i;
 
 
-   public ue(acq var1) {
+   public ue(Mob var1) {
       super(var1);
    }
 

@@ -2,18 +2,18 @@ package mojang;
 
 public class vh {
 
-   private acq a;
+   private Mob a;
    private int b = 0;
    private float c = 0.0F;
 
 
-   public vh(acq var1) {
+   public vh(Mob var1) {
       this.a = var1;
    }
 
    public void a() {
-      double var1 = this.a.o - this.a.l;
-      double var3 = this.a.q - this.a.n;
+      double var1 = this.a.o - this.a.sandX;
+      double var3 = this.a.q - this.a.sandZ;
       if(var1 * var1 + var3 * var3 > 2.500000277905201E-7D) {
          this.a.bd = this.a.u;
          this.a.bf = this.a(this.a.bd, this.a.bf, 75.0F);

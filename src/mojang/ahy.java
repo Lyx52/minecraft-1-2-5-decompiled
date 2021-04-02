@@ -5,11 +5,11 @@ public class ahy extends wp {
    private abn[] b;
 
 
-   public ahy(long var1, wp var3, vx var4) {
+   public ahy(long var1, wp var3, WorldGeneratorTypes var4) {
       super(var1);
       this.b = new abn[]{abn.d, abn.f, abn.e, abn.h, abn.c, abn.g, abn.w};
       this.a = var3;
-      if(var4 == vx.d) {
+      if(var4 == WorldGeneratorTypes.default_1_1) {
          this.b = new abn[]{abn.d, abn.f, abn.e, abn.h, abn.c, abn.g};
       }
 

@@ -42,7 +42,7 @@ abstract class aih extends he {
       }
    }
 
-   protected int b(xd var1, qg var2) {
+   protected int b(World var1, qg var2) {
       int var3 = 0;
       int var4 = 0;
 
@@ -66,7 +66,7 @@ abstract class aih extends he {
       return var0 != null && var0.b > 10;
    }
 
-   protected void a(xd var1, qg var2, int var3, int var4, int var5, int var6) {
+   protected void a(World var1, qg var2, int var3, int var4, int var5, int var6) {
       if(this.a < var6) {
          for(int var7 = this.a; var7 < var6; ++var7) {
             int var8 = this.a(var3 + var7, var5);
@@ -77,9 +77,9 @@ abstract class aih extends he {
             }
 
             ++this.a;
-            ed var11 = new ed(var1, this.a(var7));
+            Villager var11 = new Villager(var1, this.a(var7));
             var11.c((double)var8 + 0.5D, (double)var9, (double)var10 + 0.5D, 0.0F, 0.0F);
-            var1.a((nn)var11);
+            var1.a((BaseEntity)var11);
          }
 
       }

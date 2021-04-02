@@ -7,7 +7,7 @@ import java.util.Random;
 public class gm extends dd {
 
    public io a = new tj(this, "Enchant", 1);
-   private xd h;
+   private World h;
    private int i;
    private int j;
    private int k;
@@ -16,7 +16,7 @@ public class gm extends dd {
    public int[] c = new int[3];
 
 
-   public gm(aak var1, xd var2, int var3, int var4, int var5) {
+   public gm(aak var1, World var2, int var3, int var4, int var5) {
       this.h = var2;
       this.i = var3;
       this.j = var4;
@@ -114,7 +114,7 @@ public class gm extends dd {
 
    }
 
-   public boolean a(yw var1, int var2) {
+   public boolean a(Player var1, int var2) {
       aan var3 = this.a.k_(0);
       if(this.c[var2] > 0 && var3 != null && (var1.aU >= this.c[var2] || var1.aT.d)) {
          if(!this.h.F) {
@@ -138,7 +138,7 @@ public class gm extends dd {
       }
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       super.a(var1);
       if(!this.h.F) {
          aan var2 = this.a.b(0);
@@ -149,7 +149,7 @@ public class gm extends dd {
       }
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return this.h.a(this.i, this.j, this.k) != pb.bE.bO?false:var1.f((double)this.i + 0.5D, (double)this.j + 0.5D, (double)this.k + 0.5D) <= 64.0D;
    }
 

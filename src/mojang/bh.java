@@ -8,7 +8,7 @@ public class bh extends yr {
       this.g(238);
    }
 
-   public boolean a(aan var1, int var2, int var3, int var4, int var5, acq var6) {
+   public boolean a(aan var1, int var2, int var3, int var4, int var5, Mob var6) {
       if(var2 != pb.K.bO && var2 != pb.W.bO && var2 != pb.X.bO && var2 != pb.bu.bO) {
          return super.a(var1, var2, var3, var4, var5, var6);
       } else {

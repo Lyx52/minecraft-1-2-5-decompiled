@@ -6,7 +6,7 @@ public class zx extends yr {
       super(var1);
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var3.a(var4, var5, var6) != pb.aS.bO) {
          if(var7 == 0) {
             --var5;

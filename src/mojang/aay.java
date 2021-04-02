@@ -21,12 +21,12 @@ public class aay extends abs {
 
    public aay() {}
 
-   public aay(acq var1) {
+   public aay(Mob var1) {
       this.a = var1.f;
-      this.b = (byte)aao.a(var1);
-      this.c = gk.c(var1.o * 32.0D);
-      this.d = gk.c(var1.p * 32.0D);
-      this.e = gk.c(var1.q * 32.0D);
+      this.b = (byte) EntityManager.getIDByClass(var1);
+      this.c = Utils.c(var1.o * 32.0D);
+      this.d = Utils.c(var1.p * 32.0D);
+      this.e = Utils.c(var1.q * 32.0D);
       this.f = (byte)((int)(var1.u * 256.0F / 360.0F));
       this.g = (byte)((int)(var1.v * 256.0F / 360.0F));
       this.h = (byte)((int)(var1.bf * 256.0F / 360.0F));

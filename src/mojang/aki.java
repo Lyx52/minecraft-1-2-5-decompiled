@@ -6,13 +6,13 @@ public class aki extends fe {
       super(var1, var2);
    }
 
-   public void a(yo var1, double var2, double var4, double var6, float var8, float var9) {
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+   public void a(Wolf var1, double var2, double var4, double var6, float var8, float var9) {
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 
-   protected float a(yo var1, float var2) {
+   protected float a(Wolf var1, float var2) {
       return var1.al();
    }
 
-   protected void b(yo var1, float var2) {}
+   protected void b(Wolf var1, float var2) {}
 }

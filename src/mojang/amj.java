@@ -25,7 +25,7 @@ public class amj extends pb {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
+   public void a(World var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);
       super.a(var1, var2, var3, var4, var5, var6);
       int var7 = var1.e(var2, var3, var4);
@@ -45,8 +45,8 @@ public class amj extends pb {
       return 0;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
-      int var6 = ((gk.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4;
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
+      int var6 = ((Utils.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4;
       var1.f(var2, var3, var4, var6);
    }
 }

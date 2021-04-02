@@ -2,12 +2,12 @@ package mojang;
 
 class il extends yu {
 
-   private yw f;
+   private Player f;
    // $FF: synthetic field
    final aap a;
 
 
-   public il(aap var1, yw var2, io var3, int var4, int var5, int var6) {
+   public il(aap var1, Player var2, io var3, int var4, int var5, int var6) {
       super(var3, var4, var5, var6);
       this.a = var1;
       this.f = var2;

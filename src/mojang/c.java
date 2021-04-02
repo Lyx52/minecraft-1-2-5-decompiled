@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 import org.lwjgl.opengl.GL11;
 
-public class c extends vp {
+public class c extends GUIManager {
 
    private int a = 0;
    private List b;
@@ -33,12 +33,12 @@ public class c extends vp {
    }
 
    private void d() {
-      if(this.p.f.F) {
-         ahv var1 = (ahv)this.p.h;
-         var1.cl.c(new kx(var1.aB, (byte)this.p.f.q, this.p.f.B().t(), this.p.f.b(), 0));
+      if(this.minecraft.f.F) {
+         ahv var1 = (ahv)this.minecraft.h;
+         var1.cl.c(new kx(var1.aB, (byte)this.minecraft.f.q, this.minecraft.f.B().getGenerator(), this.minecraft.f.b(), 0));
       } else {
-         this.p.a((vp)null);
-         this.p.a(this.p.f.F, 0, true);
+         this.minecraft.a((GUIManager)null);
+         this.minecraft.a(this.minecraft.f.F, 0, true);
       }
 
    }
@@ -62,13 +62,13 @@ public class c extends vp {
             while((var1 = var4.readLine()) != null) {
                String var7;
                String var8;
-               for(var1 = var1.replaceAll("PLAYERNAME", this.p.k.b); var1.indexOf(var2) >= 0; var1 = var7 + "§f§k" + "XXXXXXXX".substring(0, var5.nextInt(4) + 3) + var8) {
+               for(var1 = var1.replaceAll("PLAYERNAME", this.minecraft.credentials.username); var1.indexOf(var2) >= 0; var1 = var7 + "§f§k" + "XXXXXXXX".substring(0, var5.nextInt(4) + 3) + var8) {
                   var6 = var1.indexOf(var2);
                   var7 = var1.substring(0, var6);
                   var8 = var1.substring(var6 + var2.length());
                }
 
-               this.b.addAll(this.p.q.c(var1, var3));
+               this.b.addAll(this.minecraft.q.c(var1, var3));
                this.b.add("");
             }
 
@@ -79,9 +79,9 @@ public class c extends vp {
             var4 = new BufferedReader(new InputStreamReader(c.class.getResourceAsStream("/mojang/title/credits.txt"), Charset.forName("UTF-8")));
 
             while((var1 = var4.readLine()) != null) {
-               var1 = var1.replaceAll("PLAYERNAME", this.p.k.b);
+               var1 = var1.replaceAll("PLAYERNAME", this.minecraft.credentials.username);
                var1 = var1.replaceAll("\t", "    ");
-               this.b.addAll(this.p.q.c(var1, var3));
+               this.b.addAll(this.minecraft.q.c(var1, var3));
                this.b.add("");
             }
 
@@ -93,11 +93,11 @@ public class c extends vp {
       }
    }
 
-   protected void a(abp var1) {}
+   protected void a(Button var1) {}
 
    private void b(int var1, int var2, float var3) {
-      adz var4 = adz.a;
-      GL11.glBindTexture(3553, this.p.p.b("%blur%/mojang.gui/background.png"));
+      Tessalator var4 = Tessalator.a;
+      GL11.glBindTexture(3553, this.minecraft.p.b("%blur%/mojang.gui/background.png"));
       var4.b();
       var4.a(1.0F, 1.0F, 1.0F, 1.0F);
       int var5 = this.q;
@@ -127,14 +127,14 @@ public class c extends vp {
 
    public void a(int var1, int var2, float var3) {
       this.b(var1, var2, var3);
-      adz var4 = adz.a;
+      Tessalator var4 = Tessalator.a;
       short var5 = 274;
       int var6 = this.q / 2 - var5 / 2;
       int var7 = this.r + 50;
       float var8 = -((float)this.a + var3) * this.d;
       GL11.glPushMatrix();
       GL11.glTranslatef(0.0F, var8, 0.0F);
-      GL11.glBindTexture(3553, this.p.p.b("/mojang/title/mclogo.png"));
+      GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/mclogo.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.b(var6, var7, 0, 0, 155, 44);
       this.b(var6 + 155, var7, 0, 45, 155, 44);
@@ -166,7 +166,7 @@ public class c extends vp {
       }
 
       GL11.glPopMatrix();
-      GL11.glBindTexture(3553, this.p.p.b("%blur%/mojang.misc/vignette.png"));
+      GL11.glBindTexture(3553, this.minecraft.p.b("%blur%/mojang.misc/vignette.png"));
       GL11.glEnable(3042);
       GL11.glBlendFunc(0, 769);
       var4.b();

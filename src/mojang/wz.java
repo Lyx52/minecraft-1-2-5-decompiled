@@ -15,11 +15,11 @@ public class wz extends abs {
 
    public wz() {}
 
-   public wz(nn var1) {
+   public wz(BaseEntity var1) {
       this.a = var1.f;
-      this.b = gk.c(var1.o * 32.0D);
-      this.c = gk.c(var1.p * 32.0D);
-      this.d = gk.c(var1.q * 32.0D);
+      this.b = Utils.c(var1.o * 32.0D);
+      this.c = Utils.c(var1.p * 32.0D);
+      this.d = Utils.c(var1.q * 32.0D);
       if(var1 instanceof d) {
          this.e = 1;
       }

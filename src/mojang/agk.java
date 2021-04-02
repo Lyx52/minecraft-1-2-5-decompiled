@@ -6,25 +6,25 @@ public abstract class agk extends mi {
    private String b;
 
 
-   public agk(vp var1, String var2, int var3) {
-      super(var1, adn.a().b("chat.link.confirm"), var2, var3);
-      adn var4 = adn.a();
-      this.c = var4.b("mojang.gui.yes");
-      this.d = var4.b("mojang.gui.no");
-      this.b = var4.b("chat.copy");
-      this.a = var4.b("chat.link.warning");
+   public agk(GUIManager var1, String var2, int var3) {
+      super(var1, LocalizationManager.getInstance().getLocaleStringByName("chat.link.confirm"), var2, var3);
+      LocalizationManager var4 = LocalizationManager.getInstance();
+      this.c = var4.getLocaleStringByName("mojang.gui.yes");
+      this.d = var4.getLocaleStringByName("mojang.gui.no");
+      this.b = var4.getLocaleStringByName("chat.copy");
+      this.a = var4.getLocaleStringByName("chat.link.warning");
    }
 
    public void c() {
-      this.s.add(new abp(0, this.q / 3 - 83 + 0, this.r / 6 + 96, 100, 20, this.c));
-      this.s.add(new abp(2, this.q / 3 - 83 + 105, this.r / 6 + 96, 100, 20, this.b));
-      this.s.add(new abp(1, this.q / 3 - 83 + 210, this.r / 6 + 96, 100, 20, this.d));
+      this.buttonList.add(new Button(0, this.q / 3 - 83 + 0, this.r / 6 + 96, 100, 20, this.c));
+      this.buttonList.add(new Button(2, this.q / 3 - 83 + 105, this.r / 6 + 96, 100, 20, this.b));
+      this.buttonList.add(new Button(1, this.q / 3 - 83 + 210, this.r / 6 + 96, 100, 20, this.d));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 2) {
          this.d();
-         super.a((abp)this.s.get(1));
+         super.a((Button)this.buttonList.get(1));
       } else {
          super.a(var1);
       }

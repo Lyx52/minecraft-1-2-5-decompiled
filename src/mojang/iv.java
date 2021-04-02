@@ -4,14 +4,14 @@ import org.lwjgl.opengl.GL11;
 
 public class iv extends um {
 
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("NM > NN");
       this.a("/mojang/item/arrows.png");
       GL11.glPushMatrix();
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       GL11.glRotatef(var1.w + (var1.u - var1.w) * var9 - 90.0F, 0.0F, 1.0F, 0.0F);
       GL11.glRotatef(var1.x + (var1.v - var1.x) * var9, 0.0F, 0.0F, 1.0F);
-      adz var10 = adz.a;
+      Tessalator var10 = Tessalator.a;
       byte var11 = 0;
       float var12 = 0.0F;
       float var13 = 0.5F;
@@ -23,9 +23,9 @@ public class iv extends um {
       float var19 = (float)(10 + var11 * 10) / 32.0F;
       float var20 = 0.05625F;
       GL11.glEnable('\u803a');
-      float var21 = (float)((nm)var1).b - var9;
+      float var21 = (float)((Arrow)var1).b - var9;
       if(var21 > 0.0F) {
-         float var22 = -gk.a(var21 * 3.0F) * var21;
+         float var22 = -Utils.sin(var21 * 3.0F) * var21;
          GL11.glRotatef(var22, 0.0F, 0.0F, 1.0F);
       }
 

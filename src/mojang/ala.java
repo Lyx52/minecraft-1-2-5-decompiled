@@ -30,26 +30,26 @@ class ala extends Thread {
             return;
          }
 
-         ajy.b(this.d).c(new jf(this.a.k.b, this.b, this.c));
+         ajy.b(this.d).c(new jf(this.a.credentials.username, this.b, this.c));
       } catch (UnknownHostException var2) {
          if(ajy.a(this.d)) {
             return;
          }
 
-         this.a.a((vp)(new dw("connect.failed", "disconnect.genericReason", new Object[]{"Unknown host \'" + this.b + "\'"})));
+         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{"Unknown host \'" + this.b + "\'"})));
       } catch (ConnectException var3) {
          if(ajy.a(this.d)) {
             return;
          }
 
-         this.a.a((vp)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var3.getMessage()})));
+         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var3.getMessage()})));
       } catch (Exception var4) {
          if(ajy.a(this.d)) {
             return;
          }
 
          var4.printStackTrace();
-         this.a.a((vp)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var4.toString()})));
+         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var4.toString()})));
       }
 
    }

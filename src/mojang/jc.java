@@ -28,17 +28,17 @@ public class jc implements rw {
    }
 
    public void c(String var1) {
-      if(!this.b.L) {
+      if(!this.b.running) {
          if(!this.e) {
             throw new ru();
          }
       } else {
          this.c = var1;
-         agd var2 = new agd(this.b.A, this.b.d, this.b.e);
+         WindowScaler var2 = new WindowScaler(this.b.options, this.b.width, this.b.height);
          GL11.glClear(256);
          GL11.glMatrixMode(5889);
          GL11.glLoadIdentity();
-         GL11.glOrtho(0.0D, var2.a, var2.b, 0.0D, 100.0D, 300.0D);
+         GL11.glOrtho(0.0D, var2.widthScaled, var2.heightScaled, 0.0D, 100.0D, 300.0D);
          GL11.glMatrixMode(5888);
          GL11.glLoadIdentity();
          GL11.glTranslatef(0.0F, 0.0F, -200.0F);
@@ -46,7 +46,7 @@ public class jc implements rw {
    }
 
    public void d(String var1) {
-      if(!this.b.L) {
+      if(!this.b.running) {
          if(!this.e) {
             throw new ru();
          }
@@ -59,7 +59,7 @@ public class jc implements rw {
    }
 
    public void a(int var1) {
-      if(!this.b.L) {
+      if(!this.b.running) {
          if(!this.e) {
             throw new ru();
          }
@@ -67,18 +67,18 @@ public class jc implements rw {
          long var2 = System.currentTimeMillis();
          if(var2 - this.d >= 100L) {
             this.d = var2;
-            agd var4 = new agd(this.b.A, this.b.d, this.b.e);
-            int var5 = var4.a();
-            int var6 = var4.b();
+            WindowScaler var4 = new WindowScaler(this.b.options, this.b.width, this.b.height);
+            int var5 = var4.getWidth();
+            int var6 = var4.getHeight();
             GL11.glClear(256);
             GL11.glMatrixMode(5889);
             GL11.glLoadIdentity();
-            GL11.glOrtho(0.0D, var4.a, var4.b, 0.0D, 100.0D, 300.0D);
+            GL11.glOrtho(0.0D, var4.widthScaled, var4.heightScaled, 0.0D, 100.0D, 300.0D);
             GL11.glMatrixMode(5888);
             GL11.glLoadIdentity();
             GL11.glTranslatef(0.0F, 0.0F, -200.0F);
             GL11.glClear(16640);
-            adz var7 = adz.a;
+            Tessalator var7 = Tessalator.a;
             int var8 = this.b.p.b("/mojang/gui/background.png");
             GL11.glBindTexture(3553, var8);
             float var9 = 32.0F;

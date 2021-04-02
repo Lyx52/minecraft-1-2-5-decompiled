@@ -8,7 +8,7 @@ public final class aan {
    public int a;
    public int b;
    public int c;
-   public ady d;
+   public CompundTag d;
    private int e;
 
 
@@ -43,7 +43,7 @@ public final class aan {
       this.e = var3;
    }
 
-   public static aan a(ady var0) {
+   public static aan a(CompundTag var0) {
       aan var1 = new aan();
       var1.c(var0);
       return var1.a() != null?var1:null;
@@ -56,7 +56,7 @@ public final class aan {
    public aan a(int var1) {
       aan var2 = new aan(this.c, var1, this.e);
       if(this.d != null) {
-         var2.d = (ady)this.d.b();
+         var2.d = (CompundTag)this.d.b();
       }
 
       this.a -= var1;
@@ -71,7 +71,7 @@ public final class aan {
       return this.a().g(this);
    }
 
-   public boolean a(yw var1, xd var2, int var3, int var4, int var5, int var6) {
+   public boolean a(Player var1, World var2, int var3, int var4, int var5, int var6) {
       boolean var7 = this.a().a(this, var1, var2, var3, var4, var5, var6);
       if(var7) {
          var1.a(gv.E[this.c], 1);
@@ -84,31 +84,31 @@ public final class aan {
       return this.a().a(this, var1);
    }
 
-   public aan a(xd var1, yw var2) {
+   public aan a(World var1, Player var2) {
       return this.a().a(this, var1, var2);
    }
 
-   public aan b(xd var1, yw var2) {
+   public aan b(World var1, Player var2) {
       return this.a().b(this, var1, var2);
    }
 
-   public ady b(ady var1) {
-      var1.a("id", (short)this.c);
-      var1.a("Count", (byte)this.a);
-      var1.a("Damage", (short)this.e);
+   public CompundTag b(CompundTag var1) {
+      var1.addShort("id", (short)this.c);
+      var1.addByte("Count", (byte)this.a);
+      var1.addShort("Damage", (short)this.e);
       if(this.d != null) {
-         var1.a("tag", (gh)this.d);
+         var1.addBaseTag("tag", (BaseTag)this.d);
       }
 
       return var1;
    }
 
-   public void c(ady var1) {
-      this.c = var1.e("id");
-      this.a = var1.d("Count");
-      this.e = var1.e("Damage");
-      if(var1.c("tag")) {
-         this.d = var1.m("tag");
+   public void c(CompundTag var1) {
+      this.c = var1.getShort("id");
+      this.a = var1.getByte("Count");
+      this.e = var1.getShort("Damage");
+      if(var1.containsKey("tag")) {
+         this.d = var1.getCompundTag("tag");
       }
 
    }
@@ -149,10 +149,10 @@ public final class aan {
       return yr.e[this.c].h();
    }
 
-   public void a(int var1, acq var2) {
+   public void a(int var1, Mob var2) {
       if(this.e()) {
-         if(var1 > 0 && var2 instanceof yw) {
-            int var3 = ais.c(((yw)var2).ap);
+         if(var1 > 0 && var2 instanceof Player) {
+            int var3 = ais.c(((Player)var2).ap);
             if(var3 > 0 && var2.k.r.nextInt(var3 + 1) > 0) {
                return;
             }
@@ -161,8 +161,8 @@ public final class aan {
          this.e += var1;
          if(this.e > this.j()) {
             var2.c(this);
-            if(var2 instanceof yw) {
-               ((yw)var2).a(gv.F[this.c], 1);
+            if(var2 instanceof Player) {
+               ((Player)var2).a(gv.F[this.c], 1);
             }
 
             --this.a;
@@ -176,15 +176,15 @@ public final class aan {
       }
    }
 
-   public void a(acq var1, yw var2) {
-      boolean var3 = yr.e[this.c].a(this, var1, (acq)var2);
+   public void a(Mob var1, Player var2) {
+      boolean var3 = yr.e[this.c].a(this, var1, (Mob)var2);
       if(var3) {
          var2.a(gv.E[this.c], 1);
       }
 
    }
 
-   public void a(int var1, int var2, int var3, int var4, yw var5) {
+   public void a(int var1, int var2, int var3, int var4, Player var5) {
       boolean var6 = yr.e[this.c].a(this, var1, var2, var3, var4, var5);
       if(var6) {
          var5.a(gv.E[this.c], 1);
@@ -192,7 +192,7 @@ public final class aan {
 
    }
 
-   public int a(nn var1) {
+   public int a(BaseEntity var1) {
       return yr.e[this.c].a(var1);
    }
 
@@ -200,16 +200,16 @@ public final class aan {
       return yr.e[this.c].a(var1);
    }
 
-   public void a(yw var1) {}
+   public void a(Player var1) {}
 
-   public void a(acq var1) {
+   public void a(Mob var1) {
       yr.e[this.c].a(this, var1);
    }
 
    public aan k() {
       aan var1 = new aan(this.c, this.a, this.e);
       if(this.d != null) {
-         var1.d = (ady)this.d.b();
+         var1.d = (CompundTag)this.d.b();
          if(!var1.d.equals(this.d)) {
             return var1;
          }
@@ -242,7 +242,7 @@ public final class aan {
       return this.a + "x" + yr.e[this.c].e() + "@" + this.e;
    }
 
-   public void a(xd var1, nn var2, int var3, boolean var4) {
+   public void a(World var1, BaseEntity var2, int var3, boolean var4) {
       if(this.b > 0) {
          --this.b;
       }
@@ -250,7 +250,7 @@ public final class aan {
       yr.e[this.c].a(this, var1, var2, var3, var4);
    }
 
-   public void a(xd var1, yw var2, int var3) {
+   public void a(World var1, Player var2, int var3) {
       var2.a(gv.D[this.c], var3);
       yr.e[this.c].c(this, var1, var2);
    }
@@ -267,7 +267,7 @@ public final class aan {
       return this.a().c(this);
    }
 
-   public void b(xd var1, yw var2, int var3) {
+   public void b(World var1, Player var2, int var3) {
       this.a().a(this, var1, var2, var3);
    }
 
@@ -275,15 +275,15 @@ public final class aan {
       return this.d != null;
    }
 
-   public ady o() {
+   public CompundTag o() {
       return this.d;
    }
 
-   public no p() {
-      return this.d == null?null:(no)this.d.b("ench");
+   public ListTag p() {
+      return this.d == null?null:(ListTag)this.d.getBaseTag("ench");
    }
 
-   public void d(ady var1) {
+   public void d(CompundTag var1) {
       this.d = var1;
    }
 
@@ -293,11 +293,11 @@ public final class aan {
       var1.add(var2.d(this));
       var2.a(this, (List)var1);
       if(this.n()) {
-         no var3 = this.p();
+         ListTag var3 = this.p();
          if(var3 != null) {
             for(int var4 = 0; var4 < var3.d(); ++var4) {
-               short var5 = ((ady)var3.a(var4)).e("id");
-               short var6 = ((ady)var3.a(var4)).e("lvl");
+               short var5 = ((CompundTag)var3.a(var4)).getShort("id");
+               short var6 = ((CompundTag)var3.a(var4)).getShort("lvl");
                if(jt.a[var5] != null) {
                   var1.add(jt.a[var5].c(var6));
                }
@@ -322,21 +322,21 @@ public final class aan {
 
    public void a(jt var1, int var2) {
       if(this.d == null) {
-         this.d(new ady());
+         this.d(new CompundTag());
       }
 
-      if(!this.d.c("ench")) {
-         this.d.a("ench", (gh)(new no("ench")));
+      if(!this.d.containsKey("ench")) {
+         this.d.addBaseTag("ench", (BaseTag)(new ListTag("ench")));
       }
 
-      no var3 = (no)this.d.b("ench");
-      ady var4 = new ady();
-      var4.a("id", (short)var1.w);
-      var4.a("lvl", (short)((byte)var2));
-      var3.a((gh)var4);
+      ListTag var3 = (ListTag)this.d.getBaseTag("ench");
+      CompundTag var4 = new CompundTag();
+      var4.addShort("id", (short)var1.w);
+      var4.addShort("lvl", (short)((byte)var2));
+      var3.a((BaseTag)var4);
    }
 
    public boolean u() {
-      return this.d != null && this.d.c("ench");
+      return this.d != null && this.d.containsKey("ench");
    }
 }

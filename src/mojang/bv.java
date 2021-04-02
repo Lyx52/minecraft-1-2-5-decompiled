@@ -23,8 +23,8 @@ public class bv extends tt {
       for(int var1 = 0; var1 < 16; ++var1) {
          for(var2 = 0; var2 < 16; ++var2) {
             var3 = 0.0F;
-            int var4 = (int)(gk.a((float)var2 * 3.1415927F * 2.0F / 16.0F) * 1.2F);
-            var5 = (int)(gk.a((float)var1 * 3.1415927F * 2.0F / 16.0F) * 1.2F);
+            int var4 = (int)(Utils.sin((float)var2 * 3.1415927F * 2.0F / 16.0F) * 1.2F);
+            var5 = (int)(Utils.sin((float)var1 * 3.1415927F * 2.0F / 16.0F) * 1.2F);
 
             for(var6 = var1 - 1; var6 <= var1 + 1; ++var6) {
                for(var7 = var2 - 1; var7 <= var2 + 1; ++var7) {

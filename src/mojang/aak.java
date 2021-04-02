@@ -5,12 +5,12 @@ public class aak implements io {
    public aan[] a = new aan[36];
    public aan[] b = new aan[4];
    public int c = 0;
-   public yw d;
+   public Player d;
    private aan f;
    public boolean e = false;
 
 
-   public aak(yw var1) {
+   public aak(Player var1) {
       this.d = var1;
    }
 
@@ -140,7 +140,7 @@ public class aak implements io {
             if(this.a[var4] == null) {
                this.a[var4] = new aan(var2, 0, var1.i());
                if(var1.n()) {
-                  this.a[var4].d((ady)var1.o().b());
+                  this.a[var4].d((CompundTag)var1.o().b());
                }
             }
 
@@ -283,37 +283,37 @@ public class aak implements io {
       return var2;
    }
 
-   public no a(no var1) {
+   public ListTag a(ListTag var1) {
       int var2;
-      ady var3;
+      CompundTag var3;
       for(var2 = 0; var2 < this.a.length; ++var2) {
          if(this.a[var2] != null) {
-            var3 = new ady();
-            var3.a("Slot", (byte)var2);
+            var3 = new CompundTag();
+            var3.addByte("Slot", (byte)var2);
             this.a[var2].b(var3);
-            var1.a((gh)var3);
+            var1.a((BaseTag)var3);
          }
       }
 
       for(var2 = 0; var2 < this.b.length; ++var2) {
          if(this.b[var2] != null) {
-            var3 = new ady();
-            var3.a("Slot", (byte)(var2 + 100));
+            var3 = new CompundTag();
+            var3.addByte("Slot", (byte)(var2 + 100));
             this.b[var2].b(var3);
-            var1.a((gh)var3);
+            var1.a((BaseTag)var3);
          }
       }
 
       return var1;
    }
 
-   public void b(no var1) {
+   public void b(ListTag var1) {
       this.a = new aan[36];
       this.b = new aan[4];
 
       for(int var2 = 0; var2 < var1.d(); ++var2) {
-         ady var3 = (ady)var1.a(var2);
-         int var4 = var3.d("Slot") & 255;
+         CompundTag var3 = (CompundTag)var1.a(var2);
+         int var4 = var3.getByte("Slot") & 255;
          aan var5 = aan.a(var3);
          if(var5 != null) {
             if(var4 >= 0 && var4 < this.a.length) {
@@ -350,7 +350,7 @@ public class aak implements io {
       return 64;
    }
 
-   public int a(nn var1) {
+   public int a(BaseEntity var1) {
       aan var2 = this.k_(this.c);
       return var2 != null?var2.a(var1):1;
    }
@@ -430,7 +430,7 @@ public class aak implements io {
       return this.f;
    }
 
-   public boolean a_(yw var1) {
+   public boolean a_(Player var1) {
       return this.d.G?false:var1.f(this.d) <= 64.0D;
    }
 

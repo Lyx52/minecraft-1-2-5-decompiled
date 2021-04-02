@@ -1,15 +1,15 @@
 package mojang;
 
-public class dv implements ali {
+public class dv implements WorldInterface {
 
    private int a;
    private int b;
    private ack[][] c;
    private boolean d;
-   private xd e;
+   private World e;
 
 
-   public dv(xd var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   public dv(World var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       this.e = var1;
       this.a = var2 >> 4;
       this.b = var4 >> 4;

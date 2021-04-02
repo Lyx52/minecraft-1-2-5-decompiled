@@ -13,12 +13,12 @@ public class eh extends li {
       this.b = var2;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       float var6 = var2.nextFloat() * 3.1415927F;
-      double var7 = (double)((float)(var3 + 8) + gk.a(var6) * (float)this.b / 8.0F);
-      double var9 = (double)((float)(var3 + 8) - gk.a(var6) * (float)this.b / 8.0F);
-      double var11 = (double)((float)(var5 + 8) + gk.b(var6) * (float)this.b / 8.0F);
-      double var13 = (double)((float)(var5 + 8) - gk.b(var6) * (float)this.b / 8.0F);
+      double var7 = (double)((float)(var3 + 8) + Utils.sin(var6) * (float)this.b / 8.0F);
+      double var9 = (double)((float)(var3 + 8) - Utils.sin(var6) * (float)this.b / 8.0F);
+      double var11 = (double)((float)(var5 + 8) + Utils.cos(var6) * (float)this.b / 8.0F);
+      double var13 = (double)((float)(var5 + 8) - Utils.cos(var6) * (float)this.b / 8.0F);
       double var15 = (double)(var4 + var2.nextInt(3) - 2);
       double var17 = (double)(var4 + var2.nextInt(3) - 2);
 
@@ -27,14 +27,14 @@ public class eh extends li {
          double var22 = var15 + (var17 - var15) * (double)var19 / (double)this.b;
          double var24 = var11 + (var13 - var11) * (double)var19 / (double)this.b;
          double var26 = var2.nextDouble() * (double)this.b / 16.0D;
-         double var28 = (double)(gk.a((float)var19 * 3.1415927F / (float)this.b) + 1.0F) * var26 + 1.0D;
-         double var30 = (double)(gk.a((float)var19 * 3.1415927F / (float)this.b) + 1.0F) * var26 + 1.0D;
-         int var32 = gk.c(var20 - var28 / 2.0D);
-         int var33 = gk.c(var22 - var30 / 2.0D);
-         int var34 = gk.c(var24 - var28 / 2.0D);
-         int var35 = gk.c(var20 + var28 / 2.0D);
-         int var36 = gk.c(var22 + var30 / 2.0D);
-         int var37 = gk.c(var24 + var28 / 2.0D);
+         double var28 = (double)(Utils.sin((float)var19 * 3.1415927F / (float)this.b) + 1.0F) * var26 + 1.0D;
+         double var30 = (double)(Utils.sin((float)var19 * 3.1415927F / (float)this.b) + 1.0F) * var26 + 1.0D;
+         int var32 = Utils.c(var20 - var28 / 2.0D);
+         int var33 = Utils.c(var22 - var30 / 2.0D);
+         int var34 = Utils.c(var24 - var28 / 2.0D);
+         int var35 = Utils.c(var20 + var28 / 2.0D);
+         int var36 = Utils.c(var22 + var30 / 2.0D);
+         int var37 = Utils.c(var24 + var28 / 2.0D);
 
          for(int var38 = var32; var38 <= var35; ++var38) {
             double var39 = ((double)var38 + 0.5D - var20) / (var28 / 2.0D);

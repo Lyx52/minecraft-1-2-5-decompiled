@@ -2,11 +2,11 @@ package mojang;
 
 public class ajv extends yu {
 
-   private yw a;
+   private Player a;
    private int f;
 
 
-   public ajv(yw var1, io var2, int var3, int var4, int var5) {
+   public ajv(Player var1, io var2, int var3, int var4, int var5) {
       super(var2, var3, var4, var5);
       this.a = var1;
    }

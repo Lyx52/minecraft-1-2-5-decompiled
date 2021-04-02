@@ -17,7 +17,7 @@ public class ir extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       if(!var1.F) {
          if(this.a && !var1.x(var2, var3, var4)) {
             var1.a(var2, var3, var4, this.bO, 4);
@@ -28,7 +28,7 @@ public class ir extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       if(!var1.F) {
          if(this.a && !var1.x(var2, var3, var4)) {
             var1.a(var2, var3, var4, this.bO, 4);
@@ -39,7 +39,7 @@ public class ir extends pb {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F && this.a && !var1.x(var2, var3, var4)) {
          var1.g(var2, var3, var4, bL.bO);
       }

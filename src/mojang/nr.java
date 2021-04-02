@@ -17,11 +17,11 @@ public class nr extends pb {
       this.f(255);
    }
 
-   public void a(ali var1, int var2, int var3, int var4) {
+   public void a(WorldInterface var1, int var2, int var3, int var4) {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return super.c(var1, var2, var3, var4);
    }
 
@@ -37,11 +37,11 @@ public class nr extends pb {
       return 10;
    }
 
-   public boolean a(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean a(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return super.a(var1, var2, var3, var4, var5);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
+   public void a(World var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
       int var7 = var1.e(var2, var3, var4);
       int var8 = var7 & 3;
       float var9 = 0.0F;
@@ -74,27 +74,27 @@ public class nr extends pb {
       this.a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       this.a.b(var1, var2, var3, var4, var5);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {
+   public void a(World var1, int var2, int var3, int var4, Player var5) {
       this.a.a(var1, var2, var3, var4, var5);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, int var5) {
+   public void b(World var1, int var2, int var3, int var4, int var5) {
       this.a.b(var1, var2, var3, var4, var5);
    }
 
-   public int d(ali var1, int var2, int var3, int var4) {
+   public int d(WorldInterface var1, int var2, int var3, int var4) {
       return this.a.d(var1, var2, var3, var4);
    }
 
-   public float e(ali var1, int var2, int var3, int var4) {
+   public float e(WorldInterface var1, int var2, int var3, int var4) {
       return this.a.e(var1, var2, var3, var4);
    }
 
-   public float a(nn var1) {
+   public float a(BaseEntity var1) {
       return this.a.a(var1);
    }
 
@@ -114,11 +114,11 @@ public class nr extends pb {
       return this.a.e();
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       return this.a.d(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5, bo var6) {
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5, bo var6) {
       this.a.a(var1, var2, var3, var4, var5, var6);
    }
 
@@ -130,37 +130,37 @@ public class nr extends pb {
       return this.a.a(var1, var2);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       return this.a.e(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4, 0);
       this.a.a(var1, var2, var3, var4);
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       this.a.b_(var1, var2, var3, var4);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, nn var5) {
+   public void b(World var1, int var2, int var3, int var4, BaseEntity var5) {
       this.a.b(var1, var2, var3, var4, var5);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       this.a.a(var1, var2, var3, var4, var5);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       return this.a.b(var1, var2, var3, var4, var5);
    }
 
-   public void b(xd var1, int var2, int var3, int var4) {
+   public void b(World var1, int var2, int var3, int var4) {
       this.a.b(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
-      int var6 = gk.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
+      int var6 = Utils.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
       int var7 = var1.e(var2, var3, var4) & 4;
       if(var6 == 0) {
          var1.f(var2, var3, var4, 2 | var7);
@@ -180,7 +180,7 @@ public class nr extends pb {
 
    }
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {
+   public void c(World var1, int var2, int var3, int var4, int var5) {
       if(var5 == 0) {
          int var6 = var1.e(var2, var3, var4);
          var1.f(var2, var3, var4, var6 | 4);

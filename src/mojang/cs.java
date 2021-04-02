@@ -11,7 +11,7 @@ public class cs extends li {
       this.a = var1;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       var3 -= 8;
 
       for(var5 -= 8; var4 > 5 && var1.i(var3, var4, var5); --var4) {

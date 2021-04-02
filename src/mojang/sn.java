@@ -25,7 +25,7 @@ public class sn extends agy {
       return 22;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       super.a(var1, var2, var3, var4);
       this.h(var1, var2, var3, var4);
       int var5 = var1.a(var2, var3, var4 - 1);
@@ -50,13 +50,13 @@ public class sn extends agy {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {
       int var6 = var1.a(var2, var3, var4 - 1);
       int var7 = var1.a(var2, var3, var4 + 1);
       int var8 = var1.a(var2 - 1, var3, var4);
       int var9 = var1.a(var2 + 1, var3, var4);
       byte var10 = 0;
-      int var11 = gk.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
+      int var11 = Utils.c((double)(var5.u * 4.0F / 360.0F) + 0.5D) & 3;
       if(var11 == 0) {
          var10 = 2;
       }
@@ -99,7 +99,7 @@ public class sn extends agy {
 
    }
 
-   public void h(xd var1, int var2, int var3, int var4) {
+   public void h(World var1, int var2, int var3, int var4) {
       if(!var1.F) {
          int var5 = var1.a(var2, var3, var4 - 1);
          int var6 = var1.a(var2, var3, var4 + 1);
@@ -180,7 +180,7 @@ public class sn extends agy {
       }
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       if(var5 == 1) {
          return this.bN - 1;
       } else if(var5 == 0) {
@@ -271,7 +271,7 @@ public class sn extends agy {
       return var1 == 1?this.bN - 1:(var1 == 0?this.bN - 1:(var1 == 3?this.bN + 1:this.bN));
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       int var5 = 0;
       if(var1.a(var2 - 1, var3, var4) == this.bO) {
          ++var5;
@@ -292,11 +292,11 @@ public class sn extends agy {
       return var5 > 1?false:(this.i(var1, var2 - 1, var3, var4)?false:(this.i(var1, var2 + 1, var3, var4)?false:(this.i(var1, var2, var3, var4 - 1)?false:!this.i(var1, var2, var3, var4 + 1))));
    }
 
-   private boolean i(xd var1, int var2, int var3, int var4) {
+   private boolean i(World var1, int var2, int var3, int var4) {
       return var1.a(var2, var3, var4) != this.bO?false:(var1.a(var2 - 1, var3, var4) == this.bO?true:(var1.a(var2 + 1, var3, var4) == this.bO?true:(var1.a(var2, var3, var4 - 1) == this.bO?true:var1.a(var2, var3, var4 + 1) == this.bO)));
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       super.a(var1, var2, var3, var4, var5);
       hb var6 = (hb)var1.b(var2, var3, var4);
       if(var6 != null) {
@@ -305,7 +305,7 @@ public class sn extends agy {
 
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       hb var5 = (hb)var1.b(var2, var3, var4);
       if(var5 != null) {
          for(int var6 = 0; var6 < var5.a(); ++var6) {
@@ -314,21 +314,21 @@ public class sn extends agy {
                float var8 = this.a.nextFloat() * 0.8F + 0.1F;
                float var9 = this.a.nextFloat() * 0.8F + 0.1F;
 
-               fq var12;
-               for(float var10 = this.a.nextFloat() * 0.8F + 0.1F; var7.a > 0; var1.a((nn)var12)) {
+               Item var12;
+               for(float var10 = this.a.nextFloat() * 0.8F + 0.1F; var7.a > 0; var1.a((BaseEntity)var12)) {
                   int var11 = this.a.nextInt(21) + 10;
                   if(var11 > var7.a) {
                      var11 = var7.a;
                   }
 
                   var7.a -= var11;
-                  var12 = new fq(var1, (double)((float)var2 + var8), (double)((float)var3 + var9), (double)((float)var4 + var10), new aan(var7.c, var11, var7.i()));
+                  var12 = new Item(var1, (double)((float)var2 + var8), (double)((float)var3 + var9), (double)((float)var4 + var10), new aan(var7.c, var11, var7.i()));
                   float var13 = 0.05F;
                   var12.r = (double)((float)this.a.nextGaussian() * var13);
                   var12.s = (double)((float)this.a.nextGaussian() * var13 + 0.2F);
                   var12.t = (double)((float)this.a.nextGaussian() * var13);
                   if(var7.n()) {
-                     var12.a.d((ady)var7.o().b());
+                     var12.a.d((CompundTag)var7.o().b());
                   }
                }
             }
@@ -338,7 +338,7 @@ public class sn extends agy {
       super.b_(var1, var2, var3, var4);
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       Object var6 = (hb)var1.b(var2, var3, var4);
       if(var6 == null) {
          return true;
@@ -384,17 +384,17 @@ public class sn extends agy {
       return new hb();
    }
 
-   private static boolean j(xd var0, int var1, int var2, int var3) {
-      Iterator var4 = var0.a(uo.class, wu.b((double)var1, (double)(var2 + 1), (double)var3, (double)(var1 + 1), (double)(var2 + 2), (double)(var3 + 1))).iterator();
+   private static boolean j(World var0, int var1, int var2, int var3) {
+      Iterator var4 = var0.a(Ozelot.class, wu.b((double)var1, (double)(var2 + 1), (double)var3, (double)(var1 + 1), (double)(var2 + 2), (double)(var3 + 1))).iterator();
 
-      uo var6;
+      Ozelot var6;
       do {
          if(!var4.hasNext()) {
             return false;
          }
 
-         nn var5 = (nn)var4.next();
-         var6 = (uo)var5;
+         BaseEntity var5 = (BaseEntity)var4.next();
+         var6 = (Ozelot)var5;
       } while(!var6.af());
 
       return true;

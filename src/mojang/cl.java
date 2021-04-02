@@ -8,11 +8,11 @@ public class cl extends fe {
       super(var1, var2);
    }
 
-   public void a(of var1, double var2, double var4, double var6, float var8, float var9) {
-      super.a((acq)var1, var2, var4, var6, var8, var9);
+   public void a(MushroomCow var1, double var2, double var4, double var6, float var8, float var9) {
+      super.a((Mob)var1, var2, var4, var6, var8, var9);
    }
 
-   protected void a(of var1, float var2) {
+   protected void a(MushroomCow var1, float var2) {
       super.b(var1, var2);
       if(!var1.bi()) {
          this.a("/mojang/terrain.png");

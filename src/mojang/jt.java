@@ -65,7 +65,7 @@ public abstract class jt {
       return 0;
    }
 
-   public int a(int var1, acq var2) {
+   public int a(int var1, Mob var2) {
       return 0;
    }
 

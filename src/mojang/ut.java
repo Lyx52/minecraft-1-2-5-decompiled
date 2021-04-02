@@ -2,20 +2,20 @@ package mojang;
 
 public class ut extends rc {
 
-   xd a;
-   acq b;
-   acq c;
+   World a;
+   Mob b;
+   Mob c;
    int d = 0;
 
 
-   public ut(acq var1) {
+   public ut(Mob var1) {
       this.b = var1;
       this.a = var1.k;
       this.a(3);
    }
 
    public boolean a() {
-      acq var1 = this.b.aT();
+      Mob var1 = this.b.aT();
       if(var1 == null) {
          return false;
       } else {
@@ -49,7 +49,7 @@ public class ut extends rc {
       if(var3 <= var1) {
          if(this.d <= 0) {
             this.d = 20;
-            this.b.c((nn)this.c);
+            this.b.c((BaseEntity)this.c);
          }
       }
    }

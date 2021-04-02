@@ -6,7 +6,7 @@ public class po extends yr {
       super(var1);
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       int var8 = var3.a(var4, var5, var6);
       int var9 = var3.e(var4, var5, var6);
       if(var2.e(var4, var5, var6) && var8 == pb.bI.bO && !amj.e(var9)) {
@@ -109,7 +109,7 @@ public class po extends yr {
       }
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       pl var4 = this.a(var2, var3, false);
       if(var4 != null && var4.a == aat.a) {
          int var5 = var2.a(var4.b, var4.c, var4.d);
@@ -121,11 +121,11 @@ public class po extends yr {
       if(!var2.F) {
          qo var7 = var2.b("Stronghold", (int)var3.o, (int)var3.p, (int)var3.q);
          if(var7 != null) {
-            va var6 = new va(var2, var3.o, var3.p + 1.62D - (double)var3.H, var3.q);
+            EyeOfEnderSignal var6 = new EyeOfEnderSignal(var2, var3.o, var3.p + 1.62D - (double)var3.H, var3.q);
             var6.a((double)var7.a, var7.b, (double)var7.c);
-            var2.a((nn)var6);
+            var2.a((BaseEntity)var6);
             var2.a(var3, "random.bow", 0.5F, 0.4F / (d.nextFloat() * 0.4F + 0.8F));
-            var2.a((yw)null, 1002, (int)var3.o, (int)var3.p, (int)var3.q, 0);
+            var2.a((Player)null, 1002, (int)var3.o, (int)var3.p, (int)var3.q, 0);
             if(!var3.aT.d) {
                --var1.a;
             }

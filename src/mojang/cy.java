@@ -2,11 +2,11 @@ package mojang;
 
 public class cy {
 
-   private static adn a = adn.a();
+   private static LocalizationManager a = LocalizationManager.getInstance();
 
 
    public static String a(String var0) {
-      return a.b(var0);
+      return a.getLocaleStringByName(var0);
    }
 
    public static String a(String var0, Object ... var1) {

@@ -22,7 +22,7 @@ public class gs extends qk {
       return -1;
    }
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       if(!var1.F && var2.av() != null && var2.av().c == yr.be.bQ) {
          var2.a(gv.C[this.bO], 1);
          this.a(var1, var3, var4, var5, new aan(Y, 1, var6));

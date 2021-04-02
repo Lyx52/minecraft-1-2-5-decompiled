@@ -2,13 +2,13 @@ package mojang;
 
 public class bd extends rc {
 
-   private acq a;
+   private Mob a;
    private double b;
    private double c;
    private int d = 0;
 
 
-   public bd(acq var1) {
+   public bd(Mob var1) {
       this.a = var1;
       this.a(3);
    }

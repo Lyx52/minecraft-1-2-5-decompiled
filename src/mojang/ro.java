@@ -4,7 +4,7 @@ import java.util.Random;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-public class ro extends vp {
+public class ro extends GUIManager {
 
    private static final int l = dp.a * 24 - 112;
    private static final int m = dp.b * 24 - 112;
@@ -33,23 +33,23 @@ public class ro extends vp {
    }
 
    public void c() {
-      this.s.clear();
-      this.s.add(new z(1, this.q / 2 + 24, this.r / 2 + 74, 80, 20, cy.a("mojang.gui.done")));
+      this.buttonList.clear();
+      this.buttonList.add(new z(1, this.q / 2 + 24, this.r / 2 + 74, 80, 20, cy.a("mojang.gui.done")));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.f == 1) {
-         this.p.a((vp)null);
-         this.p.g();
+         this.minecraft.a((GUIManager)null);
+         this.minecraft.g();
       }
 
       super.a(var1);
    }
 
    protected void a(char var1, int var2) {
-      if(var2 == this.p.A.s.d) {
-         this.p.a((vp)null);
-         this.p.g();
+      if(var2 == this.minecraft.options.key_inventory.keyCode) {
+         this.minecraft.a((GUIManager)null);
+         this.minecraft.g();
       } else {
          super.a(var1, var2);
       }
@@ -126,8 +126,8 @@ public class ro extends vp {
    }
 
    protected void b(int var1, int var2, float var3) {
-      int var4 = gk.c(this.e + (this.h - this.e) * (double)var3);
-      int var5 = gk.c(this.f + (this.i - this.f) * (double)var3);
+      int var4 = Utils.c(this.e + (this.h - this.e) * (double)var3);
+      int var5 = Utils.c(this.f + (this.i - this.f) * (double)var3);
       if(var4 < l) {
          var4 = l;
       }
@@ -144,8 +144,8 @@ public class ro extends vp {
          var5 = o - 1;
       }
 
-      int var6 = this.p.p.b("/mojang/terrain.png");
-      int var7 = this.p.p.b("/mojang/achievement/bg.png");
+      int var6 = this.minecraft.p.b("/mojang/terrain.png");
+      int var7 = this.minecraft.p.b("/mojang/achievement/bg.png");
       int var8 = (this.q - this.a) / 2;
       int var9 = (this.r - this.b) / 2;
       int var10 = var8 + 16;
@@ -158,7 +158,7 @@ public class ro extends vp {
       GL11.glDisable(2896);
       GL11.glEnable('\u803a');
       GL11.glEnable(2903);
-      this.p.p.b(var6);
+      this.minecraft.p.b(var6);
       int var12 = var4 + 288 >> 4;
       int var13 = var5 + 288 >> 4;
       int var14 = (var4 + 288) % 16;
@@ -256,7 +256,7 @@ public class ro extends vp {
                GL11.glColor4f(var38, var38, var38, 1.0F);
             }
 
-            this.p.p.b(var7);
+            this.minecraft.p.b(var7);
             var39 = var10 + var26;
             var40 = var11 + var27;
             if(var35.g()) {
@@ -273,7 +273,7 @@ public class ro extends vp {
 
             GL11.glEnable(2896);
             GL11.glEnable(2884);
-            var34.a(this.p.q, this.p.p, var35.d, var39 + 3, var40 + 3);
+            var34.a(this.minecraft.q, this.minecraft.p, var35.d, var39 + 3, var40 + 3);
             GL11.glDisable(2896);
             if(!this.x.b(var35)) {
                var34.a = true;
@@ -289,7 +289,7 @@ public class ro extends vp {
       GL11.glDisable(2929);
       GL11.glEnable(3042);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.p.p.b(var7);
+      this.minecraft.p.b(var7);
       this.b(var8, var9, 0, 0, this.a, this.b);
       GL11.glPopMatrix();
       this.g = 0.0F;

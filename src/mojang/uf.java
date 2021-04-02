@@ -24,7 +24,7 @@ public class uf extends kg {
       return (var1 & 3) == 1?gu.a():((var1 & 3) == 2?gu.b():gu.c());
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.e(var2, var3, var4);
       if((var5 & 3) == 1) {
          return gu.a();
@@ -48,7 +48,7 @@ public class uf extends kg {
       }
    }
 
-   public void b_(xd var1, int var2, int var3, int var4) {
+   public void b_(World var1, int var2, int var3, int var4) {
       byte var5 = 1;
       int var6 = var5 + 1;
       if(var1.b(var2 - var6, var3 - var6, var4 - var6, var2 + var6, var3 + var6, var4 + var6)) {
@@ -67,7 +67,7 @@ public class uf extends kg {
 
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       if(!var1.F) {
          int var6 = var1.e(var2, var3, var4);
          if((var6 & 8) != 0 && (var6 & 4) == 0) {
@@ -146,7 +146,7 @@ public class uf extends kg {
       }
    }
 
-   private void h(xd var1, int var2, int var3, int var4) {
+   private void h(World var1, int var2, int var3, int var4) {
       this.a(var1, var2, var3, var4, var1.e(var2, var3, var4), 0);
       var1.g(var2, var3, var4, 0);
    }
@@ -159,7 +159,7 @@ public class uf extends kg {
       return y.bO;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!var1.F) {
          byte var8 = 20;
          if((var5 & 3) == 3) {
@@ -178,7 +178,7 @@ public class uf extends kg {
 
    }
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       if(!var1.F && var2.av() != null && var2.av().c == yr.be.bQ) {
          var2.a(gv.C[this.bO], 1);
          this.a(var1, var3, var4, var5, new aan(K.bO, 1, var6 & 3));
@@ -205,7 +205,7 @@ public class uf extends kg {
       this.bN = this.c + (var1?0:1);
    }
 
-   public void b(xd var1, int var2, int var3, int var4, nn var5) {
+   public void b(World var1, int var2, int var3, int var4, BaseEntity var5) {
       super.b(var1, var2, var3, var4, var5);
    }
 }

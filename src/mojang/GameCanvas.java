@@ -3,23 +3,22 @@ package mojang;
 import java.awt.Canvas;
 import mojang.net.minecraft.client.MinecraftApplet;
 
-public class o extends Canvas {
+public class GameCanvas extends Canvas {
 
-   // $FF: synthetic field
-   final MinecraftApplet a;
+   final MinecraftApplet applet;
 
 
-   public o(MinecraftApplet var1) {
-      this.a = var1;
+   public GameCanvas(MinecraftApplet applet) {
+      this.applet = applet;
    }
 
    public synchronized void addNotify() {
       super.addNotify();
-      this.a.startMainThread();
+      this.applet.startMainThread();
    }
 
    public synchronized void removeNotify() {
-      this.a.b();
+      this.applet.destroy();
       super.removeNotify();
    }
 }

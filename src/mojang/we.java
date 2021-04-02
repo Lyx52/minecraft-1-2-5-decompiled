@@ -18,7 +18,7 @@ public class we extends fe {
       this.i = new xg(0.5F);
    }
 
-   protected int a(yw var1, int var2, float var3) {
+   protected int a(Player var1, int var2, float var3) {
       aan var4 = var1.ap.f(3 - var2);
       if(var4 != null) {
          yr var5 = var4.a();
@@ -45,7 +45,7 @@ public class we extends fe {
       return -1;
    }
 
-   public void a(yw var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(Player var1, double var2, double var4, double var6, float var8, float var9) {
       aan var10 = var1.ap.b();
       this.d.s = this.i.s = this.c.s = var10 != null?1:0;
       if(var10 != null && var1.ai() > 0) {
@@ -63,13 +63,13 @@ public class we extends fe {
          var13 -= 0.125D;
       }
 
-      super.a((acq)var1, var2, var13, var6, var8, var9);
+      super.a((Mob)var1, var2, var13, var6, var8, var9);
       this.d.u = this.i.u = this.c.u = false;
       this.d.t = this.i.t = this.c.t = false;
       this.d.s = this.i.s = this.c.s = 0;
    }
 
-   protected void a(yw var1, double var2, double var4, double var6) {
+   protected void a(Player var1, double var2, double var4, double var6) {
       if(Minecraft.r() && var1 != this.e.h) {
          float var8 = 1.6F;
          float var9 = 0.016666668F * var8;
@@ -96,7 +96,7 @@ public class we extends fe {
                GL11.glDepthMask(false);
                GL11.glEnable(3042);
                GL11.glBlendFunc(770, 771);
-               adz var14 = adz.a;
+               Tessalator var14 = Tessalator.a;
                GL11.glDisable(3553);
                var14.b();
                int var15 = var13.a(var12) / 2;
@@ -119,7 +119,7 @@ public class we extends fe {
 
    }
 
-   protected void a(yw var1, float var2) {
+   protected void a(Player var1, float var2) {
       super.b(var1, var2);
       aan var3 = var1.ap.f(3);
       if(var3 != null && var3.a().bQ < 256) {
@@ -159,12 +159,12 @@ public class we extends fe {
       if(this.a(var1.aC, (String)null)) {
          GL11.glPushMatrix();
          GL11.glTranslatef(0.0F, 0.0F, 0.125F);
-         double var20 = var1.aE + (var1.aH - var1.aE) * (double)var2 - (var1.l + (var1.o - var1.l) * (double)var2);
-         double var23 = var1.aF + (var1.aI - var1.aF) * (double)var2 - (var1.m + (var1.p - var1.m) * (double)var2);
-         double var8 = var1.aG + (var1.aJ - var1.aG) * (double)var2 - (var1.n + (var1.q - var1.n) * (double)var2);
+         double var20 = var1.aE + (var1.aH - var1.aE) * (double)var2 - (var1.sandX + (var1.o - var1.sandX) * (double)var2);
+         double var23 = var1.aF + (var1.aI - var1.aF) * (double)var2 - (var1.sandY + (var1.p - var1.sandY) * (double)var2);
+         double var8 = var1.aG + (var1.aJ - var1.aG) * (double)var2 - (var1.sandZ + (var1.q - var1.sandZ) * (double)var2);
          var10 = var1.be + (var1.bd - var1.be) * var2;
-         double var11 = (double)gk.a(var10 * 3.1415927F / 180.0F);
-         double var13 = (double)(-gk.b(var10 * 3.1415927F / 180.0F));
+         double var11 = (double) Utils.sin(var10 * 3.1415927F / 180.0F);
+         double var13 = (double)(-Utils.cos(var10 * 3.1415927F / 180.0F));
          float var15 = (float)var23 * 10.0F;
          if(var15 < -6.0F) {
             var15 = -6.0F;
@@ -181,7 +181,7 @@ public class we extends fe {
          }
 
          float var18 = var1.aw + (var1.ax - var1.aw) * var2;
-         var15 += gk.a((var1.K + (var1.L - var1.K) * var2) * 6.0F) * 32.0F * var18;
+         var15 += Utils.sin((var1.K + (var1.L - var1.K) * var2) * 6.0F) * 32.0F * var18;
          if(var1.V()) {
             var15 += 25.0F;
          }
@@ -267,7 +267,7 @@ public class we extends fe {
 
    }
 
-   protected void b(yw var1, float var2) {
+   protected void b(Player var1, float var2) {
       float var3 = 0.9375F;
       GL11.glScalef(var3, var3, var3);
    }
@@ -278,7 +278,7 @@ public class we extends fe {
       this.c.f.a(0.0625F);
    }
 
-   protected void b(yw var1, double var2, double var4, double var6) {
+   protected void b(Player var1, double var2, double var4, double var6) {
       if(var1.M() && var1.az()) {
          super.a(var1, var2 + (double)var1.aM, var4 + (double)var1.aN, var6 + (double)var1.aO);
       } else {
@@ -287,7 +287,7 @@ public class we extends fe {
 
    }
 
-   protected void a(yw var1, float var2, float var3, float var4) {
+   protected void a(Player var1, float var2, float var3, float var4) {
       if(var1.M() && var1.az()) {
          GL11.glRotatef(var1.ay(), 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(this.a(var1), 0.0F, 0.0F, 1.0F);

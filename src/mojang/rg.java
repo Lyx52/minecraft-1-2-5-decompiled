@@ -2,7 +2,7 @@ package mojang;
 
 public class rg extends rt {
 
-   public rg(xd var1, double var2, double var4, double var6) {
+   public rg(World var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6, 0.0D, 0.0D, 0.0D);
       this.r *= 0.30000001192092896D;
       this.s = (double)((float)Math.random() * 0.2F + 0.1F);
@@ -17,9 +17,9 @@ public class rg extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       this.s -= (double)this.an;
       this.b(this.r, this.s, this.t);
       this.r *= 0.9800000190734863D;
@@ -38,9 +38,9 @@ public class rg extends rt {
          this.t *= 0.699999988079071D;
       }
 
-      acn var1 = this.k.f(gk.c(this.o), gk.c(this.p), gk.c(this.q));
+      acn var1 = this.k.f(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q));
       if(var1.d() || var1.a()) {
-         double var2 = (double)((float)(gk.c(this.p) + 1) - agv.e(this.k.e(gk.c(this.o), gk.c(this.p), gk.c(this.q))));
+         double var2 = (double)((float)(Utils.c(this.p) + 1) - agv.e(this.k.e(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q))));
          if(this.p < var2) {
             this.A();
          }

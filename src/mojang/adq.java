@@ -5,7 +5,7 @@ import java.util.List;
 
 public class adq {
 
-   private xd a;
+   private World a;
    private boolean b = false;
    private int c = -1;
    private int d;
@@ -16,7 +16,7 @@ public class adq {
    private int i;
 
 
-   public adq(xd var1) {
+   public adq(World var1) {
       this.a = var1;
    }
 
@@ -78,7 +78,7 @@ public class adq {
       Iterator var2 = var1.iterator();
 
       while(var2.hasNext()) {
-         yw var3 = (yw)var2.next();
+         Player var3 = (Player)var2.next();
          this.f = this.a.A.a((int)var3.o, (int)var3.p, (int)var3.q, 1);
          if(this.f != null && this.f.c() >= 10 && this.f.d() >= 20 && this.f.e() >= 20) {
             uh var4 = this.f.a();
@@ -88,9 +88,9 @@ public class adq {
 
             while(true) {
                if(var7 < 10) {
-                  this.g = var4.a + (int)((double)(gk.b(this.a.r.nextFloat() * 3.1415927F * 2.0F) * var5) * 0.9D);
+                  this.g = var4.a + (int)((double)(Utils.cos(this.a.r.nextFloat() * 3.1415927F * 2.0F) * var5) * 0.9D);
                   this.h = var4.b;
-                  this.i = var4.c + (int)((double)(gk.a(this.a.r.nextFloat() * 3.1415927F * 2.0F) * var5) * 0.9D);
+                  this.i = var4.c + (int)((double)(Utils.sin(this.a.r.nextFloat() * 3.1415927F * 2.0F) * var5) * 0.9D);
                   var6 = false;
                   Iterator var8 = this.a.A.b().iterator();
 
@@ -131,16 +131,16 @@ public class adq {
       if(var1 == null) {
          return false;
       } else {
-         ajg var2;
+         Zombie var2;
          try {
-            var2 = new ajg(this.a);
+            var2 = new Zombie(this.a);
          } catch (Exception var4) {
             var4.printStackTrace();
             return false;
          }
 
          var2.c(var1.a, var1.b, var1.c, this.a.r.nextFloat() * 360.0F, 0.0F);
-         this.a.a((nn)var2);
+         this.a.a((BaseEntity)var2);
          uh var3 = this.f.a();
          var2.b(var3.a, var3.b, var3.c, this.f.b());
          return true;

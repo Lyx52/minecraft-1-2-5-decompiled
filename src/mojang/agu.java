@@ -2,7 +2,7 @@ package mojang;
 
 import org.lwjgl.opengl.GL11;
 
-public class agu extends oo {
+public class agu extends InterfaceRendererUtils {
 
    private final nl a;
    private final int b;
@@ -187,19 +187,19 @@ public class agu extends oo {
             this.g(0);
             return true;
          case 3:
-            vp.a(this.c());
+            GUIManager.a(this.c());
             return true;
          case 22:
-            this.b(vp.h());
+            this.b(GUIManager.h());
             return true;
          case 24:
-            vp.a(this.c());
+            GUIManager.a(this.c());
             this.b("");
             return true;
          default:
             switch(var2) {
             case 14:
-               if(vp.l()) {
+               if(GUIManager.l()) {
                   this.a(-1);
                } else {
                   this.b(-1);
@@ -207,7 +207,7 @@ public class agu extends oo {
 
                return true;
             case 199:
-               if(vp.m()) {
+               if(GUIManager.m()) {
                   this.g(0);
                } else {
                   this.d();
@@ -215,13 +215,13 @@ public class agu extends oo {
 
                return true;
             case 203:
-               if(vp.m()) {
-                  if(vp.l()) {
+               if(GUIManager.m()) {
+                  if(GUIManager.l()) {
                      this.g(this.a((int)-1, this.k()));
                   } else {
                      this.g(this.k() - 1);
                   }
-               } else if(vp.l()) {
+               } else if(GUIManager.l()) {
                   this.e(this.c(-1));
                } else {
                   this.d(-1);
@@ -229,13 +229,13 @@ public class agu extends oo {
 
                return true;
             case 205:
-               if(vp.m()) {
-                  if(vp.l()) {
+               if(GUIManager.m()) {
+                  if(GUIManager.l()) {
                      this.g(this.a((int)1, this.k()));
                   } else {
                      this.g(this.k() + 1);
                   }
-               } else if(vp.l()) {
+               } else if(GUIManager.l()) {
                   this.e(this.c(1));
                } else {
                   this.d(1);
@@ -243,7 +243,7 @@ public class agu extends oo {
 
                return true;
             case 207:
-               if(vp.m()) {
+               if(GUIManager.m()) {
                   this.g(this.f.length());
                } else {
                   this.e();
@@ -251,7 +251,7 @@ public class agu extends oo {
 
                return true;
             case 211:
-               if(vp.l()) {
+               if(GUIManager.l()) {
                   this.a(1);
                } else {
                   this.b(1);
@@ -329,7 +329,7 @@ public class agu extends oo {
 
       if(var6) {
          if(var13) {
-            oo.a(var11, var8 - 1, var11 + 1, var8 + 1 + this.a.b, -3092272);
+            InterfaceRendererUtils.a(var11, var8 - 1, var11 + 1, var8 + 1 + this.a.b, -3092272);
          } else {
             this.a.a("_", var11, var8, var1);
          }
@@ -356,7 +356,7 @@ public class agu extends oo {
          var4 = var5;
       }
 
-      adz var6 = adz.a;
+      Tessalator var6 = Tessalator.a;
       GL11.glColor4f(0.0F, 0.0F, 255.0F, 255.0F);
       GL11.glDisable(3553);
       GL11.glEnable(3058);

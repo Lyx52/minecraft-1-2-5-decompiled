@@ -37,7 +37,7 @@ public abstract class dd {
 
    }
 
-   public boolean a(yw var1, int var2) {
+   public boolean a(Player var1, int var2) {
       return false;
    }
 
@@ -50,7 +50,7 @@ public abstract class dd {
       return var2 != null?var2.b():null;
    }
 
-   public aan a(int var1, int var2, boolean var3, yw var4) {
+   public aan a(int var1, int var2, boolean var3, Player var4) {
       aan var5 = null;
       if(var2 > 1) {
          return null;
@@ -158,11 +158,11 @@ public abstract class dd {
       }
    }
 
-   protected void b(int var1, int var2, boolean var3, yw var4) {
+   protected void b(int var1, int var2, boolean var3, Player var4) {
       this.a(var1, var2, var3, var4);
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       aak var2 = var1.ap;
       if(var2.k() != null) {
          var1.a(var2.k());
@@ -197,7 +197,7 @@ public abstract class dd {
 
    public void b(short var1) {}
 
-   public abstract boolean b(yw var1);
+   public abstract boolean b(Player var1);
 
    protected boolean a(aan var1, int var2, int var3, boolean var4) {
       boolean var5 = false;

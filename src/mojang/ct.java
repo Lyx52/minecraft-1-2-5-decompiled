@@ -7,9 +7,9 @@ import org.lwjgl.opengl.GL11;
 
 public class ct {
 
-   public xd a;
+   public World a;
    private int y = -1;
-   private static adz z = adz.a;
+   private static Tessalator z = Tessalator.a;
    public static int b = 0;
    public int c;
    public int d;
@@ -38,7 +38,7 @@ public class ct {
    private int C;
 
 
-   public ct(xd var1, List var2, int var3, int var4, int var5, int var6) {
+   public ct(World var1, List var2, int var3, int var4, int var5, int var6) {
       this.a = var1;
       this.B = var2;
       this.y = var6;
@@ -172,7 +172,7 @@ public class ct {
       }
    }
 
-   public float a(nn var1) {
+   public float a(BaseEntity var1) {
       float var2 = (float)(var1.o - (double)this.n);
       float var3 = (float)(var1.p - (double)this.o);
       float var4 = (float)(var1.q - (double)this.p);

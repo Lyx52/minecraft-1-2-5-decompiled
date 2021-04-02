@@ -1,6 +1,5 @@
 package mojang;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -14,11 +13,11 @@ public class ko implements ca {
    private ua d;
    private en e = new en();
    private List f = new ArrayList();
-   private xd g;
+   private World g;
    private int h;
 
 
-   public ko(xd var1, ua var2, ca var3) {
+   public ko(World var1, ua var2, ca var3) {
       this.b = new ace(var1, 0, 0);
       this.g = var1;
       this.d = var2;
@@ -182,7 +181,7 @@ public class ko implements ca {
          }
 
          ack var4 = (ack)this.f.get(this.h++);
-         yw var5 = this.g.a((double)(var4.g << 4) + 8.0D, (double)(var4.h << 4) + 8.0D, 288.0D);
+         Player var5 = this.g.a((double)(var4.g << 4) + 8.0D, (double)(var4.h << 4) + 8.0D, 288.0D);
          if(var5 == null) {
             this.d(var4.g, var4.h);
          }
@@ -207,7 +206,7 @@ public class ko implements ca {
       return this.c.a(var1, var2, var3, var4);
    }
 
-   public qo a(xd var1, String var2, int var3, int var4, int var5) {
+   public qo a(World var1, String var2, int var3, int var4, int var5) {
       return this.c.a(var1, var2, var3, var4, var5);
    }
 }

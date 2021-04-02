@@ -9,9 +9,9 @@ public class acj {
    public pd e;
    public pd f;
    public byte[] g;
-   public no h;
-   public no i;
-   public no j;
+   public ListTag h;
+   public ListTag i;
+   public ListTag j;
    public final int k;
    public final int l;
 

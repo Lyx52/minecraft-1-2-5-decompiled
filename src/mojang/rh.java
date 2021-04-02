@@ -2,8 +2,8 @@ package mojang;
 
 public class rh {
 
-   private acq a;
-   private xd b;
+   private Mob a;
+   private World b;
    private vu c;
    private float d;
    private float e;
@@ -17,7 +17,7 @@ public class rh {
    private boolean m = false;
 
 
-   public rh(acq var1, xd var2, float var3) {
+   public rh(Mob var1, World var2, float var3) {
       this.a = var1;
       this.b = var2;
       this.e = var3;
@@ -56,19 +56,19 @@ public class rh {
    }
 
    public vu a(double var1, double var3, double var5) {
-      return !this.j()?null:this.b.a(this.a, gk.c(var1), (int)var3, gk.c(var5), this.e, this.j, this.k, this.l, this.m);
+      return !this.j()?null:this.b.a(this.a, Utils.c(var1), (int)var3, Utils.c(var5), this.e, this.j, this.k, this.l, this.m);
    }
 
    public boolean a(double var1, double var3, double var5, float var7) {
-      vu var8 = this.a((double)gk.c(var1), (double)((int)var3), (double)gk.c(var5));
+      vu var8 = this.a((double) Utils.c(var1), (double)((int)var3), (double) Utils.c(var5));
       return this.a(var8, var7);
    }
 
-   public vu a(acq var1) {
+   public vu a(Mob var1) {
       return !this.j()?null:this.b.a(this.a, var1, this.e, this.j, this.k, this.l, this.m);
    }
 
-   public boolean a(acq var1, float var2) {
+   public boolean a(Mob var1, float var2) {
       vu var3 = this.a(var1);
       return var3 != null?this.a(var3, var2):false;
    }
@@ -112,7 +112,7 @@ public class rh {
          }
 
          if(!this.e()) {
-            bo var1 = this.c.a((nn)this.a);
+            bo var1 = this.c.a((BaseEntity)this.a);
             if(var1 != null) {
                this.a.aK().a(var1.a, var1.b, var1.c, this.d);
             }
@@ -179,7 +179,7 @@ public class rh {
    private int i() {
       if(this.a.H() && this.m) {
          int var1 = (int)this.a.y.b;
-         int var2 = this.b.a(gk.c(this.a.o), var1, gk.c(this.a.q));
+         int var2 = this.b.a(Utils.c(this.a.o), var1, Utils.c(this.a.q));
          int var3 = 0;
 
          do {
@@ -188,7 +188,7 @@ public class rh {
             }
 
             ++var1;
-            var2 = this.b.a(gk.c(this.a.o), var1, gk.c(this.a.q));
+            var2 = this.b.a(Utils.c(this.a.o), var1, Utils.c(this.a.q));
             ++var3;
          } while(var3 <= 16);
 
@@ -207,7 +207,7 @@ public class rh {
    }
 
    private void l() {
-      if(!this.b.m(gk.c(this.a.o), (int)(this.a.y.b + 0.5D), gk.c(this.a.q))) {
+      if(!this.b.m(Utils.c(this.a.o), (int)(this.a.y.b + 0.5D), Utils.c(this.a.q))) {
          for(int var1 = 0; var1 < this.c.d(); ++var1) {
             e var2 = this.c.a(var1);
             if(this.b.m(var2.a, var2.b, var2.c)) {
@@ -220,8 +220,8 @@ public class rh {
    }
 
    private boolean a(bo var1, bo var2, int var3, int var4, int var5) {
-      int var6 = gk.c(var1.a);
-      int var7 = gk.c(var1.c);
+      int var6 = Utils.c(var1.a);
+      int var7 = Utils.c(var1.c);
       double var8 = var2.a - var1.a;
       double var10 = var2.c - var1.c;
       double var12 = var8 * var8 + var10 * var10;
@@ -254,8 +254,8 @@ public class rh {
             var22 /= var10;
             int var24 = var8 < 0.0D?-1:1;
             int var25 = var10 < 0.0D?-1:1;
-            int var26 = gk.c(var2.a);
-            int var27 = gk.c(var2.c);
+            int var26 = Utils.c(var2.a);
+            int var27 = Utils.c(var2.c);
             int var28 = var26 - var6;
             int var29 = var27 - var7;
 
@@ -320,7 +320,7 @@ public class rh {
                double var17 = (double)var14 + 0.5D - var7.c;
                if(var15 * var8 + var17 * var10 >= 0.0D) {
                   int var19 = this.b.a(var12, var13, var14);
-                  if(var19 > 0 && !pb.m[var19].b((ali)this.b, var12, var13, var14)) {
+                  if(var19 > 0 && !pb.m[var19].b((WorldInterface)this.b, var12, var13, var14)) {
                      return false;
                   }
                }

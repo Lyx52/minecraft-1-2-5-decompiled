@@ -18,17 +18,17 @@ public class lx extends yr {
       return var2.bO == pb.W.bO?15.0F:1.5F;
    }
 
-   public boolean a(aan var1, acq var2, acq var3) {
+   public boolean a(aan var1, Mob var2, Mob var3) {
       var1.a(1, var3);
       return true;
    }
 
-   public boolean a(aan var1, int var2, int var3, int var4, int var5, acq var6) {
+   public boolean a(aan var1, int var2, int var3, int var4, int var5, Mob var6) {
       var1.a(2, var6);
       return true;
    }
 
-   public int a(nn var1) {
+   public int a(BaseEntity var1) {
       return this.a;
    }
 
@@ -44,7 +44,7 @@ public class lx extends yr {
       return 72000;
    }
 
-   public aan a(aan var1, xd var2, yw var3) {
+   public aan a(aan var1, World var2, Player var3) {
       var3.c(var1, this.b(var1));
       return var1;
    }

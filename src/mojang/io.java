@@ -18,7 +18,7 @@ public interface io {
 
    void j();
 
-   boolean a_(yw var1);
+   boolean a_(Player var1);
 
    void e();
 

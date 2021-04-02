@@ -4,14 +4,14 @@ import org.lwjgl.opengl.GL11;
 
 public class ws extends rt {
 
-   private nn a;
-   private nn au;
+   private BaseEntity a;
+   private BaseEntity au;
    private int av = 0;
    private int aw = 0;
    private float ax;
 
 
-   public ws(xd var1, nn var2, nn var3, float var4) {
+   public ws(World var1, BaseEntity var2, BaseEntity var3, float var4) {
       super(var1, var2.o, var2.p, var2.q, var2.r, var2.s, var2.t);
       this.a = var2;
       this.au = var3;
@@ -19,7 +19,7 @@ public class ws extends rt {
       this.ax = var4;
    }
 
-   public void a(adz var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       float var8 = ((float)this.av + var2) / (float)this.aw;
       var8 *= var8;
       double var9 = this.a.o;
@@ -31,13 +31,13 @@ public class ws extends rt {
       double var21 = var9 + (var15 - var9) * (double)var8;
       double var23 = var11 + (var17 - var11) * (double)var8;
       double var25 = var13 + (var19 - var13) * (double)var8;
-      int var27 = gk.c(var21);
-      int var28 = gk.c(var23 + (double)(this.H / 2.0F));
-      int var29 = gk.c(var25);
+      int var27 = Utils.c(var21);
+      int var28 = Utils.c(var23 + (double)(this.H / 2.0F));
+      int var29 = Utils.c(var25);
       int var30 = this.b(var2);
       int var31 = var30 % 65536;
       int var32 = var30 / 65536;
-      es.a(es.b, (float)var31 / 1.0F, (float)var32 / 1.0F);
+      ARBTextureHelper.setMultiTexCoord2f(ARBTextureHelper.b, (float)var31 / 1.0F, (float)var32 / 1.0F);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var21 -= ar;
       var23 -= as;

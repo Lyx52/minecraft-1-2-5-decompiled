@@ -36,7 +36,7 @@ abstract class gq extends iff {
       this.g.k();
    }
 
-   protected void a(int var1, int var2, adz var3) {
+   protected void a(int var1, int var2, Tessalator var3) {
       if(!Mouse.isButtonDown(0)) {
          this.b = -1;
       }
@@ -89,7 +89,7 @@ abstract class gq extends iff {
 
       if(this.b >= 0) {
          this.c(this.b);
-         dc.g(this.g).C.a("random.click", 1.0F, 1.0F);
+         dc.g(this.g).soundManager.a("random.click", 1.0F, 1.0F);
       }
 
    }
@@ -141,7 +141,7 @@ abstract class gq extends iff {
                var9 = this.a(2);
             }
 
-            var9 = ("" + adn.a().b(var9)).trim();
+            var9 = ("" + LocalizationManager.getInstance().getLocaleStringByName(var9)).trim();
             if(var9.length() > 0) {
                int var6 = var1 + 12;
                int var7 = var2 - 12;
@@ -157,7 +157,7 @@ abstract class gq extends iff {
    protected void a(aii var1, int var2, int var3) {
       if(var1 != null) {
          yr var4 = yr.e[var1.b()];
-         String var5 = ("" + adn.a().c(var4.e())).trim();
+         String var5 = ("" + LocalizationManager.getInstance().c(var4.e())).trim();
          if(var5.length() > 0) {
             int var6 = var2 + 12;
             int var7 = var3 - 12;

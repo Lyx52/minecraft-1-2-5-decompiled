@@ -14,7 +14,7 @@ public class hk implements yv {
 
    public String a(String var1) {
       try {
-         return String.format(var1, new Object[]{hu.c(this.a.A.s.d)});
+         return String.format(var1, new Object[]{OptionParser.c(this.a.options.key_inventory.keyCode)});
       } catch (Exception var3) {
          return "Error: " + var3.getLocalizedMessage();
       }

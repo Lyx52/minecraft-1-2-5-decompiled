@@ -11,7 +11,7 @@ public class aeh extends li {
       this.a = var1;
    }
 
-   public boolean a(xd var1, Random var2, int var3, int var4, int var5) {
+   public boolean a(World var1, Random var2, int var3, int var4, int var5) {
       if(var1.i(var3, var4, var5) && var1.a(var3, var4 - 1, var5) == this.a) {
          int var6 = var2.nextInt(32) + 6;
          int var7 = var2.nextInt(4) + 1;
@@ -42,9 +42,9 @@ public class aeh extends li {
             }
          }
 
-         el var13 = new el(var1);
+         EnderCrystal var13 = new EnderCrystal(var1);
          var13.c((double)((float)var3 + 0.5F), (double)(var4 + var6), (double)((float)var5 + 0.5F), var2.nextFloat() * 360.0F, 0.0F);
-         var1.a((nn)var13);
+         var1.a((BaseEntity)var13);
          var1.g(var3, var4 + var6, var5, pb.z.bO);
          return true;
       } else {

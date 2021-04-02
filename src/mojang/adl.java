@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,11 +47,11 @@ public class adl extends oe {
    public void a(aec var1) {
       this.h.c = new rk(this.h, this);
       this.h.K.a(gv.i, 1);
-      this.i = new je(this, new fj(0L, var1.d, false, false, var1.c), var1.e, var1.f);
+      this.i = new je(this, new WorldStub(0L, var1.d, false, false, var1.c), var1.e, var1.f);
       this.i.F = true;
-      this.h.a((xd)this.i);
+      this.h.a((World)this.i);
       this.h.h.aB = var1.e;
-      this.h.a((vp)(new ez(this)));
+      this.h.a((GUIManager)(new ez(this)));
       this.h.h.f = var1.a;
       this.d = var1.h;
       ((rk)this.h.c).a(var1.d == 1);
@@ -62,7 +61,7 @@ public class adl extends oe {
       double var2 = (double)var1.b / 32.0D;
       double var4 = (double)var1.c / 32.0D;
       double var6 = (double)var1.d / 32.0D;
-      fq var8 = new fq(this.i, var2, var4, var6, new aan(var1.h, var1.i, var1.j));
+      Item var8 = new Item(this.i, var2, var4, var6, new aan(var1.h, var1.i, var1.j));
       var8.r = (double)var1.e / 128.0D;
       var8.s = (double)var1.f / 128.0D;
       var8.t = (double)var1.g / 128.0D;
@@ -78,82 +77,82 @@ public class adl extends oe {
       double var6 = (double)var1.d / 32.0D;
       Object var8 = null;
       if(var1.h == 10) {
-         var8 = new ama(this.i, var2, var4, var6, 0);
+         var8 = new Minecart(this.i, var2, var4, var6, 0);
       } else if(var1.h == 11) {
-         var8 = new ama(this.i, var2, var4, var6, 1);
+         var8 = new Minecart(this.i, var2, var4, var6, 1);
       } else if(var1.h == 12) {
-         var8 = new ama(this.i, var2, var4, var6, 2);
+         var8 = new Minecart(this.i, var2, var4, var6, 2);
       } else if(var1.h == 90) {
          var8 = new act(this.i, var2, var4, var6);
       } else if(var1.h == 60) {
-         var8 = new nm(this.i, var2, var4, var6);
+         var8 = new Arrow(this.i, var2, var4, var6);
       } else if(var1.h == 61) {
-         var8 = new uq(this.i, var2, var4, var6);
+         var8 = new Snowball(this.i, var2, var4, var6);
       } else if(var1.h == 65) {
-         var8 = new adw(this.i, var2, var4, var6);
+         var8 = new ThrownEnderpearl(this.i, var2, var4, var6);
       } else if(var1.h == 72) {
-         var8 = new va(this.i, var2, var4, var6);
+         var8 = new EyeOfEnderSignal(this.i, var2, var4, var6);
       } else if(var1.h == 63) {
-         var8 = new bt(this.i, var2, var4, var6, (double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
+         var8 = new Fireball(this.i, var2, var4, var6, (double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
          var1.i = 0;
       } else if(var1.h == 64) {
-         var8 = new qb(this.i, var2, var4, var6, (double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
+         var8 = new SmallFireball(this.i, var2, var4, var6, (double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
          var1.i = 0;
       } else if(var1.h == 62) {
          var8 = new qe(this.i, var2, var4, var6);
       } else if(var1.h == 73) {
-         var8 = new bj(this.i, var2, var4, var6, var1.i);
+         var8 = new ThrownPotion(this.i, var2, var4, var6, var1.i);
          var1.i = 0;
       } else if(var1.h == 75) {
-         var8 = new hf(this.i, var2, var4, var6);
+         var8 = new ThrownExpBottle(this.i, var2, var4, var6);
          var1.i = 0;
       } else if(var1.h == 1) {
-         var8 = new ep(this.i, var2, var4, var6);
+         var8 = new Boat(this.i, var2, var4, var6);
       } else if(var1.h == 50) {
-         var8 = new agg(this.i, var2, var4, var6);
+         var8 = new PrimeTnt(this.i, var2, var4, var6);
       } else if(var1.h == 51) {
-         var8 = new el(this.i, var2, var4, var6);
+         var8 = new EnderCrystal(this.i, var2, var4, var6);
       } else if(var1.h == 70) {
-         var8 = new abf(this.i, var2, var4, var6, pb.E.bO);
+         var8 = new FallingSand(this.i, var2, var4, var6, pb.E.bO);
       } else if(var1.h == 71) {
-         var8 = new abf(this.i, var2, var4, var6, pb.F.bO);
+         var8 = new FallingSand(this.i, var2, var4, var6, pb.F.bO);
       } else if(var1.h == 74) {
-         var8 = new abf(this.i, var2, var4, var6, pb.bK.bO);
+         var8 = new FallingSand(this.i, var2, var4, var6, pb.bK.bO);
       }
 
       if(var8 != null) {
-         ((nn)var8).ah = var1.b;
-         ((nn)var8).ai = var1.c;
-         ((nn)var8).aj = var1.d;
-         ((nn)var8).u = 0.0F;
-         ((nn)var8).v = 0.0F;
-         nn[] var9 = ((nn)var8).Z();
+         ((BaseEntity)var8).ah = var1.b;
+         ((BaseEntity)var8).ai = var1.c;
+         ((BaseEntity)var8).aj = var1.d;
+         ((BaseEntity)var8).u = 0.0F;
+         ((BaseEntity)var8).v = 0.0F;
+         BaseEntity[] var9 = ((BaseEntity)var8).Z();
          if(var9 != null) {
-            int var10 = var1.a - ((nn)var8).f;
+            int var10 = var1.a - ((BaseEntity)var8).f;
 
             for(int var11 = 0; var11 < var9.length; ++var11) {
                var9[var11].f += var10;
             }
          }
 
-         ((nn)var8).f = var1.a;
-         this.i.a(var1.a, (nn)var8);
+         ((BaseEntity)var8).f = var1.a;
+         this.i.a(var1.a, (BaseEntity)var8);
          if(var1.i > 0) {
             if(var1.h == 60) {
-               nn var12 = this.a(var1.i);
-               if(var12 instanceof acq) {
-                  ((nm)var8).c = (acq)var12;
+               BaseEntity var12 = this.a(var1.i);
+               if(var12 instanceof Mob) {
+                  ((Arrow)var8).c = (Mob)var12;
                }
             }
 
-            ((nn)var8).a((double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
+            ((BaseEntity)var8).a((double)var1.e / 8000.0D, (double)var1.f / 8000.0D, (double)var1.g / 8000.0D);
          }
       }
 
    }
 
    public void a(lj var1) {
-      bz var2 = new bz(this.i, (double)var1.b, (double)var1.c, (double)var1.d, var1.e);
+      XPOrb var2 = new XPOrb(this.i, (double)var1.b, (double)var1.c, (double)var1.d, var1.e);
       var2.ah = var1.b;
       var2.ai = var1.c;
       var2.aj = var1.d;
@@ -185,19 +184,19 @@ public class adl extends oe {
    }
 
    public void a(qc var1) {
-      mk var2 = new mk(this.i, var1.b, var1.c, var1.d, var1.e, var1.f);
+      Painting var2 = new Painting(this.i, var1.b, var1.c, var1.d, var1.e, var1.f);
       this.i.a(var1.a, var2);
    }
 
    public void a(yn var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          var2.a((double)var1.b / 8000.0D, (double)var1.c / 8000.0D, (double)var1.d / 8000.0D);
       }
    }
 
    public void a(pf var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null && var1.b() != null) {
          var2.y().a(var1.b());
       }
@@ -211,9 +210,9 @@ public class adl extends oe {
       float var8 = (float)(var1.f * 360) / 256.0F;
       float var9 = (float)(var1.g * 360) / 256.0F;
       rv var10 = new rv(this.h.f, var1.b);
-      var10.l = var10.N = (double)(var10.ah = var1.c);
-      var10.m = var10.O = (double)(var10.ai = var1.d);
-      var10.n = var10.P = (double)(var10.aj = var1.e);
+      var10.sandX = var10.N = (double)(var10.ah = var1.c);
+      var10.sandY = var10.O = (double)(var10.ai = var1.d);
+      var10.sandZ = var10.P = (double)(var10.aj = var1.e);
       int var11 = var1.h;
       if(var11 == 0) {
          var10.ap.a[var10.ap.c] = null;
@@ -226,7 +225,7 @@ public class adl extends oe {
    }
 
    public void a(mr var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          var2.ah = var1.b;
          var2.ai = var1.c;
@@ -241,7 +240,7 @@ public class adl extends oe {
    }
 
    public void a(aip var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          var2.ah += var1.b;
          var2.ai += var1.c;
@@ -256,7 +255,7 @@ public class adl extends oe {
    }
 
    public void a(aji var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          float var3 = (float)(var1.b * 360) / 256.0F;
          var2.f(var3);
@@ -294,11 +293,11 @@ public class adl extends oe {
       var1.d = var2.p;
       this.g.a((abs)var1);
       if(!this.j) {
-         this.h.h.l = this.h.h.o;
-         this.h.h.m = this.h.h.p;
-         this.h.h.n = this.h.h.q;
+         this.h.h.sandX = this.h.h.o;
+         this.h.h.sandY = this.h.h.p;
+         this.h.h.sandZ = this.h.h.q;
          this.j = true;
-         this.h.a((vp)null);
+         this.h.a((GUIManager)null);
       }
 
    }
@@ -356,15 +355,15 @@ public class adl extends oe {
    public void a(amg var1) {
       this.g.a("disconnect.kicked", new Object[0]);
       this.f = true;
-      this.h.a((xd)null);
-      this.h.a((vp)(new dw("disconnect.disconnected", "disconnect.genericReason", new Object[]{var1.a})));
+      this.h.a((World)null);
+      this.h.a((GUIManager)(new dw("disconnect.disconnected", "disconnect.genericReason", new Object[]{var1.a})));
    }
 
    public void a(String var1, Object[] var2) {
       if(!this.f) {
          this.f = true;
-         this.h.a((xd)null);
-         this.h.a((vp)(new dw("disconnect.lost", var1, var2)));
+         this.h.a((World)null);
+         this.h.a((GUIManager)(new dw("disconnect.lost", var1, var2)));
       }
    }
 
@@ -382,20 +381,20 @@ public class adl extends oe {
    }
 
    public void a(vv var1) {
-      nn var2 = this.a(var1.a);
-      Object var3 = (acq)this.a(var1.b);
+      BaseEntity var2 = this.a(var1.a);
+      Object var3 = (Mob)this.a(var1.b);
       if(var3 == null) {
          var3 = this.h.h;
       }
 
       if(var2 != null) {
-         if(var2 instanceof bz) {
+         if(var2 instanceof XPOrb) {
             this.i.a(var2, "random.orb", 0.2F, ((this.e.nextFloat() - this.e.nextFloat()) * 0.7F + 1.0F) * 2.0F);
          } else {
             this.i.a(var2, "random.pop", 0.2F, ((this.e.nextFloat() - this.e.nextFloat()) * 0.7F + 1.0F) * 2.0F);
          }
 
-         this.h.j.a((rt)(new ws(this.h.f, var2, (nn)var3, -0.5F)));
+         this.h.j.a((rt)(new ws(this.h.f, var2, (BaseEntity)var3, -0.5F)));
          this.i.b(var1.a);
       }
 
@@ -406,19 +405,19 @@ public class adl extends oe {
    }
 
    public void a(kc var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
-         yw var3;
+         Player var3;
          if(var1.b == 1) {
-            var3 = (yw)var2;
+            var3 = (Player)var2;
             var3.ax();
          } else if(var1.b == 2) {
             var2.k();
          } else if(var1.b == 3) {
-            var3 = (yw)var2;
+            var3 = (Player)var2;
             var3.a(false, false, false);
          } else if(var1.b == 4) {
-            var3 = (yw)var2;
+            var3 = (Player)var2;
             var3.ab();
          } else if(var1.b == 6) {
             this.h.j.a((rt)(new fs(this.h.f, var2)));
@@ -433,10 +432,10 @@ public class adl extends oe {
    }
 
    public void a(abj var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          if(var1.e == 0) {
-            yw var3 = (yw)var2;
+            Player var3 = (Player)var2;
             var3.d(var1.b, var1.c, var1.d);
          }
 
@@ -461,15 +460,15 @@ public class adl extends oe {
       if(!var2) {
          this.g.a("disconnect.genericReason", new Object[]{"The server responded with an invalid server key"});
       } else if(var1.a.equals("-")) {
-         this.c(new aec(this.h.k.b, 29));
+         this.c(new aec(this.h.credentials.username, 29));
       } else {
          try {
-            URL var4 = new URL("https://session.minecraft.net/game/joinserver.jsp?user=" + this.h.k.b + "&sessionId=" + this.h.k.c + "&serverId=" + var1.a);
+            URL var4 = new URL("https://session.minecraft.net/game/joinserver.jsp?user=" + this.h.credentials.username + "&sessionId=" + this.h.credentials.sessionid + "&serverId=" + var1.a);
             BufferedReader var5 = new BufferedReader(new InputStreamReader(var4.openStream()));
             String var6 = var5.readLine();
             var5.close();
             if(var6.equalsIgnoreCase("ok")) {
-               this.c(new aec(this.h.k.b, 29));
+               this.c(new aec(this.h.credentials.username, 29));
             } else {
                this.g.a("disconnect.loginFailedInfo", new Object[]{var6});
             }
@@ -493,12 +492,12 @@ public class adl extends oe {
       double var6 = (double)var1.e / 32.0D;
       float var8 = (float)(var1.f * 360) / 256.0F;
       float var9 = (float)(var1.g * 360) / 256.0F;
-      acq var10 = (acq)aao.a(var1.b, this.h.f);
+      Mob var10 = (Mob) EntityManager.createEntity(var1.b, this.h.f);
       var10.ah = var1.c;
       var10.ai = var1.d;
       var10.aj = var1.e;
       var10.bf = (float)(var1.h * 360) / 256.0F;
-      nn[] var11 = var10.Z();
+      BaseEntity[] var11 = var10.Z();
       if(var11 != null) {
          int var12 = var1.a - var10.f;
 
@@ -523,31 +522,31 @@ public class adl extends oe {
 
    public void a(agl var1) {
       this.h.h.a(new uh(var1.a, var1.b, var1.c));
-      this.h.f.B().a(var1.a, var1.b, var1.c);
+      this.h.f.B().setSpawnPoint(var1.a, var1.b, var1.c);
    }
 
    public void a(adv var1) {
       Object var2 = this.a(var1.a);
-      nn var3 = this.a(var1.b);
+      BaseEntity var3 = this.a(var1.b);
       if(var1.a == this.h.h.f) {
          var2 = this.h.h;
       }
 
       if(var2 != null) {
-         ((nn)var2).h(var3);
+         ((BaseEntity)var2).h(var3);
       }
    }
 
    public void a(gt var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          var2.a(var1.b);
       }
 
    }
 
-   private nn a(int var1) {
-      return (nn)(var1 == this.h.h.f?this.h.h:this.i.a(var1));
+   private BaseEntity a(int var1) {
+      return (BaseEntity)(var1 == this.h.h.f?this.h.h:this.i.a(var1));
    }
 
    public void a(ds var1) {
@@ -563,11 +562,11 @@ public class adl extends oe {
    public void a(kx var1) {
       if(var1.a != this.h.h.aB) {
          this.j = false;
-         this.i = new je(this, new fj(0L, var1.d, false, false, var1.e), var1.a, var1.b);
+         this.i = new je(this, new WorldStub(0L, var1.d, false, false, var1.e), var1.a, var1.b);
          this.i.F = true;
-         this.h.a((xd)this.i);
+         this.h.a((World)this.i);
          this.h.h.aB = var1.a;
-         this.h.a((vp)(new ez(this)));
+         this.h.a((GUIManager)(new ez(this)));
       }
 
       this.h.a(true, var1.a, false);
@@ -575,7 +574,7 @@ public class adl extends oe {
    }
 
    public void a(ags var1) {
-      agh var2 = new agh(this.h.f, (nn)null, var1.a, var1.b, var1.c, var1.d);
+      agh var2 = new agh(this.h.f, (BaseEntity)null, var1.a, var1.b, var1.c, var1.d);
       var2.g = var1.e;
       var2.a(true);
    }
@@ -588,7 +587,7 @@ public class adl extends oe {
          var2.ar.f = var1.a;
          break;
       case 1:
-         var2.a(gk.c(var2.o), gk.c(var2.p), gk.c(var2.q));
+         var2.a(Utils.c(var2.o), Utils.c(var2.p), Utils.c(var2.q));
          var2.ar.f = var1.a;
          break;
       case 2:
@@ -600,7 +599,7 @@ public class adl extends oe {
          var2.ar.f = var1.a;
          break;
       case 4:
-         var2.c(gk.c(var2.o), gk.c(var2.p), gk.c(var2.q));
+         var2.c(Utils.c(var2.o), Utils.c(var2.p), Utils.c(var2.q));
          var2.ar.f = var1.a;
          break;
       case 5:
@@ -678,7 +677,7 @@ public class adl extends oe {
       if(this.h.f.j(var1.a, var1.b, var1.c)) {
          kw var2 = this.h.f.b(var1.a, var1.b, var1.c);
          if(var2 != null && var1.d == 1 && var2 instanceof cj) {
-            ((cj)var2).a(aao.a(var1.e));
+            ((cj)var2).a(EntityManager.getNameByID(var1.e));
          }
       }
 
@@ -694,7 +693,7 @@ public class adl extends oe {
    }
 
    public void a(ta var1) {
-      nn var2 = this.a(var1.a);
+      BaseEntity var2 = this.a(var1.a);
       if(var2 != null) {
          var2.b(var1.b, var1.c, var1.d);
       }
@@ -717,15 +716,15 @@ public class adl extends oe {
       }
 
       if(var3 == 1) {
-         this.i.B().b(true);
+         this.i.B().setRain(true);
          this.i.k(1.0F);
       } else if(var3 == 2) {
-         this.i.B().b(false);
+         this.i.B().setRain(false);
          this.i.k(0.0F);
       } else if(var3 == 3) {
          ((rk)this.h.c).a(var1.c == 1);
       } else if(var3 == 4) {
-         this.h.a((vp)(new c()));
+         this.h.a((GUIManager)(new c()));
       }
 
    }
@@ -748,16 +747,16 @@ public class adl extends oe {
    }
 
    public void a(wb var1) {
-      nn var2 = this.a(var1.a);
-      if(var2 != null && var2 instanceof acq) {
-         ((acq)var2).b(new alg(var1.b, var1.d, var1.c));
+      BaseEntity var2 = this.a(var1.a);
+      if(var2 != null && var2 instanceof Mob) {
+         ((Mob)var2).b(new alg(var1.b, var1.d, var1.c));
       }
    }
 
    public void a(ado var1) {
-      nn var2 = this.a(var1.a);
-      if(var2 != null && var2 instanceof acq) {
-         ((acq)var2).m(var1.b);
+      BaseEntity var2 = this.a(var1.a);
+      if(var2 != null && var2 instanceof Mob) {
+         ((Mob)var2).m(var1.b);
       }
    }
 

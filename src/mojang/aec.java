@@ -8,7 +8,7 @@ public class aec extends abs {
 
    public int a;
    public String b;
-   public vx c;
+   public WorldGeneratorTypes c;
    public int d;
    public int e;
    public byte f;
@@ -28,9 +28,9 @@ public class aec extends abs {
          this.a = var1.readInt();
          this.b = a(var1, 16);
          String var2 = a(var1, 16);
-         this.c = vx.a(var2);
+         this.c = WorldGeneratorTypes.getGenerator(var2);
          if (this.c == null) {
-            this.c = vx.b;
+            this.c = WorldGeneratorTypes.defaultWorld;
          }
 
          this.d = var1.readInt();

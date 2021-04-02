@@ -14,9 +14,9 @@ public class fb extends gb {
    }
 
    protected void a(float var1, int var2, int var3) {
-      int var4 = this.p.p.b("/mojang/gui/trap.png");
+      int var4 = this.minecraft.p.b("/mojang/gui/trap.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.p.p.b(var4);
+      this.minecraft.p.b(var4);
       int var5 = (this.q - this.b) / 2;
       int var6 = (this.r - this.c) / 2;
       this.b(var5, var6, 0, 0, this.b, this.c);

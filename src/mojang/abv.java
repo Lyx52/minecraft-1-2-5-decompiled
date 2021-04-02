@@ -9,9 +9,9 @@ public class abv extends agt {
 
 
    public abv() {
-      this.a.add(new bg(adg.class, 10, 2, 3));
-      this.a.add(new bg(alt.class, 10, 4, 4));
-      this.a.add(new bg(aic.class, 3, 4, 4));
+      this.a.add(new bg(Blaze.class, 10, 2, 3));
+      this.a.add(new bg(PigZombie.class, 10, 4, 4));
+      this.a.add(new bg(LavaSlime.class, 3, 4, 4));
    }
 
    public List b() {

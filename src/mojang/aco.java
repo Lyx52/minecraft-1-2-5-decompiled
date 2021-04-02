@@ -6,13 +6,13 @@ public class aco extends yr {
       super(var1);
    }
 
-   public boolean a(aan var1, yw var2, xd var3, int var4, int var5, int var6, int var7) {
+   public boolean a(aan var1, Player var2, World var3, int var4, int var5, int var6, int var7) {
       if(var7 != 1) {
          return false;
       } else {
          ++var5;
          pm var8 = (pm)pb.S;
-         int var9 = gk.c((double)(var2.u * 4.0F / 360.0F) + 0.5D) & 3;
+         int var9 = Utils.c((double)(var2.u * 4.0F / 360.0F) + 0.5D) & 3;
          byte var10 = 0;
          byte var11 = 0;
          if(var9 == 0) {

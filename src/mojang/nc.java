@@ -7,9 +7,9 @@ public class nc extends yr {
       this.bR = 1;
    }
 
-   public void a(aan var1, acq var2) {
-      if(var2 instanceof qr) {
-         qr var3 = (qr)var2;
+   public void a(aan var1, Mob var2) {
+      if(var2 instanceof Pig) {
+         Pig var3 = (Pig)var2;
          if(!var3.aa() && !var3.bi()) {
             var3.a(true);
             --var1.a;
@@ -18,7 +18,7 @@ public class nc extends yr {
 
    }
 
-   public boolean a(aan var1, acq var2, acq var3) {
+   public boolean a(aan var1, Mob var2, Mob var3) {
       this.a(var1, var2);
       return true;
    }

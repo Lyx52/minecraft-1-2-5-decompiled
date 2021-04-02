@@ -20,14 +20,14 @@ public class jp extends abs {
 
    public jp() {}
 
-   public jp(fq var1) {
+   public jp(Item var1) {
       this.a = var1.f;
       this.h = var1.a.c;
       this.i = var1.a.a;
       this.j = var1.a.i();
-      this.b = gk.c(var1.o * 32.0D);
-      this.c = gk.c(var1.p * 32.0D);
-      this.d = gk.c(var1.q * 32.0D);
+      this.b = Utils.c(var1.o * 32.0D);
+      this.c = Utils.c(var1.p * 32.0D);
+      this.d = Utils.c(var1.q * 32.0D);
       this.e = (byte)((int)(var1.r * 128.0D));
       this.f = (byte)((int)(var1.s * 128.0D));
       this.g = (byte)((int)(var1.t * 128.0D));

@@ -12,7 +12,7 @@ public abstract class agv extends pb {
       this.a(true);
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return this.cd != acn.h;
    }
 
@@ -20,7 +20,7 @@ public abstract class agv extends pb {
       return 16777215;
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       if(this.cd != acn.g) {
          return 16777215;
       } else {
@@ -54,11 +54,11 @@ public abstract class agv extends pb {
       return var1 != 0 && var1 != 1?this.bN + 1:this.bN;
    }
 
-   protected int h(xd var1, int var2, int var3, int var4) {
+   protected int h(World var1, int var2, int var3, int var4) {
       return var1.f(var2, var3, var4) != this.cd?-1:var1.e(var2, var3, var4);
    }
 
-   protected int g(ali var1, int var2, int var3, int var4) {
+   protected int g(WorldInterface var1, int var2, int var3, int var4) {
       if(var1.f(var2, var3, var4) != this.cd) {
          return -1;
       } else {
@@ -83,17 +83,17 @@ public abstract class agv extends pb {
       return var2 && var1 == 0;
    }
 
-   public boolean c(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean c(WorldInterface var1, int var2, int var3, int var4, int var5) {
       acn var6 = var1.f(var2, var3, var4);
       return var6 == this.cd?false:(var5 == 1?true:(var6 == acn.u?false:super.c(var1, var2, var3, var4, var5)));
    }
 
-   public boolean a(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean a(WorldInterface var1, int var2, int var3, int var4, int var5) {
       acn var6 = var1.f(var2, var3, var4);
       return var6 == this.cd?false:(var5 == 1?true:(var6 == acn.u?false:super.a(var1, var2, var3, var4, var5)));
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return null;
    }
 
@@ -109,7 +109,7 @@ public abstract class agv extends pb {
       return 0;
    }
 
-   private bo h(ali var1, int var2, int var3, int var4) {
+   private bo h(WorldInterface var1, int var2, int var3, int var4) {
       bo var5 = mojang.bo.b(0.0D, 0.0D, 0.0D);
       int var6 = this.g(var1, var2, var3, var4);
 
@@ -191,8 +191,8 @@ public abstract class agv extends pb {
       return var5;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5, bo var6) {
-      bo var7 = this.h((ali)var1, var2, var3, var4);
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5, bo var6) {
+      bo var7 = this.h((WorldInterface)var1, var2, var3, var4);
       var6.a += var7.a;
       var6.b += var7.b;
       var6.c += var7.c;
@@ -202,7 +202,7 @@ public abstract class agv extends pb {
       return this.cd == acn.g?5:(this.cd == acn.h?30:0);
    }
 
-   public int d(ali var1, int var2, int var3, int var4) {
+   public int d(WorldInterface var1, int var2, int var3, int var4) {
       int var5 = var1.b(var2, var3, var4, 0);
       int var6 = var1.b(var2, var3 + 1, var4, 0);
       int var7 = var5 & 255;
@@ -212,13 +212,13 @@ public abstract class agv extends pb {
       return (var7 > var8?var7:var8) | (var9 > var10?var9:var10) << 16;
    }
 
-   public float e(ali var1, int var2, int var3, int var4) {
+   public float e(WorldInterface var1, int var2, int var3, int var4) {
       float var5 = var1.c(var2, var3, var4);
       float var6 = var1.c(var2, var3 + 1, var4);
       return var5 > var6?var5:var6;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {
+   public void a(World var1, int var2, int var3, int var4, Random var5) {
       super.a(var1, var2, var3, var4, var5);
    }
 
@@ -226,7 +226,7 @@ public abstract class agv extends pb {
       return this.cd == acn.g?1:0;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {
+   public void b(World var1, int var2, int var3, int var4, Random var5) {
       int var6;
       if(this.cd == acn.g) {
          if(var5.nextInt(10) == 0) {
@@ -337,7 +337,7 @@ public abstract class agv extends pb {
 
    }
 
-   public static double a(ali var0, int var1, int var2, int var3, acn var4) {
+   public static double a(WorldInterface var0, int var1, int var2, int var3, acn var4) {
       bo var5 = null;
       if(var4 == acn.g) {
          var5 = ((agv) A).h(var0, var1, var2, var3);
@@ -350,15 +350,15 @@ public abstract class agv extends pb {
       return var5.a == 0.0D && var5.c == 0.0D?-1000.0D:Math.atan2(var5.c, var5.a) - 1.5707963267948966D;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {
+   public void a(World var1, int var2, int var3, int var4) {
       this.j(var1, var2, var3, var4);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {
+   public void a(World var1, int var2, int var3, int var4, int var5) {
       this.j(var1, var2, var3, var4);
    }
 
-   private void j(xd var1, int var2, int var3, int var4) {
+   private void j(World var1, int var2, int var3, int var4) {
       if(var1.a(var2, var3, var4) == this.bO) {
          if(this.cd == acn.h) {
             boolean var5 = false;
@@ -397,7 +397,7 @@ public abstract class agv extends pb {
       }
    }
 
-   protected void i(xd var1, int var2, int var3, int var4) {
+   protected void i(World var1, int var2, int var3, int var4) {
       var1.a((double)((float)var2 + 0.5F), (double)((float)var3 + 0.5F), (double)((float)var4 + 0.5F), "random.fizz", 0.5F, 2.6F + (var1.r.nextFloat() - var1.r.nextFloat()) * 0.8F);
 
       for(int var5 = 0; var5 < 8; ++var5) {

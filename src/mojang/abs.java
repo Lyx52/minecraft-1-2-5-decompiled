@@ -161,7 +161,7 @@ public abstract class abs {
 
    }
 
-   protected ady c(DataInputStream var1) throws IOException {
+   protected CompundTag c(DataInputStream var1) throws IOException {
       short var2 = var1.readShort();
       if(var2 < 0) {
          return null;
@@ -172,7 +172,7 @@ public abstract class abs {
       }
    }
 
-   protected void a(ady var1, DataOutputStream var2) throws IOException {
+   protected void a(CompundTag var1, DataOutputStream var2) throws IOException {
       if(var1 == null) {
          var2.writeShort(-1);
       } else {

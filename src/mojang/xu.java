@@ -6,10 +6,10 @@ public class xu {
 
    protected int b = 8;
    protected Random c = new Random();
-   protected xd d;
+   protected World d;
 
 
-   public void a(ca var1, xd var2, int var3, int var4, byte[] var5) {
+   public void a(ca var1, World var2, int var3, int var4, byte[] var5) {
       int var6 = this.b;
       this.d = var2;
       this.c.setSeed(var2.v());
@@ -27,5 +27,5 @@ public class xu {
 
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, byte[] var6) {}
+   protected void a(World var1, int var2, int var3, int var4, int var5, byte[] var6) {}
 }

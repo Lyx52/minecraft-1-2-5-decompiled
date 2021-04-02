@@ -8,7 +8,7 @@ public abstract class bc extends ajr {
    private int b = 0;
 
 
-   public bc(xd var1) {
+   public bc(World var1) {
       super(var1);
    }
 
@@ -41,8 +41,8 @@ public abstract class bc extends ajr {
 
    }
 
-   protected void a(nn var1, float var2) {
-      if(var1 instanceof yw) {
+   protected void a(BaseEntity var1, float var2) {
+      if(var1 instanceof Player) {
          if(var2 < 3.0F) {
             double var3 = var1.o - this.o;
             double var5 = var1.q - this.q;
@@ -50,7 +50,7 @@ public abstract class bc extends ajr {
             this.ap = true;
          }
 
-         yw var7 = (yw)var1;
+         Player var7 = (Player)var1;
          if(var7.av() == null || !this.a(var7.av())) {
             this.ao = null;
          }
@@ -108,14 +108,14 @@ public abstract class bc extends ajr {
             this.k.a("heart", this.o + (double)(this.U.nextFloat() * this.I * 2.0F) - (double)this.I, this.p + 0.5D + (double)(this.U.nextFloat() * this.J), this.q + (double)(this.U.nextFloat() * this.I * 2.0F) - (double)this.I, var4, var6, var8);
          }
 
-         this.k.a((nn)var2);
+         this.k.a((BaseEntity)var2);
       }
 
    }
 
    public abstract bc a(bc var1);
 
-   protected void b(nn var1, float var2) {}
+   protected void b(BaseEntity var1, float var2) {}
 
    public boolean a(md var1, int var2) {
       this.aq = 60;
@@ -128,17 +128,17 @@ public abstract class bc extends ajr {
       return this.k.a(var1, var2 - 1, var3) == pb.u.bO?10.0F:this.k.c(var1, var2, var3) - 0.5F;
    }
 
-   public void b(ady var1) {
+   public void b(CompundTag var1) {
       super.b(var1);
-      var1.a("InLove", this.a);
+      var1.addInt("InLove", this.a);
    }
 
-   public void a(ady var1) {
+   public void a(CompundTag var1) {
       super.a(var1);
-      this.a = var1.f("InLove");
+      this.a = var1.getInt("InLove");
    }
 
-   protected nn h() {
+   protected BaseEntity h() {
       if(this.aq > 0) {
          return null;
       } else {
@@ -156,10 +156,10 @@ public abstract class bc extends ajr {
                }
             }
          } else if(this.av() == 0) {
-            var2 = this.k.a(yw.class, this.y.b((double)var1, (double)var1, (double)var1));
+            var2 = this.k.a(Player.class, this.y.b((double)var1, (double)var1, (double)var1));
 
             for(var3 = 0; var3 < var2.size(); ++var3) {
-               yw var5 = (yw)var2.get(var3);
+               Player var5 = (Player)var2.get(var3);
                if(var5.av() != null && this.a(var5.av())) {
                   return var5;
                }
@@ -180,9 +180,9 @@ public abstract class bc extends ajr {
    }
 
    public boolean i() {
-      int var1 = gk.c(this.o);
-      int var2 = gk.c(this.y.b);
-      int var3 = gk.c(this.q);
+      int var1 = Utils.c(this.o);
+      int var2 = Utils.c(this.y.b);
+      int var3 = Utils.c(this.q);
       return this.k.a(var1, var2 - 1, var3) == pb.u.bO && this.k.n(var1, var2, var3) > 8 && super.i();
    }
 
@@ -194,7 +194,7 @@ public abstract class bc extends ajr {
       return false;
    }
 
-   protected int b(yw var1) {
+   protected int b(Player var1) {
       return 1 + this.k.r.nextInt(3);
    }
 
@@ -202,7 +202,7 @@ public abstract class bc extends ajr {
       return var1.c == yr.T.bQ;
    }
 
-   public boolean c(yw var1) {
+   public boolean c(Player var1) {
       aan var2 = var1.ap.b();
       if(var2 != null && this.a(var2) && this.av() == 0) {
          if(!var1.aT.d) {

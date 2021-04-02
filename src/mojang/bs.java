@@ -32,7 +32,7 @@ public class bs extends dd {
 
    }
 
-   public boolean b(yw var1) {
+   public boolean b(Player var1) {
       return this.a.a_(var1);
    }
 
@@ -60,7 +60,7 @@ public class bs extends dd {
       return var2;
    }
 
-   public void a(yw var1) {
+   public void a(Player var1) {
       super.a(var1);
       this.a.f();
    }

@@ -35,15 +35,15 @@ public class re extends xu {
       }
 
       for(; var15 < var16; ++var15) {
-         double var54 = 1.5D + (double)(gk.a((float)var15 * 3.1415927F / (float)var16) * var12 * 1.0F);
+         double var54 = 1.5D + (double)(Utils.sin((float)var15 * 3.1415927F / (float)var16) * var12 * 1.0F);
          double var30 = var54 * var17;
          var54 *= (double)var19.nextFloat() * 0.25D + 0.75D;
          var30 *= (double)var19.nextFloat() * 0.25D + 0.75D;
-         float var32 = gk.b(var14);
-         float var33 = gk.a(var14);
-         var6 += (double)(gk.b(var13) * var32);
+         float var32 = Utils.cos(var14);
+         float var33 = Utils.sin(var14);
+         var6 += (double)(Utils.cos(var13) * var32);
          var8 += (double)var33;
-         var10 += (double)(gk.a(var13) * var32);
+         var10 += (double)(Utils.sin(var13) * var32);
          var14 *= 0.7F;
          var14 += var25 * 0.05F;
          var13 += var24 * 0.05F;
@@ -61,12 +61,12 @@ public class re extends xu {
             }
 
             if(var6 >= var20 - 16.0D - var54 * 2.0D && var10 >= var22 - 16.0D - var54 * 2.0D && var6 <= var20 + 16.0D + var54 * 2.0D && var10 <= var22 + 16.0D + var54 * 2.0D) {
-               int var55 = gk.c(var6 - var54) - var3 * 16 - 1;
-               int var35 = gk.c(var6 + var54) - var3 * 16 + 1;
-               int var56 = gk.c(var8 - var30) - 1;
-               int var37 = gk.c(var8 + var30) + 1;
-               int var57 = gk.c(var10 - var54) - var4 * 16 - 1;
-               int var39 = gk.c(var10 + var54) - var4 * 16 + 1;
+               int var55 = Utils.c(var6 - var54) - var3 * 16 - 1;
+               int var35 = Utils.c(var6 + var54) - var3 * 16 + 1;
+               int var56 = Utils.c(var8 - var30) - 1;
+               int var37 = Utils.c(var8 + var30) + 1;
+               int var57 = Utils.c(var10 - var54) - var4 * 16 - 1;
+               int var39 = Utils.c(var10 + var54) - var4 * 16 + 1;
                if(var55 < 0) {
                   var55 = 0;
                }
@@ -157,7 +157,7 @@ public class re extends xu {
 
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, int var5, byte[] var6) {
+   protected void a(World var1, int var2, int var3, int var4, int var5, byte[] var6) {
       if(this.c.nextInt(50) == 0) {
          double var7 = (double)(var2 * 16 + this.c.nextInt(16));
          double var9 = (double)(this.c.nextInt(this.c.nextInt(40) + 8) + 20);

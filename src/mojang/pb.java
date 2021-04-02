@@ -226,7 +226,7 @@ public class pb {
       return true;
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4) {
       return !this.cd.c();
    }
 
@@ -274,23 +274,23 @@ public class pb {
       this.ca = (double)var6;
    }
 
-   public float e(ali var1, int var2, int var3, int var4) {
+   public float e(WorldInterface var1, int var2, int var3, int var4) {
       return var1.a(var2, var3, var4, q[this.bO]);
    }
 
-   public int d(ali var1, int var2, int var3, int var4) {
+   public int d(WorldInterface var1, int var2, int var3, int var4) {
       return var1.b(var2, var3, var4, q[this.bO]);
    }
 
-   public boolean a(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean a(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return var5 == 0 && this.bW > 0.0D?true:(var5 == 1 && this.bZ < 1.0D?true:(var5 == 2 && this.bX > 0.0D?true:(var5 == 3 && this.ca < 1.0D?true:(var5 == 4 && this.bV > 0.0D?true:(var5 == 5 && this.bY < 1.0D?true:!var1.g(var2, var3, var4))))));
    }
 
-   public boolean c(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean c(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return var1.f(var2, var3, var4).a();
    }
 
-   public int d(ali var1, int var2, int var3, int var4, int var5) {
+   public int d(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return this.a(var5, var1.e(var2, var3, var4));
    }
 
@@ -302,11 +302,11 @@ public class pb {
       return this.bN;
    }
 
-   public wu d(xd var1, int var2, int var3, int var4) {
+   public wu d(World var1, int var2, int var3, int var4) {
       return wu.b((double)var2 + this.bV, (double)var3 + this.bW, (double)var4 + this.bX, (double)var2 + this.bY, (double)var3 + this.bZ, (double)var4 + this.ca);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
+   public void a(World var1, int var2, int var3, int var4, wu var5, ArrayList var6) {
       wu var7 = this.c(var1, var2, var3, var4);
       if(var7 != null && var5.a(var7)) {
          var6.add(var7);
@@ -314,7 +314,7 @@ public class pb {
 
    }
 
-   public wu c(xd var1, int var2, int var3, int var4) {
+   public wu c(World var1, int var2, int var3, int var4) {
       return wu.b((double)var2 + this.bV, (double)var3 + this.bW, (double)var4 + this.bX, (double)var2 + this.bY, (double)var3 + this.bZ, (double)var4 + this.ca);
    }
 
@@ -330,21 +330,21 @@ public class pb {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, Random var5) {}
+   public void a(World var1, int var2, int var3, int var4, Random var5) {}
 
-   public void b(xd var1, int var2, int var3, int var4, Random var5) {}
+   public void b(World var1, int var2, int var3, int var4, Random var5) {}
 
-   public void b(xd var1, int var2, int var3, int var4, int var5) {}
+   public void b(World var1, int var2, int var3, int var4, int var5) {}
 
-   public void a(xd var1, int var2, int var3, int var4, int var5) {}
+   public void a(World var1, int var2, int var3, int var4, int var5) {}
 
    public int e() {
       return 10;
    }
 
-   public void a(xd var1, int var2, int var3, int var4) {}
+   public void a(World var1, int var2, int var3, int var4) {}
 
-   public void b_(xd var1, int var2, int var3, int var4) {}
+   public void b_(World var1, int var2, int var3, int var4) {}
 
    public int a(Random var1) {
       return 1;
@@ -354,15 +354,15 @@ public class pb {
       return this.bO;
    }
 
-   public float a(yw var1) {
+   public float a(Player var1) {
       return this.bP < 0.0F?0.0F:(!var1.b(this)?1.0F / this.bP / 100.0F:var1.a(this) / this.bP / 30.0F);
    }
 
-   public final void a(xd var1, int var2, int var3, int var4, int var5, int var6) {
+   public final void a(World var1, int var2, int var3, int var4, int var5, int var6) {
       this.a(var1, var2, var3, var4, var5, 1.0F, var6);
    }
 
-   public void a(xd var1, int var2, int var3, int var4, int var5, float var6, int var7) {
+   public void a(World var1, int var2, int var3, int var4, int var5, float var6, int var7) {
       if(!var1.F) {
          int var8 = this.a(var7, var1.r);
 
@@ -378,15 +378,15 @@ public class pb {
       }
    }
 
-   protected void a(xd var1, int var2, int var3, int var4, aan var5) {
+   protected void a(World var1, int var2, int var3, int var4, aan var5) {
       if(!var1.F) {
          float var6 = 0.7F;
          double var7 = (double)(var1.r.nextFloat() * var6) + (double)(1.0F - var6) * 0.5D;
          double var9 = (double)(var1.r.nextFloat() * var6) + (double)(1.0F - var6) * 0.5D;
          double var11 = (double)(var1.r.nextFloat() * var6) + (double)(1.0F - var6) * 0.5D;
-         fq var13 = new fq(var1, (double)var2 + var7, (double)var3 + var9, (double)var4 + var11, var5);
+         Item var13 = new Item(var1, (double)var2 + var7, (double)var3 + var9, (double)var4 + var11, var5);
          var13.c = 10;
-         var1.a((nn)var13);
+         var1.a((BaseEntity)var13);
       }
    }
 
@@ -394,12 +394,12 @@ public class pb {
       return 0;
    }
 
-   public float a(nn var1) {
+   public float a(BaseEntity var1) {
       return this.bQ / 5.0F;
    }
 
-   public pl a(xd var1, int var2, int var3, int var4, bo var5, bo var6) {
-      this.a((ali)var1, var2, var3, var4);
+   public pl a(World var1, int var2, int var3, int var4, bo var5, bo var6) {
+      this.a((WorldInterface)var1, var2, var3, var4);
       var5 = var5.c((double)(-var2), (double)(-var3), (double)(-var4));
       var6 = var6.c((double)(-var2), (double)(-var3), (double)(-var4));
       bo var7 = var5.a(var6, this.bV);
@@ -501,34 +501,34 @@ public class pb {
       return var1 == null?false:var1.a >= this.bV && var1.a <= this.bY && var1.b >= this.bW && var1.b <= this.bZ;
    }
 
-   public void b(xd var1, int var2, int var3, int var4) {}
+   public void b(World var1, int var2, int var3, int var4) {}
 
    public int c() {
       return 0;
    }
 
-   public boolean d(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean d(World var1, int var2, int var3, int var4, int var5) {
       return this.e(var1, var2, var3, var4);
    }
 
-   public boolean e(xd var1, int var2, int var3, int var4) {
+   public boolean e(World var1, int var2, int var3, int var4) {
       int var5 = var1.a(var2, var3, var4);
       return var5 == 0 || m[var5].cd.i();
    }
 
-   public boolean b(xd var1, int var2, int var3, int var4, yw var5) {
+   public boolean b(World var1, int var2, int var3, int var4, Player var5) {
       return false;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, nn var5) {}
+   public void b(World var1, int var2, int var3, int var4, BaseEntity var5) {}
 
-   public void c(xd var1, int var2, int var3, int var4, int var5) {}
+   public void c(World var1, int var2, int var3, int var4, int var5) {}
 
-   public void a(xd var1, int var2, int var3, int var4, yw var5) {}
+   public void a(World var1, int var2, int var3, int var4, Player var5) {}
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5, bo var6) {}
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5, bo var6) {}
 
-   public void a(ali var1, int var2, int var3, int var4) {}
+   public void a(WorldInterface var1, int var2, int var3, int var4) {}
 
    public int i() {
       return 16777215;
@@ -538,11 +538,11 @@ public class pb {
       return 16777215;
    }
 
-   public int c(ali var1, int var2, int var3, int var4) {
+   public int c(WorldInterface var1, int var2, int var3, int var4) {
       return 16777215;
    }
 
-   public boolean b(ali var1, int var2, int var3, int var4, int var5) {
+   public boolean b(WorldInterface var1, int var2, int var3, int var4, int var5) {
       return false;
    }
 
@@ -550,15 +550,15 @@ public class pb {
       return false;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5) {}
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5) {}
 
-   public boolean e(xd var1, int var2, int var3, int var4, int var5) {
+   public boolean e(World var1, int var2, int var3, int var4, int var5) {
       return false;
    }
 
    public void h() {}
 
-   public void a(xd var1, yw var2, int var3, int var4, int var5, int var6) {
+   public void a(World var1, Player var2, int var3, int var4, int var5, int var6) {
       var2.a(gv.C[this.bO], 1);
       var2.c(0.025F);
       if(this.q() && ais.d(var2.ap)) {
@@ -590,11 +590,11 @@ public class pb {
       return this.a(var2);
    }
 
-   public boolean g(xd var1, int var2, int var3, int var4) {
+   public boolean g(World var1, int var2, int var3, int var4) {
       return true;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, acq var5) {}
+   public void a(World var1, int var2, int var3, int var4, Mob var5) {}
 
    public pb a(String var1) {
       this.a = "tile." + var1;
@@ -609,7 +609,7 @@ public class pb {
       return this.a;
    }
 
-   public void b(xd var1, int var2, int var3, int var4, int var5, int var6) {}
+   public void b(World var1, int var2, int var3, int var4, int var5, int var6) {}
 
    public boolean t() {
       return this.bS;
@@ -624,11 +624,11 @@ public class pb {
       return this.cd.l();
    }
 
-   public float f(ali var1, int var2, int var3, int var4) {
+   public float f(WorldInterface var1, int var2, int var3, int var4) {
       return var1.h(var2, var3, var4)?0.2F:1.0F;
    }
 
-   public void a(xd var1, int var2, int var3, int var4, nn var5, float var6) {}
+   public void a(World var1, int var2, int var3, int var4, BaseEntity var5, float var6) {}
 
    static {
       yr.e[ab.bO] = (new uc(ab.bO - 256)).a("cloth");

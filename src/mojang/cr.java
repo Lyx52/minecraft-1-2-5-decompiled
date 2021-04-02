@@ -11,15 +11,15 @@ public class cr extends um {
       this.a = var1;
    }
 
-   public void a(nn var1, double var2, double var4, double var6, float var8, float var9) {
+   public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       GL11.glPushMatrix();
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       GL11.glEnable('\u803a');
       GL11.glScalef(0.5F, 0.5F, 0.5F);
       this.a("/mojang/gui/items.png");
-      adz var10 = adz.a;
+      Tessalator var10 = Tessalator.a;
       if(this.a == 154) {
-         int var11 = hx.a(((bj)var1).g(), false);
+         int var11 = hx.a(((ThrownPotion)var1).g(), false);
          float var12 = (float)(var11 >> 16 & 255) / 255.0F;
          float var13 = (float)(var11 >> 8 & 255) / 255.0F;
          float var14 = (float)(var11 & 255) / 255.0F;
@@ -35,7 +35,7 @@ public class cr extends um {
       GL11.glPopMatrix();
    }
 
-   private void a(adz var1, int var2) {
+   private void a(Tessalator var1, int var2) {
       float var3 = (float)(var2 % 16 * 16 + 0) / 256.0F;
       float var4 = (float)(var2 % 16 * 16 + 16) / 256.0F;
       float var5 = (float)(var2 / 16 * 16 + 0) / 256.0F;

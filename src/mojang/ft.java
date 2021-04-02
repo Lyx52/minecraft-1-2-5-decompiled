@@ -2,19 +2,19 @@ package mojang;
 
 public class ft extends fl {
 
-   private nn o;
+   private BaseEntity o;
 
 
-   public ft(String var1, nn var2, nn var3) {
+   public ft(String var1, BaseEntity var2, BaseEntity var3) {
       super(var1, var2);
       this.o = var3;
    }
 
-   public nn b() {
+   public BaseEntity b() {
       return this.a;
    }
 
-   public nn a() {
+   public BaseEntity a() {
       return this.o;
    }
 }

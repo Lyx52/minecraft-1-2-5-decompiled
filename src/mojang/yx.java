@@ -2,7 +2,7 @@ package mojang;
 
 public class yx extends rt {
 
-   public yx(xd var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public yx(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.r = var8 + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.05F);
       this.s = var10 + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.05F);
@@ -13,9 +13,9 @@ public class yx extends rt {
    }
 
    public void J_() {
-      this.l = this.o;
-      this.m = this.p;
-      this.n = this.q;
+      this.sandX = this.o;
+      this.sandY = this.p;
+      this.sandZ = this.q;
       if(this.d++ >= this.e) {
          this.A();
       }

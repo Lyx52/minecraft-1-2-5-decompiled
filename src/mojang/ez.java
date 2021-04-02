@@ -1,6 +1,6 @@
 package mojang;
 
-public class ez extends vp {
+public class ez extends GUIManager {
 
    private adl a;
    private int b = 0;
@@ -13,7 +13,7 @@ public class ez extends vp {
    protected void a(char var1, int var2) {}
 
    public void c() {
-      this.s.clear();
+      this.buttonList.clear();
    }
 
    public void a() {
@@ -28,12 +28,12 @@ public class ez extends vp {
 
    }
 
-   protected void a(abp var1) {}
+   protected void a(Button var1) {}
 
    public void a(int var1, int var2, float var3) {
       this.e(0);
-      adn var4 = adn.a();
-      this.a(this.u, var4.b("multiplayer.downloadingTerrain"), this.q / 2, this.r / 2 - 50, 16777215);
+      LocalizationManager var4 = LocalizationManager.getInstance();
+      this.a(this.u, var4.getLocaleStringByName("multiplayer.downloadingTerrain"), this.q / 2, this.r / 2 - 50, 16777215);
       super.a(var1, var2, var3);
    }
 }

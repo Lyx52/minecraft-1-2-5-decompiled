@@ -1,6 +1,6 @@
 package mojang;
 
-public class afx extends vp {
+public class afx extends GUIManager {
 
    private int a = 0;
 
@@ -10,14 +10,14 @@ public class afx extends vp {
    }
 
    public void c() {
-      this.s.clear();
-      this.s.add(new abp(0, this.q / 2 - 100, this.r / 4 + 120 + 12, "Back to title screen"));
+      this.buttonList.clear();
+      this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, "Back to title screen"));
    }
 
-   protected void a(abp var1) {
+   protected void a(Button var1) {
       if(var1.h) {
          if(var1.f == 0) {
-            this.p.a((vp)(new xt()));
+            this.minecraft.a((GUIManager)(new xt()));
          }
 
       }

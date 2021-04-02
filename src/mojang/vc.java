@@ -15,25 +15,25 @@ public class vc {
    private File h;
    private File i;
    private File j;
-   private fc k;
+   private CredentialManager k;
    private int l = 0;
    private int m = 0;
 
 
-   public vc(fc var1, alf var2, File var3) {
-      this.e = new File(var3, "stats_" + var1.b.toLowerCase() + "_unsent.dat");
-      this.f = new File(var3, "stats_" + var1.b.toLowerCase() + ".dat");
-      this.i = new File(var3, "stats_" + var1.b.toLowerCase() + "_unsent.old");
-      this.j = new File(var3, "stats_" + var1.b.toLowerCase() + ".old");
-      this.g = new File(var3, "stats_" + var1.b.toLowerCase() + "_unsent.tmp");
-      this.h = new File(var3, "stats_" + var1.b.toLowerCase() + ".tmp");
-      if(!var1.b.toLowerCase().equals(var1.b)) {
-         this.a(var3, "stats_" + var1.b + "_unsent.dat", this.e);
-         this.a(var3, "stats_" + var1.b + ".dat", this.f);
-         this.a(var3, "stats_" + var1.b + "_unsent.old", this.i);
-         this.a(var3, "stats_" + var1.b + ".old", this.j);
-         this.a(var3, "stats_" + var1.b + "_unsent.tmp", this.g);
-         this.a(var3, "stats_" + var1.b + ".tmp", this.h);
+   public vc(CredentialManager var1, alf var2, File var3) {
+      this.e = new File(var3, "stats_" + var1.username.toLowerCase() + "_unsent.dat");
+      this.f = new File(var3, "stats_" + var1.username.toLowerCase() + ".dat");
+      this.i = new File(var3, "stats_" + var1.username.toLowerCase() + "_unsent.old");
+      this.j = new File(var3, "stats_" + var1.username.toLowerCase() + ".old");
+      this.g = new File(var3, "stats_" + var1.username.toLowerCase() + "_unsent.tmp");
+      this.h = new File(var3, "stats_" + var1.username.toLowerCase() + ".tmp");
+      if(!var1.username.toLowerCase().equals(var1.username)) {
+         this.a(var3, "stats_" + var1.username + "_unsent.dat", this.e);
+         this.a(var3, "stats_" + var1.username + ".dat", this.f);
+         this.a(var3, "stats_" + var1.username + "_unsent.old", this.i);
+         this.a(var3, "stats_" + var1.username + ".old", this.j);
+         this.a(var3, "stats_" + var1.username + "_unsent.tmp", this.g);
+         this.a(var3, "stats_" + var1.username + ".tmp", this.h);
       }
 
       this.d = var2;
@@ -91,7 +91,7 @@ public class vc {
       PrintWriter var5 = new PrintWriter(new FileWriter(var3, false));
 
       try {
-         var5.print(alf.a(this.k.b, "local", var1));
+         var5.print(alf.a(this.k.username, "local", var1));
       } finally {
          var5.close();
       }

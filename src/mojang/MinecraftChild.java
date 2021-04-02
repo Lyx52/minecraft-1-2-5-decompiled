@@ -6,21 +6,20 @@ import java.awt.Component;
 import mojang.net.minecraft.client.Minecraft;
 import mojang.net.minecraft.client.MinecraftApplet;
 
-public class n extends Minecraft {
+public class MinecraftChild extends Minecraft {
 
-   // $FF: synthetic field
-   final MinecraftApplet a;
+   final MinecraftApplet minecraftApplet;
 
 
-   public n(MinecraftApplet var1, Component var2, Canvas var3, MinecraftApplet var4, int var5, int var6, boolean var7) {
-      super(var2, var3, var4, var5, var6, var7);
-      this.a = var1;
+   public MinecraftChild(MinecraftApplet applet, Component componentApplet, Canvas canvas, MinecraftApplet minecraftApplet, int width, int height, boolean fullscreen) {
+      super(componentApplet, canvas, minecraftApplet, width, height, fullscreen);
+      this.minecraftApplet = applet;
    }
 
-   public void a(ja var1) {
-      this.a.removeAll();
-      this.a.setLayout(new BorderLayout());
-      this.a.add(new uu(var1), "Center");
-      this.a.validate();
+   public void throwStopGameException(StopGameException exception) {
+      this.minecraftApplet.removeAll();
+      this.minecraftApplet.setLayout(new BorderLayout());
+      this.minecraftApplet.add(new ErrorPanel(exception), "Center");
+      this.minecraftApplet.validate();
    }
 }
