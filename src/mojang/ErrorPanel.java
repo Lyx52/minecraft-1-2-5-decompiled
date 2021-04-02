@@ -14,11 +14,11 @@ import org.lwjgl.opengl.GL11;
 
 public class uu extends Panel {
 
-   public uu(ja var1) {
+   public uu(StopGameException var1) {
       this.setBackground(new Color(3028036));
       this.setLayout(new BorderLayout());
       StringWriter var2 = new StringWriter();
-      var1.b.printStackTrace(new PrintWriter(var2));
+      var1.exception.printStackTrace(new PrintWriter(var2));
       String var3 = var2.toString();
       String var4 = "";
       String var5 = "";

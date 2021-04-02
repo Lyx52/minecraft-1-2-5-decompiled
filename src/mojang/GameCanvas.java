@@ -15,7 +15,7 @@ public class o extends Canvas {
 
    public synchronized void addNotify() {
       super.addNotify();
-      this.a.a();
+      this.a.startMainThread();
    }
 
    public synchronized void removeNotify() {
