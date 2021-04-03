@@ -11,7 +11,7 @@ public class adr extends Button {
 
    public void a(Minecraft var1, int var2, int var3) {
       if(this.i) {
-         GL11.glBindTexture(3553, var1.p.b("/mojang/gui/gui.png"));
+         GL11.glBindTexture(3553, var1.textureManager.readImageFromLocation("/mojang/gui/gui.png"));
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          boolean var4 = var2 >= this.x && var3 >= this.y && var2 < this.x + this.width && var3 < this.y + this.height;
          int var5 = 106;

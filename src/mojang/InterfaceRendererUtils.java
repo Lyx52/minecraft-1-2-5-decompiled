@@ -45,7 +45,7 @@ public class InterfaceRendererUtils {
       float var6 = (float)(var4 >> 16 & 255) / 255.0F;
       float var7 = (float)(var4 >> 8 & 255) / 255.0F;
       float var8 = (float)(var4 & 255) / 255.0F;
-      Tessalator var9 = Tessalator.a;
+      Tessalator var9 = Tessalator.tessalatorInstance;
       GL11.glEnable(3042);
       GL11.glDisable(3553);
       GL11.glBlendFunc(770, 771);
@@ -74,7 +74,7 @@ public class InterfaceRendererUtils {
       GL11.glDisable(3008);
       GL11.glBlendFunc(770, 771);
       GL11.glShadeModel(7425);
-      Tessalator var15 = Tessalator.a;
+      Tessalator var15 = Tessalator.tessalatorInstance;
       var15.b();
       var15.a(var8, var9, var10, var7);
       var15.a((double)var3, (double)var2, (double)this.g);
@@ -100,7 +100,7 @@ public class InterfaceRendererUtils {
    public void b(int var1, int var2, int var3, int var4, int var5, int var6) {
       float var7 = 0.00390625F;
       float var8 = 0.00390625F;
-      Tessalator var9 = Tessalator.a;
+      Tessalator var9 = Tessalator.tessalatorInstance;
       var9.b();
       var9.a((double)(var1 + 0), (double)(var2 + var6), (double)this.g, (double)((float)(var3 + 0) * var7), (double)((float)(var4 + var6) * var8));
       var9.a((double)(var1 + var5), (double)(var2 + var6), (double)this.g, (double)((float)(var3 + var5) * var7), (double)((float)(var4 + var6) * var8));

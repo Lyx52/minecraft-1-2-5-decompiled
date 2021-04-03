@@ -275,7 +275,7 @@ public class yr {
 
    public String h(aan var1) {
       String var2 = this.a(var1);
-      return var2 == null?"":cy.a(var2);
+      return var2 == null?"": LocalizationManagerWrapper.getLocaleString(var2);
    }
 
    public String e() {
@@ -308,7 +308,7 @@ public class yr {
    }
 
    public String n() {
-      return cy.a(this.e() + ".name");
+      return LocalizationManagerWrapper.getLocaleString(this.e() + ".name");
    }
 
    public int b(int var1, int var2) {
@@ -345,7 +345,7 @@ public class yr {
    public void a(aan var1, List var2) {}
 
    public String d(aan var1) {
-      String var2 = ("" + LocalizationManager.getInstance().c(this.h(var1))).trim();
+      String var2 = ("" + LocalizationManager.getInstance().getNameLocale(this.h(var1))).trim();
       return var2;
    }
 

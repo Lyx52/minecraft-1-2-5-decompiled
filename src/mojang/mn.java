@@ -16,22 +16,22 @@ public class mn {
 
    public mn(Minecraft var1) {
       this.a = var1;
-      this.f = new aal(var1.q, var1.options, var1.p);
+      this.f = new aal(var1.q, var1.options, var1.textureManager);
    }
 
    public void a(Mob var1, aan var2, int var3) {
       GL11.glPushMatrix();
       if(var2.c < 256 && vl.a(pb.m[var2.c].d())) {
-         GL11.glBindTexture(3553, this.a.p.b("/mojang/terrain.png"));
+         GL11.glBindTexture(3553, this.a.textureManager.readImageFromLocation("/mojang/terrain.png"));
          this.e.a(pb.m[var2.c], var2.i(), 1.0F);
       } else {
          if(var2.c < 256) {
-            GL11.glBindTexture(3553, this.a.p.b("/mojang/terrain.png"));
+            GL11.glBindTexture(3553, this.a.textureManager.readImageFromLocation("/mojang/terrain.png"));
          } else {
-            GL11.glBindTexture(3553, this.a.p.b("/mojang/gui/items.png"));
+            GL11.glBindTexture(3553, this.a.textureManager.readImageFromLocation("/mojang/gui/items.png"));
          }
 
-         Tessalator var4 = Tessalator.a;
+         Tessalator var4 = Tessalator.tessalatorInstance;
          int var5 = var1.b(var2, var3);
          float var6 = ((float)(var5 % 16 * 16) + 0.0F) / 256.0F;
          float var7 = ((float)(var5 % 16 * 16) + 15.99F) / 256.0F;
@@ -50,7 +50,7 @@ public class mn {
          if(var2 != null && var2.r() && var3 == 0) {
             GL11.glDepthFunc(514);
             GL11.glDisable(2896);
-            this.a.p.b(this.a.p.b("%blur%/mojang.misc/glint.png"));
+            this.a.textureManager.b(this.a.textureManager.readImageFromLocation("%blur%/mojang.misc/glint.png"));
             GL11.glEnable(3042);
             GL11.glBlendFunc(768, 1);
             float var13 = 0.76F;
@@ -225,7 +225,7 @@ public class mn {
          GL11.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(var16 * -85.0F, 0.0F, 0.0F, 1.0F);
          GL11.glEnable('\u803a');
-         GL11.glBindTexture(3553, this.a.p.a(this.a.h.Z, this.a.h.v_()));
+         GL11.glBindTexture(3553, this.a.textureManager.a(this.a.h.Z, this.a.h.v_()));
 
          for(var9 = 0; var9 < 2; ++var9) {
             int var24 = var9 * 2 - 1;
@@ -256,8 +256,8 @@ public class mn {
          GL11.glTranslatef(-1.0F, -1.0F, 0.0F);
          var10 = 0.015625F;
          GL11.glScalef(var10, var10, var10);
-         this.a.p.b(this.a.p.b("/mojang/misc/mapbg.png"));
-         Tessalator var23 = Tessalator.a;
+         this.a.textureManager.b(this.a.textureManager.readImageFromLocation("/mojang/misc/mapbg.png"));
+         Tessalator var23 = Tessalator.tessalatorInstance;
          GL11.glNormal3f(0.0F, 0.0F, -1.0F);
          var23.b();
          byte var27 = 7;
@@ -267,7 +267,7 @@ public class mn {
          var23.a((double)(0 - var27), (double)(0 - var27), 0.0D, 0.0D, 0.0D);
          var23.a();
          aaj var25 = yr.bd.a(var14, this.a.f);
-         this.f.a(this.a.h, this.a.p, var25);
+         this.f.a(this.a.h, this.a.textureManager, var25);
          GL11.glPopMatrix();
       } else if(var14 != null) {
          GL11.glPushMatrix();
@@ -374,7 +374,7 @@ public class mn {
          var10 = Utils.sin(Utils.sqrt(var16) * 3.1415927F);
          GL11.glRotatef(var10 * 70.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(-var18 * 20.0F, 0.0F, 0.0F, 1.0F);
-         GL11.glBindTexture(3553, this.a.p.a(this.a.h.Z, this.a.h.v_()));
+         GL11.glBindTexture(3553, this.a.textureManager.a(this.a.h.Z, this.a.h.v_()));
          GL11.glTranslatef(-1.0F, 3.6F, 3.5F);
          GL11.glRotatef(120.0F, 0.0F, 0.0F, 1.0F);
          GL11.glRotatef(200.0F, 1.0F, 0.0F, 0.0F);
@@ -397,7 +397,7 @@ public class mn {
       GL11.glDisable(3008);
       int var2;
       if(this.a.h.T()) {
-         var2 = this.a.p.b("/mojang/terrain.png");
+         var2 = this.a.textureManager.readImageFromLocation("/mojang/terrain.png");
          GL11.glBindTexture(3553, var2);
          this.d(var1);
       }
@@ -406,7 +406,7 @@ public class mn {
          var2 = Utils.c(this.a.h.o);
          int var3 = Utils.c(this.a.h.p);
          int var4 = Utils.c(this.a.h.q);
-         int var5 = this.a.p.b("/mojang/terrain.png");
+         int var5 = this.a.textureManager.readImageFromLocation("/mojang/terrain.png");
          GL11.glBindTexture(3553, var5);
          int var6 = this.a.f.a(var2, var3, var4);
          if(this.a.f.h(var2, var3, var4)) {
@@ -431,7 +431,7 @@ public class mn {
       }
 
       if(this.a.h.a(acn.g)) {
-         var2 = this.a.p.b("/mojang/misc/water.png");
+         var2 = this.a.textureManager.readImageFromLocation("/mojang/misc/water.png");
          GL11.glBindTexture(3553, var2);
          this.c(var1);
       }
@@ -440,7 +440,7 @@ public class mn {
    }
 
    private void a(float var1, int var2) {
-      Tessalator var3 = Tessalator.a;
+      Tessalator var3 = Tessalator.tessalatorInstance;
       this.a.h.a(var1);
       float var4 = 0.1F;
       GL11.glColor4f(var4, var4, var4, 0.5F);
@@ -466,7 +466,7 @@ public class mn {
    }
 
    private void c(float var1) {
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       float var3 = this.a.h.a(var1);
       GL11.glColor4f(var3, var3, var3, 0.5F);
       GL11.glEnable(3042);
@@ -492,7 +492,7 @@ public class mn {
    }
 
    private void d(float var1) {
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.9F);
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);

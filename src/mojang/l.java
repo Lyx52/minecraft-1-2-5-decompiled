@@ -14,7 +14,7 @@ public class l implements afk {
 
    public List a = new ArrayList();
    private World i;
-   private Texture j;
+   private TextureManager j;
    private List k = new ArrayList();
    private ct[] l;
    private ct[] m;
@@ -59,7 +59,7 @@ public class l implements afk {
    int h = 0;
 
 
-   public l(Minecraft var1, Texture var2) {
+   public l(Minecraft var1, TextureManager var2) {
       this.r = var1;
       this.j = var2;
       byte var3 = 34;
@@ -81,7 +81,7 @@ public class l implements afk {
       this.f();
       GL11.glEndList();
       GL11.glPopMatrix();
-      Tessalator var5 = Tessalator.a;
+      Tessalator var5 = Tessalator.tessalatorInstance;
       this.x = this.w + 1;
       GL11.glNewList(this.x, 4864);
       byte var7 = 64;
@@ -122,7 +122,7 @@ public class l implements afk {
 
    private void f() {
       Random var1 = new Random(10842L);
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       var2.b();
 
       for(int var3 = 0; var3 < 1500; ++var3) {
@@ -624,8 +624,8 @@ public class l implements afk {
          GL11.glBlendFunc(770, 771);
          tf.a();
          GL11.glDepthMask(false);
-         this.j.b(this.j.b("/mojang/misc/tunnel.png"));
-         Tessalator var19 = Tessalator.a;
+         this.j.b(this.j.readImageFromLocation("/mojang/misc/tunnel.png"));
+         Tessalator var19 = Tessalator.tessalatorInstance;
 
          for(int var20 = 0; var20 < 6; ++var20) {
             GL11.glPushMatrix();
@@ -680,7 +680,7 @@ public class l implements afk {
          }
 
          GL11.glColor3f(var3, var4, var5);
-         Tessalator var21 = Tessalator.a;
+         Tessalator var21 = Tessalator.tessalatorInstance;
          GL11.glDepthMask(false);
          GL11.glEnable(2912);
          GL11.glColor3f(var3, var4, var5);
@@ -747,7 +747,7 @@ public class l implements afk {
          GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(this.i.c(var1) * 360.0F, 1.0F, 0.0F, 0.0F);
          var11 = 30.0F;
-         GL11.glBindTexture(3553, this.j.b("/mojang/terrain/sun.png"));
+         GL11.glBindTexture(3553, this.j.readImageFromLocation("/mojang/terrain/sun.png"));
          var21.b();
          var21.a((double)(-var11), 100.0D, (double)(-var11), 0.0D, 0.0D);
          var21.a((double)var11, 100.0D, (double)(-var11), 1.0D, 0.0D);
@@ -755,7 +755,7 @@ public class l implements afk {
          var21.a((double)(-var11), 100.0D, (double)var11, 0.0D, 1.0D);
          var21.a();
          var11 = 20.0F;
-         GL11.glBindTexture(3553, this.j.b("/mojang/terrain/moon_phases.png"));
+         GL11.glBindTexture(3553, this.j.readImageFromLocation("/mojang/terrain/moon_phases.png"));
          var25 = this.i.d(var1);
          int var26 = var25 % 4;
          int var27 = var25 / 4 % 2;
@@ -841,8 +841,8 @@ public class l implements afk {
             float var2 = (float)(this.r.i.O + (this.r.i.p - this.r.i.O) * (double)var1);
             byte var3 = 32;
             int var4 = 256 / var3;
-            Tessalator var5 = Tessalator.a;
-            GL11.glBindTexture(3553, this.j.b("/mojang/environment/clouds.png"));
+            Tessalator var5 = Tessalator.tessalatorInstance;
+            GL11.glBindTexture(3553, this.j.readImageFromLocation("/mojang/environment/clouds.png"));
             GL11.glEnable(3042);
             GL11.glBlendFunc(770, 771);
             bo var6 = this.i.f(var1);
@@ -897,7 +897,7 @@ public class l implements afk {
    public void c(float var1) {
       GL11.glDisable(2884);
       float var2 = (float)(this.r.i.O + (this.r.i.p - this.r.i.O) * (double)var1);
-      Tessalator var3 = Tessalator.a;
+      Tessalator var3 = Tessalator.tessalatorInstance;
       float var4 = 12.0F;
       float var5 = 4.0F;
       double var6 = (double)((float)this.v + var1);
@@ -908,7 +908,7 @@ public class l implements afk {
       int var14 = Utils.c(var10 / 2048.0D);
       var8 -= (double)(var13 * 2048);
       var10 -= (double)(var14 * 2048);
-      GL11.glBindTexture(3553, this.j.b("/mojang/environment/clouds.png"));
+      GL11.glBindTexture(3553, this.j.readImageFromLocation("/mojang/environment/clouds.png"));
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       bo var15 = this.i.f(var1);
@@ -1179,7 +1179,7 @@ public class l implements afk {
    }
 
    public void a(Player var1, pl var2, int var3, aan var4, float var5) {
-      Tessalator var6 = Tessalator.a;
+      Tessalator var6 = Tessalator.tessalatorInstance;
       GL11.glEnable(3042);
       GL11.glEnable(3008);
       GL11.glBlendFunc(770, 1);
@@ -1188,7 +1188,7 @@ public class l implements afk {
       if(var3 == 0) {
          if(this.g > 0.0F) {
             GL11.glBlendFunc(774, 768);
-            int var7 = this.j.b("/mojang/terrain.png");
+            int var7 = this.j.readImageFromLocation("/mojang/terrain.png");
             GL11.glBindTexture(3553, var7);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.5F);
             GL11.glPushMatrix();
@@ -1222,7 +1222,7 @@ public class l implements afk {
          GL11.glBlendFunc(770, 771);
          float var16 = Utils.sin((float)System.currentTimeMillis() / 100.0F) * 0.2F + 0.8F;
          GL11.glColor4f(var16, var16, var16, Utils.sin((float)System.currentTimeMillis() / 200.0F) * 0.2F + 0.5F);
-         var8 = this.j.b("/mojang/terrain.png");
+         var8 = this.j.readImageFromLocation("/mojang/terrain.png");
          GL11.glBindTexture(3553, var8);
          int var17 = var2.b;
          int var18 = var2.c;
@@ -1282,7 +1282,7 @@ public class l implements afk {
    }
 
    private void a(wu var1) {
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       var2.a(3);
       var2.a(var1.a, var1.b, var1.c);
       var2.a(var1.d, var1.b, var1.c);

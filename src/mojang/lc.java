@@ -26,20 +26,20 @@ public class lc extends Resource {
 
    public void b(Minecraft minecraft) {
       if(this.f != null) {
-         minecraft.p.a(this.e);
+         minecraft.textureManager.a(this.e);
       }
 
    }
 
    public void c(Minecraft minecraft) {
       if(this.f != null && this.e < 0) {
-         this.e = minecraft.p.a(this.f);
+         this.e = minecraft.textureManager.a(this.f);
       }
 
       if(this.f != null) {
-         minecraft.p.b(this.e);
+         minecraft.textureManager.b(this.e);
       } else {
-         GL11.glBindTexture(3553, minecraft.p.b("/mojang/gui/unknown_pack.png"));
+         GL11.glBindTexture(3553, minecraft.textureManager.readImageFromLocation("/mojang/gui/unknown_pack.png"));
       }
 
    }

@@ -23,7 +23,7 @@ public class adl extends oe {
    private Minecraft h;
    private je i;
    private boolean j = false;
-   public za b = new za((akp)null);
+   public za b = new za((WorldFileInterface)null);
    private Map k = new HashMap();
    public List c = new ArrayList();
    public int d = 20;
@@ -51,7 +51,7 @@ public class adl extends oe {
       this.i.F = true;
       this.h.a((World)this.i);
       this.h.h.aB = var1.e;
-      this.h.a((GUIManager)(new ez(this)));
+      this.h.addMenu((GUIManager)(new ez(this)));
       this.h.h.f = var1.a;
       this.d = var1.h;
       ((rk)this.h.c).a(var1.d == 1);
@@ -297,7 +297,7 @@ public class adl extends oe {
          this.h.h.sandY = this.h.h.p;
          this.h.h.sandZ = this.h.h.q;
          this.j = true;
-         this.h.a((GUIManager)null);
+         this.h.addMenu((GUIManager)null);
       }
 
    }
@@ -356,14 +356,14 @@ public class adl extends oe {
       this.g.a("disconnect.kicked", new Object[0]);
       this.f = true;
       this.h.a((World)null);
-      this.h.a((GUIManager)(new dw("disconnect.disconnected", "disconnect.genericReason", new Object[]{var1.a})));
+      this.h.addMenu((GUIManager)(new dw("disconnect.disconnected", "disconnect.genericReason", new Object[]{var1.a})));
    }
 
    public void a(String var1, Object[] var2) {
       if(!this.f) {
          this.f = true;
          this.h.a((World)null);
-         this.h.a((GUIManager)(new dw("disconnect.lost", var1, var2)));
+         this.h.addMenu((GUIManager)(new dw("disconnect.lost", var1, var2)));
       }
    }
 
@@ -566,7 +566,7 @@ public class adl extends oe {
          this.i.F = true;
          this.h.a((World)this.i);
          this.h.h.aB = var1.a;
-         this.h.a((GUIManager)(new ez(this)));
+         this.h.addMenu((GUIManager)(new ez(this)));
       }
 
       this.h.a(true, var1.a, false);
@@ -724,7 +724,7 @@ public class adl extends oe {
       } else if(var3 == 3) {
          ((rk)this.h.c).a(var1.c == 1);
       } else if(var3 == 4) {
-         this.h.a((GUIManager)(new c()));
+         this.h.addMenu((GUIManager)(new c()));
       }
 
    }

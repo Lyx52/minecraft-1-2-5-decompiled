@@ -29,7 +29,7 @@ public class acz extends GUIManager {
       this.b.f(128);
       this.b.b(true);
       this.b.a(d);
-      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0;
+      ((Button)this.buttonList.get(0)).visible = this.b.b().length() > 0 && this.b.b().split(":").length > 0;
    }
 
    public void e() {
@@ -37,11 +37,11 @@ public class acz extends GUIManager {
       d = this.b.b();
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 1) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 1) {
             this.a.a(false, 0);
-         } else if(var1.f == 0) {
+         } else if(var1.buttonID == 0) {
             this.c.b = this.b.b();
             this.a.a(true, 0);
          }
@@ -52,10 +52,10 @@ public class acz extends GUIManager {
    protected void a(char var1, int var2) {
       this.b.a(var1, var2);
       if(var1 == 28) {
-         this.a((Button)this.buttonList.get(0));
+         this.clickButton((Button)this.buttonList.get(0));
       }
 
-      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0;
+      ((Button)this.buttonList.get(0)).visible = this.b.b().length() > 0 && this.b.b().split(":").length > 0;
    }
 
    protected void a(int var1, int var2, int var3) {

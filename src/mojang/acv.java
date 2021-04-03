@@ -8,10 +8,10 @@ public class acv extends yr {
    }
 
    public String d(aan var1) {
-      String var2 = ("" + cy.a(this.e() + ".name")).trim();
+      String var2 = ("" + LocalizationManagerWrapper.getLocaleString(this.e() + ".name")).trim();
       String var3 = EntityManager.getNameByID(var1.i());
       if(var3 != null) {
-         var2 = var2 + " " + cy.a("entity." + var3 + ".name");
+         var2 = var2 + " " + LocalizationManagerWrapper.getLocaleString("entity." + var3 + ".name");
       }
 
       return var2;

@@ -138,7 +138,7 @@ public class hy implements ca {
 
    }
 
-   public boolean a(boolean var1, rw var2) {
+   public boolean a(boolean var1, GUIBackgroundInterface var2) {
       int var3 = 0;
       int var4 = 0;
       int var5;
@@ -169,7 +169,7 @@ public class hy implements ca {
                if(var2 != null) {
                   ++var5;
                   if(var5 % 10 == 0) {
-                     var2.a(var5 * 100 / var4);
+                     var2.createBackground(var5 * 100 / var4);
                   }
                }
             }

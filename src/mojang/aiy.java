@@ -66,12 +66,12 @@ public class aiy extends InterfaceRendererUtils {
       int var45;
       if(!this.i.c.e()) {
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         GL11.glBindTexture(3553, this.i.p.b("/mojang/gui/gui.png"));
+         GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("/mojang/gui/gui.png"));
          aak var31 = this.i.h.ap;
          this.g = -90.0F;
          this.b(var6 / 2 - 91, var7 - 22, 0, 0, 182, 22);
          this.b(var6 / 2 - 91 - 1 + var31.c * 20, var7 - 22 - 1, 0, 22, 24, 22);
-         GL11.glBindTexture(3553, this.i.p.b("/mojang/gui/icons.png"));
+         GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("/mojang/gui/icons.png"));
          GL11.glEnable(3042);
          GL11.glBlendFunc(775, 769);
          this.b(var6 / 2 - 7, var7 / 2 - 7, 0, 0, 16, 16);
@@ -372,7 +372,7 @@ public class aiy extends InterfaceRendererUtils {
             if(var19 < var38.size()) {
                ah var46 = (ah)var38.get(var19);
                var8.a(var46.a, var20, var45, 16777215);
-               this.i.p.b(this.i.p.b("/mojang/gui/icons.png"));
+               this.i.textureManager.b(this.i.textureManager.readImageFromLocation("/mojang/gui/icons.png"));
                byte var47 = 0;
                boolean var49 = false;
                byte var50;
@@ -484,7 +484,7 @@ public class aiy extends InterfaceRendererUtils {
          String var9 = "Boss health";
          var2.a(var9, var4 / 2 - var2.a(var9) / 2, var8 - 10, 16711935);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         GL11.glBindTexture(3553, this.i.p.b("/mojang/gui/icons.png"));
+         GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("/mojang/gui/icons.png"));
       }
    }
 
@@ -494,8 +494,8 @@ public class aiy extends InterfaceRendererUtils {
       GL11.glBlendFunc(770, 771);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(3008);
-      GL11.glBindTexture(3553, this.i.p.b("%blur%/mojang.misc/pumpkinblur.png"));
-      Tessalator var3 = Tessalator.a;
+      GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("%blur%/mojang.misc/pumpkinblur.png"));
+      Tessalator var3 = Tessalator.tessalatorInstance;
       var3.b();
       var3.a(0.0D, (double)var2, -90.0D, 0.0D, 1.0D);
       var3.a((double)var1, (double)var2, -90.0D, 1.0D, 1.0D);
@@ -523,8 +523,8 @@ public class aiy extends InterfaceRendererUtils {
       GL11.glDepthMask(false);
       GL11.glBlendFunc(0, 769);
       GL11.glColor4f(this.c, this.c, this.c, 1.0F);
-      GL11.glBindTexture(3553, this.i.p.b("%blur%/mojang.misc/vignette.png"));
-      Tessalator var4 = Tessalator.a;
+      GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("%blur%/mojang.misc/vignette.png"));
+      Tessalator var4 = Tessalator.tessalatorInstance;
       var4.b();
       var4.a(0.0D, (double)var3, -90.0D, 0.0D, 1.0D);
       var4.a((double)var2, (double)var3, -90.0D, 1.0D, 1.0D);
@@ -549,12 +549,12 @@ public class aiy extends InterfaceRendererUtils {
       GL11.glDepthMask(false);
       GL11.glBlendFunc(770, 771);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, var1);
-      GL11.glBindTexture(3553, this.i.p.b("/mojang/terrain.png"));
+      GL11.glBindTexture(3553, this.i.textureManager.readImageFromLocation("/mojang/terrain.png"));
       float var4 = (float)(pb.be.bN % 16) / 16.0F;
       float var5 = (float)(pb.be.bN / 16) / 16.0F;
       float var6 = (float)(pb.be.bN % 16 + 1) / 16.0F;
       float var7 = (float)(pb.be.bN / 16 + 1) / 16.0F;
-      Tessalator var8 = Tessalator.a;
+      Tessalator var8 = Tessalator.tessalatorInstance;
       var8.b();
       var8.a(0.0D, (double)var3, -90.0D, (double)var4, (double)var7);
       var8.a((double)var2, (double)var3, -90.0D, (double)var6, (double)var7);
@@ -579,12 +579,12 @@ public class aiy extends InterfaceRendererUtils {
             GL11.glTranslatef((float)(-(var2 + 8)), (float)(-(var3 + 12)), 0.0F);
          }
 
-         d.a(this.i.q, this.i.p, var5, var2, var3);
+         d.a(this.i.q, this.i.textureManager, var5, var2, var3);
          if(var6 > 0.0F) {
             GL11.glPopMatrix();
          }
 
-         d.b(this.i.q, this.i.p, var5, var2, var3);
+         d.b(this.i.q, this.i.textureManager, var5, var2, var3);
       }
    }
 

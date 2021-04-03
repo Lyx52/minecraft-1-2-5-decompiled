@@ -4,15 +4,15 @@ import java.util.Random;
 
 public class Utils {
 
-   private static float[] a = new float[65536];
+   private static float[] sinTable = new float[65536];
 
 
    public static final float sin(float value) {
-      return a[(int)(value * 10430.378F) & '\uffff'];
+      return sinTable[(int)(value * 10430.378F) & '\uffff'];
    }
 
    public static final float cos(float value) {
-      return a[(int)(value * 10430.378F + 16384.0F) & '\uffff'];
+      return sinTable[(int)(value * 10430.378F + 16384.0F) & '\uffff'];
    }
 
    public static final float sqrt(float value) {
@@ -47,14 +47,14 @@ public class Utils {
    }
 
    public static int a(int var0, int var1, int var2) {
-      return var0 < var1?var1:(var0 > var2?var2:var0);
+      return var0 < var1 ? var1:(Math.min(var0, var2));
    }
 
    public static float a(float var0, float var1, float var2) {
-      return var0 < var1?var1:(var0 > var2?var2:var0);
+      return var0 < var1 ? var1 : Math.min(var0, var2);
    }
 
-   public static double a(double var0, double var2) {
+   public static double absMax(double var0, double var2) {
       if(var0 < 0.0D) {
          var0 = -var0;
       }
@@ -74,13 +74,13 @@ public class Utils {
       return worldName == null || worldName.length() == 0;
    }
 
-   public static int a(Random var0, int var1, int var2) {
-      return var1 >= var2?var1:var0.nextInt(var2 - var1 + 1) + var1;
+   public static int randInt(Random randomizer, int var1, int var2) {
+      return var1 >= var2 ? var1 : randomizer.nextInt(var2 - var1 + 1) + var1;
    }
 
    static {
-      for(int var0 = 0; var0 < 65536; ++var0) {
-         a[var0] = (float)Math.sin((double)var0 * 3.141592653589793D * 2.0D / 65536.0D);
+      for(int index = 0; index < 65536; ++index) {
+         sinTable[index] = (float)Math.sin((double)index * 3.141592653589793D * 2.0D / 65536.0D);
       }
 
    }

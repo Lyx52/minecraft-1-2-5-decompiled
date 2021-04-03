@@ -21,12 +21,12 @@ public abstract class agk extends mi {
       this.buttonList.add(new Button(1, this.q / 3 - 83 + 210, this.r / 6 + 96, 100, 20, this.d));
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 2) {
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 2) {
          this.d();
-         super.a((Button)this.buttonList.get(1));
+         super.clickButton((Button)this.buttonList.get(1));
       } else {
-         super.a(var1);
+         super.clickButton(var1);
       }
 
    }

@@ -22,23 +22,23 @@ public class oz extends GUIManager {
       int var2 = this.d();
 
       for(int var3 = 0; var3 < this.c.inputKeys.length; ++var3) {
-         this.buttonList.add(new z(var3, var2 + var3 % 2 * 160, this.r / 6 + 24 * (var3 >> 1), 70, 20, this.c.b(var3)));
+         this.buttonList.add(new TexturePackButton(var3, var2 + var3 % 2 * 160, this.r / 6 + 24 * (var3 >> 1), 70, 20, this.c.b(var3)));
       }
 
       this.buttonList.add(new Button(200, this.q / 2 - 100, this.r / 6 + 168, var1.getLocaleStringByName("mojang.gui.done")));
       this.a = var1.getLocaleStringByName("controls.title");
    }
 
-   protected void a(Button var1) {
+   protected void clickButton(Button var1) {
       for(int var2 = 0; var2 < this.c.inputKeys.length; ++var2) {
          ((Button)this.buttonList.get(var2)).title = this.c.b(var2);
       }
 
-      if(var1.f == 200) {
-         this.minecraft.a(this.b);
+      if(var1.buttonID == 200) {
+         this.minecraft.addMenu(this.b);
       } else {
-         this.d = var1.f;
-         var1.title = "> " + this.c.b(var1.f) + " <";
+         this.d = var1.buttonID;
+         var1.title = "> " + this.c.b(var1.buttonID) + " <";
       }
 
    }

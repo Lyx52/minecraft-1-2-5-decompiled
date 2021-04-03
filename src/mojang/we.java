@@ -96,7 +96,7 @@ public class we extends fe {
                GL11.glDepthMask(false);
                GL11.glEnable(3042);
                GL11.glBlendFunc(770, 771);
-               Tessalator var14 = Tessalator.a;
+               Tessalator var14 = Tessalator.tessalatorInstance;
                GL11.glDisable(3553);
                var14.b();
                int var15 = var13.a(var12) / 2;

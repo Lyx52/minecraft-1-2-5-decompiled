@@ -30,12 +30,12 @@ public class mi extends GUIManager {
    }
 
    public void c() {
-      this.buttonList.add(new z(0, this.q / 2 - 155, this.r / 6 + 96, this.c));
-      this.buttonList.add(new z(1, this.q / 2 - 155 + 160, this.r / 6 + 96, this.d));
+      this.buttonList.add(new TexturePackButton(0, this.q / 2 - 155, this.r / 6 + 96, this.c));
+      this.buttonList.add(new TexturePackButton(1, this.q / 2 - 155 + 160, this.r / 6 + 96, this.d));
    }
 
-   protected void a(Button var1) {
-      this.a.a(var1.f == 0, this.f);
+   protected void clickButton(Button var1) {
+      this.a.a(var1.buttonID == 0, this.f);
    }
 
    public void a(int var1, int var2, float var3) {

@@ -9,11 +9,11 @@ public class cw {
 
    protected World a;
    private List[] b = new List[4];
-   private Texture c;
+   private TextureManager c;
    private Random d = new Random();
 
 
-   public cw(World var1, Texture var2) {
+   public cw(World var1, TextureManager var2) {
       if(var1 != null) {
          this.a = var1;
       }
@@ -62,19 +62,19 @@ public class cw {
          if(this.b[var8].size() != 0) {
             int var9 = 0;
             if(var8 == 0) {
-               var9 = this.c.b("/mojang/particles.png");
+               var9 = this.c.readImageFromLocation("/mojang/particles.png");
             }
 
             if(var8 == 1) {
-               var9 = this.c.b("/mojang/terrain.png");
+               var9 = this.c.readImageFromLocation("/mojang/terrain.png");
             }
 
             if(var8 == 2) {
-               var9 = this.c.b("/mojang/gui/items.png");
+               var9 = this.c.readImageFromLocation("/mojang/gui/items.png");
             }
 
             GL11.glBindTexture(3553, var9);
-            Tessalator var10 = Tessalator.a;
+            Tessalator var10 = Tessalator.tessalatorInstance;
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             var10.b();
 
@@ -98,7 +98,7 @@ public class cw {
       float var8 = Utils.cos(var1.v * 0.017453292F);
       byte var9 = 3;
       if(this.b[var9].size() != 0) {
-         Tessalator var10 = Tessalator.a;
+         Tessalator var10 = Tessalator.tessalatorInstance;
 
          for(int var11 = 0; var11 < this.b[var9].size(); ++var11) {
             rt var12 = (rt)this.b[var9].get(var11);

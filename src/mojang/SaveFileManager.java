@@ -55,17 +55,17 @@ public class SaveFileManager extends SaveFileReader {
       agp.a();
    }
 
-   public akp a(String var1, boolean var2) {
-      return new aia(this.saveLocation, var1, var2);
+   public WorldFileInterface getWorldFile(String worldLocation, boolean var2) {
+      return new WorldFileDimWrapper(this.saveLocation, worldLocation, var2);
    }
 
-   public boolean a(String var1) {
-      WorldParser var2 = this.parseSaveFile(var1);
-      return var2 != null && var2.getVersion() != this.postOnePointZero();
+   public boolean isWorldValid(String worldName) {
+      WorldParser parsedWorld = this.parseSaveFile(worldName);
+      return parsedWorld != null && parsedWorld.getVersion() != this.postOnePointZero();
    }
 
-   public boolean a(String var1, rw var2) {
-      var2.a(0);
+   public boolean a(String var1, GUIBackgroundInterface var2) {
+      var2.createBackground(0);
       ArrayList var3 = new ArrayList();
       ArrayList var4 = new ArrayList();
       ArrayList var5 = new ArrayList();
@@ -101,7 +101,7 @@ public class SaveFileManager extends SaveFileReader {
       }
 
       this.d(var1);
-      akp var12 = this.a(var1, false);
+      WorldFileInterface var12 = this.getWorldFile(var1, false);
       var12.a(var10);
       return true;
    }
@@ -124,7 +124,7 @@ public class SaveFileManager extends SaveFileReader {
       }
    }
 
-   private void a(File var1, ArrayList var2, rs var3, int var4, int var5, rw var6) {
+   private void a(File var1, ArrayList var2, rs var3, int var4, int var5, GUIBackgroundInterface var6) {
       Iterator var7 = var2.iterator();
 
       while(var7.hasNext()) {
@@ -132,12 +132,12 @@ public class SaveFileManager extends SaveFileReader {
          this.a(var1, var8, var3, var4, var5, var6);
          ++var4;
          int var9 = (int)Math.round(100.0D * (double)var4 / (double)var5);
-         var6.a(var9);
+         var6.createBackground(var9);
       }
 
    }
 
-   private void a(File var1, File var2, rs var3, int var4, int var5, rw var6) {
+   private void a(File var1, File var2, rs var3, int var4, int var5, GUIBackgroundInterface var6) {
       try {
          String var7 = var2.getName();
          lz var8 = new lz(var2);
@@ -160,7 +160,7 @@ public class SaveFileManager extends SaveFileReader {
                      var16.addBaseTag("Level", (BaseTag)var17);
                      oj.a(var15, var17, var3);
                      DataOutputStream var18 = var9.b(var10, var11);
-                     at.a(var16, (DataOutput)var18);
+                     at.writeToTag(var16, (DataOutput)var18);
                      var18.close();
                   }
                }
@@ -169,7 +169,7 @@ public class SaveFileManager extends SaveFileReader {
             var11 = (int)Math.round(100.0D * (double)(var4 * 1024) / (double)(var5 * 1024));
             int var20 = (int)Math.round(100.0D * (double)((var10 + 1) * 32 + var4 * 1024) / (double)(var5 * 1024));
             if(var20 > var11) {
-               var6.a(var20);
+               var6.createBackground(var20);
             }
          }
 

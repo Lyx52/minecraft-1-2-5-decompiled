@@ -35,7 +35,7 @@ public class Tessalator {
    private double w;
    private double x;
    private int y;
-   public static final Tessalator a = new Tessalator(2097152);
+   public static final Tessalator tessalatorInstance = new Tessalator(2097152);
    private boolean running = false;
    private boolean A = false;
    private IntBuffer B;

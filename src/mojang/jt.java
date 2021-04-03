@@ -83,8 +83,8 @@ public abstract class jt {
    }
 
    public String c(int var1) {
-      String var2 = cy.a(this.d());
-      return var2 + " " + cy.a("enchantment.level." + var1);
+      String var2 = LocalizationManagerWrapper.getLocaleString(this.d());
+      return var2 + " " + LocalizationManagerWrapper.getLocaleString("enchantment.level." + var1);
    }
 
 }

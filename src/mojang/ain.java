@@ -18,7 +18,7 @@ public class ain extends gb {
 
    public void a() {
       if(this.minecraft.c.h()) {
-         this.minecraft.a((GUIManager)(new sr(this.minecraft.h)));
+         this.minecraft.addMenu((GUIManager)(new sr(this.minecraft.h)));
       }
 
    }
@@ -26,7 +26,7 @@ public class ain extends gb {
    public void c() {
       this.buttonList.clear();
       if(this.minecraft.c.h()) {
-         this.minecraft.a((GUIManager)(new sr(this.minecraft.h)));
+         this.minecraft.addMenu((GUIManager)(new sr(this.minecraft.h)));
       } else {
          super.c();
          if(!this.minecraft.h.bg().isEmpty()) {
@@ -37,7 +37,7 @@ public class ain extends gb {
    }
 
    protected void d() {
-      this.u.b(cy.a("container.crafting"), 86, 16, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString("container.crafting"), 86, 16, 4210752);
    }
 
    public void a(int var1, int var2, float var3) {
@@ -47,9 +47,9 @@ public class ain extends gb {
    }
 
    protected void a(float var1, int var2, int var3) {
-      int var4 = this.minecraft.p.b("/mojang/gui/inventory.png");
+      int var4 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/inventory.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var4);
+      this.minecraft.textureManager.b(var4);
       int var5 = this.e;
       int var6 = this.f;
       this.b(var5, var6, 0, 0, this.b, this.c);
@@ -85,13 +85,13 @@ public class ain extends gb {
       GL11.glDisable('\u803a');
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
-         this.minecraft.a((GUIManager)(new ro(this.minecraft.K)));
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
+         this.minecraft.addMenu((GUIManager)(new ro(this.minecraft.K)));
       }
 
-      if(var1.f == 1) {
-         this.minecraft.a((GUIManager)(new dc(this, this.minecraft.K)));
+      if(var1.buttonID == 1) {
+         this.minecraft.addMenu((GUIManager)(new dc(this, this.minecraft.K)));
       }
 
    }
@@ -99,7 +99,7 @@ public class ain extends gb {
    private void g() {
       int var1 = this.e - 124;
       int var2 = this.f;
-      int var3 = this.minecraft.p.b("/mojang/gui/inventory.png");
+      int var3 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/inventory.png");
       Collection var4 = this.minecraft.h.bg();
       if(!var4.isEmpty()) {
          int var5 = 33;
@@ -111,14 +111,14 @@ public class ain extends gb {
             alg var7 = (alg)var6.next();
             aad var8 = aad.a[var7.a()];
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            this.minecraft.p.b(var3);
+            this.minecraft.textureManager.b(var3);
             this.b(var1, var2, 0, this.c, 140, 32);
             if(var8.d()) {
                int var9 = var8.e();
                this.b(var1 + 6, var2 + 7, 0 + var9 % 8 * 18, this.c + 32 + var9 / 8 * 18, 18, 18);
             }
 
-            String var11 = cy.a(var8.c());
+            String var11 = LocalizationManagerWrapper.getLocaleString(var8.c());
             if(var7.c() == 1) {
                var11 = var11 + " II";
             } else if(var7.c() == 2) {

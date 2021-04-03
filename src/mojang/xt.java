@@ -55,7 +55,7 @@ public class xt extends GUIManager {
    protected void a(char var1, int var2) {}
 
    public void c() {
-      this.f = this.minecraft.p.a(new BufferedImage(256, 256, 2));
+      this.f = this.minecraft.textureManager.a(new BufferedImage(256, 256, 2));
       Calendar var1 = Calendar.getInstance();
       var1.setTime(new Date());
       if(var1.get(2) + 1 == 11 && var1.get(5) == 9) {
@@ -82,40 +82,40 @@ public class xt extends GUIManager {
 
       this.buttonList.add(new adr(5, this.q / 2 - 124, var4 + 72 + 12));
       if(this.minecraft.credentials == null) {
-         this.d.h = false;
+         this.d.visible = false;
       }
 
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
-         this.minecraft.a((GUIManager)(new cd(this, this.minecraft.options)));
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
+         this.minecraft.addMenu(new OptionMenu(this, this.minecraft.options));
       }
 
-      if(var1.f == 5) {
-         this.minecraft.a((GUIManager)(new afv(this, this.minecraft.options)));
+      if(var1.buttonID == 5) {
+         this.minecraft.addMenu(new LanguageOptionMenu(this, this.minecraft.options));
       }
 
-      if(var1.f == 1) {
-         this.minecraft.a((GUIManager)(new WorldSelectionMenu(this)));
+      if(var1.buttonID == 1) {
+         this.minecraft.addMenu(new WorldSelectionMenu(this));
       }
 
-      if(var1.f == 2) {
-         this.minecraft.a((GUIManager)(new acp(this)));
+      if(var1.buttonID == 2) {
+         this.minecraft.addMenu(new ServerSelectionMenu(this));
       }
 
-      if(var1.f == 3) {
-         this.minecraft.a((GUIManager)(new em(this)));
+      if(var1.buttonID == 3) {
+         this.minecraft.addMenu(new TexturePackMenu(this));
       }
 
-      if(var1.f == 4) {
+      if(var1.buttonID == 4) {
          this.minecraft.stop();
       }
 
    }
 
    private void b(int var1, int var2, float var3) {
-      Tessalator var4 = Tessalator.a;
+      Tessalator var4 = Tessalator.tessalatorInstance;
       GL11.glMatrixMode(5889);
       GL11.glPushMatrix();
       GL11.glLoadIdentity();
@@ -163,7 +163,7 @@ public class xt extends GUIManager {
                GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
             }
 
-            GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/bg/panorama" + var10 + ".png"));
+            GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("/mojang/title/bg/panorama" + var10 + ".png"));
             var4.b();
             var4.a(16777215, 255 / (var6 + 1));
             float var11 = 0.0F;
@@ -197,7 +197,7 @@ public class xt extends GUIManager {
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       GL11.glColorMask(true, true, true, false);
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       var2.b();
       byte var3 = 3;
 
@@ -230,7 +230,7 @@ public class xt extends GUIManager {
       this.a(var3);
       this.a(var3);
       GL11.glViewport(0, 0, this.minecraft.width, this.minecraft.height);
-      Tessalator var4 = Tessalator.a;
+      Tessalator var4 = Tessalator.tessalatorInstance;
       var4.b();
       float var5 = this.q > this.r?120.0F / (float)this.q:120.0F / (float)this.r;
       float var6 = (float)this.r * var5 / 256.0F;
@@ -249,13 +249,13 @@ public class xt extends GUIManager {
 
    public void a(int var1, int var2, float var3) {
       this.c(var1, var2, var3);
-      Tessalator var4 = Tessalator.a;
+      Tessalator var4 = Tessalator.tessalatorInstance;
       short var5 = 274;
       int var6 = this.q / 2 - var5 / 2;
       byte var7 = 30;
       this.a(0, 0, this.q, this.r, -2130706433, 16777215);
       this.a(0, 0, this.q, this.r, 0, Integer.MIN_VALUE);
-      GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/mclogo.png"));
+      GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("/mojang/title/mclogo.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       if((double)this.b < 1.0E-4D) {
          this.b(var6 + 0, var7 + 0, 0, 0, 99, 44);

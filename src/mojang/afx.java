@@ -14,10 +14,10 @@ public class afx extends GUIManager {
       this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, "Back to title screen"));
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 0) {
-            this.minecraft.a((GUIManager)(new xt()));
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 0) {
+            this.minecraft.addMenu((GUIManager)(new xt()));
          }
 
       }

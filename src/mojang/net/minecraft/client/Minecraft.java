@@ -44,11 +44,11 @@ public abstract class Minecraft implements Runnable {
    public Canvas canvas;
    public boolean appletMode = false;
    public volatile boolean _running = false;
-   public Texture p;
+   public TextureManager textureManager;
    public nl q;
    public nl r;
    public GUIManager guiManager = null;
-   public jc t;
+   public GUIBackground guiBackground;
    public lr u;
    private ck Y;
    private int Z = 0;
@@ -67,6 +67,7 @@ public abstract class Minecraft implements Runnable {
    public TexturePackManager texturePackManager;
    public File gameDirectory;
    private SaveFileManager saveFileManager;
+   //private SaveFileInterface saveFileManager;
    //private kb saves;
    public static long[] G = new long[512];
    public static long[] H = new long[512];
@@ -177,19 +178,19 @@ public abstract class Minecraft implements Runnable {
          this.options = new OptionParser(this, this.gameDirectory);
 
          this.texturePackManager = new TexturePackManager(this, this.gameDirectory);
-         this.p = new Texture(this.texturePackManager, this.options);
+         this.textureManager = new TextureManager(this.texturePackManager, this.options);
          this.v();
-         this.q = new nl(this.options, "/mojang/font/default.png", this.p, false);
-         this.r = new nl(this.options, "/mojang/font/alternate.png", this.p, false);
+         this.q = new nl(this.options, "/mojang/font/default.png", this.textureManager, false);
+         this.r = new nl(this.options, "/mojang/font/alternate.png", this.textureManager, false);
          if (this.options.lang != null) {
-            LocalizationManager.getInstance().a(this.options.lang);
+            LocalizationManager.getInstance().changeLocale(this.options.lang);
             this.q.a(LocalizationManager.getInstance().d());
-            this.q.b(LocalizationManager.d(this.options.lang));
+            this.q.b(LocalizationManager.isSaudiArabicOrHebrew(this.options.lang));
          }
 
-         zt.a(this.p.a("/mojang/misc/watercolor.png"));
-         zv.a(this.p.a("/mojang/misc/grasscolor.png"));
-         gu.a(this.p.a("/mojang/misc/foliagecolor.png"));
+         zt.a(this.textureManager.a("/mojang/misc/watercolor.png"));
+         zv.a(this.textureManager.a("/mojang/misc/grasscolor.png"));
+         gu.a(this.textureManager.a("/mojang/misc/foliagecolor.png"));
          this.u = new lr(this);
          ahu.a.f = new mn(this);
          this.K = new alf(this.credentials, this.gameDirectory);
@@ -220,18 +221,18 @@ public abstract class Minecraft implements Runnable {
          this.checkGLError("Startup");
          this.W = new vm();
          this.soundManager.a(this.options);
-         this.p.a((tt) this.ai);
-         this.p.a((tt) this.ah);
-         this.p.a((tt) (new zp()));
-         this.p.a((tt) (new tu(this)));
-         this.p.a((tt) (new ht(this)));
-         this.p.a((tt) (new ael()));
-         this.p.a((tt) (new gf()));
-         this.p.a((tt) (new nh(0)));
-         this.p.a((tt) (new nh(1)));
-         this.g = new l(this, this.p);
+         this.textureManager.a((tt) this.ai);
+         this.textureManager.a((tt) this.ah);
+         this.textureManager.a((tt) (new zp()));
+         this.textureManager.a((tt) (new tu(this)));
+         this.textureManager.a((tt) (new ht(this)));
+         this.textureManager.a((tt) (new ael()));
+         this.textureManager.a((tt) (new gf()));
+         this.textureManager.a((tt) (new nh(0)));
+         this.textureManager.a((tt) (new nh(1)));
+         this.g = new l(this, this.textureManager);
          GL11.glViewport(0, 0, this.width, this.height);
-         this.j = new cw(this.f, this.p);
+         this.j = new cw(this.f, this.textureManager);
 
          try {
             this.Y = new ck(this.gameDirectory, this);
@@ -243,12 +244,12 @@ public abstract class Minecraft implements Runnable {
          this.checkGLError("Post startup");
          this.w = new aiy(this);
          if (this.hostname != null) {
-            this.a((GUIManager) (new ajy(this, this.hostname, this.port)));
+            this.addMenu((GUIManager) (new ajy(this, this.hostname, this.port)));
          } else {
-            this.a((GUIManager) (new xt()));
+            this.addMenu((GUIManager) (new xt()));
          }
 
-         this.t = new jc(this);
+         this.guiBackground = new GUIBackground(this);
       } catch (LWJGLException e) {
          e.printStackTrace();
       }
@@ -265,11 +266,11 @@ public abstract class Minecraft implements Runnable {
       GL11.glTranslatef(0.0F, 0.0F, -2000.0F);
       GL11.glViewport(0, 0, this.width, this.height);
       GL11.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
       GL11.glDisable(2896);
       GL11.glEnable(3553);
       GL11.glDisable(2912);
-      GL11.glBindTexture(3553, this.p.b("/mojang/title/mojang.png"));
+      GL11.glBindTexture(3553, this.textureManager.readImageFromLocation("/mojang/title/mojang.png"));
       var2.b();
       var2.c(16777215);
       var2.a(0.0D, (double)this.height, 0.0D, 0.0D, 0.0D);
@@ -296,7 +297,7 @@ public abstract class Minecraft implements Runnable {
    public void a(int var1, int var2, int var3, int var4, int var5, int var6) {
       float var7 = 0.00390625F;
       float var8 = 0.00390625F;
-      Tessalator var9 = Tessalator.a;
+      Tessalator var9 = Tessalator.tessalatorInstance;
       var9.b();
       var9.a((double)(var1 + 0), (double)(var2 + var6), 0.0D, (double)((float)(var3 + 0) * var7), (double)((float)(var4 + var6) * var8));
       var9.a((double)(var1 + var5), (double)(var2 + var6), 0.0D, (double)((float)(var3 + var5) * var7), (double)((float)(var4 + var6) * var8));
@@ -348,11 +349,11 @@ public abstract class Minecraft implements Runnable {
       return osName.contains("win") ? OSTypes.WINDOWS : (osName.contains("mac") ? OSTypes.MACOS :(osName.contains("solaris")? OSTypes.SOLARIS :(osName.contains("sunos")? OSTypes.SOLARIS :(osName.contains("linux")? OSTypes.LINUX :(osName.contains("unix")? OSTypes.LINUX : OSTypes.UNKOWN)))));
    }
 
-   public SaveFileManager getSaveFileManager() {
+   public SaveFileInterface getSaveFileManager() {
       return this.saveFileManager;
    }
 
-   public void a(GUIManager guiManager) {
+   public void addMenu(GUIManager guiManager) {
       if(!(this.guiManager instanceof uw)) {
          if(this.guiManager != null) {
             this.guiManager.e();
@@ -459,17 +460,17 @@ public abstract class Minecraft implements Runnable {
          while(this.running) {
             try {
                this.x();
-            } catch (aiz var9) {
+            } catch (MinecraftRuntimeException var9) {
                this.f = null;
                this.a((World)null);
-               this.a((GUIManager)(new afx()));
+               this.addMenu((GUIManager)(new afx()));
             } catch (OutOfMemoryError var10) {
                this.e();
-               this.a((GUIManager)(new ti()));
+               this.addMenu((GUIManager)(new ti()));
                System.gc();
             }
          }
-      } catch (ru var12) {
+      } catch (MinecraftError var12) {
          ;
       } catch (Throwable var13) {
          this.e();
@@ -508,10 +509,10 @@ public abstract class Minecraft implements Runnable {
 
             try {
                this.k();
-            } catch (aiz var5) {
+            } catch (MinecraftRuntimeException var5) {
                this.f = null;
                this.a((World)null);
-               this.a((GUIManager)(new afx()));
+               this.addMenu((GUIManager)(new afx()));
             }
          }
 
@@ -689,7 +690,7 @@ public abstract class Minecraft implements Runnable {
       GL11.glTranslatef(0.0F, 0.0F, -2000.0F);
       GL11.glLineWidth(1.0F);
       GL11.glDisable(3553);
-      Tessalator var9 = Tessalator.a;
+      Tessalator var9 = Tessalator.tessalatorInstance;
       var9.a(7);
       int var10 = (int)(var5 / 200000L);
       var9.c(536870912);
@@ -836,7 +837,7 @@ public abstract class Minecraft implements Runnable {
          if(!this.R) {
             this.R = true;
             this.D.a();
-            this.a((GUIManager)null);
+            this.addMenu((GUIManager)null);
             this.aa = 10000;
          }
       }
@@ -852,7 +853,7 @@ public abstract class Minecraft implements Runnable {
 
    public void i() {
       if(this.guiManager == null) {
-         this.a((GUIManager)(new lb()));
+         this.addMenu((GUIManager)(new lb()));
       }
    }
 
@@ -1039,20 +1040,20 @@ public abstract class Minecraft implements Runnable {
          this.c.c();
       }
 
-      GL11.glBindTexture(3553, this.p.b("/mojang/terrain.png"));
+      GL11.glBindTexture(3553, this.textureManager.readImageFromLocation("/mojang/terrain.png"));
       lv.c("textures");
       if(!this._running) {
-         this.p.a();
+         this.textureManager.a();
       }
 
       if(this.guiManager == null && this.h != null) {
          if(this.h.bb() <= 0) {
-            this.a((GUIManager)null);
+            this.addMenu((GUIManager)null);
          } else if(this.h.az() && this.f != null && this.f.F) {
-            this.a((GUIManager)(new yj()));
+            this.addMenu((GUIManager)(new yj()));
          }
       } else if(this.guiManager != null && this.guiManager instanceof yj && !this.h.az()) {
-         this.a((GUIManager)null);
+         this.addMenu((GUIManager)null);
       }
 
       if(this.guiManager != null) {
@@ -1132,7 +1133,7 @@ public abstract class Minecraft implements Runnable {
                      }
 
                      if(Keyboard.getEventKey() == 20 && Keyboard.isKeyDown(61)) {
-                        this.p.b();
+                        this.textureManager.b();
                      }
 
                      if(Keyboard.getEventKey() == 33 && Keyboard.isKeyDown(61)) {
@@ -1188,7 +1189,7 @@ public abstract class Minecraft implements Runnable {
          }
 
          while(this.options.key_inventory.c()) {
-            this.a((GUIManager)(new ain(this.h)));
+            this.addMenu((GUIManager)(new ain(this.h)));
          }
 
          while(this.options.key_drop.c()) {
@@ -1196,11 +1197,11 @@ public abstract class Minecraft implements Runnable {
          }
 
          while(this.l() && this.options.key_chat.c()) {
-            this.a((GUIManager)(new yf()));
+            this.addMenu((GUIManager)(new yf()));
          }
 
          if(this.l() && this.guiManager == null && (Keyboard.isKeyDown(53) || Keyboard.isKeyDown(181))) {
-            this.a((GUIManager)(new yf("/")));
+            this.addMenu((GUIManager)(new yf("/")));
          }
 
          if(this.h.aj()) {
@@ -1313,28 +1314,27 @@ public abstract class Minecraft implements Runnable {
       return this.f != null && this.f.F;
    }
 
-   public void a(String var1, String var2, WorldStub var3) {
+   public void loadWorld(String worldLocation, String worldName, WorldStub stub) {
       this.a((World)null);
       System.gc();
-      if(this.saveFileManager.a(var1)) {
-         this.convertWorld(var1, var2);
+      if(((SaveFileManager)this.saveFileManager).isWorldValid(worldLocation)) {
+         this.convertWorld(worldLocation, worldName);
       } else {
-         if(this.t != null) {
-            this.t.a(cy.a("menu.switchingLevel"));
-            this.t.d("");
+         if(this.guiBackground != null) {
+            this.guiBackground.switchBackgroundString(LocalizationManagerWrapper.getLocaleString("menu.switchingLevel"));
+            this.guiBackground.changeSecondaryString("");
          }
 
-         akp var4 = this.saveFileManager.a(var1, false);
-         World var5 = null;
-         var5 = new World(var4, var2, var3);
-         if(var5.s) {
+         WorldFileInterface fileInterface = ((SaveFileManager)this.saveFileManager).getWorldFile(worldLocation, false);
+         World world = new World(fileInterface, worldName, stub);
+         if(world.s) {
             this.K.a(gv.g, 1);
             this.K.a(gv.f, 1);
-            this.a(var5, cy.a("menu.generatingLevel"));
+            this.a(world, LocalizationManagerWrapper.getLocaleString("menu.generatingLevel"));
          } else {
             this.K.a(gv.h, 1);
             this.K.a(gv.f, 1);
-            this.a(var5, cy.a("menu.loadingLevel"));
+            this.a(world, LocalizationManagerWrapper.getLocaleString("menu.loadingLevel"));
          }
       }
 
@@ -1409,69 +1409,69 @@ public abstract class Minecraft implements Runnable {
       this.a((World)null, var1);
    }
 
-   public void a(World var1) {
-      this.a(var1, "");
+   public void a(World worldName) {
+      this.a(worldName, "");
    }
 
-   public void a(World var1, String var2) {
-      this.a(var1, var2, (Player)null);
+   public void a(World worldName, String id) {
+      this.a(worldName, id, (Player)null);
    }
 
-   public void a(World var1, String var2, Player var3) {
+   public void a(World worldName, String id, Player player) {
       this.K.b();
       this.K.c();
       this.i = null;
-      if(this.t != null) {
-         this.t.a(var2);
-         this.t.d("");
+      if(this.guiBackground != null) {
+         this.guiBackground.switchBackgroundString(id);
+         this.guiBackground.changeSecondaryString("");
       }
 
       this.soundManager.a((String)null, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       if(this.f != null) {
-         this.f.a((rw)this.t);
+         this.f.a((GUIBackgroundInterface)this.guiBackground);
       }
 
-      this.f = var1;
-      if(var1 != null) {
+      this.f = worldName;
+      if(worldName != null) {
          if(this.c != null) {
-            this.c.a(var1);
+            this.c.a(worldName);
          }
 
          if(!this.l()) {
-            if(var3 == null) {
-               this.h = (vq)var1.a(vq.class);
+            if(player == null) {
+               this.h = (vq)worldName.a(vq.class);
             }
          } else if(this.h != null) {
             this.h.z();
-            if(var1 != null) {
-               var1.a((BaseEntity)this.h);
+            if(worldName != null) {
+               worldName.a((BaseEntity)this.h);
             }
          }
 
-         if(!var1.F) {
-            this.e(var2);
+         if(!worldName.F) {
+            this.e(id);
          }
 
          if(this.h == null) {
-            this.h = (vq)this.c.b(var1);
+            this.h = (vq)this.c.b(worldName);
             this.h.z();
             this.c.a((Player)this.h);
          }
 
          this.h.a = new ij(this.options);
          if(this.g != null) {
-            this.g.a(var1);
+            this.g.a(worldName);
          }
 
          if(this.j != null) {
-            this.j.a(var1);
+            this.j.a(worldName);
          }
 
-         if(var3 != null) {
-            var1.l();
+         if(player != null) {
+            worldName.l();
          }
 
-         ca var4 = var1.z();
+         ca var4 = worldName.z();
          if(var4 instanceof hy) {
             hy var5 = (hy)var4;
             int var6 = Utils.d((float)((int)this.h.o)) >> 4;
@@ -1479,10 +1479,10 @@ public abstract class Minecraft implements Runnable {
             var5.d(var6, var7);
          }
 
-         var1.a((Player)this.h);
+         worldName.a((Player)this.h);
          this.c.b((Player)this.h);
-         if(var1.s) {
-            var1.a((rw)this.t);
+         if(worldName.s) {
+            worldName.a((GUIBackgroundInterface)this.guiBackground);
          }
 
          this.i = this.h;
@@ -1496,16 +1496,16 @@ public abstract class Minecraft implements Runnable {
    }
 
    private void convertWorld(String var1, String var2) {
-      this.t.a("Converting World to " + this.saveFileManager.isOld());
-      this.t.d("This may take a while :)");
-      this.saveFileManager.a(var1, (rw)this.t);
-      this.a(var1, var2, new WorldStub(0L, 0, true, false, WorldGeneratorTypes.defaultWorld));
+      this.guiBackground.switchBackgroundString("Converting World to " + this.saveFileManager.isOld());
+      this.guiBackground.changeSecondaryString("This may take a while :)");
+      this.saveFileManager.a(var1, (GUIBackgroundInterface)this.guiBackground);
+      this.loadWorld(var1, var2, new WorldStub(0L, 0, true, false, WorldGeneratorTypes.defaultWorld));
    }
 
    private void e(String var1) {
-      if(this.t != null) {
-         this.t.a(var1);
-         this.t.d(cy.a("menu.generatingTerrain"));
+      if(this.guiBackground != null) {
+         this.guiBackground.switchBackgroundString(var1);
+         this.guiBackground.changeSecondaryString(LocalizationManagerWrapper.getLocaleString("menu.generatingTerrain"));
       }
 
       short var2 = 128;
@@ -1530,8 +1530,8 @@ public abstract class Minecraft implements Runnable {
 
       for(int var10 = -var2; var10 <= var2; var10 += 16) {
          for(int var8 = -var2; var8 <= var2; var8 += 16) {
-            if(this.t != null) {
-               this.t.a(var3++ * 100 / var4);
+            if(this.guiBackground != null) {
+               this.guiBackground.createBackground(var3++ * 100 / var4);
             }
 
             this.f.a(var6.a + var10, 64, var6.c + var8);
@@ -1546,8 +1546,8 @@ public abstract class Minecraft implements Runnable {
       }
 
       if(!this.c.e()) {
-         if(this.t != null) {
-            this.t.d(cy.a("menu.simulating"));
+         if(this.guiBackground != null) {
+            this.guiBackground.changeSecondaryString(LocalizationManagerWrapper.getLocaleString("menu.simulating"));
          }
 
          boolean var9 = true;
@@ -1648,9 +1648,9 @@ public abstract class Minecraft implements Runnable {
       this.h.f = var10;
       this.h.ab();
       this.c.b((Player)this.h);
-      this.e(cy.a("menu.respawning"));
+      this.e(LocalizationManagerWrapper.getLocaleString("menu.respawning"));
       if(this.guiManager instanceof uy) {
-         this.a((GUIManager) null);
+         this.addMenu((GUIManager) null);
       }
 
    }

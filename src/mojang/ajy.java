@@ -29,14 +29,14 @@ public class ajy extends GUIManager {
       this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.cancel")));
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
          this.b = true;
          if(this.a != null) {
             this.a.c();
          }
 
-         this.minecraft.a((GUIManager)(new xt()));
+         this.minecraft.addMenu((GUIManager)(new xt()));
       }
 
    }

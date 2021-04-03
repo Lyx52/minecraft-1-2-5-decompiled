@@ -36,11 +36,11 @@ public class alu extends GUIManager {
       ++this.c;
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 0) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 0) {
             this.b.j();
-            this.minecraft.a((GUIManager)null);
+            this.minecraft.addMenu((GUIManager)null);
          }
 
       }

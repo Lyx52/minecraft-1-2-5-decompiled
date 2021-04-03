@@ -6,9 +6,9 @@ public interface SaveFileInterface {
 
    String isOld();
 
-   akp a(String var1, boolean var2);
+   WorldFileInterface getWorldFile(String var1, boolean var2);
 
-   List parseSaveFiles();
+   List parseOldSaveFiles();
 
    void d();
 
@@ -18,7 +18,7 @@ public interface SaveFileInterface {
 
    void a(String var1, String var2);
 
-   boolean a(String var1);
+   boolean isWorldValid(String var1);
 
-   boolean a(String var1, rw var2);
+   boolean a(String var1, GUIBackgroundInterface var2);
 }

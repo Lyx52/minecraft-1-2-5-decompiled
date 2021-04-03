@@ -19,7 +19,7 @@ public class tb extends um {
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       int var10 = ((XPOrb)var1).i();
       this.a("/mojang/item/xporb.png");
-      Tessalator var11 = Tessalator.a;
+      Tessalator var11 = Tessalator.tessalatorInstance;
       float var12 = (float)(var10 % 4 * 16 + 0) / 64.0F;
       float var13 = (float)(var10 % 4 * 16 + 16) / 64.0F;
       float var14 = (float)(var10 / 4 * 16 + 0) / 64.0F;

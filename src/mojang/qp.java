@@ -204,7 +204,7 @@ public class qp {
    private void d(float var1) {
       this.r = BufferManager.createGLList(1);
       GL11.glNewList(this.r, 4864);
-      Tessalator var2 = Tessalator.a;
+      Tessalator var2 = Tessalator.tessalatorInstance;
 
       for(int var3 = 0; var3 < this.l.size(); ++var3) {
          ((lq)this.l.get(var3)).a(var2, var1);

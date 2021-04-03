@@ -25,11 +25,11 @@ public class yj extends yf {
 
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 1) {
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 1) {
          this.g();
       } else {
-         super.a(var1);
+         super.clickButton(var1);
       }
 
    }

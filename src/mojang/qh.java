@@ -5,36 +5,36 @@ import org.lwjgl.opengl.GL11;
 class qh extends iff {
 
    // $FF: synthetic field
-   final acp a;
+   final ServerSelectionMenu a;
 
 
-   public qh(acp var1) {
+   public qh(ServerSelectionMenu var1) {
       super(var1.minecraft, var1.q, var1.r, 32, var1.r - 64, 36);
       this.a = var1;
    }
 
    protected int a() {
-      return acp.a(this.a).size();
+      return ServerSelectionMenu.a(this.a).size();
    }
 
    protected void a(int var1, boolean var2) {
-      acp.a(this.a, var1);
-      boolean var3 = acp.b(this.a) >= 0 && acp.b(this.a) < this.a();
-      acp.c(this.a).h = var3;
-      acp.d(this.a).h = var3;
-      acp.e(this.a).h = var3;
+      ServerSelectionMenu.a(this.a, var1);
+      boolean var3 = ServerSelectionMenu.b(this.a) >= 0 && ServerSelectionMenu.b(this.a) < this.a();
+      ServerSelectionMenu.c(this.a).visible = var3;
+      ServerSelectionMenu.d(this.a).visible = var3;
+      ServerSelectionMenu.e(this.a).visible = var3;
       if(var2 && var3) {
-         acp.b(this.a, var1);
+         ServerSelectionMenu.b(this.a, var1);
       }
 
    }
 
    protected boolean b_(int var1) {
-      return var1 == acp.b(this.a);
+      return var1 == ServerSelectionMenu.b(this.a);
    }
 
    protected int b() {
-      return acp.a(this.a).size() * 36;
+      return ServerSelectionMenu.a(this.a).size() * 36;
    }
 
    protected void c() {
@@ -42,14 +42,14 @@ class qh extends iff {
    }
 
    protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
-      oa var6 = (oa)acp.a(this.a).get(var1);
-      synchronized(acp.g()) {
-         if(acp.n() < 5 && !var6.f) {
+      oa var6 = (oa) ServerSelectionMenu.a(this.a).get(var1);
+      synchronized(ServerSelectionMenu.g()) {
+         if(ServerSelectionMenu.n() < 5 && !var6.f) {
             var6.f = true;
             var6.e = -2L;
             var6.d = "";
             var6.c = "";
-            acp.o();
+            ServerSelectionMenu.o();
             (new by(this, var6)).start();
          }
       }
@@ -59,7 +59,7 @@ class qh extends iff {
       this.a.b(this.a.u, var6.c, var2 + 215 - this.a.u.a(var6.c), var3 + 12, 8421504);
       this.a.b(this.a.u, var6.b, var2 + 2, var3 + 12 + 11, 3158064);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.a.minecraft.p.b(this.a.minecraft.p.b("/gui/icons.png"));
+      this.a.minecraft.textureManager.b(this.a.minecraft.textureManager.readImageFromLocation("/gui/icons.png"));
       String var9 = "";
       byte var7;
       int var8;
@@ -98,7 +98,7 @@ class qh extends iff {
       this.a.b(var2 + 205, var3, 0 + var7 * 10, 176 + var8 * 8, 10, 8);
       byte var10 = 4;
       if(this.k >= var2 + 205 - var10 && this.l >= var3 - var10 && this.k <= var2 + 205 + 10 + var10 && this.l <= var3 + 8 + var10) {
-         acp.a(this.a, var9);
+         ServerSelectionMenu.a(this.a, var9);
       }
 
    }

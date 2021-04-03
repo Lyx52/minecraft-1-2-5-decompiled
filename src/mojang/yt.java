@@ -21,7 +21,7 @@ public class yt extends um {
       GL11.glDisable(2896);
       if(var10 == pb.bK) {
          this.a.a = var11;
-         Tessalator var12 = Tessalator.a;
+         Tessalator var12 = Tessalator.tessalatorInstance;
          var12.b();
          var12.b((double)((float)(-Utils.c(var1.o)) - 0.5F), (double)((float)(-Utils.c(var1.p)) - 0.5F), (double)((float)(-Utils.c(var1.q)) - 0.5F));
          this.a.b(var10, Utils.c(var1.o), Utils.c(var1.p), Utils.c(var1.q));

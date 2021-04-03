@@ -11,16 +11,16 @@ public class WorldSelectionMenu extends GUIManager {
    protected GUIManager guiManager;
    protected String selectWorldTitle = "Select world";
    private boolean d = false;
-   private int e;
+   private int selectedIndex;
    private List parsedSaveFiles;
-   private iz h;
+   private WorldButtonList worldButtonList;
    private String i;
    private String j;
    private String[] k = new String[2];
    private boolean l;
-   private Button m;
-   private Button n;
-   private Button o;
+   private Button deleteWorldButton;
+   private Button selectWorldButton;
+   private Button renameWorldButton;
 
 
    public WorldSelectionMenu(GUIManager guiManager) {
@@ -34,29 +34,29 @@ public class WorldSelectionMenu extends GUIManager {
       this.j = localeManager.getLocaleStringByName("selectWorld.conversion");
       this.k[0] = localeManager.getLocaleStringByName("gameMode.survival");
       this.k[1] = localeManager.getLocaleStringByName("gameMode.creative");
-      this.g();
-      this.h = new iz(this);
-      this.h.alist(this.buttonList, 4, 5);
+      this.sortWorlds();
+      this.worldButtonList = new WorldButtonList(this);
+      this.worldButtonList.alist(this.buttonList, 4, 5);
       this.addWorldSelectionButtons();
    }
 
-   private void g() {
-      SaveFileManager saveFileManager = this.minecraft.getSaveFileManager();
-      this.parsedSaveFiles = saveFileManager.parseSaveFiles();
+   private void sortWorlds() {
+      SaveFileInterface saveFileManager = this.minecraft.getSaveFileManager();
+      this.parsedSaveFiles = ((SaveFileManager)saveFileManager).parseSaveFiles();
       Collections.sort(this.parsedSaveFiles);
-      this.e = -1;
+      this.selectedIndex = -1;
    }
 
-   protected String a(int var1) {
-      return ((WorldListItem)this.parsedSaveFiles.get(var1)).getWorldLocation();
+   protected String getWorldLocation(int index) {
+      return ((WorldListItem)this.parsedSaveFiles.get(index)).getWorldLocation();
    }
 
-   protected String b(int index) {
+   protected String getWorldByIndex(int index) {
       String worldName = ((WorldListItem)this.parsedSaveFiles.get(index)).getWorldName();
 
       if(worldName == null || Utils.isWorldNameValid(worldName)) {
-         LocalizationManager var3 = LocalizationManager.getInstance();
-         worldName = var3.getLocaleStringByName("selectWorld.world") + " " + (index + 1);
+         LocalizationManager localeManager = LocalizationManager.getInstance();
+         worldName = localeManager.getLocaleStringByName("selectWorld.world") + " " + (index + 1);
       }
 
       return worldName;
@@ -64,63 +64,63 @@ public class WorldSelectionMenu extends GUIManager {
 
    public void addWorldSelectionButtons() {
       LocalizationManager localeManager = LocalizationManager.getInstance();
-      this.buttonList.add(this.n = new Button(1, this.q / 2 - 154, this.r - 52, 150, 20, localeManager.getLocaleStringByName("selectWorld.select")));
-      this.buttonList.add(this.o = new Button(6, this.q / 2 - 154, this.r - 28, 70, 20, localeManager.getLocaleStringByName("selectWorld.rename")));
-      this.buttonList.add(this.m = new Button(2, this.q / 2 - 74, this.r - 28, 70, 20, localeManager.getLocaleStringByName("selectWorld.delete")));
+      this.buttonList.add(this.selectWorldButton = new Button(1, this.q / 2 - 154, this.r - 52, 150, 20, localeManager.getLocaleStringByName("selectWorld.select")));
+      this.buttonList.add(this.renameWorldButton = new Button(6, this.q / 2 - 154, this.r - 28, 70, 20, localeManager.getLocaleStringByName("selectWorld.rename")));
+      this.buttonList.add(this.deleteWorldButton = new Button(2, this.q / 2 - 74, this.r - 28, 70, 20, localeManager.getLocaleStringByName("selectWorld.delete")));
       this.buttonList.add(new Button(3, this.q / 2 + 4, this.r - 52, 150, 20, localeManager.getLocaleStringByName("selectWorld.create")));
       this.buttonList.add(new Button(0, this.q / 2 + 4, this.r - 28, 150, 20, localeManager.getLocaleStringByName("mojang.gui.cancel")));
-      this.n.h = false;
-      this.m.h = false;
-      this.o.h = false;
+      this.selectWorldButton.visible = false;
+      this.deleteWorldButton.visible = false;
+      this.renameWorldButton.visible = false;
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 2) {
-            String var2 = this.b(this.e);
-            if(var2 != null) {
+   protected void clickButton(Button button) {
+      if(button.visible) {
+         if(button.buttonID == 2) {
+            String selectedIndex = this.getWorldByIndex(this.selectedIndex);
+            if(selectedIndex != null) {
                this.l = true;
                LocalizationManager var3 = LocalizationManager.getInstance();
                String var4 = var3.getLocaleStringByName("selectWorld.deleteQuestion");
-               String var5 = "\'" + var2 + "\' " + var3.getLocaleStringByName("selectWorld.deleteWarning");
+               String var5 = "\'" + selectedIndex + "\' " + var3.getLocaleStringByName("selectWorld.deleteWarning");
                String var6 = var3.getLocaleStringByName("selectWorld.deleteButton");
                String var7 = var3.getLocaleStringByName("mojang.gui.cancel");
-               mi var8 = new mi(this, var4, var5, var6, var7, this.e);
-               this.minecraft.a((GUIManager)var8);
+               mi var8 = new mi(this, var4, var5, var6, var7, this.selectedIndex);
+               this.minecraft.addMenu((GUIManager)var8);
             }
-         } else if(var1.f == 1) {
-            this.c(this.e);
-         } else if(var1.f == 3) {
-            this.minecraft.a((GUIManager)(new xh(this)));
-         } else if(var1.f == 6) {
-            this.minecraft.a((GUIManager)(new aax(this, this.a(this.e))));
-         } else if(var1.f == 0) {
-            this.minecraft.a(this.guiManager);
+         } else if(button.buttonID == 1) {
+            this.menuLoadWorld(this.selectedIndex);
+         } else if(button.buttonID == 3) {
+            this.minecraft.addMenu((GUIManager)(new xh(this)));
+         } else if(button.buttonID == 6) {
+            this.minecraft.addMenu((GUIManager)(new aax(this, this.getWorldLocation(this.selectedIndex))));
+         } else if(button.buttonID == 0) {
+            this.minecraft.addMenu(this.guiManager);
          } else {
-            this.h.a(var1);
+            this.worldButtonList.a(button);
          }
 
       }
    }
 
-   public void c(int var1) {
-      this.minecraft.a((GUIManager)null);
+   public void menuLoadWorld(int worldIndex) {
+      this.minecraft.addMenu((GUIManager)null);
       if(!this.d) {
          this.d = true;
-         int var2 = ((WorldListItem)this.parsedSaveFiles.get(var1)).getGameType();
-         if(var2 == 0) {
+         int gameType = ((WorldListItem)this.parsedSaveFiles.get(worldIndex)).getGameType();
+         if(gameType == 0) {
             this.minecraft.c = new aes(this.minecraft);
          } else {
             this.minecraft.c = new aff(this.minecraft);
          }
 
-         String var3 = this.a(var1);
-         if(var3 == null) {
-            var3 = "World" + var1;
+         String worldLocation = this.getWorldLocation(worldIndex);
+         if(worldLocation == null) {
+            worldLocation = "World" + worldIndex;
          }
 
-         this.minecraft.a(var3, this.b(var1), (WorldStub)null);
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.loadWorld(worldLocation, this.getWorldByIndex(worldIndex), (WorldStub)null);
+         this.minecraft.addMenu((GUIManager)null);
       }
    }
 
@@ -130,49 +130,44 @@ public class WorldSelectionMenu extends GUIManager {
          if(var1) {
             SaveFileInterface var3 = this.minecraft.getSaveFileManager();
             var3.d();
-            var3.deleteSave(this.a(var2));
-            this.g();
+            var3.deleteSave(this.getWorldLocation(var2));
+            this.sortWorlds();
          }
 
-         this.minecraft.a((GUIManager)this);
+         this.minecraft.addMenu((GUIManager)this);
       }
 
    }
 
    public void a(int var1, int var2, float var3) {
-      this.h.a(var1, var2, var3);
+      this.worldButtonList.a(var1, var2, var3);
       this.a(this.u, this.selectWorldTitle, this.q / 2, 20, 16777215);
       super.a(var1, var2, var3);
    }
 
-   // $FF: synthetic method
-   static List a(WorldSelectionMenu var0) {
-      return var0.parsedSaveFiles;
+
+   static List getParsedSaveFiles(WorldSelectionMenu selectionMenu) {
+      return selectionMenu.parsedSaveFiles;
    }
 
-   // $FF: synthetic method
-   static int a(WorldSelectionMenu var0, int var1) {
-      return var0.e = var1;
+   static int setSelectedIndex(WorldSelectionMenu selectionMenu, int index) {
+      return selectionMenu.selectedIndex = index;
    }
 
-   // $FF: synthetic method
-   static int b(WorldSelectionMenu var0) {
-      return var0.e;
+   static int getSelectedIndex(WorldSelectionMenu selectionMenu) {
+      return selectionMenu.selectedIndex;
    }
 
-   // $FF: synthetic method
-   static Button c(WorldSelectionMenu var0) {
-      return var0.n;
+   static Button getSelectWorldButton(WorldSelectionMenu selectionMenu) {
+      return selectionMenu.selectWorldButton;
    }
 
-   // $FF: synthetic method
-   static Button d(WorldSelectionMenu var0) {
-      return var0.m;
+   static Button getDeleteWorldButton(WorldSelectionMenu selectionMenu) {
+      return selectionMenu.deleteWorldButton;
    }
 
-   // $FF: synthetic method
-   static Button e(WorldSelectionMenu var0) {
-      return var0.o;
+   static Button getRenameWorldButton(WorldSelectionMenu selectionMenu) {
+      return selectionMenu.renameWorldButton;
    }
 
    // $FF: synthetic method

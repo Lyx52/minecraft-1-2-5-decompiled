@@ -9,7 +9,7 @@ public class ct {
 
    public World a;
    private int y = -1;
-   private static Tessalator z = Tessalator.a;
+   private static Tessalator z = Tessalator.tessalatorInstance;
    public static int b = 0;
    public int c;
    public int d;

@@ -112,7 +112,7 @@ public class tw extends um {
    }
 
    private void a(int var1, int var2) {
-      Tessalator var3 = Tessalator.a;
+      Tessalator var3 = Tessalator.tessalatorInstance;
       float var4 = (float)(var1 % 16 * 16 + 0) / 256.0F;
       float var5 = (float)(var1 % 16 * 16 + 16) / 256.0F;
       float var6 = (float)(var1 / 16 * 16 + 0) / 256.0F;
@@ -143,13 +143,13 @@ public class tw extends um {
 
    }
 
-   public void a(nl var1, Texture var2, int var3, int var4, int var5, int var6, int var7) {
+   public void a(nl var1, TextureManager var2, int var3, int var4, int var5, int var6, int var7) {
       int var10;
       float var11;
       float var12;
       float var13;
       if(var3 < 256 && vl.a(pb.m[var3].d())) {
-         var2.b(var2.b("/mojang/terrain.png"));
+         var2.b(var2.readImageFromLocation("/mojang/terrain.png"));
          pb var15 = pb.m[var3];
          GL11.glPushMatrix();
          GL11.glTranslatef((float)(var6 - 2), (float)(var7 + 3), -3.0F + this.b);
@@ -175,7 +175,7 @@ public class tw extends um {
          int var8;
          if(yr.e[var3].c()) {
             GL11.glDisable(2896);
-            var2.b(var2.b("/mojang/gui/items.png"));
+            var2.b(var2.readImageFromLocation("/mojang/gui/items.png"));
 
             for(var8 = 0; var8 <= 1; ++var8) {
                int var9 = yr.e[var3].a(var4, var8);
@@ -194,9 +194,9 @@ public class tw extends um {
          } else if(var5 >= 0) {
             GL11.glDisable(2896);
             if(var3 < 256) {
-               var2.b(var2.b("/mojang/terrain.png"));
+               var2.b(var2.readImageFromLocation("/mojang/terrain.png"));
             } else {
-               var2.b(var2.b("/mojang/gui/items.png"));
+               var2.b(var2.readImageFromLocation("/mojang/gui/items.png"));
             }
 
             var8 = yr.e[var3].b(var4, 0);
@@ -215,14 +215,14 @@ public class tw extends um {
       GL11.glEnable(2884);
    }
 
-   public void a(nl var1, Texture var2, aan var3, int var4, int var5) {
+   public void a(nl var1, TextureManager var2, aan var3, int var4, int var5) {
       if(var3 != null) {
          this.a(var1, var2, var3.c, var3.i(), var3.b(), var4, var5);
          if(var3 != null && var3.r()) {
             GL11.glDepthFunc(516);
             GL11.glDisable(2896);
             GL11.glDepthMask(false);
-            var2.b(var2.b("%blur%/mojang.misc/glint.png"));
+            var2.b(var2.readImageFromLocation("%blur%/mojang.misc/glint.png"));
             this.b -= 50.0F;
             GL11.glEnable(3042);
             GL11.glBlendFunc(774, 774);
@@ -252,7 +252,7 @@ public class tw extends um {
          float var8 = 0.00390625F;
          float var9 = (float)(System.currentTimeMillis() % (long)(3000 + var6 * 1873)) / (3000.0F + (float)(var6 * 1873)) * 256.0F;
          float var10 = 0.0F;
-         Tessalator var11 = Tessalator.a;
+         Tessalator var11 = Tessalator.tessalatorInstance;
          float var12 = 4.0F;
          if(var6 == 1) {
             var12 = -1.0F;
@@ -268,7 +268,7 @@ public class tw extends um {
 
    }
 
-   public void b(nl var1, Texture var2, aan var3, int var4, int var5) {
+   public void b(nl var1, TextureManager var2, aan var3, int var4, int var5) {
       if(var3 != null) {
          if(var3.a > 1) {
             String var6 = "" + var3.a;
@@ -285,7 +285,7 @@ public class tw extends um {
             GL11.glDisable(2896);
             GL11.glDisable(2929);
             GL11.glDisable(3553);
-            Tessalator var8 = Tessalator.a;
+            Tessalator var8 = Tessalator.tessalatorInstance;
             int var9 = 255 - var7 << 16 | var7 << 8;
             int var10 = (255 - var7) / 4 << 16 | 16128;
             this.a(var8, var4 + 2, var5 + 13, 13, 2, 0);
@@ -313,7 +313,7 @@ public class tw extends um {
    public void a(int var1, int var2, int var3, int var4, int var5, int var6) {
       float var7 = 0.00390625F;
       float var8 = 0.00390625F;
-      Tessalator var9 = Tessalator.a;
+      Tessalator var9 = Tessalator.tessalatorInstance;
       var9.b();
       var9.a((double)(var1 + 0), (double)(var2 + var6), (double)this.b, (double)((float)(var3 + 0) * var7), (double)((float)(var4 + var6) * var8));
       var9.a((double)(var1 + var5), (double)(var2 + var6), (double)this.b, (double)((float)(var3 + var5) * var7), (double)((float)(var4 + var6) * var8));

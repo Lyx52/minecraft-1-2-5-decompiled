@@ -25,18 +25,18 @@ public class SaveFileReader implements SaveFileInterface {
       return "Old Format";
    }
 
-   public List parseSaveFiles() {
-      ArrayList var1 = new ArrayList();
+   public List parseOldSaveFiles() {
+      ArrayList saveList = new ArrayList();
 
       for(int var2 = 0; var2 < 5; ++var2) {
-         String var3 = "World" + (var2 + 1);
-         WorldParser var4 = this.parseSaveFile(var3);
+         String worldName = "World" + (var2 + 1);
+         WorldParser var4 = this.parseSaveFile(worldName);
          if(var4 != null) {
-            var1.add(new WorldListItem(var3, "", var4.getLastPlayed(), var4.getSizeOnDisk(), var4.getGameType(), false, var4.isHardcore()));
+            saveList.add(new WorldListItem(worldName, "", var4.getLastPlayed(), var4.getSizeOnDisk(), var4.getGameType(), false, var4.isHardcore()));
          }
       }
 
-      return var1;
+      return saveList;
    }
 
    public void d() {}
@@ -83,7 +83,7 @@ public class SaveFileReader implements SaveFileInterface {
                CompundTag var5 = at.readLevelData((InputStream)(new FileInputStream(var4)));
                CompundTag var6 = var5.getCompundTag("Data");
                var6.addString("LevelName", var2);
-               at.a(var5, (OutputStream)(new FileOutputStream(var4)));
+               at.writeAndGZIPTag(var5, (OutputStream)(new FileOutputStream(var4)));
             } catch (Exception var7) {
                var7.printStackTrace();
             }
@@ -112,15 +112,15 @@ public class SaveFileReader implements SaveFileInterface {
 
    }
 
-   public akp a(String var1, boolean var2) {
-      return new eg(this.saveLocation, var1, var2);
+   public WorldFileInterface getWorldFile(String var1, boolean var2) {
+      return new WorldFile(this.saveLocation, var1, var2);
    }
 
-   public boolean a(String var1) {
+   public boolean isWorldValid(String var1) {
       return false;
    }
 
-   public boolean a(String var1, rw var2) {
+   public boolean a(String var1, GUIBackgroundInterface var2) {
       return false;
    }
 }

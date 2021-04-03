@@ -13,7 +13,7 @@ public class ahu {
    public static double b;
    public static double c;
    public static double d;
-   public Texture e;
+   public TextureManager e;
    public mn f;
    public World g;
    public Mob h;
@@ -95,7 +95,7 @@ public class ahu {
       return this.a(var1.getClass());
    }
 
-   public void a(World var1, Texture var2, nl var3, Mob var4, OptionParser var5, float var6) {
+   public void a(World var1, TextureManager var2, nl var3, Mob var4, OptionParser var5, float var6) {
       this.g = var1;
       this.e = var2;
       this.k = var5;

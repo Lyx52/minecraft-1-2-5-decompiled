@@ -7,14 +7,14 @@ public class ti extends GUIManager {
    public void c() {
       LocalizationManager var1 = LocalizationManager.getInstance();
       this.buttonList.clear();
-      this.buttonList.add(new z(0, this.q / 2 - 155, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.toMenu")));
-      this.buttonList.add(new z(1, this.q / 2 - 155 + 160, this.r / 4 + 120 + 12, var1.getLocaleStringByName("menu.quit")));
+      this.buttonList.add(new TexturePackButton(0, this.q / 2 - 155, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.toMenu")));
+      this.buttonList.add(new TexturePackButton(1, this.q / 2 - 155 + 160, this.r / 4 + 120 + 12, var1.getLocaleStringByName("menu.quit")));
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
-         this.minecraft.a((GUIManager)(new xt()));
-      } else if(var1.f == 1) {
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
+         this.minecraft.addMenu((GUIManager)(new xt()));
+      } else if(var1.buttonID == 1) {
          this.minecraft.stop();
       }
 

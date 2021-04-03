@@ -11,17 +11,17 @@ public class uy extends GUIManager {
    public void c() {
       this.buttonList.clear();
       if(this.minecraft.f.B().isHardcore()) {
-         this.buttonList.add(new Button(1, this.q / 2 - 100, this.r / 4 + 96, cy.a("deathScreen.deleteWorld")));
+         this.buttonList.add(new Button(1, this.q / 2 - 100, this.r / 4 + 96, LocalizationManagerWrapper.getLocaleString("deathScreen.deleteWorld")));
       } else {
-         this.buttonList.add(new Button(1, this.q / 2 - 100, this.r / 4 + 72, cy.a("deathScreen.respawn")));
-         this.buttonList.add(new Button(2, this.q / 2 - 100, this.r / 4 + 96, cy.a("deathScreen.titleScreen")));
+         this.buttonList.add(new Button(1, this.q / 2 - 100, this.r / 4 + 72, LocalizationManagerWrapper.getLocaleString("deathScreen.respawn")));
+         this.buttonList.add(new Button(2, this.q / 2 - 100, this.r / 4 + 96, LocalizationManagerWrapper.getLocaleString("deathScreen.titleScreen")));
          if(this.minecraft.credentials == null) {
-            ((Button)this.buttonList.get(1)).h = false;
+            ((Button)this.buttonList.get(1)).visible = false;
          }
       }
 
       Button var2;
-      for(Iterator var1 = this.buttonList.iterator(); var1.hasNext(); var2.h = false) {
+      for(Iterator var1 = this.buttonList.iterator(); var1.hasNext(); var2.visible = false) {
          var2 = (Button)var1.next();
       }
 
@@ -29,19 +29,19 @@ public class uy extends GUIManager {
 
    protected void a(char var1, int var2) {}
 
-   protected void a(Button var1) {
-      switch(var1.f) {
+   protected void clickButton(Button var1) {
+      switch(var1.buttonID) {
       case 1:
          if(this.minecraft.f.B().isHardcore()) {
-            String var2 = this.minecraft.f.A().d();
+            String var2 = this.minecraft.f.A().getWorldName();
             this.minecraft.b("Deleting world");
             SaveFileInterface var3 = this.minecraft.getSaveFileManager();
             var3.d();
             var3.deleteSave(var2);
-            this.minecraft.a((GUIManager)(new xt()));
+            this.minecraft.addMenu((GUIManager)(new xt()));
          } else {
             this.minecraft.h.ag();
-            this.minecraft.a((GUIManager)null);
+            this.minecraft.addMenu((GUIManager)null);
          }
          break;
       case 2:
@@ -50,7 +50,7 @@ public class uy extends GUIManager {
          }
 
          this.minecraft.a((World)null);
-         this.minecraft.a((GUIManager)(new xt()));
+         this.minecraft.addMenu((GUIManager)(new xt()));
       }
 
    }
@@ -60,14 +60,14 @@ public class uy extends GUIManager {
       GL11.glPushMatrix();
       GL11.glScalef(2.0F, 2.0F, 2.0F);
       boolean var4 = this.minecraft.f.B().isHardcore();
-      String var5 = var4?cy.a("deathScreen.title.hardcore"):cy.a("deathScreen.title");
+      String var5 = var4? LocalizationManagerWrapper.getLocaleString("deathScreen.title.hardcore"): LocalizationManagerWrapper.getLocaleString("deathScreen.title");
       this.a(this.u, var5, this.q / 2 / 2, 30, 16777215);
       GL11.glPopMatrix();
       if(var4) {
-         this.a(this.u, cy.a("deathScreen.hardcoreInfo"), this.q / 2, 144, 16777215);
+         this.a(this.u, LocalizationManagerWrapper.getLocaleString("deathScreen.hardcoreInfo"), this.q / 2, 144, 16777215);
       }
 
-      this.a(this.u, cy.a("deathScreen.score") + ": §e" + this.minecraft.h.ar(), this.q / 2, 100, 16777215);
+      this.a(this.u, LocalizationManagerWrapper.getLocaleString("deathScreen.score") + ": §e" + this.minecraft.h.ar(), this.q / 2, 100, 16777215);
       super.a(var1, var2, var3);
    }
 
@@ -80,7 +80,7 @@ public class uy extends GUIManager {
       ++this.a;
       Button var2;
       if(this.a == 20) {
-         for(Iterator var1 = this.buttonList.iterator(); var1.hasNext(); var2.h = true) {
+         for(Iterator var1 = this.buttonList.iterator(); var1.hasNext(); var2.visible = true) {
             var2 = (Button)var1.next();
          }
       }

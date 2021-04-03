@@ -602,7 +602,7 @@ public class pb {
    }
 
    public String r() {
-      return cy.a(this.s() + ".name");
+      return LocalizationManagerWrapper.getLocaleString(this.s() + ".name");
    }
 
    public String s() {

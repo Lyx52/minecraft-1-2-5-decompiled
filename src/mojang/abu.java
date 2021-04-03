@@ -21,7 +21,7 @@ public class abu extends um {
       GL11.glScalef(var10 / 1.0F, var10 / 1.0F, var10 / 1.0F);
       byte var11 = 46;
       this.a("/mojang/gui/items.png");
-      Tessalator var12 = Tessalator.a;
+      Tessalator var12 = Tessalator.tessalatorInstance;
       float var13 = (float)(var11 % 16 * 16 + 0) / 256.0F;
       float var14 = (float)(var11 % 16 * 16 + 16) / 256.0F;
       float var15 = (float)(var11 / 16 * 16 + 0) / 256.0F;

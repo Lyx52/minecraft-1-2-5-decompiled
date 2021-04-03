@@ -29,8 +29,8 @@ public class sm extends gb {
    }
 
    protected void d() {
-      this.u.b(cy.a("container.enchant"), 12, 6, 4210752);
-      this.u.b(cy.a("container.inventory"), 8, this.c - 96 + 2, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString("container.enchant"), 12, 6, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString("container.inventory"), 8, this.c - 96 + 2, 4210752);
    }
 
    public void a() {
@@ -54,9 +54,9 @@ public class sm extends gb {
    }
 
    protected void a(float var1, int var2, int var3) {
-      int var4 = this.minecraft.p.b("/mojang/gui/enchant.png");
+      int var4 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/enchant.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var4);
+      this.minecraft.textureManager.b(var4);
       int var5 = (this.q - this.b) / 2;
       int var6 = (this.r - this.c) / 2;
       this.b(var5, var6, 0, 0, this.b, this.c);
@@ -77,7 +77,7 @@ public class sm extends gb {
       float var9 = 5.0F;
       GL11.glScalef(var9, var9, var9);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-      this.minecraft.p.b(this.minecraft.p.b("/mojang/item/book.png"));
+      this.minecraft.textureManager.b(this.minecraft.textureManager.readImageFromLocation("/mojang/item/book.png"));
       GL11.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);
       float var10 = this.n + (this.m - this.n) * var1;
       GL11.glTranslatef((1.0F - var10) * 0.2F, (1.0F - var10) * 0.1F, (1.0F - var10) * 0.25F);
@@ -114,13 +114,13 @@ public class sm extends gb {
       GL11.glPopMatrix();
       tf.a();
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var4);
+      this.minecraft.textureManager.b(var4);
       gy.a.a(this.y.b);
 
       for(int var13 = 0; var13 < 3; ++var13) {
          String var14 = gy.a.a();
          this.g = 0.0F;
-         this.minecraft.p.b(var4);
+         this.minecraft.textureManager.b(var4);
          int var15 = this.y.c[var13];
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          if(var15 == 0) {

@@ -13,7 +13,7 @@ public class afj extends um {
       byte var10 = 1;
       byte var11 = 2;
       this.a("/mojang/particles.png");
-      Tessalator var12 = Tessalator.a;
+      Tessalator var12 = Tessalator.tessalatorInstance;
       float var13 = (float)(var10 * 8 + 0) / 128.0F;
       float var14 = (float)(var10 * 8 + 8) / 128.0F;
       float var15 = (float)(var11 * 8 + 0) / 128.0F;

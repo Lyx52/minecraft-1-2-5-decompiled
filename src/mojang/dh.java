@@ -53,7 +53,7 @@ public class dh extends um {
             float var29 = 0.7519531F;
             float var30 = 0.0F;
             float var31 = 0.0625F;
-            Tessalator var32 = Tessalator.a;
+            Tessalator var32 = Tessalator.tessalatorInstance;
             var32.b();
             var32.b(0.0F, 0.0F, -1.0F);
             var32.a((double)var12, (double)var15, (double)var8, (double)var17, (double)var18);

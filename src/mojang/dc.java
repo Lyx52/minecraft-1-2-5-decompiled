@@ -21,7 +21,7 @@ public class dc extends GUIManager {
    }
 
    public void c() {
-      this.b = cy.a("mojang.gui.stats");
+      this.b = LocalizationManagerWrapper.getLocaleString("mojang.gui.stats");
       this.d = new ns(this);
       this.d.alist(this.buttonList, 1, 1);
       this.e = new bx(this);
@@ -41,24 +41,24 @@ public class dc extends GUIManager {
       Button var3;
       this.buttonList.add(var3 = new Button(3, this.q / 2 + 62, this.r - 52, 100, 20, var1.getLocaleStringByName("stat.itemsButton")));
       if(this.f.a() == 0) {
-         var2.h = false;
+         var2.visible = false;
       }
 
       if(this.e.a() == 0) {
-         var3.h = false;
+         var3.visible = false;
       }
 
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 0) {
-            this.minecraft.a(this.a);
-         } else if(var1.f == 1) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 0) {
+            this.minecraft.addMenu(this.a);
+         } else if(var1.buttonID == 1) {
             this.i = this.d;
-         } else if(var1.f == 3) {
+         } else if(var1.buttonID == 3) {
             this.i = this.e;
-         } else if(var1.f == 2) {
+         } else if(var1.buttonID == 2) {
             this.i = this.f;
          } else {
             this.i.a(var1);
@@ -77,7 +77,7 @@ public class dc extends GUIManager {
       this.a(var1 + 1, var2 + 1);
       GL11.glEnable('\u803a');
       tf.c();
-      c.a(this.u, this.minecraft.p, var3, 0, yr.e[var3].b(0), var1 + 2, var2 + 2);
+      c.a(this.u, this.minecraft.textureManager, var3, 0, yr.e[var3].b(0), var1 + 2, var2 + 2);
       tf.a();
       GL11.glDisable('\u803a');
    }
@@ -87,10 +87,10 @@ public class dc extends GUIManager {
    }
 
    private void c(int var1, int var2, int var3, int var4) {
-      int var5 = this.minecraft.p.b("/mojang/gui/slot.png");
+      int var5 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/slot.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var5);
-      Tessalator var10 = Tessalator.a;
+      this.minecraft.textureManager.b(var5);
+      Tessalator var10 = Tessalator.tessalatorInstance;
       var10.b();
       var10.a((double)(var1 + 0), (double)(var2 + 18), (double)this.g, (double)((float)(var3 + 0) * 0.0078125F), (double)((float)(var4 + 18) * 0.0078125F));
       var10.a((double)(var1 + 18), (double)(var2 + 18), (double)this.g, (double)((float)(var3 + 18) * 0.0078125F), (double)((float)(var4 + 18) * 0.0078125F));

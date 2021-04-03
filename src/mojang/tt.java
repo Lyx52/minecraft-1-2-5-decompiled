@@ -18,11 +18,11 @@ public class tt {
 
    public void a() {}
 
-   public void a(Texture var1) {
+   public void a(TextureManager var1) {
       if(this.k == 0) {
-         GL11.glBindTexture(3553, var1.b("/mojang/terrain.png"));
+         GL11.glBindTexture(3553, var1.readImageFromLocation("/mojang/terrain.png"));
       } else if(this.k == 1) {
-         GL11.glBindTexture(3553, var1.b("/mojang/gui/items.png"));
+         GL11.glBindTexture(3553, var1.readImageFromLocation("/mojang/gui/items.png"));
       }
 
    }

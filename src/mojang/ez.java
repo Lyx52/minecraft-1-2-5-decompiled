@@ -28,7 +28,7 @@ public class ez extends GUIManager {
 
    }
 
-   protected void a(Button var1) {}
+   protected void clickButton(Button var1) {}
 
    public void a(int var1, int var2, float var3) {
       this.e(0);

@@ -36,14 +36,14 @@ public class aax extends GUIManager {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 1) {
-            this.minecraft.a(this.a);
-         } else if(var1.f == 0) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 1) {
+            this.minecraft.addMenu(this.a);
+         } else if(var1.buttonID == 0) {
             SaveFileInterface var2 = this.minecraft.getSaveFileManager();
             var2.a(this.c, this.b.b().trim());
-            this.minecraft.a(this.a);
+            this.minecraft.addMenu(this.a);
          }
 
       }
@@ -51,9 +51,9 @@ public class aax extends GUIManager {
 
    protected void a(char var1, int var2) {
       this.b.a(var1, var2);
-      ((Button)this.buttonList.get(0)).h = this.b.b().trim().length() > 0;
+      ((Button)this.buttonList.get(0)).visible = this.b.b().trim().length() > 0;
       if(var1 == 13) {
-         this.a((Button)this.buttonList.get(0));
+         this.clickButton((Button)this.buttonList.get(0));
       }
 
    }

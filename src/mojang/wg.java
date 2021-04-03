@@ -28,7 +28,7 @@ public class wg extends InterfaceRendererUtils {
    }
 
    public void a(float var1) {
-      this.b.p.b(this.b.p.b("/mojang/gui/particles.png"));
+      this.b.textureManager.b(this.b.textureManager.readImageFromLocation("/mojang/gui/particles.png"));
 
       for(int var2 = 0; var2 < this.a.size(); ++var2) {
          hv var3 = (hv)this.a.get(var2);

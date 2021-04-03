@@ -21,7 +21,7 @@ public class sr extends gb {
 
    public void a() {
       if(!this.minecraft.c.h()) {
-         this.minecraft.a((GUIManager)(new ain(this.minecraft.h)));
+         this.minecraft.addMenu((GUIManager)(new ain(this.minecraft.h)));
       }
 
    }
@@ -86,7 +86,7 @@ public class sr extends gb {
 
    public void c() {
       if(!this.minecraft.c.h()) {
-         this.minecraft.a((GUIManager)(new ain(this.minecraft.h)));
+         this.minecraft.addMenu((GUIManager)(new ain(this.minecraft.h)));
       } else {
          super.c();
          this.buttonList.clear();
@@ -95,7 +95,7 @@ public class sr extends gb {
    }
 
    protected void d() {
-      this.u.b(cy.a("container.creative"), 8, 6, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString("container.creative"), 8, 6, 4210752);
    }
 
    public void f() {
@@ -162,8 +162,8 @@ public class sr extends gb {
 
    protected void a(float var1, int var2, int var3) {
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      int var4 = this.minecraft.p.b("/mojang/gui/allitems.png");
-      this.minecraft.p.b(var4);
+      int var4 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/allitems.png");
+      this.minecraft.textureManager.b(var4);
       int var5 = this.e;
       int var6 = this.f;
       this.b(var5, var6, 0, 0, this.b, this.c);
@@ -173,13 +173,13 @@ public class sr extends gb {
       this.b(var5 + 154, var6 + 17 + (int)((float)(var9 - var8 - 17) * this.i), 0, 208, 16, 16);
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
-         this.minecraft.a((GUIManager)(new ro(this.minecraft.K)));
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
+         this.minecraft.addMenu((GUIManager)(new ro(this.minecraft.K)));
       }
 
-      if(var1.f == 1) {
-         this.minecraft.a((GUIManager)(new dc(this, this.minecraft.K)));
+      if(var1.buttonID == 1) {
+         this.minecraft.addMenu((GUIManager)(new dc(this, this.minecraft.K)));
       }
 
    }

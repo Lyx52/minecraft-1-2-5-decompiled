@@ -58,7 +58,7 @@ public class ajw {
    }
 
    public String toString() {
-      return cy.a(this.a);
+      return LocalizationManagerWrapper.getLocaleString(this.a);
    }
 
    // $FF: synthetic method

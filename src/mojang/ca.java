@@ -12,7 +12,7 @@ public interface ca {
 
    void a(ca var1, int var2, int var3);
 
-   boolean a(boolean var1, rw var2);
+   boolean a(boolean var1, GUIBackgroundInterface var2);
 
    boolean a();
 

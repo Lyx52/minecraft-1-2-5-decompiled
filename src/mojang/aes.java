@@ -13,8 +13,8 @@ public class aes extends ki {
    private int i = 0;
 
 
-   public aes(Minecraft var1) {
-      super(var1);
+   public aes(Minecraft minecraft) {
+      super(minecraft);
    }
 
    public void a(Player var1) {

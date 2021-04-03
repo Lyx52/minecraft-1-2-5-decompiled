@@ -11,7 +11,7 @@ public class iv extends um {
       GL11.glTranslatef((float)var2, (float)var4, (float)var6);
       GL11.glRotatef(var1.w + (var1.u - var1.w) * var9 - 90.0F, 0.0F, 1.0F, 0.0F);
       GL11.glRotatef(var1.x + (var1.v - var1.x) * var9, 0.0F, 0.0F, 1.0F);
-      Tessalator var10 = Tessalator.a;
+      Tessalator var10 = Tessalator.tessalatorInstance;
       byte var11 = 0;
       float var12 = 0.0F;
       float var13 = 0.5F;

@@ -259,7 +259,7 @@ public class fe extends um {
          GL11.glDisable(2929);
          GL11.glEnable(3042);
          GL11.glBlendFunc(770, 771);
-         Tessalator var14 = Tessalator.a;
+         Tessalator var14 = Tessalator.tessalatorInstance;
          byte var15 = 0;
          if(var2.equals("deadmau5")) {
             var15 = -10;

@@ -28,7 +28,7 @@ public class xh extends GUIManager {
    public xh(GUIManager var1) {
       this.a = var1;
       this.x = "";
-      this.y = cy.a("selectWorld.newWorld");
+      this.y = LocalizationManagerWrapper.getLocaleString("selectWorld.newWorld");
    }
 
    public void a() {
@@ -101,12 +101,12 @@ public class xh extends GUIManager {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 1) {
-            this.minecraft.a(this.a);
-         } else if(var1.f == 0) {
-            this.minecraft.a((GUIManager)null);
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 1) {
+            this.minecraft.addMenu(this.a);
+         } else if(var1.buttonID == 0) {
+            this.minecraft.addMenu((GUIManager)null);
             if(this.i) {
                return;
             }
@@ -133,9 +133,9 @@ public class xh extends GUIManager {
                this.minecraft.c = new aes(this.minecraft);
             }
 
-            this.minecraft.a(this.d, this.b.b(), new WorldStub(var2, var9, this.f, this.h, WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z]));
-            this.minecraft.a((GUIManager)null);
-         } else if(var1.f == 3) {
+            this.minecraft.loadWorld(this.d, this.b.b(), new WorldStub(var2, var9, this.f, this.h, WorldGeneratorTypes.WORLD_GENERATOR_TYPES[this.z]));
+            this.minecraft.addMenu((GUIManager)null);
+         } else if(var1.buttonID == 3) {
             this.j = !this.j;
             this.k.i = !this.j;
             this.m.i = this.j;
@@ -148,7 +148,7 @@ public class xh extends GUIManager {
                var8 = LocalizationManager.getInstance();
                this.l.title = var8.getLocaleStringByName("selectWorld.moreWorldOptions");
             }
-         } else if(var1.f == 2) {
+         } else if(var1.buttonID == 2) {
             if(this.e.equals("survival")) {
                this.h = false;
                this.e = "hardcore";
@@ -166,10 +166,10 @@ public class xh extends GUIManager {
             }
 
             this.g();
-         } else if(var1.f == 4) {
+         } else if(var1.buttonID == 4) {
             this.f = !this.f;
             this.g();
-         } else if(var1.f == 5) {
+         } else if(var1.buttonID == 5) {
             ++this.z;
             if(this.z >= WorldGeneratorTypes.WORLD_GENERATOR_TYPES.length) {
                this.z = 0;
@@ -198,10 +198,10 @@ public class xh extends GUIManager {
       }
 
       if(var1 == 13) {
-         this.a((Button)this.buttonList.get(0));
+         this.clickButton((Button)this.buttonList.get(0));
       }
 
-      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0;
+      ((Button)this.buttonList.get(0)).visible = this.b.b().length() > 0;
       this.d();
    }
 

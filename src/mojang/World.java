@@ -40,7 +40,7 @@ public class World implements WorldInterface {
    public final alb t;
    protected List u;
    protected ca v;
-   protected final akp w;
+   protected final WorldFileInterface w;
    protected WorldParser x;
    public boolean y;
    private boolean N;
@@ -73,7 +73,7 @@ public class World implements WorldInterface {
       return this.t.c;
    }
 
-   public World(akp var1, String var2, alb var3, WorldStub var4) {
+   public World(WorldFileInterface var1, String var2, alb var3, WorldStub var4) {
       this.a = false;
       this.b = new ArrayList();
       this.G = new ArrayList();
@@ -160,11 +160,11 @@ public class World implements WorldInterface {
       this.K();
    }
 
-   public World(akp var1, String var2, WorldStub var3) {
+   public World(WorldFileInterface var1, String var2, WorldStub var3) {
       this(var1, var2, var3, (alb)null);
    }
 
-   public World(akp var1, String var2, WorldStub var3, alb var4) {
+   public World(WorldFileInterface var1, String var2, WorldStub var3, alb var4) {
       this.a = false;
       this.b = new ArrayList();
       this.G = new ArrayList();
@@ -228,7 +228,7 @@ public class World implements WorldInterface {
    }
 
    protected ca d() {
-      ua var1 = this.w.a(this.t);
+      ua var1 = this.w.createDimensionFile(this.t);
       return new ko(this, var1, this.t.b());
    }
 
@@ -326,7 +326,7 @@ public class World implements WorldInterface {
 
    }
 
-   public void a(boolean var1, rw var2) {
+   public void a(boolean var1, GUIBackgroundInterface var2) {
       if(this.v.b()) {
          if(var2 != null) {
             var2.b("Saving level");
@@ -334,7 +334,7 @@ public class World implements WorldInterface {
 
          this.J();
          if(var2 != null) {
-            var2.d("Saving chunks");
+            var2.changeSecondaryString("Saving chunks");
          }
 
          this.v.a(var1, var2);
@@ -355,7 +355,7 @@ public class World implements WorldInterface {
             this.J();
          }
 
-         return this.v.a(false, (rw)null);
+         return this.v.a(false, (GUIBackgroundInterface)null);
       }
    }
 
@@ -1837,7 +1837,7 @@ public class World implements WorldInterface {
       }
    }
 
-   public void a(rw var1) {
+   public void a(GUIBackgroundInterface var1) {
       this.a(true, var1);
 
       try {
@@ -1894,7 +1894,7 @@ public class World implements WorldInterface {
       var2 = this.x.getGameTime() + 1L;
       if(var2 % (long)this.p == 0L) {
          lv.c("save");
-         this.a(false, (rw)null);
+         this.a(false, (GUIBackgroundInterface)null);
       }
 
       this.x.setGameTime(var2);
@@ -2878,7 +2878,7 @@ public class World implements WorldInterface {
 
    }
 
-   public akp A() {
+   public WorldFileInterface A() {
       return this.w;
    }
 

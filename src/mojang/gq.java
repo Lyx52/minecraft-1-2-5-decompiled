@@ -157,7 +157,7 @@ abstract class gq extends iff {
    protected void a(aii var1, int var2, int var3) {
       if(var1 != null) {
          yr var4 = yr.e[var1.b()];
-         String var5 = ("" + LocalizationManager.getInstance().c(var4.e())).trim();
+         String var5 = ("" + LocalizationManager.getInstance().getNameLocale(var4.e())).trim();
          if(var5.length() > 0) {
             int var6 = var2 + 12;
             int var7 = var3 - 12;

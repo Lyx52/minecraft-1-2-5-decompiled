@@ -96,7 +96,7 @@ public class IsomCanvas extends Canvas implements KeyListener, MouseListener, Mo
 
    public void b(String var1) {
       this.i = this.j = 0;
-      this.d = new World(new eg(new File(this.e, "saves"), var1, false), var1, new WorldStub((new Random()).nextLong(), 0, true, false, WorldGeneratorTypes.defaultWorld));
+      this.d = new World(new WorldFile(new File(this.e, "saves"), var1, false), var1, new WorldStub((new Random()).nextLong(), 0, true, false, WorldGeneratorTypes.defaultWorld));
       this.d.f = 0;
       List var2 = this.g;
       synchronized(this.g) {

@@ -32,18 +32,18 @@ public class xs extends GUIManager {
       this.b = new agu(this.u, this.q / 2 - 100, 116, 200, 20);
       this.b.f(128);
       this.b.a(this.d.b);
-      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
+      ((Button)this.buttonList.get(0)).visible = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
    }
 
    public void e() {
       Keyboard.enableRepeatEvents(false);
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == 1) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
+         if(var1.buttonID == 1) {
             this.a.a(false, 0);
-         } else if(var1.f == 0) {
+         } else if(var1.buttonID == 0) {
             this.d.a = this.c.b();
             this.d.b = this.b.b();
             this.a.a(true, 0);
@@ -66,15 +66,15 @@ public class xs extends GUIManager {
       }
 
       if(var1 == 13) {
-         this.a((Button)this.buttonList.get(0));
+         this.clickButton((Button)this.buttonList.get(0));
       }
 
-      ((Button)this.buttonList.get(0)).h = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
-      if(((Button)this.buttonList.get(0)).h) {
+      ((Button)this.buttonList.get(0)).visible = this.b.b().length() > 0 && this.b.b().split(":").length > 0 && this.c.b().length() > 0;
+      if(((Button)this.buttonList.get(0)).visible) {
          String var3 = this.b.b().trim();
          String[] var4 = var3.split(":");
          if(var4.length > 2) {
-            ((Button)this.buttonList.get(0)).h = false;
+            ((Button)this.buttonList.get(0)).visible = false;
          }
       }
 

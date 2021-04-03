@@ -25,7 +25,7 @@ public class jy extends GUIManager {
       for(var5 = 0; var5 < var4; ++var5) {
          DefaultOptions var6 = var3[var5];
          if(!var6.a()) {
-            this.buttonList.add(new z(var6.getIDS(), this.q / 2 - 155 + var2 % 2 * 160, this.r / 6 + 24 * (var2 >> 1), var6, this.c.c(var6)));
+            this.buttonList.add(new TexturePackButton(var6.getIDS(), this.q / 2 - 155 + var2 % 2 * 160, this.r / 6 + 24 * (var2 >> 1), var6, this.c.c(var6)));
          } else {
             this.buttonList.add(new ajz(var6.getIDS(), this.q / 2 - 155 + var2 % 2 * 160, this.r / 6 + 24 * (var2 >> 1), var6, this.c.c(var6), this.c.a(var6)));
          }
@@ -50,17 +50,17 @@ public class jy extends GUIManager {
 
    }
 
-   protected void a(Button var1) {
-      if(var1.h) {
+   protected void clickButton(Button var1) {
+      if(var1.visible) {
          int var2 = this.c.guiScale;
-         if(var1.f < 100 && var1 instanceof z) {
-            this.c.a(((z)var1).a(), 1);
-            var1.title = this.c.c(DefaultOptions.a(var1.f));
+         if(var1.buttonID < 100 && var1 instanceof TexturePackButton) {
+            this.c.a(((TexturePackButton)var1).getOptions(), 1);
+            var1.title = this.c.c(DefaultOptions.a(var1.buttonID));
          }
 
-         if(var1.f == 200) {
+         if(var1.buttonID == 200) {
             this.minecraft.options.b();
-            this.minecraft.a(this.b);
+            this.minecraft.addMenu(this.b);
          }
 
          if(this.c.guiScale != var2) {
@@ -77,8 +77,8 @@ public class jy extends GUIManager {
       this.k();
       this.a(this.u, this.a, this.q / 2, 20, 16777215);
       if(!this.d && this.c.viewDistance == 0) {
-         this.a(this.u, cy.a("options.farWarning1"), this.q / 2, this.r / 6 + 144, 11468800);
-         this.a(this.u, cy.a("options.farWarning2"), this.q / 2, this.r / 6 + 144 + 12, 11468800);
+         this.a(this.u, LocalizationManagerWrapper.getLocaleString("options.farWarning1"), this.q / 2, this.r / 6 + 144, 11468800);
+         this.a(this.u, LocalizationManagerWrapper.getLocaleString("options.farWarning2"), this.q / 2, this.r / 6 + 144 + 12, 11468800);
       }
 
       super.a(var1, var2, var3);

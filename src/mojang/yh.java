@@ -77,7 +77,7 @@ public class yh implements ca {
 
    }
 
-   public boolean a(boolean var1, rw var2) {
+   public boolean a(boolean var1, GUIBackgroundInterface var2) {
       return true;
    }
 

@@ -17,13 +17,13 @@ import java.util.Map;
 
 public class za {
 
-   private akp a;
+   private WorldFileInterface a;
    private Map b = new HashMap();
    private List c = new ArrayList();
    private Map d = new HashMap();
 
 
-   public za(akp var1) {
+   public za(WorldFileInterface var1) {
       this.a = var1;
       this.b();
    }
@@ -35,7 +35,7 @@ public class za {
       } else {
          if(this.a != null) {
             try {
-               File var4 = this.a.a(var2);
+               File var4 = this.a.getDataFile(var2);
                if(var4 != null && var4.exists()) {
                   try {
                      var3 = (zk)var1.getConstructor(new Class[]{String.class}).newInstance(new Object[]{var2});
@@ -89,14 +89,14 @@ public class za {
    private void a(zk var1) {
       if(this.a != null) {
          try {
-            File var2 = this.a.a(var1.a);
+            File var2 = this.a.getDataFile(var1.a);
             if(var2 != null) {
                CompundTag var3 = new CompundTag();
                var1.b(var3);
                CompundTag var4 = new CompundTag();
                var4.addCompundTag("data", var3);
                FileOutputStream var5 = new FileOutputStream(var2);
-               at.a(var4, (OutputStream)var5);
+               at.writeAndGZIPTag(var4, (OutputStream)var5);
                var5.close();
             }
          } catch (Exception var6) {
@@ -113,7 +113,7 @@ public class za {
             return;
          }
 
-         File var1 = this.a.a("idcounts");
+         File var1 = this.a.getDataFile("idcounts");
          if(var1 != null && var1.exists()) {
             DataInputStream var2 = new DataInputStream(new FileInputStream(var1));
             CompundTag var3 = at.a((DataInput)var2);
@@ -149,7 +149,7 @@ public class za {
          return var2.shortValue();
       } else {
          try {
-            File var3 = this.a.a("idcounts");
+            File var3 = this.a.getDataFile("idcounts");
             if(var3 != null) {
                CompundTag var4 = new CompundTag();
                Iterator var5 = this.d.keySet().iterator();
@@ -161,7 +161,7 @@ public class za {
                }
 
                DataOutputStream var9 = new DataOutputStream(new FileOutputStream(var3));
-               at.a(var4, (DataOutput)var9);
+               at.writeToTag(var4, (DataOutput)var9);
                var9.close();
             }
          } catch (Exception var8) {

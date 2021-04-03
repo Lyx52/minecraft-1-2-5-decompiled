@@ -14,12 +14,12 @@ public abstract class um {
    public abstract void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9);
 
    protected void a(String var1) {
-      Texture var2 = this.e.e;
-      var2.b(var2.b(var1));
+      TextureManager var2 = this.e.e;
+      var2.b(var2.readImageFromLocation(var1));
    }
 
    protected boolean a(String var1, String var2) {
-      Texture var3 = this.e.e;
+      TextureManager var3 = this.e.e;
       int var4 = var3.a(var1, var2);
       if(var4 >= 0) {
          var3.b(var4);
@@ -43,7 +43,7 @@ public abstract class um {
       float var16 = var1.I * 1.4F;
       GL11.glScalef(var16, var16, var16);
       this.a("/mojang/terrain.png");
-      Tessalator var17 = Tessalator.a;
+      Tessalator var17 = Tessalator.tessalatorInstance;
       float var18 = 0.5F;
       float var19 = 0.0F;
       float var20 = var1.J / var16;
@@ -93,8 +93,8 @@ public abstract class um {
    private void c(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
-      Texture var10 = this.e.e;
-      var10.b(var10.b("%clamp%/mojang.misc/shadow.png"));
+      TextureManager var10 = this.e.e;
+      var10.b(var10.readImageFromLocation("%clamp%/mojang.misc/shadow.png"));
       World var11 = this.b();
       GL11.glDepthMask(false);
       float var12 = this.g;
@@ -121,7 +121,7 @@ public abstract class um {
       double var25 = var2 - var36;
       double var27 = var4 - var15;
       double var29 = var6 - var17;
-      Tessalator var31 = Tessalator.a;
+      Tessalator var31 = Tessalator.tessalatorInstance;
       var31.b();
 
       for(int var32 = var19; var32 <= var20; ++var32) {
@@ -146,7 +146,7 @@ public abstract class um {
    }
 
    private void a(pb var1, double var2, double var4, double var6, int var8, int var9, int var10, float var11, float var12, double var13, double var15, double var17) {
-      Tessalator var19 = Tessalator.a;
+      Tessalator var19 = Tessalator.tessalatorInstance;
       if(var1.b()) {
          double var20 = ((double)var11 - (var4 - ((double)var9 + var15)) / 2.0D) * 0.5D * (double)this.b().c(var8, var9, var10);
          if(var20 >= 0.0D) {
@@ -174,7 +174,7 @@ public abstract class um {
 
    public static void a(wu var0, double var1, double var3, double var5) {
       GL11.glDisable(3553);
-      Tessalator var7 = Tessalator.a;
+      Tessalator var7 = Tessalator.tessalatorInstance;
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var7.b();
       var7.b(var1, var3, var5);
@@ -214,7 +214,7 @@ public abstract class um {
    }
 
    public static void a(wu var0) {
-      Tessalator var1 = Tessalator.a;
+      Tessalator var1 = Tessalator.tessalatorInstance;
       var1.b();
       var1.a(var0.a, var0.e, var0.c);
       var1.a(var0.d, var0.e, var0.c);

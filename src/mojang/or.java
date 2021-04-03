@@ -83,7 +83,7 @@ public class or extends fe {
          GL11.glTranslatef((float)var2, (float)var4 + 2.0F, (float)var6);
          GL11.glRotatef((float)(-Math.atan2((double)var14, (double)var12)) * 180.0F / 3.1415927F - 90.0F, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef((float)(-Math.atan2((double)var15, (double)var13)) * 180.0F / 3.1415927F - 90.0F, 1.0F, 0.0F, 0.0F);
-         Tessalator var17 = Tessalator.a;
+         Tessalator var17 = Tessalator.tessalatorInstance;
          tf.a();
          GL11.glDisable(2884);
          this.a("/mojang/mob/enderdragon/beam.png");
@@ -114,7 +114,7 @@ public class or extends fe {
 
    protected void a(EnderDragon var1, float var2) {
       super.b(var1, var2);
-      Tessalator var3 = Tessalator.a;
+      Tessalator var3 = Tessalator.tessalatorInstance;
       if(var1.ay > 0) {
          tf.a();
          float var4 = ((float)var1.ay + var2) / 200.0F;

@@ -121,11 +121,11 @@ public class ei extends yr {
 
    public String d(aan var1) {
       if(var1.i() == 0) {
-         return cy.a("mojang.item.emptyPotion.name").trim();
+         return LocalizationManagerWrapper.getLocaleString("mojang.item.emptyPotion.name").trim();
       } else {
          String var2 = "";
          if(c(var1.i())) {
-            var2 = cy.a("potion.prefix.grenade").trim() + " ";
+            var2 = LocalizationManagerWrapper.getLocaleString("potion.prefix.grenade").trim() + " ";
          }
 
          List var3 = bs.a_(var1);
@@ -133,10 +133,10 @@ public class ei extends yr {
          if(var3 != null && !var3.isEmpty()) {
             var4 = ((alg)var3.get(0)).d();
             var4 = var4 + ".postfix";
-            return var2 + cy.a(var4).trim();
+            return var2 + LocalizationManagerWrapper.getLocaleString(var4).trim();
          } else {
             var4 = hx.b(var1.i());
-            return cy.a(var4).trim() + " " + super.d(var1);
+            return LocalizationManagerWrapper.getLocaleString(var4).trim() + " " + super.d(var1);
          }
       }
    }
@@ -149,9 +149,9 @@ public class ei extends yr {
 
             while(var7.hasNext()) {
                alg var5 = (alg)var7.next();
-               String var6 = cy.a(var5.d()).trim();
+               String var6 = LocalizationManagerWrapper.getLocaleString(var5.d()).trim();
                if(var5.c() > 0) {
-                  var6 = var6 + " " + cy.a("potion.potency." + var5.c()).trim();
+                  var6 = var6 + " " + LocalizationManagerWrapper.getLocaleString("potion.potency." + var5.c()).trim();
                }
 
                if(var5.b() > 20) {
@@ -165,7 +165,7 @@ public class ei extends yr {
                }
             }
          } else {
-            String var4 = cy.a("potion.empty").trim();
+            String var4 = LocalizationManagerWrapper.getLocaleString("potion.empty").trim();
             var2.add("§7" + var4);
          }
 

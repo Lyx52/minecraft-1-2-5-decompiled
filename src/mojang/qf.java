@@ -42,10 +42,10 @@ public class qf extends aih {
 
       int var4;
       for(var4 = 1; var4 <= 7; ++var4) {
-         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 1, 1, var4, var3);
-         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 2, 1, var4, var3);
-         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 4, 1, var4, var3);
-         this.a(var1, pb.az.bO, Utils.a(var2, 2, 7), 5, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.randInt(var2, 2, 7), 1, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.randInt(var2, 2, 7), 2, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.randInt(var2, 2, 7), 4, 1, var4, var3);
+         this.a(var1, pb.az.bO, Utils.randInt(var2, 2, 7), 5, 1, var4, var3);
       }
 
       for(var4 = 0; var4 < 9; ++var4) {

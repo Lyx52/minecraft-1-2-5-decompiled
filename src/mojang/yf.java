@@ -55,14 +55,14 @@ public class yf extends GUIManager {
       }
 
       if(var2 == 1) {
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.addMenu((GUIManager)null);
       } else if(var2 == 28) {
          String var3 = this.a.b().trim();
          if(var3.length() > 0 && !this.minecraft.startsWithSlash(var3)) {
             this.minecraft.h.a(var3);
          }
 
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.addMenu((GUIManager)null);
       } else if(var2 == 200) {
          this.a(-1);
       } else if(var2 == 208) {
@@ -105,7 +105,7 @@ public class yf extends GUIManager {
             URI var5 = var4.b();
             if(var5 != null) {
                this.j = var5;
-               this.minecraft.a((GUIManager)(new be(this, this, var4.a(), 0, var4)));
+               this.minecraft.addMenu((GUIManager)(new be(this, this, var4.a(), 0, var4)));
                return;
             }
          }
@@ -128,7 +128,7 @@ public class yf extends GUIManager {
          }
 
          this.j = null;
-         this.minecraft.a((GUIManager)this);
+         this.minecraft.addMenu((GUIManager)this);
       }
 
    }

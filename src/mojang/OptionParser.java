@@ -116,7 +116,7 @@ public class OptionParser {
    }
 
    public static String c(int var0) {
-      return var0 < 0?cy.a("key.mouseButton", new Object[]{Integer.valueOf(var0 + 101)}):Keyboard.getKeyName(var0);
+      return var0 < 0? LocalizationManagerWrapper.getFormatedLocaleString("key.mouseButton", new Object[]{Integer.valueOf(var0 + 101)}):Keyboard.getKeyName(var0);
    }
 
    public void a(int var1, int var2) {
@@ -181,7 +181,7 @@ public class OptionParser {
 
       if(var1 == DefaultOptions.ANAGLYPH) {
          this.glyph3d = !this.glyph3d;
-         this.minecraftInstance.p.b();
+         this.minecraftInstance.textureManager.b();
       }
 
       if(var1 == DefaultOptions.FRAMERATE_LIMIT) {

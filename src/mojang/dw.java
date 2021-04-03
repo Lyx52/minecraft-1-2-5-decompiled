@@ -10,7 +10,7 @@ public class dw extends GUIManager {
       LocalizationManager var4 = LocalizationManager.getInstance();
       this.a = var4.getLocaleStringByName(var1);
       if(var3 != null) {
-         this.b = var4.a(var2, var3);
+         this.b = var4.formatLocaleString(var2, var3);
       } else {
          this.b = var4.getLocaleStringByName(var2);
       }
@@ -27,9 +27,9 @@ public class dw extends GUIManager {
       this.buttonList.add(new Button(0, this.q / 2 - 100, this.r / 4 + 120 + 12, var1.getLocaleStringByName("mojang.gui.toMenu")));
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 0) {
-         this.minecraft.a((GUIManager)(new xt()));
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 0) {
+         this.minecraft.addMenu((GUIManager)(new xt()));
       }
 
    }

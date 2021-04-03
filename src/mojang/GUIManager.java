@@ -34,7 +34,7 @@ public class GUIManager extends InterfaceRendererUtils {
 
    protected void a(char var1, int var2) {
       if(var2 == 1) {
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.addMenu((GUIManager)null);
          this.minecraft.g();
       }
 
@@ -70,7 +70,7 @@ public class GUIManager extends InterfaceRendererUtils {
             if(var5.c(this.minecraft, var1, var2)) {
                this.a = var5;
                this.minecraft.soundManager.a("random.click", 1.0F, 1.0F);
-               this.a(var5);
+               this.clickButton(var5);
             }
          }
       }
@@ -85,7 +85,7 @@ public class GUIManager extends InterfaceRendererUtils {
 
    }
 
-   protected void a(Button var1) {}
+   protected void clickButton(Button var1) {}
 
    public void a(Minecraft var1, int var2, int var3) {
       this.v = new wg(var1);
@@ -157,8 +157,8 @@ public class GUIManager extends InterfaceRendererUtils {
    public void e(int var1) {
       GL11.glDisable(2896);
       GL11.glDisable(2912);
-      Tessalator var2 = Tessalator.a;
-      GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/gui/background.png"));
+      Tessalator var2 = Tessalator.tessalatorInstance;
+      GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("/mojang/gui/background.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var3 = 32.0F;
       var2.b();

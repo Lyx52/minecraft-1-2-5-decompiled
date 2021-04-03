@@ -79,7 +79,7 @@ public class vq extends Player {
             }
 
             if(this.b.guiManager != null) {
-               this.b.a((GUIManager)null);
+               this.b.addMenu((GUIManager)null);
             }
 
             if(this.aR == 0.0F) {
@@ -194,7 +194,7 @@ public class vq extends Player {
       if(!this.k.F) {
          if(this.aB == 1 && var1 == 1) {
             this.a((ajw)dp.C);
-            this.b.a((GUIManager)(new c()));
+            this.b.addMenu((GUIManager)(new c()));
          } else {
             this.a((ajw)dp.B);
             this.b.soundManager.a("portal.travel", 1.0F, this.U.nextFloat() * 0.4F + 0.8F);
@@ -238,35 +238,35 @@ public class vq extends Player {
 
    public void af() {
       super.af();
-      this.b.a((GUIManager)null);
+      this.b.addMenu((GUIManager)null);
    }
 
    public void a(sc var1) {
-      this.b.a((GUIManager)(new alu(var1)));
+      this.b.addMenu((GUIManager)(new alu(var1)));
    }
 
    public void a(io var1) {
-      this.b.a((GUIManager)(new zn(this.ap, var1)));
+      this.b.addMenu((GUIManager)(new zn(this.ap, var1)));
    }
 
    public void a(int var1, int var2, int var3) {
-      this.b.a((GUIManager)(new aen(this.ap, this.k, var1, var2, var3)));
+      this.b.addMenu((GUIManager)(new aen(this.ap, this.k, var1, var2, var3)));
    }
 
    public void c(int var1, int var2, int var3) {
-      this.b.a((GUIManager)(new sm(this.ap, this.k, var1, var2, var3)));
+      this.b.addMenu((GUIManager)(new sm(this.ap, this.k, var1, var2, var3)));
    }
 
    public void a(ahg var1) {
-      this.b.a((GUIManager)(new kv(this.ap, var1)));
+      this.b.addMenu((GUIManager)(new kv(this.ap, var1)));
    }
 
    public void a(amc var1) {
-      this.b.a((GUIManager)(new hg(this.ap, var1)));
+      this.b.addMenu((GUIManager)(new hg(this.ap, var1)));
    }
 
    public void a(az var1) {
-      this.b.a((GUIManager)(new fb(this.ap, var1)));
+      this.b.addMenu((GUIManager)(new fb(this.ap, var1)));
    }
 
    public void d(BaseEntity var1) {

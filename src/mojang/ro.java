@@ -34,21 +34,21 @@ public class ro extends GUIManager {
 
    public void c() {
       this.buttonList.clear();
-      this.buttonList.add(new z(1, this.q / 2 + 24, this.r / 2 + 74, 80, 20, cy.a("mojang.gui.done")));
+      this.buttonList.add(new TexturePackButton(1, this.q / 2 + 24, this.r / 2 + 74, 80, 20, LocalizationManagerWrapper.getLocaleString("mojang.gui.done")));
    }
 
-   protected void a(Button var1) {
-      if(var1.f == 1) {
-         this.minecraft.a((GUIManager)null);
+   protected void clickButton(Button var1) {
+      if(var1.buttonID == 1) {
+         this.minecraft.addMenu((GUIManager)null);
          this.minecraft.g();
       }
 
-      super.a(var1);
+      super.clickButton(var1);
    }
 
    protected void a(char var1, int var2) {
       if(var2 == this.minecraft.options.key_inventory.keyCode) {
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.addMenu((GUIManager)null);
          this.minecraft.g();
       } else {
          super.a(var1, var2);
@@ -144,8 +144,8 @@ public class ro extends GUIManager {
          var5 = o - 1;
       }
 
-      int var6 = this.minecraft.p.b("/mojang/terrain.png");
-      int var7 = this.minecraft.p.b("/mojang/achievement/bg.png");
+      int var6 = this.minecraft.textureManager.readImageFromLocation("/mojang/terrain.png");
+      int var7 = this.minecraft.textureManager.readImageFromLocation("/mojang/achievement/bg.png");
       int var8 = (this.q - this.a) / 2;
       int var9 = (this.r - this.b) / 2;
       int var10 = var8 + 16;
@@ -158,7 +158,7 @@ public class ro extends GUIManager {
       GL11.glDisable(2896);
       GL11.glEnable('\u803a');
       GL11.glEnable(2903);
-      this.minecraft.p.b(var6);
+      this.minecraft.textureManager.b(var6);
       int var12 = var4 + 288 >> 4;
       int var13 = var5 + 288 >> 4;
       int var14 = (var4 + 288) % 16;
@@ -256,7 +256,7 @@ public class ro extends GUIManager {
                GL11.glColor4f(var38, var38, var38, 1.0F);
             }
 
-            this.minecraft.p.b(var7);
+            this.minecraft.textureManager.b(var7);
             var39 = var10 + var26;
             var40 = var11 + var27;
             if(var35.g()) {
@@ -273,7 +273,7 @@ public class ro extends GUIManager {
 
             GL11.glEnable(2896);
             GL11.glEnable(2884);
-            var34.a(this.minecraft.q, this.minecraft.p, var35.d, var39 + 3, var40 + 3);
+            var34.a(this.minecraft.q, this.minecraft.textureManager, var35.d, var39 + 3, var40 + 3);
             GL11.glDisable(2896);
             if(!this.x.b(var35)) {
                var34.a = true;
@@ -289,7 +289,7 @@ public class ro extends GUIManager {
       GL11.glDisable(2929);
       GL11.glEnable(3042);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var7);
+      this.minecraft.textureManager.b(var7);
       this.b(var8, var9, 0, 0, this.a, this.b);
       GL11.glPopMatrix();
       this.g = 0.0F;
@@ -298,7 +298,7 @@ public class ro extends GUIManager {
       GL11.glEnable(3553);
       super.a(var1, var2, var3);
       if(var32 != null) {
-         String var36 = cy.a(var32.i());
+         String var36 = LocalizationManagerWrapper.getLocaleString(var32.i());
          String var37 = var32.f();
          var26 = var1 + 12;
          var27 = var2 - 4;
@@ -312,11 +312,11 @@ public class ro extends GUIManager {
             this.a(var26 - 3, var27 - 3, var26 + var39 + 3, var27 + var40 + 3 + 12, -1073741824, -1073741824);
             this.u.a(var37, var26, var27 + 12, var39, -6250336);
             if(this.x.a(var32)) {
-               this.u.a(cy.a("mojang.achievement.taken"), var26, var27 + var40 + 4, -7302913);
+               this.u.a(LocalizationManagerWrapper.getLocaleString("mojang.achievement.taken"), var26, var27 + var40 + 4, -7302913);
             }
          } else {
             var39 = Math.max(this.u.a(var36), 120);
-            String var42 = cy.a("mojang.achievement.requires", new Object[]{cy.a(var32.c.i())});
+            String var42 = LocalizationManagerWrapper.getFormatedLocaleString("mojang.achievement.requires", new Object[]{LocalizationManagerWrapper.getLocaleString(var32.c.i())});
             var30 = this.u.b(var42, var39);
             this.a(var26 - 3, var27 - 3, var26 + var39 + 3, var27 + var30 + 12 + 3, -1073741824, -1073741824);
             this.u.a(var42, var26, var27 + 12, var39, -9416624);

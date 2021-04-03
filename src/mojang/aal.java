@@ -12,7 +12,7 @@ public class aal {
    private nl d;
 
 
-   public aal(nl var1, OptionParser var2, Texture var3) {
+   public aal(nl var1, OptionParser var2, TextureManager var3) {
       this.c = var2;
       this.d = var1;
       this.b = var3.a(new BufferedImage(128, 128, 2));
@@ -23,7 +23,7 @@ public class aal {
 
    }
 
-   public void a(Player var1, Texture var2, aaj var3) {
+   public void a(Player var1, TextureManager var2, aaj var3) {
       for(int var4 = 0; var4 < 16384; ++var4) {
          byte var5 = var3.f[var4];
          if(var5 / 4 == 0) {
@@ -59,7 +59,7 @@ public class aal {
       var2.a(this.a, 128, 128, this.b);
       byte var15 = 0;
       byte var16 = 0;
-      Tessalator var17 = Tessalator.a;
+      Tessalator var17 = Tessalator.tessalatorInstance;
       float var18 = 0.0F;
       GL11.glBindTexture(3553, this.b);
       GL11.glEnable(3042);
@@ -73,7 +73,7 @@ public class aal {
       var17.a();
       GL11.glEnable(3008);
       GL11.glDisable(3042);
-      var2.b(var2.b("/mojang/misc/mapicons.png"));
+      var2.b(var2.readImageFromLocation("/mojang/misc/mapicons.png"));
       Iterator var19 = var3.i.iterator();
 
       while(var19.hasNext()) {

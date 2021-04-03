@@ -12,7 +12,7 @@ public class fv extends aar {
       System.out.println("OU > KW");
       pb var9 = pb.m[((ou)var1).a()];
       if(var9 != null && ((ou)var1).a(var8) < 1.0F) {
-         Tessalator var10 = Tessalator.a;
+         Tessalator var10 = Tessalator.tessalatorInstance;
          this.a("/mojang/terrain.png");
          tf.a();
          GL11.glBlendFunc(770, 771);

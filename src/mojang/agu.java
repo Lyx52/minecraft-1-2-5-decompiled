@@ -356,7 +356,7 @@ public class agu extends InterfaceRendererUtils {
          var4 = var5;
       }
 
-      Tessalator var6 = Tessalator.a;
+      Tessalator var6 = Tessalator.tessalatorInstance;
       GL11.glColor4f(0.0F, 0.0F, 255.0F, 255.0F);
       GL11.glDisable(3553);
       GL11.glEnable(3058);

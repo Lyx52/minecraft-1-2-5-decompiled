@@ -42,7 +42,7 @@ public class pc implements ca {
       return var3 == null?this.a:var3;
    }
 
-   public boolean a(boolean var1, rw var2) {
+   public boolean a(boolean var1, GUIBackgroundInterface var2) {
       return true;
    }
 

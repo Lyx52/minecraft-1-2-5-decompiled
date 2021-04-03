@@ -778,7 +778,7 @@ public abstract class BaseEntity {
       if(var1.i != this && var1.j != this) {
          double var2 = var1.o - this.o;
          double var4 = var1.q - this.q;
-         double var6 = Utils.a(var2, var4);
+         double var6 = Utils.absMax(var2, var4);
          if(var6 >= 0.009999999776482582D) {
             var6 = (double) Utils.sqrt(var6);
             var2 /= var6;

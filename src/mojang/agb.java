@@ -372,7 +372,7 @@ public class agb implements ca {
       yp.a = false;
    }
 
-   public boolean a(boolean var1, rw var2) {
+   public boolean a(boolean var1, GUIBackgroundInterface var2) {
       return true;
    }
 

@@ -17,7 +17,7 @@ public class cr extends um {
       GL11.glEnable('\u803a');
       GL11.glScalef(0.5F, 0.5F, 0.5F);
       this.a("/mojang/gui/items.png");
-      Tessalator var10 = Tessalator.a;
+      Tessalator var10 = Tessalator.tessalatorInstance;
       if(this.a == 154) {
          int var11 = hx.a(((ThrownPotion)var1).g(), false);
          float var12 = (float)(var11 >> 16 & 255) / 255.0F;

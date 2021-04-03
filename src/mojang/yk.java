@@ -9,13 +9,13 @@ class yk extends iff {
    private ArrayList b;
    private TreeMap c;
    // $FF: synthetic field
-   final afv a;
+   final LanguageOptionMenu a;
 
 
-   public yk(afv var1) {
+   public yk(LanguageOptionMenu var1) {
       super(var1.minecraft, var1.q, var1.r, 32, var1.r - 65 + 4, 18);
       this.a = var1;
-      this.c = LocalizationManager.getInstance().b();
+      this.c = LocalizationManager.getInstance().getLangCodeToName();
       this.b = new ArrayList();
       Iterator var2 = this.c.keySet().iterator();
 
@@ -31,15 +31,15 @@ class yk extends iff {
    }
 
    protected void a(int var1, boolean var2) {
-      LocalizationManager.getInstance().a((String)this.b.get(var1));
+      LocalizationManager.getInstance().changeLocale((String)this.b.get(var1));
       this.a.minecraft.q.a(LocalizationManager.getInstance().d());
-      afv.a(this.a).lang = (String)this.b.get(var1);
-      this.a.u.b(LocalizationManager.d(afv.a(this.a).lang));
-      afv.b(this.a).title = LocalizationManager.getInstance().getLocaleStringByName("gui.done");
+      LanguageOptionMenu.a(this.a).lang = (String)this.b.get(var1);
+      this.a.u.b(LocalizationManager.isSaudiArabicOrHebrew(LanguageOptionMenu.a(this.a).lang));
+      LanguageOptionMenu.b(this.a).title = LocalizationManager.getInstance().getLocaleStringByName("mojang.gui.done");
    }
 
    protected boolean b_(int var1) {
-      return ((String)this.b.get(var1)).equals(LocalizationManager.getInstance().c());
+      return ((String)this.b.get(var1)).equals(LocalizationManager.getInstance().getCurrentLocaleCode());
    }
 
    protected int b() {
@@ -53,6 +53,6 @@ class yk extends iff {
    protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
       this.a.u.b(true);
       this.a.a(this.a.u, (String)this.c.get(this.b.get(var1)), this.a.q / 2, var3 + 1, 16777215);
-      this.a.u.b(LocalizationManager.d(afv.a(this.a).lang));
+      this.a.u.b(LocalizationManager.isSaudiArabicOrHebrew(LanguageOptionMenu.a(this.a).lang));
    }
 }

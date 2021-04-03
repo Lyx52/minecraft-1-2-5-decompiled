@@ -30,7 +30,7 @@ class by extends Thread {
                         var27 = true;
                         this.a.d = "§8Polling..";
                         long var1 = System.nanoTime();
-                        acp.a(this.b.a, this.a);
+                        ServerSelectionMenu.a(this.b.a, this.a);
                         long var3 = System.nanoTime();
                         this.a.e = (var3 - var1) / 1000000L;
                         var27 = false;
@@ -61,44 +61,44 @@ class by extends Thread {
                         break label185;
                      } finally {
                         if(var27) {
-                           synchronized(acp.g()) {
-                              acp.p();
+                           synchronized(ServerSelectionMenu.g()) {
+                              ServerSelectionMenu.p();
                            }
                         }
                      }
 
-                     synchronized(acp.g()) {
-                        acp.p();
+                     synchronized(ServerSelectionMenu.g()) {
+                        ServerSelectionMenu.p();
                         return;
                      }
                   }
 
-                  synchronized(acp.g()) {
-                     acp.p();
+                  synchronized(ServerSelectionMenu.g()) {
+                     ServerSelectionMenu.p();
                      return;
                   }
                }
 
-               synchronized(acp.g()) {
-                  acp.p();
+               synchronized(ServerSelectionMenu.g()) {
+                  ServerSelectionMenu.p();
                   return;
                }
             }
 
-            synchronized(acp.g()) {
-               acp.p();
+            synchronized(ServerSelectionMenu.g()) {
+               ServerSelectionMenu.p();
                return;
             }
          }
 
-         synchronized(acp.g()) {
-            acp.p();
+         synchronized(ServerSelectionMenu.g()) {
+            ServerSelectionMenu.p();
             return;
          }
       }
 
-      synchronized(acp.g()) {
-         acp.p();
+      synchronized(ServerSelectionMenu.g()) {
+         ServerSelectionMenu.p();
       }
 
    }

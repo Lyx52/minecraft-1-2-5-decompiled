@@ -6,11 +6,11 @@ public class im extends rt {
 
    private int a = 0;
    private int au = 0;
-   private Texture av;
+   private TextureManager av;
    private float aw;
 
 
-   public im(Texture var1, World var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public im(TextureManager var1, World var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       super(var2, var3, var5, var7, 0.0D, 0.0D, 0.0D);
       this.av = var1;
       this.au = 6 + this.U.nextInt(4);
@@ -21,7 +21,7 @@ public class im extends rt {
    public void a(Tessalator var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       int var8 = (int)(((float)this.a + var2) * 15.0F / (float)this.au);
       if(var8 <= 15) {
-         this.av.b(this.av.b("/mojang/misc/explosion.png"));
+         this.av.b(this.av.readImageFromLocation("/mojang/misc/explosion.png"));
          float var9 = (float)(var8 % 4) / 4.0F;
          float var10 = var9 + 0.24975F;
          float var11 = (float)(var8 / 4) / 4.0F;

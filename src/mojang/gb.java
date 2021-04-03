@@ -63,8 +63,8 @@ public abstract class gb extends GUIManager {
          GL11.glTranslatef(0.0F, 0.0F, 32.0F);
          this.g = 200.0F;
          a.b = 200.0F;
-         a.a(this.u, this.minecraft.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
-         a.b(this.u, this.minecraft.p, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
+         a.a(this.u, this.minecraft.textureManager, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
+         a.b(this.u, this.minecraft.textureManager, var21.k(), var1 - var4 - 8, var2 - var5 - 8);
          this.g = 0.0F;
          a.b = 0.0F;
       }
@@ -152,7 +152,7 @@ public abstract class gb extends GUIManager {
          int var8 = var1.e();
          if(var8 >= 0) {
             GL11.glDisable(2896);
-            this.minecraft.p.b(this.minecraft.p.b("/mojang/gui/items.png"));
+            this.minecraft.textureManager.b(this.minecraft.textureManager.readImageFromLocation("/mojang/gui/items.png"));
             this.b(var2, var3, var8 % 16 * 16, var8 / 16 * 16, 16, 16);
             GL11.glEnable(2896);
             var5 = true;
@@ -160,8 +160,8 @@ public abstract class gb extends GUIManager {
       }
 
       if(!var5) {
-         a.a(this.u, this.minecraft.p, var4, var2, var3);
-         a.b(this.u, this.minecraft.p, var4, var2, var3);
+         a.a(this.u, this.minecraft.textureManager, var4, var2, var3);
+         a.b(this.u, this.minecraft.textureManager, var4, var2, var3);
       }
 
       a.b = 0.0F;

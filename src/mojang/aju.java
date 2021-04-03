@@ -80,7 +80,7 @@ public class aju extends Resource {
 
    public void b(Minecraft minecraft) {
       if(this.g != null) {
-         minecraft.p.a(this.f);
+         minecraft.textureManager.a(this.f);
       }
 
       this.b();
@@ -88,13 +88,13 @@ public class aju extends Resource {
 
    public void c(Minecraft minecraft) {
       if(this.g != null && this.f < 0) {
-         this.f = minecraft.p.a(this.g);
+         this.f = minecraft.textureManager.a(this.g);
       }
 
       if(this.g != null) {
-         minecraft.p.b(this.f);
+         minecraft.textureManager.b(this.f);
       } else {
-         GL11.glBindTexture(3553, minecraft.p.b("/mojang/gui/unknown_pack.png"));
+         GL11.glBindTexture(3553, minecraft.textureManager.readImageFromLocation("/mojang/gui/unknown_pack.png"));
       }
 
    }

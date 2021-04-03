@@ -1,7 +1,5 @@
 package mojang;
 
-import org.lwjgl.Sys;
-
 public class aeb extends ajw {
 
    public final int a;
@@ -77,7 +75,7 @@ public class aeb extends ajw {
    }
 
    public String f() {
-      return this.l != null?this.l.a(cy.a(this.k)):cy.a(this.k);
+      return this.l != null?this.l.a(LocalizationManagerWrapper.getLocaleString(this.k)): LocalizationManagerWrapper.getLocaleString(this.k);
    }
 
    public aeb a(yv var1) {

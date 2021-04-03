@@ -8,9 +8,9 @@ public abstract class aar {
    public abstract void a(kw var1, double var2, double var4, double var6, float var8);
 
    protected void a(String var1) {
-      Texture var2 = this.b.e;
+      TextureManager var2 = this.b.e;
       if(var2 != null) {
-         var2.b(var2.b(var1));
+         var2.b(var2.readImageFromLocation(var1));
       }
 
    }

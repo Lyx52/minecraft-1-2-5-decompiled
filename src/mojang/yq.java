@@ -6,10 +6,10 @@ public class yq extends rt {
 
    private int a = 0;
    private int au = 0;
-   private Texture av;
+   private TextureManager av;
 
 
-   public yq(Texture var1, World var2, double var3, double var5, double var7) {
+   public yq(TextureManager var1, World var2, double var3, double var5, double var7) {
       super(var2, var3, var5, var7, 0.0D, 0.0D, 0.0D);
       this.av = var1;
       this.r = this.s = this.t = 0.0D;
@@ -31,7 +31,7 @@ public class yq extends rt {
       float var12 = (float)(this.p - as);
       float var13 = (float)(this.q - at);
       float var14 = this.k.c(Utils.c(this.o), Utils.c(this.p), Utils.c(this.q));
-      this.av.b(this.av.b("/mojang/misc/footprint.png"));
+      this.av.b(this.av.readImageFromLocation("/mojang/misc/footprint.png"));
       GL11.glEnable(3042);
       GL11.glBlendFunc(770, 771);
       var1.b();

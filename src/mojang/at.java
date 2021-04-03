@@ -19,11 +19,11 @@ public class at {
       return var2;
    }
 
-   public static void a(CompundTag var0, OutputStream var1) throws IOException {
+   public static void writeAndGZIPTag(CompundTag tag, OutputStream var1) throws IOException {
       DataOutputStream var2 = new DataOutputStream(new GZIPOutputStream(var1));
 
       try {
-         a(var0, (DataOutput)var2);
+         writeToTag(tag, (DataOutput)var2);
       } finally {
          var2.close();
       }
@@ -48,7 +48,7 @@ public class at {
       DataOutputStream var2 = new DataOutputStream(new GZIPOutputStream(var1));
 
       try {
-         a(var0, (DataOutput)var2);
+         writeToTag(var0, (DataOutput)var2);
       } finally {
          var2.close();
       }
@@ -78,7 +78,7 @@ public class at {
       DataOutputStream var2 = new DataOutputStream(new FileOutputStream(var1));
 
       try {
-         a(var0, (DataOutput)var2);
+         writeToTag(var0, (DataOutput)var2);
       } finally {
          var2.close();
       }
@@ -111,7 +111,7 @@ public class at {
       }
    }
 
-   public static void a(CompundTag var0, DataOutput var1) throws IOException {
-      BaseTag.writeTag(var0, var1);
+   public static void writeToTag(CompundTag tag, DataOutput writer) throws IOException {
+      BaseTag.writeTag(tag, writer);
    }
 }

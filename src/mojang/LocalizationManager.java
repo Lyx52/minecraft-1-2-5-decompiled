@@ -9,82 +9,82 @@ public class LocalizationManager {
 
    private static LocalizationManager localizationManagerInstance = new LocalizationManager();
    private Properties localeStringMap = new Properties();
-   private TreeMap c;
-   private String d;
+   private TreeMap langCodeToName;
+   private String currentLocaleCode;
    private boolean e;
-
+   private String currentPath = System.getProperty("user.dir");
 
    private LocalizationManager() {
-      this.e();
-      this.a("en_US");
+      this.init();
+      this.changeLocale("en_US");
    }
 
    public static LocalizationManager getInstance() {
       return localizationManagerInstance;
    }
 
-   private void e() {
-      TreeMap treeMap = new TreeMap();
+   private void init() {
+      TreeMap langCodeToName = new TreeMap();
 
       try {
-         BufferedReader var2 = new BufferedReader(new InputStreamReader(LocalizationManager.class.getResourceAsStream("/mojang/lang/languages.txt"), "UTF-8"));
+         BufferedReader reader = new BufferedReader(new InputStreamReader(LocalizationManager.class.getResourceAsStream("/mojang/lang/languages.txt"), "UTF-8"));
 
-         for(String var3 = var2.readLine(); var3 != null; var3 = var2.readLine()) {
-            String[] var4 = var3.split("=");
-            if(var4 != null && var4.length == 2) {
-               treeMap.put(var4[0], var4[1]);
+         for(String line = reader.readLine(); line != null; line = reader.readLine()) {
+            String[] splitLine = line.split("=");
+            if(splitLine != null && splitLine.length == 2) {
+               langCodeToName.put(splitLine[0], splitLine[1]);
             }
          }
-      } catch (IOException var5) {
-         var5.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
          return;
       }
 
-      this.c = treeMap;
+      this.langCodeToName = langCodeToName;
    }
 
-   public TreeMap b() {
-      return this.c;
+   public TreeMap getLangCodeToName() {
+      return this.langCodeToName;
    }
 
-   private void a(Properties var1, String var2) throws IOException {
-      FileInputStream file = new FileInputStream("/mojang/lang/" + var2 + ".mojang.lang");
+   private void readLocaleFile(Properties propertyFile, String localeCode) throws IOException {
+      FileInputStream file = new FileInputStream(currentPath + "/src/" + "/mojang/lang/" + localeCode + ".lang");
 
       InputStreamReader inp = new InputStreamReader(file, "UTF-8");
 
-      BufferedReader var3 = new BufferedReader(inp);
+      BufferedReader reader = new BufferedReader(inp);
 
-      for(String var4 = var3.readLine(); var4 != null; var4 = var3.readLine()) {
-         var4 = var4.trim();
-         if(!var4.startsWith("#")) {
-            String[] var5 = var4.split("=");
-            if(var5 != null && var5.length == 2) {
-               var1.setProperty(var5[0], var5[1]);
+      for(String line = reader.readLine(); line != null; line = reader.readLine()) {
+         line = line.trim();
+         if(!line.startsWith("#")) {
+            String[] splitLine = line.split("=");
+            if(splitLine != null && splitLine.length == 2) {
+               propertyFile.setProperty(splitLine[0], splitLine[1]);
             }
          }
       }
 
    }
 
-   public void a(String var1) {
-      if(!var1.equals(this.d)) {
-         Properties var2 = new Properties();
+   public void changeLocale(String localeCode) {
+      if(!localeCode.equals(this.currentLocaleCode)) {
+         Properties langProperties = new Properties();
 
          try {
-            this.a(var2, "en_US");
-         } catch (IOException var8) {
-            ;
+            this.readLocaleFile(langProperties, "en_US");
+         } catch (IOException e) {
+            e.printStackTrace();
          }
 
          this.e = false;
-         if(!"en_US".equals(var1)) {
+         if(!"en_US".equals(localeCode)) {
             try {
-               this.a(var2, var1);
-               Enumeration var3 = var2.propertyNames();
+               this.readLocaleFile(langProperties, localeCode);
+               Enumeration var3 = langProperties.propertyNames();
 
                while(var3.hasMoreElements() && !this.e) {
                   Object var4 = var3.nextElement();
-                  Object var5 = var2.get(var4);
+                  Object var5 = langProperties.get(var4);
                   if(var5 != null) {
                      String var6 = var5.toString();
 
@@ -102,13 +102,13 @@ public class LocalizationManager {
             }
          }
 
-         this.d = var1;
-         this.localeStringMap = var2;
+         this.currentLocaleCode = localeCode;
+         this.localeStringMap = langProperties;
       }
    }
 
-   public String c() {
-      return this.d;
+   public String getCurrentLocaleCode() {
+      return this.currentLocaleCode;
    }
 
    public boolean d() {
@@ -119,17 +119,17 @@ public class LocalizationManager {
       return this.localeStringMap.getProperty(name, name);
    }
 
-   public String a(String var1, Object ... var2) {
-      String var3 = this.localeStringMap.getProperty(var1, var1);
-      return String.format(var3, var2);
+   public String formatLocaleString(String key, Object ... format) {
+      String name = this.localeStringMap.getProperty(key, key);
+      return String.format(name, format);
    }
 
-   public String c(String var1) {
-      return this.localeStringMap.getProperty(var1 + ".name", "");
+   public String getNameLocale(String name) {
+      return this.localeStringMap.getProperty(name + ".name", "");
    }
 
-   public static boolean d(String var0) {
-      return "ar_SA".equals(var0) || "he_IL".equals(var0);
+   public static boolean isSaudiArabicOrHebrew(String localeName) {
+      return "ar_SA".equals(localeName) || "he_IL".equals(localeName);
    }
 
 }

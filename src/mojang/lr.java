@@ -75,7 +75,7 @@ public class lr {
    public lr(Minecraft var1) {
       this.r = var1;
       this.c = new mn(var1);
-      this.d = var1.p.a(new BufferedImage(16, 16, 1));
+      this.d = var1.textureManager.a(new BufferedImage(16, 16, 1));
       this.Q = new int[256];
    }
 
@@ -457,7 +457,7 @@ public class lr {
       GL11.glScalef(var3, var3, var3);
       GL11.glTranslatef(8.0F, 8.0F, 8.0F);
       GL11.glMatrixMode(5888);
-      this.r.p.b(this.d);
+      this.r.textureManager.b(this.d);
       GL11.glTexParameteri(3553, 10241, 9729);
       GL11.glTexParameteri(3553, 10240, 9729);
       GL11.glTexParameteri(3553, 10241, 9729);
@@ -562,7 +562,7 @@ public class lr {
             this.Q[var2] = var19 << 24 | var20 << 16 | var21 << 8 | var22;
          }
 
-         this.r.p.a(this.Q, 16, 16, this.d);
+         this.r.textureManager.a(this.Q, 16, 16, this.d);
       }
    }
 
@@ -764,7 +764,7 @@ public class lr {
 
          this.a(0, var1);
          GL11.glEnable(2912);
-         GL11.glBindTexture(3553, this.r.p.b("/mojang/terrain.png"));
+         GL11.glBindTexture(3553, this.r.textureManager.readImageFromLocation("/mojang/terrain.png"));
          tf.a();
          lv.c("mojang/terrain");
          var5.a(var4, 0, (double)var1);
@@ -799,7 +799,7 @@ public class lr {
          this.a(0, var1);
          GL11.glEnable(3042);
          GL11.glDisable(2884);
-         GL11.glBindTexture(3553, this.r.p.b("/mojang/terrain.png"));
+         GL11.glBindTexture(3553, this.r.textureManager.readImageFromLocation("/mojang/terrain.png"));
          if(this.r.options.fancyGraphics) {
             lv.c("water");
             if(this.r.options.aoSetting) {
@@ -961,13 +961,13 @@ public class lr {
          int var43 = Utils.c(var41.o);
          int var44 = Utils.c(var41.p);
          int var45 = Utils.c(var41.q);
-         Tessalator var8 = Tessalator.a;
+         Tessalator var8 = Tessalator.tessalatorInstance;
          GL11.glDisable(2884);
          GL11.glNormal3f(0.0F, 1.0F, 0.0F);
          GL11.glEnable(3042);
          GL11.glBlendFunc(770, 771);
          GL11.glAlphaFunc(516, 0.01F);
-         GL11.glBindTexture(3553, this.r.p.b("/mojang/environment/snow.png"));
+         GL11.glBindTexture(3553, this.r.textureManager.readImageFromLocation("/mojang/environment/snow.png"));
          double var9 = var41.N + (var41.o - var41.N) * (double)var1;
          double var11 = var41.O + (var41.p - var41.O) * (double)var1;
          double var13 = var41.P + (var41.q - var41.P) * (double)var1;
@@ -1023,7 +1023,7 @@ public class lr {
                            }
 
                            var18 = 0;
-                           GL11.glBindTexture(3553, this.r.p.b("/mojang/environment/rain.png"));
+                           GL11.glBindTexture(3553, this.r.textureManager.readImageFromLocation("/mojang/environment/rain.png"));
                            var8.b();
                         }
 
@@ -1047,7 +1047,7 @@ public class lr {
                            }
 
                            var18 = 1;
-                           GL11.glBindTexture(3553, this.r.p.b("/mojang/environment/snow.png"));
+                           GL11.glBindTexture(3553, this.r.textureManager.readImageFromLocation("/mojang/environment/snow.png"));
                            var8.b();
                         }
 

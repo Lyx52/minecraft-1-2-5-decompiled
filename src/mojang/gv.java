@@ -84,7 +84,7 @@ public class gv {
          while(var1.hasNext()) {
             Integer var5 = (Integer)var1.next();
             if(yr.e[var5.intValue()] != null) {
-               String var3 = cy.a("stat.craftItem", new Object[]{yr.e[var5.intValue()].n()});
+               String var3 = LocalizationManagerWrapper.getFormatedLocaleString("stat.craftItem", new Object[]{yr.e[var5.intValue()].n()});
                D[var5.intValue()] = (new aii(16842752 + var5.intValue(), var3, var5.intValue())).a();
             }
          }
@@ -98,7 +98,7 @@ public class gv {
 
       for(int var3 = 0; var3 < 256; ++var3) {
          if(pb.m[var3] != null && pb.m[var3].t()) {
-            String var4 = cy.a(var0, new Object[]{pb.m[var3].r()});
+            String var4 = LocalizationManagerWrapper.getFormatedLocaleString(var0, new Object[]{pb.m[var3].r()});
             var2[var3] = (new aii(var1 + var3, var4, var3)).a();
             e.add((aii)var2[var3]);
          }
@@ -115,7 +115,7 @@ public class gv {
 
       for(int var5 = var3; var5 < var4; ++var5) {
          if(yr.e[var5] != null) {
-            String var6 = cy.a(var1, new Object[]{yr.e[var5].n()});
+            String var6 = LocalizationManagerWrapper.getFormatedLocaleString(var1, new Object[]{yr.e[var5].n()});
             var0[var5] = (new aii(var2 + var5, var6, var5)).a();
             if(var5 >= 256) {
                d.add((aii)var0[var5]);
@@ -134,7 +134,7 @@ public class gv {
 
       for(int var5 = var3; var5 < var4; ++var5) {
          if(yr.e[var5] != null && yr.e[var5].i()) {
-            String var6 = cy.a(var1, new Object[]{yr.e[var5].n()});
+            String var6 = LocalizationManagerWrapper.getFormatedLocaleString(var1, new Object[]{yr.e[var5].n()});
             var0[var5] = (new aii(var2 + var5, var6, var5)).a();
          }
       }

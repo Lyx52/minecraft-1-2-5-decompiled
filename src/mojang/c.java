@@ -37,7 +37,7 @@ public class c extends GUIManager {
          ahv var1 = (ahv)this.minecraft.h;
          var1.cl.c(new kx(var1.aB, (byte)this.minecraft.f.q, this.minecraft.f.B().getGenerator(), this.minecraft.f.b(), 0));
       } else {
-         this.minecraft.a((GUIManager)null);
+         this.minecraft.addMenu((GUIManager)null);
          this.minecraft.a(this.minecraft.f.F, 0, true);
       }
 
@@ -93,11 +93,11 @@ public class c extends GUIManager {
       }
    }
 
-   protected void a(Button var1) {}
+   protected void clickButton(Button var1) {}
 
    private void b(int var1, int var2, float var3) {
-      Tessalator var4 = Tessalator.a;
-      GL11.glBindTexture(3553, this.minecraft.p.b("%blur%/mojang.gui/background.png"));
+      Tessalator var4 = Tessalator.tessalatorInstance;
+      GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("%blur%/mojang.gui/background.png"));
       var4.b();
       var4.a(1.0F, 1.0F, 1.0F, 1.0F);
       int var5 = this.q;
@@ -127,14 +127,14 @@ public class c extends GUIManager {
 
    public void a(int var1, int var2, float var3) {
       this.b(var1, var2, var3);
-      Tessalator var4 = Tessalator.a;
+      Tessalator var4 = Tessalator.tessalatorInstance;
       short var5 = 274;
       int var6 = this.q / 2 - var5 / 2;
       int var7 = this.r + 50;
       float var8 = -((float)this.a + var3) * this.d;
       GL11.glPushMatrix();
       GL11.glTranslatef(0.0F, var8, 0.0F);
-      GL11.glBindTexture(3553, this.minecraft.p.b("/mojang/title/mclogo.png"));
+      GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("/mojang/title/mclogo.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.b(var6, var7, 0, 0, 155, 44);
       this.b(var6 + 155, var7, 0, 45, 155, 44);
@@ -166,7 +166,7 @@ public class c extends GUIManager {
       }
 
       GL11.glPopMatrix();
-      GL11.glBindTexture(3553, this.minecraft.p.b("%blur%/mojang.misc/vignette.png"));
+      GL11.glBindTexture(3553, this.minecraft.textureManager.readImageFromLocation("%blur%/mojang.misc/vignette.png"));
       GL11.glEnable(3042);
       GL11.glBlendFunc(0, 769);
       var4.b();

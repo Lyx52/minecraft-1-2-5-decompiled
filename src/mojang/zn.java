@@ -21,14 +21,14 @@ public class zn extends gb {
    }
 
    protected void d() {
-      this.u.b(cy.a(this.i.c()), 8, 6, 4210752);
-      this.u.b(cy.a(this.h.c()), 8, this.c - 96 + 2, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString(this.i.c()), 8, 6, 4210752);
+      this.u.b(LocalizationManagerWrapper.getLocaleString(this.h.c()), 8, this.c - 96 + 2, 4210752);
    }
 
    protected void a(float var1, int var2, int var3) {
-      int var4 = this.minecraft.p.b("/mojang/gui/container.png");
+      int var4 = this.minecraft.textureManager.readImageFromLocation("/mojang/gui/container.png");
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.minecraft.p.b(var4);
+      this.minecraft.textureManager.b(var4);
       int var5 = (this.q - this.b) / 2;
       int var6 = (this.r - this.c) / 2;
       this.b(var5, var6, 0, 0, this.b, this.j * 18 + 17);

@@ -13,7 +13,7 @@ public class ach {
    public static double b;
    public static double c;
    public static double d;
-   public Texture e;
+   public TextureManager e;
    public World f;
    public Mob g;
    public float h;
@@ -57,7 +57,7 @@ public class ach {
       return var1 == null?null:this.a(var1.getClass());
    }
 
-   public void a(World var1, Texture var2, nl var3, Mob var4, float var5) {
+   public void a(World var1, TextureManager var2, nl var3, Mob var4, float var5) {
       if(this.f != var1) {
          this.a(var1);
       }

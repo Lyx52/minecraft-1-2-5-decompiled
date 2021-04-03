@@ -5,35 +5,35 @@ import org.lwjgl.opengl.GL11;
 class cn extends iff {
 
    // $FF: synthetic field
-   final em a;
+   final TexturePackMenu a;
 
 
-   public cn(em var1) {
-      super(em.a(var1), var1.q, var1.r, 32, var1.r - 55 + 4, 36);
+   public cn(TexturePackMenu var1) {
+      super(TexturePackMenu.a(var1), var1.q, var1.r, 32, var1.r - 55 + 4, 36);
       this.a = var1;
    }
 
    protected int a() {
-      List var1 = em.b(this.a).texturePackManager.b();
+      List var1 = TexturePackMenu.b(this.a).texturePackManager.b();
       return var1.size();
    }
 
    protected void a(int var1, boolean var2) {
-      List var3 = em.c(this.a).texturePackManager.b();
+      List var3 = TexturePackMenu.c(this.a).texturePackManager.b();
 
       try {
-         em.d(this.a).texturePackManager.setTexturePack((Resource)var3.get(var1));
-         em.e(this.a).p.b();
+         TexturePackMenu.d(this.a).texturePackManager.setTexturePack((Resource)var3.get(var1));
+         TexturePackMenu.e(this.a).textureManager.b();
       } catch (Exception var5) {
-         em.f(this.a).texturePackManager.setTexturePack((Resource)var3.get(0));
-         em.g(this.a).p.b();
+         TexturePackMenu.f(this.a).texturePackManager.setTexturePack((Resource)var3.get(0));
+         TexturePackMenu.g(this.a).textureManager.b();
       }
 
    }
 
    protected boolean b_(int var1) {
-      List var2 = em.h(this.a).texturePackManager.b();
-      return em.i(this.a).texturePackManager.resource == var2.get(var1);
+      List var2 = TexturePackMenu.h(this.a).texturePackManager.b();
+      return TexturePackMenu.i(this.a).texturePackManager.resource == var2.get(var1);
    }
 
    protected int b() {
@@ -45,8 +45,8 @@ class cn extends iff {
    }
 
    protected void a(int var1, int var2, int var3, int var4, Tessalator var5) {
-      Resource var6 = (Resource)em.j(this.a).texturePackManager.b().get(var1);
-      var6.c(em.k(this.a));
+      Resource var6 = (Resource) TexturePackMenu.j(this.a).texturePackManager.b().get(var1);
+      var6.c(TexturePackMenu.k(this.a));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var5.b();
       var5.c(16777215);
@@ -55,8 +55,8 @@ class cn extends iff {
       var5.a((double)(var2 + 32), (double)var3, 0.0D, 1.0D, 0.0D);
       var5.a((double)var2, (double)var3, 0.0D, 0.0D, 0.0D);
       var5.a();
-      this.a.b(em.l(this.a), var6.a, var2 + 32 + 2, var3 + 1, 16777215);
-      this.a.b(em.m(this.a), var6.b, var2 + 32 + 2, var3 + 12, 8421504);
-      this.a.b(em.n(this.a), var6.c, var2 + 32 + 2, var3 + 12 + 10, 8421504);
+      this.a.b(TexturePackMenu.l(this.a), var6.a, var2 + 32 + 2, var3 + 1, 16777215);
+      this.a.b(TexturePackMenu.m(this.a), var6.b, var2 + 32 + 2, var3 + 12, 8421504);
+      this.a.b(TexturePackMenu.n(this.a), var6.c, var2 + 32 + 2, var3 + 12 + 10, 8421504);
    }
 }

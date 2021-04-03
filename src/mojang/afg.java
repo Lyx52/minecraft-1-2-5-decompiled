@@ -7,7 +7,7 @@ public class afg extends um {
 
    public void a(BaseEntity var1, double var2, double var4, double var6, float var8, float var9) {
       System.out.println("D > NN");
-      Tessalator var10 = Tessalator.a;
+      Tessalator var10 = Tessalator.tessalatorInstance;
       GL11.glDisable(3553);
       GL11.glDisable(2896);
       GL11.glEnable(3042);

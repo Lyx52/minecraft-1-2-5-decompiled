@@ -22,15 +22,15 @@ public class qd extends InterfaceRendererUtils {
    }
 
    public void a(aeb var1) {
-      this.d = cy.a("mojang.achievement.get");
-      this.e = cy.a(var1.i());
+      this.d = LocalizationManagerWrapper.getLocaleString("mojang.achievement.get");
+      this.e = LocalizationManagerWrapper.getLocaleString(var1.i());
       this.h = System.currentTimeMillis();
       this.f = var1;
       this.j = false;
    }
 
    public void b(aeb var1) {
-      this.d = cy.a(var1.i());
+      this.d = LocalizationManagerWrapper.getLocaleString(var1.i());
       this.e = var1.f();
       this.h = System.currentTimeMillis() - 2500L;
       this.f = var1;
@@ -81,7 +81,7 @@ public class qd extends InterfaceRendererUtils {
             var3 *= var3;
             int var5 = this.b - 160;
             int var6 = 0 - (int)(var3 * 36.0D);
-            int var7 = this.a.p.b("/mojang/achievement/bg.png");
+            int var7 = this.a.textureManager.readImageFromLocation("/mojang/achievement/bg.png");
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glEnable(3553);
             GL11.glBindTexture(3553, var7);
@@ -99,7 +99,7 @@ public class qd extends InterfaceRendererUtils {
             GL11.glEnable('\u803a');
             GL11.glEnable(2903);
             GL11.glEnable(2896);
-            this.i.a(this.a.q, this.a.p, this.f.d, var5 + 8, var6 + 8);
+            this.i.a(this.a.q, this.a.textureManager, this.f.d, var5 + 8, var6 + 8);
             GL11.glDisable(2896);
             GL11.glDepthMask(true);
             GL11.glEnable(2929);

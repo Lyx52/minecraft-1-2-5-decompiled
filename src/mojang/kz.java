@@ -69,7 +69,7 @@ public class kz extends aar {
          GL11.glTranslatef(-var9, -var11, -var10);
          var19 = var18 + aau.b;
          GL11.glTranslatef(aau.a * var15 / var19, aau.c * var15 / var19, -var10);
-         Tessalator var24 = Tessalator.a;
+         Tessalator var24 = Tessalator.tessalatorInstance;
          var24.b();
          var21 = var12.nextFloat() * 0.5F + 0.1F;
          float var22 = var12.nextFloat() * 0.5F + 0.4F;

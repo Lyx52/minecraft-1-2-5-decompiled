@@ -36,20 +36,20 @@ class ala extends Thread {
             return;
          }
 
-         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{"Unknown host \'" + this.b + "\'"})));
+         this.a.addMenu((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{"Unknown host \'" + this.b + "\'"})));
       } catch (ConnectException var3) {
          if(ajy.a(this.d)) {
             return;
          }
 
-         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var3.getMessage()})));
+         this.a.addMenu((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var3.getMessage()})));
       } catch (Exception var4) {
          if(ajy.a(this.d)) {
             return;
          }
 
          var4.printStackTrace();
-         this.a.a((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var4.toString()})));
+         this.a.addMenu((GUIManager)(new dw("connect.failed", "disconnect.genericReason", new Object[]{var4.toString()})));
       }
 
    }

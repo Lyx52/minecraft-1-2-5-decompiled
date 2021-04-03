@@ -104,12 +104,12 @@ public abstract class iff {
    }
 
    public void a(Button var1) {
-      if(var1.h) {
-         if(var1.f == this.f) {
+      if(var1.visible) {
+         if(var1.buttonID == this.f) {
             this.o -= (float)(this.j * 2 / 3);
             this.m = -2.0F;
             this.d();
-         } else if(var1.f == this.g) {
+         } else if(var1.buttonID == this.g) {
             this.o += (float)(this.j * 2 / 3);
             this.m = -2.0F;
             this.d();
@@ -201,8 +201,8 @@ public abstract class iff {
       this.d();
       GL11.glDisable(2896);
       GL11.glDisable(2912);
-      Tessalator var18 = Tessalator.a;
-      GL11.glBindTexture(3553, this.a.p.b("/gui/background.png"));
+      Tessalator var18 = Tessalator.tessalatorInstance;
+      GL11.glBindTexture(3553, this.a.textureManager.readImageFromLocation("/mojang/gui/background.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var17 = 32.0F;
       var18.b();
@@ -319,8 +319,8 @@ public abstract class iff {
    }
 
    private void a(int var1, int var2, int var3, int var4) {
-      Tessalator var5 = Tessalator.a;
-      GL11.glBindTexture(3553, this.a.p.b("/gui/background.png"));
+      Tessalator var5 = Tessalator.tessalatorInstance;
+      GL11.glBindTexture(3553, this.a.textureManager.readImageFromLocation("/mojang/gui/background.png"));
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
       var5.b();

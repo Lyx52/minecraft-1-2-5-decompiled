@@ -129,7 +129,7 @@ public class ko implements ca {
 
    }
 
-   public boolean a(boolean var1, rw var2) {
+   public boolean a(boolean var1, GUIBackgroundInterface var2) {
       int var3 = 0;
 
       for(int var4 = 0; var4 < this.f.size(); ++var4) {
